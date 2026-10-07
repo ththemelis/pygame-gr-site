@@ -1,0 +1,2502 @@
+
+<!doctype html>
+<html lang="el" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Εργαστηριακό υλικό μαθήματος — ΣΑΕΚ, Γ΄ εξάμηνο">
+      
+      
+        <meta name="author" content="Θόδωρος Θεμελής">
+      
+      
+      
+        <link rel="prev" href="../lesson-01/">
+      
+      
+        <link rel="next" href="../../02-rock-paper-scissors/lesson-02/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.7">
+    
+    
+      
+        <title>Φύλλο εργασίας - Προγραμματισμός εφαρμογών διαδικτύου & παιχνιδιών (Python, pygame)</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.ec1eaa64.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/course.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#1" class="md-skip">
+          Μετάβαση στο περιεχόμενο
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Κεφαλίδα">
+    <a href="../.." title="Προγραμματισμός εφαρμογών διαδικτύου &amp; παιχνιδιών (Python, pygame)" class="md-header__button md-logo" aria-label="Προγραμματισμός εφαρμογών διαδικτύου & παιχνιδιών (Python, pygame)" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Προγραμματισμός εφαρμογών διαδικτύου & παιχνιδιών (Python, pygame)
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Φύλλο εργασίας
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Σκοτεινό θέμα"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Σκοτεινό θέμα" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m17.75 4.09-2.53 1.94.91 3.06-2.63-1.81-2.63 1.81.91-3.06-2.53-1.94L12.44 4l1.06-3 1.06 3zm3.5 6.91-1.64 1.25.59 1.98-1.7-1.17-1.7 1.17.59-1.98L15.75 11l2.06-.05L18.5 9l.69 1.95zm-2.28 4.95c.83-.08 1.72 1.1 1.19 1.85-.32.45-.66.87-1.08 1.27C15.17 23 8.84 23 4.94 19.07c-3.91-3.9-3.91-10.24 0-14.14.4-.4.82-.76 1.27-1.08.75-.53 1.93.36 1.85 1.19-.27 2.86.69 5.83 2.89 8.02a9.96 9.96 0 0 0 8.02 2.89m-1.64 2.02a12.08 12.08 0 0 1-7.8-3.47c-2.17-2.19-3.33-5-3.49-7.82-2.81 3.14-2.7 7.96.31 10.98 3.02 3.01 7.84 3.12 10.98.31"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Φωτεινό θέμα"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Φωτεινό θέμα" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 7a5 5 0 0 1 5 5 5 5 0 0 1-5 5 5 5 0 0 1-5-5 5 5 0 0 1 5-5m0 2a3 3 0 0 0-3 3 3 3 0 0 0 3 3 3 3 0 0 0 3-3 3 3 0 0 0-3-3m0-7 2.39 3.42C13.65 5.15 12.84 5 12 5s-1.65.15-2.39.42zM3.34 7l4.16-.35A7.2 7.2 0 0 0 5.94 8.5c-.44.74-.69 1.5-.83 2.29zm.02 10 1.76-3.77a7.131 7.131 0 0 0 2.38 4.14zM20.65 7l-1.77 3.79a7.02 7.02 0 0 0-2.38-4.15zm-.01 10-4.14.36c.59-.51 1.12-1.14 1.54-1.86.42-.73.69-1.5.83-2.29zM12 22l-2.41-3.44c.74.27 1.55.44 2.41.44.82 0 1.63-.17 2.37-.44z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Αναζήτηση" placeholder="Αναζήτηση" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Αναζήτηση">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Καθαρισμός" aria-label="Καθαρισμός" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Αρχικοποίηση αναζήτησης
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Πλοήγηση" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Προγραμματισμός εφαρμογών διαδικτύου &amp; παιχνιδιών (Python, pygame)" class="md-nav__button md-logo" aria-label="Προγραμματισμός εφαρμογών διαδικτύου & παιχνιδιών (Python, pygame)" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    Προγραμματισμός εφαρμογών διαδικτύου & παιχνιδιών (Python, pygame)
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Αρχική
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Μάθημα 1 — Σπάσε τον κωδικό
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Μάθημα 1 — Σπάσε τον κωδικό
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../lesson-01/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Μάθημα
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Φύλλο εργασίας
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Φύλλο εργασίας
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Πίνακας περιεχομένων">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Πίνακας περιεχομένων
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1-45" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Κύκλος 1 — Το πρώτο πρόγραμμα (45′)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Κύκλος 1 — Το πρώτο πρόγραμμα (45′)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#15" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Θεωρία (15′)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Α. Πρόβλεψη (5′)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Β. Ιχνηλάτηση (4′)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Γ. Σωστό ή λάθος; (3′)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Δ. Βρες το σφάλμα (4′)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#1-01-one-guesspy-10" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Ε. Στάδιο 1 — 01-one-guess.py (10′)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ΣΤ. Κάρτα εξόδου (4′)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-45" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Κύκλος 2 — Αποφάσεις (45′)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Κύκλος 2 — Αποφάσεις (45′)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#15_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Θεωρία (15′)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Α. Αριθμητικοί τελεστές (3′)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Β. Συγκρίσεις (3′)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Γ. Βάλε σε σειρά (4′)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Δ. Ποιος κλάδος εκτελείται; (3′)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-02-hintpy-8" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Ε. Στάδιο 2 — 02-hint.py (8′)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ΣΤ. Βρες το σφάλμα (4′)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#5_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Ζ. Λογικοί τελεστές (5′)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-45" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Κύκλος 3 — Επανάληψη (45′)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Κύκλος 3 — Επανάληψη (45′)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#14" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Θεωρία (14′)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Α. Πρόβλεψη βρόχου (4′)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#8" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Β. Ιχνηλάτηση του παιχνιδιού (8′)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Γ. Σωστό ή λάθος; (3′)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Δ. Ατέρμονες βρόχοι (4′)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-03-repeat-guesspy-8" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Ε. Στάδιο 3 — 03-repeat-guess.py (8′)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4_7" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ΣΤ. Γράψε εσύ: αντίστροφη μέτρηση (4′)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-45" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Κύκλος 4 — Το ολοκληρωμένο παιχνίδι (45′)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Κύκλος 4 — Το ολοκληρωμένο παιχνίδι (45′)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#10" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Θεωρία (10′)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Α. Πότε συνεχίζει ο βρόχος; (3′)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4-04-finalpy-12" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Β. Στάδιο 4 — 04-final.py (12′)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#7" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Γ. Συστηματικές δοκιμές (7′)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#8_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Δ. Γράψε εσύ: έξτρα υπόδειξη (8′)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#5_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Ε. Κάρτα εξόδου (5′)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Αυτοέλεγχος
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Μάθημα 2 — Πέτρα, ψαλίδι, χαρτί
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Μάθημα 2 — Πέτρα, ψαλίδι, χαρτί
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../02-rock-paper-scissors/lesson-02/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Μάθημα
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../02-rock-paper-scissors/worksheet-02/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Φύλλο εργασίας
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Μάθημα 3 — Κρεμάλα
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Μάθημα 3 — Κρεμάλα
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../03-hangman/lesson-03/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Μάθημα
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../03-hangman/worksheet-03/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Φύλλο εργασίας
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Μάθημα 4 — Κουίζ γνώσεων
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Μάθημα 4 — Κουίζ γνώσεων
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../04-quiz-console/lesson-04/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Μάθημα
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../04-quiz-console/worksheet-04/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Φύλλο εργασίας
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Μάθημα 5 — Λαβύρινθος
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Μάθημα 5 — Λαβύρινθος
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../05-maze/lesson-05/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Μάθημα
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../05-maze/worksheet-05/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Φύλλο εργασίας
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Πίνακας περιεχομένων">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Πίνακας περιεχομένων
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1-45" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Κύκλος 1 — Το πρώτο πρόγραμμα (45′)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Κύκλος 1 — Το πρώτο πρόγραμμα (45′)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#15" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Θεωρία (15′)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Α. Πρόβλεψη (5′)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Β. Ιχνηλάτηση (4′)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Γ. Σωστό ή λάθος; (3′)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Δ. Βρες το σφάλμα (4′)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#1-01-one-guesspy-10" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Ε. Στάδιο 1 — 01-one-guess.py (10′)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ΣΤ. Κάρτα εξόδου (4′)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-45" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Κύκλος 2 — Αποφάσεις (45′)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Κύκλος 2 — Αποφάσεις (45′)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#15_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Θεωρία (15′)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Α. Αριθμητικοί τελεστές (3′)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Β. Συγκρίσεις (3′)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Γ. Βάλε σε σειρά (4′)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Δ. Ποιος κλάδος εκτελείται; (3′)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-02-hintpy-8" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Ε. Στάδιο 2 — 02-hint.py (8′)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ΣΤ. Βρες το σφάλμα (4′)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#5_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Ζ. Λογικοί τελεστές (5′)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-45" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Κύκλος 3 — Επανάληψη (45′)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Κύκλος 3 — Επανάληψη (45′)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#14" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Θεωρία (14′)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Α. Πρόβλεψη βρόχου (4′)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#8" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Β. Ιχνηλάτηση του παιχνιδιού (8′)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Γ. Σωστό ή λάθος; (3′)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Δ. Ατέρμονες βρόχοι (4′)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-03-repeat-guesspy-8" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Ε. Στάδιο 3 — 03-repeat-guess.py (8′)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4_7" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ΣΤ. Γράψε εσύ: αντίστροφη μέτρηση (4′)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-45" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Κύκλος 4 — Το ολοκληρωμένο παιχνίδι (45′)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Κύκλος 4 — Το ολοκληρωμένο παιχνίδι (45′)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#10" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Θεωρία (10′)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Α. Πότε συνεχίζει ο βρόχος; (3′)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4-04-finalpy-12" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Β. Στάδιο 4 — 04-final.py (12′)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#7" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Γ. Συστηματικές δοκιμές (7′)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#8_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Δ. Γράψε εσύ: έξτρα υπόδειξη (8′)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#5_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Ε. Κάρτα εξόδου (5′)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Αυτοέλεγχος
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="1">Φύλλο εργασίας — Μάθημα 1: Σπάσε τον κωδικό<a class="headerlink" href="#1" title="Permanent link">&para;</a></h1>
+<div class="admonition info">
+<p class="admonition-title">Πώς δουλεύουμε</p>
+<p>Η θεωρία είναι στη σελίδα <a href="../lesson-01/">Μάθημα 1</a>. Εδώ είναι οι ασκήσεις. Στις ασκήσεις
+πρόβλεψης <strong>γράψε πρώτα την απάντησή σου</strong> και μετά τρέξε τον κώδικα στο <code>sandbox.py</code>.
+Μια λάθος πρόβλεψη είναι χρήσιμη: δείχνει τι δεν έχει ακόμη γίνει σαφές.</p>
+</div>
+<table>
+<thead>
+<tr>
+<th>Κύκλος</th>
+<th>45′ εργασία</th>
+<th>Αποτέλεσμα</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>Μεταβλητές, τύποι, <code>input</code>, σφάλματα</td>
+<td>Πρόγραμμα που δέχεται μία πρόβλεψη</td>
+</tr>
+<tr>
+<td>2</td>
+<td>Τελεστές, συγκρίσεις, <code>if/elif/else</code></td>
+<td>Πρόγραμμα με υπόδειξη</td>
+</tr>
+<tr>
+<td>3</td>
+<td>Βρόχος <code>while</code>, μετρητής, σημαία</td>
+<td>Πολλές προβλέψεις μέχρι τη νίκη</td>
+</tr>
+<tr>
+<td>4</td>
+<td><code>random</code>, όριο προσπαθειών, δοκιμές</td>
+<td>Ολοκληρωμένο παιχνίδι</td>
+</tr>
+</tbody>
+</table>
+<p>Μετά από κάθε κύκλο ακολουθεί διάλειμμα 15′.</p>
+<hr />
+<h2 id="1-45">Κύκλος 1 — Το πρώτο πρόγραμμα (45′)<a class="headerlink" href="#1-45" title="Permanent link">&para;</a></h2>
+<h3 id="15">Θεωρία (15′)<a class="headerlink" href="#15" title="Permanent link">&para;</a></h3>
+<p>Παρακολούθησε την επίδειξη και διάβασε τις ενότητες <strong>1.1–1.6</strong> του <a href="../lesson-01/">μαθήματος</a>. Δοκίμασε στο <code>sandbox.py</code> ό,τι δείχνει ο διδάσκων.</p>
+<h3 id="5">Α. Πρόβλεψη (5′)<a class="headerlink" href="#5" title="Permanent link">&para;</a></h3>
+<p>Γράψε τι εμφανίζει κάθε πρόγραμμα. Μετά τρέξε το στο <code>sandbox.py</code>.</p>
+<p><strong>1.</strong>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="nb">print</span><span class="p">(</span><span class="s2">"Κωδικός:"</span><span class="p">,</span> <span class="mi">7</span><span class="p">)</span>
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="nb">print</span><span class="p">(</span><span class="s2">"Κωδικός: "</span> <span class="o">+</span> <span class="s2">"7"</span><span class="p">)</span>
+</span></code></pre></div>
+Έξοδος: <strong><em>_</em></strong><strong><em>_</em></strong><strong><em>_</em></strong><strong><em>_</em></strong><strong><em>_</em></strong><strong><em>_</em></strong>____</p>
+<p><strong>2.</strong>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="n">attempts</span> <span class="o">=</span> <span class="mi">2</span>
+</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="n">attempts</span> <span class="o">=</span> <span class="n">attempts</span> <span class="o">+</span> <span class="mi">3</span>
+</span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="nb">print</span><span class="p">(</span><span class="n">attempts</span><span class="p">)</span>
+</span></code></pre></div>
+Έξοδος: <strong><em>_</em></strong><strong><em>_</em></strong><strong><em>_</em></strong><strong><em>_</em></strong><strong><em>_</em></strong><strong><em>_</em></strong>____</p>
+<p><strong>3.</strong>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="n">name</span> <span class="o">=</span> <span class="s2">"Νίκη"</span>
+</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="n">age</span> <span class="o">=</span> <span class="mi">17</span>
+</span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"</span><span class="si">{</span><span class="n">name</span><span class="si">}</span><span class="s2"> είναι </span><span class="si">{</span><span class="n">age</span><span class="si">}</span><span class="s2"> ετών."</span><span class="p">)</span>
+</span></code></pre></div>
+Έξοδος: <strong><em>_</em></strong><strong><em>_</em></strong><strong><em>_</em></strong><strong><em>_</em></strong><strong><em>_</em></strong><strong><em>_</em></strong>____</p>
+<p><strong>4.</strong>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="n">x</span> <span class="o">=</span> <span class="s2">"3"</span>
+</span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="n">y</span> <span class="o">=</span> <span class="s2">"4"</span>
+</span><span id="__span-3-3"><a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a><span class="nb">print</span><span class="p">(</span><span class="n">x</span> <span class="o">+</span> <span class="n">y</span><span class="p">)</span>
+</span><span id="__span-3-4"><a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a><span class="nb">print</span><span class="p">(</span><span class="nb">int</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="o">+</span> <span class="nb">int</span><span class="p">(</span><span class="n">y</span><span class="p">))</span>
+</span></code></pre></div>
+Έξοδος: <strong><em>_</em></strong><strong><em>_</em></strong><strong><em>_</em></strong><strong><em>_</em></strong><strong><em>_</em></strong><strong><em>_</em></strong>____</p>
+<h3 id="4">Β. Ιχνηλάτηση (4′)<a class="headerlink" href="#4" title="Permanent link">&para;</a></h3>
+<p>Η <strong>ιχνηλάτηση</strong> είναι να εκτελείς εσύ τον κώδικα στο χαρτί, γραμμή προς γραμμή. Συμπλήρωσε την
+τιμή κάθε μεταβλητής <strong>μετά</strong> την εκτέλεση της γραμμής. Βάλε <code>—</code> αν η μεταβλητή δεν υπάρχει ακόμη.</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="n">a</span> <span class="o">=</span> <span class="mi">4</span>
+</span><span id="__span-4-2"><a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a><span class="n">b</span> <span class="o">=</span> <span class="n">a</span> <span class="o">*</span> <span class="mi">2</span>
+</span><span id="__span-4-3"><a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a><span class="n">a</span> <span class="o">=</span> <span class="n">b</span> <span class="o">-</span> <span class="mi">3</span>
+</span><span id="__span-4-4"><a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a><span class="n">b</span> <span class="o">=</span> <span class="n">a</span> <span class="o">+</span> <span class="n">b</span>
+</span></code></pre></div>
+<table>
+<thead>
+<tr>
+<th>Μετά τη γραμμή</th>
+<th style="text-align: center;"><code>a</code></th>
+<th style="text-align: center;"><code>b</code></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>a = 4</code></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+</tr>
+<tr>
+<td><code>b = a * 2</code></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+</tr>
+<tr>
+<td><code>a = b - 3</code></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+</tr>
+<tr>
+<td><code>b = a + b</code></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+</tr>
+</tbody>
+</table>
+<h3 id="3">Γ. Σωστό ή λάθος; (3′)<a class="headerlink" href="#3" title="Permanent link">&para;</a></h3>
+<p>Κύκλωσε Σ ή Λ και γράψε σύντομα γιατί.</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: center;"></th>
+<th>Πρόταση</th>
+<th style="text-align: center;"></th>
+<th>Γιατί;</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;">1</td>
+<td>Η <code>input()</code> επιστρέφει αριθμό όταν ο χρήστης γράψει ψηφία.</td>
+<td style="text-align: center;">Σ / Λ</td>
+<td></td>
+</tr>
+<tr>
+<td style="text-align: center;">2</td>
+<td>Το <code>7</code> και το <code>"7"</code> έχουν διαφορετικό τύπο.</td>
+<td style="text-align: center;">Σ / Λ</td>
+<td></td>
+</tr>
+<tr>
+<td style="text-align: center;">3</td>
+<td>Το <code>2nd_try</code> είναι έγκυρο όνομα μεταβλητής.</td>
+<td style="text-align: center;">Σ / Λ</td>
+<td></td>
+</tr>
+<tr>
+<td style="text-align: center;">4</td>
+<td>Το <code>secret</code> και το <code>Secret</code> είναι η ίδια μεταβλητή.</td>
+<td style="text-align: center;">Σ / Λ</td>
+<td></td>
+</tr>
+<tr>
+<td style="text-align: center;">5</td>
+<td>Η γραμμή <code>x = x + 1</code> δίνει πάντα σφάλμα, γιατί είναι αδύνατη.</td>
+<td style="text-align: center;">Σ / Λ</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h3 id="4_1">Δ. Βρες το σφάλμα (4′)<a class="headerlink" href="#4_1" title="Permanent link">&para;</a></h3>
+<p>Κάθε πρόγραμμα έχει ένα σφάλμα. Πρόβλεψε τον <strong>τύπο</strong> του σφάλματος και γράψε τη διόρθωση. Μετά
+τρέξε τον κώδικα για να επιβεβαιώσεις.</p>
+<p><div class="language-python highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="nb">print</span><span class="p">(</span><span class="s2">"Γεια σου)</span>
+</span></code></pre></div>
+Τύπος σφάλματος: ______________  Διόρθωση: ______________________________</p>
+<p><div class="language-python highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="n">secret</span> <span class="o">=</span> <span class="mi">7</span>
+</span><span id="__span-6-2"><a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a><span class="nb">print</span><span class="p">(</span><span class="n">sceret</span><span class="p">)</span>
+</span></code></pre></div>
+Τύπος σφάλματος: ______________  Διόρθωση: ______________________________</p>
+<p><div class="language-python highlight"><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="n">guess</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">"Αριθμός: "</span><span class="p">)</span>
+</span><span id="__span-7-2"><a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a><span class="nb">print</span><span class="p">(</span><span class="n">guess</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span>
+</span></code></pre></div>
+Τύπος σφάλματος: ______________  Διόρθωση: ______________________________</p>
+<h3 id="1-01-one-guesspy-10">Ε. Στάδιο 1 — <code>01-one-guess.py</code> (10′)<a class="headerlink" href="#1-01-one-guesspy-10" title="Permanent link">&para;</a></h3>
+<ol>
+<li>Άνοιξε το <code>01-one-guess.py</code> και συμπλήρωσε τα δύο κενά (<code>TODO 1</code> και <code>TODO 2</code>).</li>
+<li>Τρέξε το πρόγραμμα τρεις φορές και συμπλήρωσε τον πίνακα:</li>
+</ol>
+<table>
+<thead>
+<tr>
+<th style="text-align: center;">Τι έγραψα</th>
+<th>Τι εμφανίστηκε στο τέλος</th>
+<th style="text-align: center;">Το περίμενα;</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;"><code>7</code></td>
+<td></td>
+<td style="text-align: center;"></td>
+</tr>
+<tr>
+<td style="text-align: center;"><code>3</code></td>
+<td></td>
+<td style="text-align: center;"></td>
+</tr>
+<tr>
+<td style="text-align: center;"><code>20</code></td>
+<td></td>
+<td style="text-align: center;"></td>
+</tr>
+</tbody>
+</table>
+<ol>
+<li>Γράψε <code>abc</code> ως κωδικό. <strong>Πρώτα πρόβλεψε</strong>, μετά τρέξε.</li>
+<li>Τύπος σφάλματος: <strong><em>_</em></strong><strong><em>_</em></strong></li>
+<li>Αριθμός γραμμής που αναφέρει η Python: ______</li>
+<li>Ποια εντολή του προγράμματος προκάλεσε το σφάλμα; <strong><em>_</em></strong><strong><em>_</em></strong><strong><em>_</em></strong><strong><em>_</em></strong>__</li>
+</ol>
+<h3 id="4_2">ΣΤ. Κάρτα εξόδου (4′)<a class="headerlink" href="#4_2" title="Permanent link">&para;</a></h3>
+<p>Απάντησε γραπτά, με δικά σου λόγια:</p>
+<ol>
+<li>Τι τύπο έχει η τιμή που επιστρέφει η <code>input()</code>;  <strong><em>_</em></strong><strong><em>_</em></strong><strong><em>_</em></strong><strong><em>_</em></strong>__</li>
+<li>Γιατί χρειάζεται η <code>int()</code> στο πρόγραμμά μας;  <strong><em>_</em></strong><strong><em>_</em></strong><strong><em>_</em></strong><strong><em>_</em></strong>__</li>
+<li>Τι κάνει η γραμμή <code>secret = 7</code>;  <strong><em>_</em></strong><strong><em>_</em></strong><strong><em>_</em></strong><strong><em>_</em></strong>__</li>
+</ol>
+<hr />
+<h2 id="2-45">Κύκλος 2 — Αποφάσεις (45′)<a class="headerlink" href="#2-45" title="Permanent link">&para;</a></h2>
+<h3 id="15_1">Θεωρία (15′)<a class="headerlink" href="#15_1" title="Permanent link">&para;</a></h3>
+<p>Ενότητες <strong>2.1–2.4</strong> του <a href="../lesson-01/">μαθήματος</a>: αριθμητικοί τελεστές, συγκρίσεις, <code>if/elif/else</code>, λογικοί τελεστές.</p>
+<h3 id="3_1">Α. Αριθμητικοί τελεστές (3′)<a class="headerlink" href="#3_1" title="Permanent link">&para;</a></h3>
+<p>Πρόβλεψε το αποτέλεσμα και μετά έλεγξέ το στο <code>sandbox.py</code>:</p>
+<table>
+<thead>
+<tr>
+<th>Έκφραση</th>
+<th style="text-align: center;">Αποτέλεσμα</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>7 + 2</code></td>
+<td style="text-align: center;"></td>
+</tr>
+<tr>
+<td><code>7 / 2</code></td>
+<td style="text-align: center;"></td>
+</tr>
+<tr>
+<td><code>7 // 2</code></td>
+<td style="text-align: center;"></td>
+</tr>
+<tr>
+<td><code>7 % 2</code></td>
+<td style="text-align: center;"></td>
+</tr>
+<tr>
+<td><code>2 ** 4</code></td>
+<td style="text-align: center;"></td>
+</tr>
+<tr>
+<td><code>10 - 2 * 3</code></td>
+<td style="text-align: center;"></td>
+</tr>
+<tr>
+<td><code>(10 - 2) * 3</code></td>
+<td style="text-align: center;"></td>
+</tr>
+</tbody>
+</table>
+<h3 id="3_2">Β. Συγκρίσεις (3′)<a class="headerlink" href="#3_2" title="Permanent link">&para;</a></h3>
+<p>Με <code>secret = 7</code> και <code>guess = 12</code>, γράψε <code>True</code> ή <code>False</code>:</p>
+<table>
+<thead>
+<tr>
+<th>Έκφραση</th>
+<th style="text-align: center;">Τιμή</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>guess == secret</code></td>
+<td style="text-align: center;"></td>
+</tr>
+<tr>
+<td><code>guess != secret</code></td>
+<td style="text-align: center;"></td>
+</tr>
+<tr>
+<td><code>guess &lt; secret</code></td>
+<td style="text-align: center;"></td>
+</tr>
+<tr>
+<td><code>guess &gt;= secret</code></td>
+<td style="text-align: center;"></td>
+</tr>
+<tr>
+<td><code>guess == 12</code></td>
+<td style="text-align: center;"></td>
+</tr>
+<tr>
+<td><code>guess &lt;= 11</code></td>
+<td style="text-align: center;"></td>
+</tr>
+</tbody>
+</table>
+<h3 id="4_3">Γ. Βάλε σε σειρά (4′)<a class="headerlink" href="#4_3" title="Permanent link">&para;</a></h3>
+<p>Οι γραμμές του προγράμματος έχουν ανακατευτεί και έχουν χάσει την εσοχή τους. Γράψε τις στη
+σωστή σειρά, <strong>με τη σωστή εσοχή</strong>, ώστε το πρόγραμμα να λέει «Σωστός», «Μεγαλύτερος» ή
+«Μικρότερος».</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-8-1"><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a>a)  else:
+</span><span id="__span-8-2"><a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a>b)  print("Μικρότερος.")
+</span><span id="__span-8-3"><a id="__codelineno-8-3" name="__codelineno-8-3" href="#__codelineno-8-3"></a>c)  if guess == secret:
+</span><span id="__span-8-4"><a id="__codelineno-8-4" name="__codelineno-8-4" href="#__codelineno-8-4"></a>d)  print("Σωστός.")
+</span><span id="__span-8-5"><a id="__codelineno-8-5" name="__codelineno-8-5" href="#__codelineno-8-5"></a>e)  elif guess &lt; secret:
+</span><span id="__span-8-6"><a id="__codelineno-8-6" name="__codelineno-8-6" href="#__codelineno-8-6"></a>f)  print("Μεγαλύτερος.")
+</span></code></pre></div>
+<p>Σωστή μορφή (γράψε το πρόγραμμα):</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-9-1"><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a>______________________________________
+</span><span id="__span-9-2"><a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a>______________________________________
+</span><span id="__span-9-3"><a id="__codelineno-9-3" name="__codelineno-9-3" href="#__codelineno-9-3"></a>______________________________________
+</span><span id="__span-9-4"><a id="__codelineno-9-4" name="__codelineno-9-4" href="#__codelineno-9-4"></a>______________________________________
+</span><span id="__span-9-5"><a id="__codelineno-9-5" name="__codelineno-9-5" href="#__codelineno-9-5"></a>______________________________________
+</span><span id="__span-9-6"><a id="__codelineno-9-6" name="__codelineno-9-6" href="#__codelineno-9-6"></a>______________________________________
+</span></code></pre></div>
+<h3 id="3_3">Δ. Ποιος κλάδος εκτελείται; (3′)<a class="headerlink" href="#3_3" title="Permanent link">&para;</a></h3>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-10-1"><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a><span class="n">secret</span> <span class="o">=</span> <span class="mi">7</span>
+</span><span id="__span-10-2"><a id="__codelineno-10-2" name="__codelineno-10-2" href="#__codelineno-10-2"></a><span class="k">if</span> <span class="n">guess</span> <span class="o">==</span> <span class="n">secret</span><span class="p">:</span>
+</span><span id="__span-10-3"><a id="__codelineno-10-3" name="__codelineno-10-3" href="#__codelineno-10-3"></a>    <span class="nb">print</span><span class="p">(</span><span class="s2">"Α"</span><span class="p">)</span>
+</span><span id="__span-10-4"><a id="__codelineno-10-4" name="__codelineno-10-4" href="#__codelineno-10-4"></a><span class="k">elif</span> <span class="n">guess</span> <span class="o">&lt;</span> <span class="n">secret</span><span class="p">:</span>
+</span><span id="__span-10-5"><a id="__codelineno-10-5" name="__codelineno-10-5" href="#__codelineno-10-5"></a>    <span class="nb">print</span><span class="p">(</span><span class="s2">"Β"</span><span class="p">)</span>
+</span><span id="__span-10-6"><a id="__codelineno-10-6" name="__codelineno-10-6" href="#__codelineno-10-6"></a><span class="k">else</span><span class="p">:</span>
+</span><span id="__span-10-7"><a id="__codelineno-10-7" name="__codelineno-10-7" href="#__codelineno-10-7"></a>    <span class="nb">print</span><span class="p">(</span><span class="s2">"Γ"</span><span class="p">)</span>
+</span></code></pre></div>
+<table>
+<thead>
+<tr>
+<th style="text-align: center;"><code>guess</code></th>
+<th style="text-align: center;">Τι εμφανίζεται</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;"><code>3</code></td>
+<td style="text-align: center;"></td>
+</tr>
+<tr>
+<td style="text-align: center;"><code>7</code></td>
+<td style="text-align: center;"></td>
+</tr>
+<tr>
+<td style="text-align: center;"><code>12</code></td>
+<td style="text-align: center;"></td>
+</tr>
+</tbody>
+</table>
+<p>Για ποιες τιμές του <code>guess</code> εμφανίζεται το «Γ»; <strong><em>_</em></strong><strong><em>_</em></strong><strong><em>_</em></strong><strong><em>_</em></strong>__</p>
+<h3 id="2-02-hintpy-8">Ε. Στάδιο 2 — <code>02-hint.py</code> (8′)<a class="headerlink" href="#2-02-hintpy-8" title="Permanent link">&para;</a></h3>
+<ol>
+<li>Συμπλήρωσε τις δύο συνθήκες.</li>
+<li>Τρέξε το πρόγραμμα τρεις φορές. Ο κωδικός είναι το <code>7</code>.</li>
+</ol>
+<table>
+<thead>
+<tr>
+<th style="text-align: center;">Τι έγραψα</th>
+<th>Τι εμφανίστηκε</th>
+<th style="text-align: center;">Σωστό;</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;"><code>3</code></td>
+<td></td>
+<td style="text-align: center;"></td>
+</tr>
+<tr>
+<td style="text-align: center;"><code>12</code></td>
+<td></td>
+<td style="text-align: center;"></td>
+</tr>
+<tr>
+<td style="text-align: center;"><code>7</code></td>
+<td></td>
+<td style="text-align: center;"></td>
+</tr>
+</tbody>
+</table>
+<ol>
+<li><strong>Τροποποίηση:</strong> άλλαξε τον κωδικό σε <code>15</code> (<code>secret = 15</code>). Τρέξε με <code>3</code>, <code>15</code> και <code>20</code>.
+   Χρειάστηκε να αλλάξεις κάτι άλλο εκτός από τον αριθμό; <strong><em>_</em></strong><strong><em>_</em></strong><strong><em>_</em></strong><strong><em>_</em></strong>__</li>
+</ol>
+<h3 id="4_4">ΣΤ. Βρες το σφάλμα (4′)<a class="headerlink" href="#4_4" title="Permanent link">&para;</a></h3>
+<p>Πρόβλεψε το μήνυμα σφάλματος και διόρθωσε κάθε πρόγραμμα. Μετά τρέξε το.</p>
+<p><div class="language-python highlight"><pre><span></span><code><span id="__span-11-1"><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a><span class="n">guess</span> <span class="o">=</span> <span class="mi">3</span>
+</span><span id="__span-11-2"><a id="__codelineno-11-2" name="__codelineno-11-2" href="#__codelineno-11-2"></a><span class="k">if</span> <span class="n">guess</span> <span class="o">=</span> <span class="mi">7</span><span class="p">:</span>
+</span><span id="__span-11-3"><a id="__codelineno-11-3" name="__codelineno-11-3" href="#__codelineno-11-3"></a>    <span class="nb">print</span><span class="p">(</span><span class="s2">"Σωστός"</span><span class="p">)</span>
+</span></code></pre></div>
+Τύπος σφάλματος: ______________  Διόρθωση: ______________________________</p>
+<p><div class="language-python highlight"><pre><span></span><code><span id="__span-12-1"><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a><span class="n">guess</span> <span class="o">=</span> <span class="mi">3</span>
+</span><span id="__span-12-2"><a id="__codelineno-12-2" name="__codelineno-12-2" href="#__codelineno-12-2"></a><span class="k">if</span> <span class="n">guess</span> <span class="o">==</span> <span class="mi">7</span>
+</span><span id="__span-12-3"><a id="__codelineno-12-3" name="__codelineno-12-3" href="#__codelineno-12-3"></a>    <span class="nb">print</span><span class="p">(</span><span class="s2">"Σωστός"</span><span class="p">)</span>
+</span></code></pre></div>
+Τύπος σφάλματος: ______________  Διόρθωση: ______________________________</p>
+<p><div class="language-python highlight"><pre><span></span><code><span id="__span-13-1"><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a><span class="n">guess</span> <span class="o">=</span> <span class="mi">3</span>
+</span><span id="__span-13-2"><a id="__codelineno-13-2" name="__codelineno-13-2" href="#__codelineno-13-2"></a><span class="k">if</span> <span class="n">guess</span> <span class="o">==</span> <span class="mi">7</span><span class="p">:</span>
+</span><span id="__span-13-3"><a id="__codelineno-13-3" name="__codelineno-13-3" href="#__codelineno-13-3"></a><span class="nb">print</span><span class="p">(</span><span class="s2">"Σωστός"</span><span class="p">)</span>
+</span></code></pre></div>
+Τύπος σφάλματος: ______________  Διόρθωση: ______________________________</p>
+<h3 id="5_1">Ζ. Λογικοί τελεστές (5′)<a class="headerlink" href="#5_1" title="Permanent link">&para;</a></h3>
+<p>Με <code>attempts = 3</code>, <code>found = False</code>, <code>guess = 25</code>, <code>MIN_NUMBER = 1</code>, <code>MAX_NUMBER = 20</code>,
+γράψε <code>True</code> ή <code>False</code>:</p>
+<table>
+<thead>
+<tr>
+<th>Έκφραση</th>
+<th style="text-align: center;">Τιμή</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>not found</code></td>
+<td style="text-align: center;"></td>
+</tr>
+<tr>
+<td><code>attempts &lt; 5 and not found</code></td>
+<td style="text-align: center;"></td>
+</tr>
+<tr>
+<td><code>attempts &lt; 5 and found</code></td>
+<td style="text-align: center;"></td>
+</tr>
+<tr>
+<td><code>guess &lt; MIN_NUMBER or guess &gt; MAX_NUMBER</code></td>
+<td style="text-align: center;"></td>
+</tr>
+<tr>
+<td><code>guess &gt;= MIN_NUMBER and guess &lt;= MAX_NUMBER</code></td>
+<td style="text-align: center;"></td>
+</tr>
+<tr>
+<td><code>not (attempts &lt; 5)</code></td>
+<td style="text-align: center;"></td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="3-45">Κύκλος 3 — Επανάληψη (45′)<a class="headerlink" href="#3-45" title="Permanent link">&para;</a></h2>
+<h3 id="14">Θεωρία (14′)<a class="headerlink" href="#14" title="Permanent link">&para;</a></h3>
+<p>Ενότητες <strong>3.1–3.4</strong> του <a href="../lesson-01/">μαθήματος</a>: <code>while</code>, μετρητής, σημαία, ατέρμονος βρόχος.</p>
+<h3 id="4_5">Α. Πρόβλεψη βρόχου (4′)<a class="headerlink" href="#4_5" title="Permanent link">&para;</a></h3>
+<p><strong>1.</strong>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-14-1"><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a><span class="n">count</span> <span class="o">=</span> <span class="mi">1</span>
+</span><span id="__span-14-2"><a id="__codelineno-14-2" name="__codelineno-14-2" href="#__codelineno-14-2"></a><span class="k">while</span> <span class="n">count</span> <span class="o">&lt;=</span> <span class="mi">3</span><span class="p">:</span>
+</span><span id="__span-14-3"><a id="__codelineno-14-3" name="__codelineno-14-3" href="#__codelineno-14-3"></a>    <span class="nb">print</span><span class="p">(</span><span class="s2">"Γύρος"</span><span class="p">,</span> <span class="n">count</span><span class="p">)</span>
+</span><span id="__span-14-4"><a id="__codelineno-14-4" name="__codelineno-14-4" href="#__codelineno-14-4"></a>    <span class="n">count</span> <span class="o">+=</span> <span class="mi">1</span>
+</span><span id="__span-14-5"><a id="__codelineno-14-5" name="__codelineno-14-5" href="#__codelineno-14-5"></a><span class="nb">print</span><span class="p">(</span><span class="s2">"Τέλος"</span><span class="p">)</span>
+</span></code></pre></div>
+Έξοδος: <strong><em>_</em></strong><strong><em>_</em></strong><strong><em>_</em></strong><strong><em>_</em></strong><strong><em>_</em></strong><strong><em>_</em></strong>____</p>
+<p><strong>2.</strong>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-15-1"><a id="__codelineno-15-1" name="__codelineno-15-1" href="#__codelineno-15-1"></a><span class="n">n</span> <span class="o">=</span> <span class="mi">10</span>
+</span><span id="__span-15-2"><a id="__codelineno-15-2" name="__codelineno-15-2" href="#__codelineno-15-2"></a><span class="k">while</span> <span class="n">n</span> <span class="o">&gt;</span> <span class="mi">4</span><span class="p">:</span>
+</span><span id="__span-15-3"><a id="__codelineno-15-3" name="__codelineno-15-3" href="#__codelineno-15-3"></a>    <span class="n">n</span> <span class="o">-=</span> <span class="mi">3</span>
+</span><span id="__span-15-4"><a id="__codelineno-15-4" name="__codelineno-15-4" href="#__codelineno-15-4"></a><span class="nb">print</span><span class="p">(</span><span class="n">n</span><span class="p">)</span>
+</span></code></pre></div>
+Έξοδος: <strong><em>_</em></strong><strong><em>_</em></strong><strong><em>_</em></strong><strong><em>_</em></strong><strong><em>_</em></strong><strong><em>_</em></strong>____</p>
+<h3 id="8">Β. Ιχνηλάτηση του παιχνιδιού (8′)<a class="headerlink" href="#8" title="Permanent link">&para;</a></h3>
+<p>Ο κωδικός είναι <code>7</code> και ο παίκτης δίνει διαδοχικά <code>3</code>, <code>9</code>, <code>7</code>. Εκτέλεσε στο χαρτί το πρόγραμμα
+του Σταδίου 3 και συμπλήρωσε την τιμή των μεταβλητών <strong>στο τέλος κάθε γύρου</strong>.</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: center;">Γύρος</th>
+<th style="text-align: center;"><code>guess</code></th>
+<th style="text-align: center;"><code>attempts</code></th>
+<th style="text-align: center;"><code>found</code></th>
+<th>Μήνυμα που εμφανίζεται</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;">1</td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td></td>
+</tr>
+<tr>
+<td style="text-align: center;">2</td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td></td>
+</tr>
+<tr>
+<td style="text-align: center;">3</td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>Πόσες φορές ελέγχθηκε η συνθήκη <code>not found</code>; ______  Πόσες φορές ήταν αληθής; ______</li>
+<li>Τι θα εμφανιστεί μετά τον βρόχο; <strong><em>_</em></strong><strong><em>_</em></strong><strong><em>_</em></strong><strong><em>_</em></strong>__</li>
+</ul>
+<h3 id="3_4">Γ. Σωστό ή λάθος; (3′)<a class="headerlink" href="#3_4" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: center;"></th>
+<th>Πρόταση</th>
+<th style="text-align: center;"></th>
+<th>Γιατί;</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;">1</td>
+<td>Η συνθήκη του <code>while</code> ελέγχεται μόνο μία φορά, στην αρχή.</td>
+<td style="text-align: center;">Σ / Λ</td>
+<td></td>
+</tr>
+<tr>
+<td style="text-align: center;">2</td>
+<td>Αν η συνθήκη είναι ψευδής από την αρχή, το μπλοκ δεν εκτελείται ποτέ.</td>
+<td style="text-align: center;">Σ / Λ</td>
+<td></td>
+</tr>
+<tr>
+<td style="text-align: center;">3</td>
+<td>Το <code>attempts += 1</code> κάνει το ίδιο με το <code>attempts = attempts + 1</code>.</td>
+<td style="text-align: center;">Σ / Λ</td>
+<td></td>
+</tr>
+<tr>
+<td style="text-align: center;">4</td>
+<td>Ένας βρόχος <code>while True:</code> χωρίς τίποτα που να τον σταματά τελειώνει μόνος του.</td>
+<td style="text-align: center;">Σ / Λ</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h3 id="4_6">Δ. Ατέρμονες βρόχοι (4′)<a class="headerlink" href="#4_6" title="Permanent link">&para;</a></h3>
+<p>Για κάθε πρόγραμμα, πες αν θα τελειώσει πάντα, και αν όχι, πώς διορθώνεται.</p>
+<p><strong>1.</strong>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-16-1"><a id="__codelineno-16-1" name="__codelineno-16-1" href="#__codelineno-16-1"></a><span class="n">attempts</span> <span class="o">=</span> <span class="mi">0</span>
+</span><span id="__span-16-2"><a id="__codelineno-16-2" name="__codelineno-16-2" href="#__codelineno-16-2"></a><span class="k">while</span> <span class="n">attempts</span> <span class="o">&lt;</span> <span class="mi">5</span><span class="p">:</span>
+</span><span id="__span-16-3"><a id="__codelineno-16-3" name="__codelineno-16-3" href="#__codelineno-16-3"></a>    <span class="nb">print</span><span class="p">(</span><span class="s2">"Προσπάθεια"</span><span class="p">)</span>
+</span></code></pre></div>
+Τελειώνει; ______  Διόρθωση: ______________________________________</p>
+<p><strong>2.</strong>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-17-1"><a id="__codelineno-17-1" name="__codelineno-17-1" href="#__codelineno-17-1"></a><span class="n">found</span> <span class="o">=</span> <span class="kc">False</span>
+</span><span id="__span-17-2"><a id="__codelineno-17-2" name="__codelineno-17-2" href="#__codelineno-17-2"></a><span class="k">while</span> <span class="ow">not</span> <span class="n">found</span><span class="p">:</span>
+</span><span id="__span-17-3"><a id="__codelineno-17-3" name="__codelineno-17-3" href="#__codelineno-17-3"></a>    <span class="n">guess</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">"Κωδικός: "</span><span class="p">))</span>
+</span><span id="__span-17-4"><a id="__codelineno-17-4" name="__codelineno-17-4" href="#__codelineno-17-4"></a>    <span class="k">if</span> <span class="n">guess</span> <span class="o">==</span> <span class="mi">7</span><span class="p">:</span>
+</span><span id="__span-17-5"><a id="__codelineno-17-5" name="__codelineno-17-5" href="#__codelineno-17-5"></a>        <span class="n">found</span> <span class="o">=</span> <span class="kc">True</span>
+</span></code></pre></div>
+Τελειώνει πάντα; ______  Σε ποια περίπτωση συνεχίζει; ______________________________</p>
+<div class="admonition warning">
+<p class="admonition-title">Αν το πρόγραμμά σου «κόλλησε»</p>
+<p>Πάτα <strong>Ctrl + C</strong> στο τερματικό για να το σταματήσεις.</p>
+</div>
+<h3 id="3-03-repeat-guesspy-8">Ε. Στάδιο 3 — <code>03-repeat-guess.py</code> (8′)<a class="headerlink" href="#3-03-repeat-guesspy-8" title="Permanent link">&para;</a></h3>
+<ol>
+<li>Συμπλήρωσε τα τρία κενά και παίξε μέχρι να βρεις τον κωδικό. Πόσες προσπάθειες χρειάστηκες;</li>
+</ol>
+<hr />
+<ol>
+<li><strong>Πρόβλεψη και δοκιμή:</strong> τι θα εμφανίσει στο τέλος το πρόγραμμα αν <strong>σβήσεις</strong> τη γραμμή
+   <code>attempts += 1</code>; Πρόβλεψη: ______________________________  Αποτέλεσμα: ______________</li>
+<li>Βάλε τη γραμμή πίσω. Μετά αλλάξε το <code>while not found:</code> σε <code>while found:</code>. Τι συμβαίνει και
+   γιατί; <strong><em>_</em></strong><strong><em>_</em></strong><strong><em>_</em></strong><strong><em>_</em></strong><strong><em>_</em></strong><strong><em>_</em></strong>____</li>
+</ol>
+<h3 id="4_7">ΣΤ. Γράψε εσύ: αντίστροφη μέτρηση (4′)<a class="headerlink" href="#4_7" title="Permanent link">&para;</a></h3>
+<p>Σε νέο αρχείο <code>countdown.py</code>, γράψε πρόγραμμα με <code>while</code> που εμφανίζει:</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-18-1"><a id="__codelineno-18-1" name="__codelineno-18-1" href="#__codelineno-18-1"></a>5
+</span><span id="__span-18-2"><a id="__codelineno-18-2" name="__codelineno-18-2" href="#__codelineno-18-2"></a>4
+</span><span id="__span-18-3"><a id="__codelineno-18-3" name="__codelineno-18-3" href="#__codelineno-18-3"></a>3
+</span><span id="__span-18-4"><a id="__codelineno-18-4" name="__codelineno-18-4" href="#__codelineno-18-4"></a>2
+</span><span id="__span-18-5"><a id="__codelineno-18-5" name="__codelineno-18-5" href="#__codelineno-18-5"></a>1
+</span><span id="__span-18-6"><a id="__codelineno-18-6" name="__codelineno-18-6" href="#__codelineno-18-6"></a>Εκτόξευση
+</span></code></pre></div>
+<p><em>Υπόδειξη:</em> χρειάζεσαι μια μεταβλητή που ξεκινά από 5 και μειώνεται σε κάθε γύρο.</p>
+<hr />
+<h2 id="4-45">Κύκλος 4 — Το ολοκληρωμένο παιχνίδι (45′)<a class="headerlink" href="#4-45" title="Permanent link">&para;</a></h2>
+<h3 id="10">Θεωρία (10′)<a class="headerlink" href="#10" title="Permanent link">&para;</a></h3>
+<p>Ενότητες <strong>4.1–4.4</strong> του <a href="../lesson-01/">μαθήματος</a>: <code>import random</code>, ανάγνωση του ολοκληρωμένου προγράμματος, έλεγχος και αποσφαλμάτωση.</p>
+<h3 id="3_5">Α. Πότε συνεχίζει ο βρόχος; (3′)<a class="headerlink" href="#3_5" title="Permanent link">&para;</a></h3>
+<p>Η συνθήκη του βρόχου είναι <code>attempts &lt; MAX_ATTEMPTS and not found</code>, με <code>MAX_ATTEMPTS = 5</code>.
+Συμπλήρωσε:</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: center;"><code>attempts</code></th>
+<th style="text-align: center;"><code>found</code></th>
+<th style="text-align: center;">Συνεχίζει ο βρόχος; (Ναι/Όχι)</th>
+<th>Τι σημαίνει</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;"><code>0</code></td>
+<td style="text-align: center;"><code>False</code></td>
+<td style="text-align: center;"></td>
+<td></td>
+</tr>
+<tr>
+<td style="text-align: center;"><code>4</code></td>
+<td style="text-align: center;"><code>False</code></td>
+<td style="text-align: center;"></td>
+<td></td>
+</tr>
+<tr>
+<td style="text-align: center;"><code>5</code></td>
+<td style="text-align: center;"><code>False</code></td>
+<td style="text-align: center;"></td>
+<td></td>
+</tr>
+<tr>
+<td style="text-align: center;"><code>2</code></td>
+<td style="text-align: center;"><code>True</code></td>
+<td style="text-align: center;"></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h3 id="4-04-finalpy-12">Β. Στάδιο 4 — <code>04-final.py</code> (12′)<a class="headerlink" href="#4-04-finalpy-12" title="Permanent link">&para;</a></h3>
+<ol>
+<li>Συμπλήρωσε τα πέντε κενά (<code>TODO 1</code> έως <code>TODO 5</code>).</li>
+<li>Παίξε δύο γύρους. Σημείωσε αν κέρδισες και πόσες προσπάθειες χρειάστηκες:
+   Γύρος 1: ____________  Γύρος 2: ____________</li>
+<li>Βρες στο πρόγραμμα και γράψε τα ονόματα:</li>
+<li>των τριών σταθερών: <strong><em>_</em></strong><strong><em>_</em></strong><strong><em>_</em></strong><strong><em>_</em></strong>__</li>
+<li>της μεταβλητής-μετρητή: ______________  της σημαίας: ______________</li>
+</ol>
+<h3 id="7">Γ. Συστηματικές δοκιμές (7′)<a class="headerlink" href="#7" title="Permanent link">&para;</a></h3>
+<p>Για να ελέγχεις με σταθερό κωδικό, κάνε σχόλιο τη γραμμή με το <code>random</code> και βάλε <code>secret = 7</code>:</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-19-1"><a id="__codelineno-19-1" name="__codelineno-19-1" href="#__codelineno-19-1"></a><span class="n">secret</span> <span class="o">=</span> <span class="mi">7</span>   <span class="c1"># secret = random.randint(MIN_NUMBER, MAX_NUMBER)</span>
+</span></code></pre></div>
+<p>Εκτέλεσε τα παρακάτω σενάρια, γράφοντας πρώτα τι <strong>περιμένεις</strong>:</p>
+<table>
+<thead>
+<tr>
+<th>Σενάριο</th>
+<th>Τι περιμένω</th>
+<th>Τι έγινε</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Δίνω <code>7</code> στην πρώτη προσπάθεια</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>Δίνω πέντε φορές <code>1</code></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>Δίνω <code>0</code></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>Δίνω <code>21</code></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>Δίνω <code>1</code>, και μετά <code>20</code></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p>Όταν τελειώσεις, <strong>γύρνα το <code>random</code> στη θέση του</strong>.</p>
+<h3 id="8_1">Δ. Γράψε εσύ: έξτρα υπόδειξη (8′)<a class="headerlink" href="#8_1" title="Permanent link">&para;</a></h3>
+<p>Πρόσθεσε μια ακόμη υπόδειξη. Μετά τη <strong>δεύτερη</strong> προσπάθεια, αν ο κωδικός δεν έχει βρεθεί, το
+πρόγραμμα να εμφανίζει αν ο κωδικός είναι <strong>άρτιος</strong> ή <strong>περιττός</strong>:</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-20-1"><a id="__codelineno-20-1" name="__codelineno-20-1" href="#__codelineno-20-1"></a>Ο κωδικός είναι άρτιος.
+</span></code></pre></div>
+<p><em>Υποδείξεις:</em> χρειάζεσαι τον τελεστή <code>%</code> και ένα <code>if/else</code>. Η συνθήκη «δεύτερη προσπάθεια»
+ελέγχεται με τη μεταβλητή που μετρά τις προσπάθειες. Δοκίμασε με <code>secret = 7</code> και με
+<code>secret = 12</code>.</p>
+<h3 id="5_2">Ε. Κάρτα εξόδου (5′)<a class="headerlink" href="#5_2" title="Permanent link">&para;</a></h3>
+<ol>
+<li>Γιατί η συνθήκη του <code>while</code> περιέχει <code>and</code>; Τι θα γινόταν αν είχε μόνο το <code>not found</code>;  </li>
+</ol>
+<hr />
+<ol>
+<li>Ποια είναι η μεγαλύτερη τιμή του <code>guess</code> που <strong>δεν</strong> θεωρείται εκτός ορίων; ______</li>
+<li>Ποιο μέρος του προγράμματος (προετοιμασία, βρόχος, αποτέλεσμα) θα αλλάξεις για να δώσεις
+   δέκα προσπάθειες;  <strong><em>_</em></strong><strong><em>_</em></strong><strong><em>_</em></strong><strong><em>_</em></strong><strong><em>_</em></strong><strong><em>_</em></strong>____</li>
+</ol>
+<hr />
+<h2 id="_1">Αυτοέλεγχος<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
+<ul>
+<li>□ Μπορώ να εξηγήσω τη διαφορά ανάμεσα στο <code>7</code> και το <code>"7"</code>.</li>
+<li>□ Ξέρω γιατί η <code>input()</code> θέλει <code>int()</code> και τι σφάλμα εμφανίζεται αν λείπει.</li>
+<li>□ Μπορώ να προβλέψω ποιος κλάδος ενός <code>if/elif/else</code> θα εκτελεστεί.</li>
+<li>□ Μπορώ να ιχνηλατήσω έναν βρόχο <code>while</code> στο χαρτί.</li>
+<li>□ Έλεγξα το παιχνίδι στις οριακές τιμές και στις δύο περιπτώσεις τέλους.</li>
+</ul>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Επιστροφή στην αρχή
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+      
+      <nav class="md-footer__inner md-grid" aria-label="Υποσέλιδο" >
+        
+          
+          <a href="../lesson-01/" class="md-footer__link md-footer__link--prev" aria-label="Προηγούμενο: Μάθημα">
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Προηγούμενο
+              </span>
+              <div class="md-ellipsis">
+                Μάθημα
+              </div>
+            </div>
+          </a>
+        
+        
+          
+          <a href="../../02-rock-paper-scissors/lesson-02/" class="md-footer__link md-footer__link--next" aria-label="Επόμενο: Μάθημα">
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Επόμενο
+              </span>
+              <div class="md-ellipsis">
+                Μάθημα
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      © 2026 Θόδωρος Θεμελής — <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.el"
+   target="_blank" rel="noopener">CC BY-NC-SA 4.0</a>
+
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.sections", "navigation.top", "navigation.footer", "content.code.copy", "content.code.annotate", "toc.follow", "search.suggest", "search.highlight"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "\u0391\u03bd\u03c4\u03b9\u03b3\u03c1\u03ac\u03c6\u03b7\u03ba\u03b5 \u03c3\u03c4\u03bf \u03c0\u03c1\u03cc\u03c7\u03b5\u03b9\u03c1\u03bf", "clipboard.copy": "\u0391\u03bd\u03c4\u03b9\u03b3\u03c1\u03b1\u03c6\u03ae \u03c3\u03c4\u03bf \u03c0\u03c1\u03cc\u03c7\u03b5\u03b9\u03c1\u03bf", "search.result.more.one": "1 \u03b1\u03ba\u03cc\u03bc\u03b1 \u03c3\u03b5 \u03b1\u03c5\u03c4\u03ae\u03bd \u03c4\u03b7 \u03c3\u03b5\u03bb\u03af\u03b4\u03b1", "search.result.more.other": "# \u03b1\u03ba\u03cc\u03bc\u03b1 \u03c3\u03b5 \u03b1\u03c5\u03c4\u03ae\u03bd \u03c4\u03b7 \u03c3\u03b5\u03bb\u03af\u03b4\u03b1", "search.result.none": "\u03b4\u03b5\u03bd \u03b2\u03c1\u03ae\u03ba\u03b5 \u03ba\u03ac\u03c0\u03bf\u03b9\u03bf \u03ad\u03b3\u03b3\u03c1\u03b1\u03c6\u03bf", "search.result.one": "1 \u03ad\u03b3\u03b3\u03c1\u03b1\u03c6\u03bf \u03c0\u03bf\u03c5 \u03c4\u03b1\u03b9\u03c1\u03b9\u03ac\u03b6\u03b5\u03b9", "search.result.other": "# \u03ad\u03b3\u03b3\u03c1\u03b1\u03c6\u03b1 \u03c0\u03bf\u03c5 \u03c4\u03b1\u03b9\u03c1\u03b9\u03ac\u03b6\u03bf\u03c5\u03bd", "search.result.placeholder": "\u03a0\u03bb\u03b7\u03ba\u03c4\u03c1\u03bf\u03bb\u03bf\u03b3\u03ae\u03c3\u03c4\u03b5 \u03b3\u03b9\u03b1 \u03bd\u03b1 \u03b1\u03c1\u03c7\u03af\u03c3\u03b5\u03b9 \u03b7 \u03b1\u03bd\u03b1\u03b6\u03ae\u03c4\u03b7\u03c3\u03b7", "search.result.term.missing": "\u039b\u03b5\u03af\u03c0\u03b5\u03b9", "select.version": "\u0395\u03c0\u03b9\u03bb\u03bf\u03b3\u03ae \u03ad\u03ba\u03b4\u03bf\u03c3\u03b7\u03c2"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.d7400e89.min.js"></script>
+      
+    
+  </body>
+</html>

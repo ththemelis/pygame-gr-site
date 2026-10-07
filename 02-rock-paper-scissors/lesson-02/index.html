@@ -1,0 +1,2797 @@
+
+<!doctype html>
+<html lang="el" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Εργαστηριακό υλικό μαθήματος — ΣΑΕΚ, Γ΄ εξάμηνο">
+      
+      
+        <meta name="author" content="Θόδωρος Θεμελής">
+      
+      
+      
+        <link rel="prev" href="../../01-guess-number/worksheet-01/">
+      
+      
+        <link rel="next" href="../worksheet-02/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.7">
+    
+    
+      
+        <title>Μάθημα - Προγραμματισμός εφαρμογών διαδικτύου & παιχνιδιών (Python, pygame)</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.ec1eaa64.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/course.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#2" class="md-skip">
+          Μετάβαση στο περιεχόμενο
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Κεφαλίδα">
+    <a href="../.." title="Προγραμματισμός εφαρμογών διαδικτύου &amp; παιχνιδιών (Python, pygame)" class="md-header__button md-logo" aria-label="Προγραμματισμός εφαρμογών διαδικτύου & παιχνιδιών (Python, pygame)" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Προγραμματισμός εφαρμογών διαδικτύου & παιχνιδιών (Python, pygame)
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Μάθημα
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Σκοτεινό θέμα"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Σκοτεινό θέμα" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m17.75 4.09-2.53 1.94.91 3.06-2.63-1.81-2.63 1.81.91-3.06-2.53-1.94L12.44 4l1.06-3 1.06 3zm3.5 6.91-1.64 1.25.59 1.98-1.7-1.17-1.7 1.17.59-1.98L15.75 11l2.06-.05L18.5 9l.69 1.95zm-2.28 4.95c.83-.08 1.72 1.1 1.19 1.85-.32.45-.66.87-1.08 1.27C15.17 23 8.84 23 4.94 19.07c-3.91-3.9-3.91-10.24 0-14.14.4-.4.82-.76 1.27-1.08.75-.53 1.93.36 1.85 1.19-.27 2.86.69 5.83 2.89 8.02a9.96 9.96 0 0 0 8.02 2.89m-1.64 2.02a12.08 12.08 0 0 1-7.8-3.47c-2.17-2.19-3.33-5-3.49-7.82-2.81 3.14-2.7 7.96.31 10.98 3.02 3.01 7.84 3.12 10.98.31"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Φωτεινό θέμα"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Φωτεινό θέμα" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 7a5 5 0 0 1 5 5 5 5 0 0 1-5 5 5 5 0 0 1-5-5 5 5 0 0 1 5-5m0 2a3 3 0 0 0-3 3 3 3 0 0 0 3 3 3 3 0 0 0 3-3 3 3 0 0 0-3-3m0-7 2.39 3.42C13.65 5.15 12.84 5 12 5s-1.65.15-2.39.42zM3.34 7l4.16-.35A7.2 7.2 0 0 0 5.94 8.5c-.44.74-.69 1.5-.83 2.29zm.02 10 1.76-3.77a7.131 7.131 0 0 0 2.38 4.14zM20.65 7l-1.77 3.79a7.02 7.02 0 0 0-2.38-4.15zm-.01 10-4.14.36c.59-.51 1.12-1.14 1.54-1.86.42-.73.69-1.5.83-2.29zM12 22l-2.41-3.44c.74.27 1.55.44 2.41.44.82 0 1.63-.17 2.37-.44z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Αναζήτηση" placeholder="Αναζήτηση" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Αναζήτηση">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Καθαρισμός" aria-label="Καθαρισμός" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Αρχικοποίηση αναζήτησης
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Πλοήγηση" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Προγραμματισμός εφαρμογών διαδικτύου &amp; παιχνιδιών (Python, pygame)" class="md-nav__button md-logo" aria-label="Προγραμματισμός εφαρμογών διαδικτύου & παιχνιδιών (Python, pygame)" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    Προγραμματισμός εφαρμογών διαδικτύου & παιχνιδιών (Python, pygame)
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Αρχική
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Μάθημα 1 — Σπάσε τον κωδικό
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Μάθημα 1 — Σπάσε τον κωδικό
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../01-guess-number/lesson-01/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Μάθημα
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../01-guess-number/worksheet-01/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Φύλλο εργασίας
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Μάθημα 2 — Πέτρα, ψαλίδι, χαρτί
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Μάθημα 2 — Πέτρα, ψαλίδι, χαρτί
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Μάθημα
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Μάθημα
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Πίνακας περιεχομένων">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Πίνακας περιεχομένων
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Αρχεία εργαστηρίου
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Η αποστολή
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Στο τέλος θα μπορείς
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Πριν αρχίσεις
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Κύκλος 1 — Λίστες και ένας γύρος
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Κύκλος 1 — Λίστες και ένας γύρος">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#11" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.1 Γιατί χρειάζεται λίστα
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#12" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.2 Δείκτες: ποιο στοιχείο θέλω;
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#13-len" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.3 Μήκος της λίστας: len
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#14-in-not-in" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.4 Ανήκει η τιμή στη λίστα: in και not in
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#15" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.5 Αλλαγή στοιχείου
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#16" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.6 Από τον αριθμό του μενού στον δείκτη
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#17" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.7 Οι κανόνες του παιχνιδιού ως συνθήκες
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#1_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Στάδιο 1 — Ένας γύρος
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Κύκλος 2 — Τυχαία επιλογή και έγκυρη είσοδος
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Κύκλος 2 — Τυχαία επιλογή και έγκυρη είσοδος">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#21-randomchoice" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.1 Τυχαίο στοιχείο: random.choice
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#22-while-true-break" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.2 Βρόχος που τον σταματάς εσύ: while True και break
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#23" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.3 Έλεγχος εισόδου: ζήτα μέχρι να είναι έγκυρη
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Στάδιο 2 — Τυχαία επιλογή και έγκυρη είσοδος
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Κύκλος 3 — Ο αγώνας
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Κύκλος 3 — Ο αγώνας">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#31" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.1 Πολλαπλή εκχώρηση
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#32" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.2 Φωλιασμένοι βρόχοι
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#33" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.3 Πότε τελειώνει ο αγώνας
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#34" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.4 Ισοπαλίες, σκορ και αριθμός γύρου
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#35" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.5 Η δομή ολόκληρου του προγράμματος
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Στάδιο 3 — Αγώνας μέχρι τους 3 πόντους
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Κύκλος 4 — Ανθεκτική είσοδος
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Κύκλος 4 — Ανθεκτική είσοδος">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#41-try-except" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.1 Εξαιρέσεις: try και except
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#42-continue" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.2 Η εντολή continue
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#43" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.3 Αλυσιδωτή σύγκριση
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#44" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.4 Το πρότυπο «ζήτα μέχρι να είναι έγκυρο» για αριθμούς
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#45" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.5 Δοκιμές της εισόδου
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Στάδιο 4 — Το ολοκληρωμένο παιχνίδι
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Έλεγχος πριν ολοκληρώσεις
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Για να θυμάσαι
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Λεξιλόγιο
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_8" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Δική σου εκδοχή
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../worksheet-02/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Φύλλο εργασίας
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Μάθημα 3 — Κρεμάλα
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Μάθημα 3 — Κρεμάλα
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../03-hangman/lesson-03/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Μάθημα
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../03-hangman/worksheet-03/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Φύλλο εργασίας
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Μάθημα 4 — Κουίζ γνώσεων
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Μάθημα 4 — Κουίζ γνώσεων
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../04-quiz-console/lesson-04/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Μάθημα
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../04-quiz-console/worksheet-04/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Φύλλο εργασίας
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Μάθημα 5 — Λαβύρινθος
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Μάθημα 5 — Λαβύρινθος
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../05-maze/lesson-05/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Μάθημα
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../05-maze/worksheet-05/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Φύλλο εργασίας
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Πίνακας περιεχομένων">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Πίνακας περιεχομένων
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Αρχεία εργαστηρίου
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Η αποστολή
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Στο τέλος θα μπορείς
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Πριν αρχίσεις
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Κύκλος 1 — Λίστες και ένας γύρος
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Κύκλος 1 — Λίστες και ένας γύρος">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#11" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.1 Γιατί χρειάζεται λίστα
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#12" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.2 Δείκτες: ποιο στοιχείο θέλω;
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#13-len" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.3 Μήκος της λίστας: len
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#14-in-not-in" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.4 Ανήκει η τιμή στη λίστα: in και not in
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#15" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.5 Αλλαγή στοιχείου
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#16" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.6 Από τον αριθμό του μενού στον δείκτη
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#17" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.7 Οι κανόνες του παιχνιδιού ως συνθήκες
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#1_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Στάδιο 1 — Ένας γύρος
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Κύκλος 2 — Τυχαία επιλογή και έγκυρη είσοδος
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Κύκλος 2 — Τυχαία επιλογή και έγκυρη είσοδος">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#21-randomchoice" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.1 Τυχαίο στοιχείο: random.choice
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#22-while-true-break" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.2 Βρόχος που τον σταματάς εσύ: while True και break
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#23" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.3 Έλεγχος εισόδου: ζήτα μέχρι να είναι έγκυρη
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Στάδιο 2 — Τυχαία επιλογή και έγκυρη είσοδος
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Κύκλος 3 — Ο αγώνας
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Κύκλος 3 — Ο αγώνας">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#31" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.1 Πολλαπλή εκχώρηση
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#32" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.2 Φωλιασμένοι βρόχοι
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#33" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.3 Πότε τελειώνει ο αγώνας
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#34" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.4 Ισοπαλίες, σκορ και αριθμός γύρου
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#35" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.5 Η δομή ολόκληρου του προγράμματος
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Στάδιο 3 — Αγώνας μέχρι τους 3 πόντους
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Κύκλος 4 — Ανθεκτική είσοδος
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Κύκλος 4 — Ανθεκτική είσοδος">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#41-try-except" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.1 Εξαιρέσεις: try και except
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#42-continue" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.2 Η εντολή continue
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#43" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.3 Αλυσιδωτή σύγκριση
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#44" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.4 Το πρότυπο «ζήτα μέχρι να είναι έγκυρο» για αριθμούς
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#45" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.5 Δοκιμές της εισόδου
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Στάδιο 4 — Το ολοκληρωμένο παιχνίδι
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Έλεγχος πριν ολοκληρώσεις
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Για να θυμάσαι
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Λεξιλόγιο
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_8" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Δική σου εκδοχή
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="2">Μάθημα 2: Πέτρα, ψαλίδι, χαρτί<a class="headerlink" href="#2" title="Permanent link">&para;</a></h1>
+<p><strong>Παιχνίδι:</strong> αγώνας εναντίον του υπολογιστή, μέχρι να φτάσει κάποιος τους πόντους νίκης<br />
+<strong>Διάρκεια:</strong> 4 κύκλοι × (45′ εργασία + 15′ διάλειμμα)</p>
+<div class="admonition info">
+<p class="admonition-title">Φύλλο εργασίας</p>
+<p>Αυτή η σελίδα εξηγεί τις έννοιες. Οι ασκήσεις και οι οδηγίες για κάθε κύκλο βρίσκονται στο
+<a href="../worksheet-02/">Φύλλο εργασίας 2</a>. Δούλεψε με τις δύο σελίδες ανοιχτές.</p>
+</div>
+<h2 id="_1">Αρχεία εργαστηρίου<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>Αρχείο</th>
+<th>Κύκλος</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="../code/starter/01-one-round.py">01-one-round.py</a></td>
+<td>1</td>
+</tr>
+<tr>
+<td><a href="../code/starter/02-valid-round.py">02-valid-round.py</a></td>
+<td>2</td>
+</tr>
+<tr>
+<td><a href="../code/starter/03-match.py">03-match.py</a></td>
+<td>3</td>
+</tr>
+<tr>
+<td><a href="../code/starter/04-final.py">04-final.py</a></td>
+<td>4</td>
+</tr>
+</tbody>
+</table>
+<h2 id="_2">Η αποστολή<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
+<p>Στο Μάθημα 1 ο υπολογιστής διάλεγε έναν αριθμό και εσύ τον μάντευες. Σήμερα παίζει απέναντί σου:
+διαλέγει τυχαία πέτρα, ψαλίδι ή χαρτί, και νικητής είναι όποιος φτάσει πρώτος τους πόντους που
+θα ορίσεις στην αρχή (από 1 έως 5).</p>
+<p>Για να γίνει αυτό, το πρόγραμμα χρειάζεται τρία πράγματα που δεν έχεις δει ακόμη:</p>
+<ol>
+<li><strong>Έναν τρόπο να κρατά τις τρεις επιλογές μαζί.</strong> Αυτό είναι η <em>λίστα</em>.</li>
+<li><strong>Έναν τρόπο να αντιδρά όταν ο παίκτης γράψει κάτι άκυρο</strong>, αντί να σταματά με σφάλμα. Αυτό
+   είναι ο <em>έλεγχος εισόδου</em> και οι <em>εξαιρέσεις</em>.</li>
+<li><strong>Έναν τρόπο να παίζει πολλούς γύρους</strong>, όπου κάθε γύρος ζητά με τη σειρά του είσοδο. Αυτό
+   είναι οι <em>φωλιασμένοι βρόχοι</em>.</li>
+</ol>
+<h2 id="_3">Στο τέλος θα μπορείς<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h2>
+<ul>
+<li>να δημιουργείς λίστα και να παίρνεις στοιχεία με δείκτη, ξεκινώντας από το 0.</li>
+<li>να χρησιμοποιείς τη <code>len()</code> και τους τελεστές <code>in</code> και <code>not in</code>.</li>
+<li>να επιλέγεις τυχαίο στοιχείο λίστας με <code>random.choice()</code>.</li>
+<li>να ζητάς είσοδο μέχρι να είναι έγκυρη, με <code>while True</code> και <code>break</code>.</li>
+<li>να φωλιάζεις έναν βρόχο μέσα σε άλλον και να εξηγείς ποιον σταματά το <code>break</code>.</li>
+<li>να δίνεις τιμή σε δύο μεταβλητές με μία πολλαπλή εκχώρηση.</li>
+<li>να πιάνεις το σφάλμα <code>ValueError</code> με <code>try/except</code> και να συνεχίζεις με <code>continue</code>.</li>
+<li>να ελέγχεις ότι ένας αριθμός είναι μέσα σε όρια με αλυσιδωτή σύγκριση.</li>
+<li>να δοκιμάζεις την είσοδο ενός προγράμματος με έγκυρες, άκυρες και οριακές τιμές.</li>
+</ul>
+<h2 id="_4">Πριν αρχίσεις<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h2>
+<ol>
+<li>Μέσα στον φάκελο <code>python-games</code> φτιάξε τον φάκελο <code>02-rock-paper-scissors</code>.</li>
+<li>Κατέβασε εκεί τα τέσσερα αρχεία του πίνακα, με τα ακριβή τους ονόματα.</li>
+<li>Άνοιξε τον φάκελο στο VS Code (<strong>File → Open Folder</strong>) και άνοιξε τερματικό
+   (<strong>Terminal → New Terminal</strong>).</li>
+<li>Φτιάξε ένα κενό αρχείο <code>sandbox.py</code> για δοκιμές, όπως στο Μάθημα 1.</li>
+</ol>
+<p>Ένα πρόγραμμα εκτελείται όπως πριν, π.χ. <code>python 01-one-round.py</code>.</p>
+<div class="admonition tip">
+<p class="admonition-title">Ο κύκλος εργασίας</p>
+<p><strong>Πρόβλεψη → εκτέλεση → σύγκριση → εξήγηση.</strong> Όπως στο Μάθημα 1: πριν τρέξεις κάτι, γράψε τι
+περιμένεις να συμβεί.</p>
+</div>
+<hr />
+<h2 id="1">Κύκλος 1 — Λίστες και ένας γύρος<a class="headerlink" href="#1" title="Permanent link">&para;</a></h2>
+<p>Σε αυτόν τον κύκλο μαθαίνεις να κρατάς πολλές τιμές σε μία μεταβλητή και χρησιμοποιείς τη λίστα
+για να παίξεις έναν γύρο.</p>
+<h3 id="11">1.1 Γιατί χρειάζεται λίστα<a class="headerlink" href="#11" title="Permanent link">&para;</a></h3>
+<p>Οι τρεις επιλογές του παιχνιδιού είναι ένα σύνολο που ανήκει μαζί. Θα μπορούσες να γράψεις τρεις
+μεταβλητές (<code>choice1</code>, <code>choice2</code>, <code>choice3</code>), αλλά τότε κάθε φορά που θέλεις να διαλέξεις μία από
+αυτές χρειάζεσαι ξεχωριστό <code>if</code>, και αν προσθέσεις μία τέταρτη επιλογή αλλάζεις όλο το πρόγραμμα.</p>
+<p>Η <strong>λίστα</strong> (list) είναι μια μεταβλητή που κρατά πολλές τιμές, με σειρά. Γράφεται με αγκύλες και
+κόμματα:</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="n">CHOICES</span> <span class="o">=</span> <span class="p">[</span><span class="s2">"πέτρα"</span><span class="p">,</span> <span class="s2">"ψαλίδι"</span><span class="p">,</span> <span class="s2">"χαρτί"</span><span class="p">]</span>
+</span></code></pre></div>
+<ul>
+<li>Οι τιμές της λίστας λέγονται <strong>στοιχεία</strong> (elements).</li>
+<li>Μια λίστα μπορεί να κρατά οποιουσδήποτε τύπους, ακόμη και μπερδεμένους:
+  <code>[7, "Αλέξης", True, 3.5]</code>.</li>
+<li>Μια λίστα χωρίς στοιχεία είναι η κενή λίστα: <code>[]</code>.</li>
+<li>Το όνομα γράφεται με κεφαλαία (<code>CHOICES</code>), επειδή οι επιλογές δεν αλλάζουν όσο τρέχει το
+  παιχνίδι. Είναι η σύμβαση για σταθερές που είδες στο Μάθημα 1.</li>
+</ul>
+<h3 id="12">1.2 Δείκτες: ποιο στοιχείο θέλω;<a class="headerlink" href="#12" title="Permanent link">&para;</a></h3>
+<p>Κάθε στοιχείο έχει μια θέση, που λέγεται <strong>δείκτης</strong> (index). <strong>Η αρίθμηση ξεκινά από το 0</strong>, όχι
+από το 1:</p>
+<table>
+<thead>
+<tr>
+<th>Δείκτης</th>
+<th style="text-align: center;">0</th>
+<th style="text-align: center;">1</th>
+<th style="text-align: center;">2</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Στοιχείο</strong></td>
+<td style="text-align: center;"><code>"πέτρα"</code></td>
+<td style="text-align: center;"><code>"ψαλίδι"</code></td>
+<td style="text-align: center;"><code>"χαρτί"</code></td>
+</tr>
+</tbody>
+</table>
+<p>Παίρνεις ένα στοιχείο γράφοντας το όνομα της λίστας και τον δείκτη μέσα σε αγκύλες:</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="n">CHOICES</span> <span class="o">=</span> <span class="p">[</span><span class="s2">"πέτρα"</span><span class="p">,</span> <span class="s2">"ψαλίδι"</span><span class="p">,</span> <span class="s2">"χαρτί"</span><span class="p">]</span>
+</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="nb">print</span><span class="p">(</span><span class="n">CHOICES</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>    <span class="c1"># πέτρα</span>
+</span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="nb">print</span><span class="p">(</span><span class="n">CHOICES</span><span class="p">[</span><span class="mi">2</span><span class="p">])</span>    <span class="c1"># χαρτί</span>
+</span></code></pre></div>
+<p>Το 0 μοιάζει περίεργο, αλλά αυτός είναι ο κανόνας στην Python, στη C και στις περισσότερες γλώσσες.
+Ο δείκτης δείχνει «πόσες θέσεις μετά την αρχή».</p>
+<p>Η Python δέχεται και <strong>αρνητικούς δείκτες</strong>, που μετρούν από το τέλος: το <code>CHOICES[-1]</code> είναι το
+τελευταίο στοιχείο και το <code>CHOICES[-3]</code> το τρίτο από το τέλος. Θα το δεις να έχει σημασία
+σε λίγο.</p>
+<p>Αν ζητήσεις δείκτη που δεν υπάρχει, παίρνεις σφάλμα:</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>IndexError: list index out of range
+</span></code></pre></div>
+<p>Το <code>CHOICES[3]</code> είναι σφάλμα, γιατί η λίστα έχει στοιχεία μόνο στις θέσεις 0, 1 και 2.</p>
+<h3 id="13-len">1.3 Μήκος της λίστας: <code>len</code><a class="headerlink" href="#13-len" title="Permanent link">&para;</a></h3>
+<p>Η <code>len()</code> δίνει το πλήθος των στοιχείων:</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="nb">print</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">CHOICES</span><span class="p">))</span>   <span class="c1"># 3</span>
+</span></code></pre></div>
+<p>Ο <strong>τελευταίος δείκτης είναι πάντα <code>len(CHOICES) - 1</code></strong>. Μια λίστα με 3 στοιχεία έχει δείκτες
+0, 1, 2. Αυτό το «κατά ένα» είναι η πιο συνηθισμένη πηγή λαθών με λίστες.</p>
+<h3 id="14-in-not-in">1.4 Ανήκει η τιμή στη λίστα: <code>in</code> και <code>not in</code><a class="headerlink" href="#14-in-not-in" title="Permanent link">&para;</a></h3>
+<p>Οι τελεστές <code>in</code> και <code>not in</code> ελέγχουν αν μια τιμή υπάρχει σε μια λίστα και απαντούν με
+<code>True</code> ή <code>False</code>:</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="nb">print</span><span class="p">(</span><span class="s2">"ψαλίδι"</span> <span class="ow">in</span> <span class="n">CHOICES</span><span class="p">)</span>       <span class="c1"># True</span>
+</span><span id="__span-4-2"><a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a><span class="nb">print</span><span class="p">(</span><span class="s2">"σαύρα"</span> <span class="ow">in</span> <span class="n">CHOICES</span><span class="p">)</span>        <span class="c1"># False</span>
+</span><span id="__span-4-3"><a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a><span class="nb">print</span><span class="p">(</span><span class="s2">"σαύρα"</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">CHOICES</span><span class="p">)</span>    <span class="c1"># True</span>
+</span></code></pre></div>
+<p>Θα τους χρησιμοποιήσεις στον έλεγχο της εισόδου, στον επόμενο κύκλο.</p>
+<h3 id="15">1.5 Αλλαγή στοιχείου<a class="headerlink" href="#15" title="Permanent link">&para;</a></h3>
+<p>Μπορείς να αντικαταστήσεις ένα στοιχείο, δίνοντάς του νέα τιμή με τον δείκτη του:</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="n">numbers</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">]</span>
+</span><span id="__span-5-2"><a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a><span class="n">numbers</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="mi">9</span>
+</span><span id="__span-5-3"><a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a><span class="nb">print</span><span class="p">(</span><span class="n">numbers</span><span class="p">)</span>    <span class="c1"># [9, 2, 3]</span>
+</span></code></pre></div>
+<p>Λέμε ότι οι λίστες είναι <strong>τροποποιήσιμες</strong> (mutable): αλλάζουν στη θέση τους. Στο Μάθημα 3 θα μάθεις
+και να προσθέτεις στοιχεία.</p>
+<h3 id="16">1.6 Από τον αριθμό του μενού στον δείκτη<a class="headerlink" href="#16" title="Permanent link">&para;</a></h3>
+<p>Ο παίκτης βλέπει το μενού «1 = πέτρα, 2 = ψαλίδι, 3 = χαρτί» και γράφει έναν αριθμό από το 1 έως το 3.
+Η λίστα όμως έχει δείκτες από το 0 έως το 2. Χρειάζεται μια <strong>μετατροπή</strong>: ο δείκτης είναι ο
+αριθμός μείον 1.</p>
+<table>
+<thead>
+<tr>
+<th>Ο παίκτης γράφει</th>
+<th style="text-align: center;">1</th>
+<th style="text-align: center;">2</th>
+<th style="text-align: center;">3</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Δείκτης = αριθμός − 1</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">1</td>
+<td style="text-align: center;">2</td>
+</tr>
+<tr>
+<td>Επιλογή</td>
+<td style="text-align: center;">πέτρα</td>
+<td style="text-align: center;">ψαλίδι</td>
+<td style="text-align: center;">χαρτί</td>
+</tr>
+</tbody>
+</table>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="n">number</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">"Η επιλογή σου: "</span><span class="p">))</span>
+</span><span id="__span-6-2"><a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a><span class="n">player</span> <span class="o">=</span> <span class="n">CHOICES</span><span class="p">[</span><span class="n">number</span> <span class="o">-</span> <span class="mi">1</span><span class="p">]</span>
+</span></code></pre></div>
+<div class="admonition warning">
+<p class="admonition-title">Τι γίνεται αν ο παίκτης γράψει 0 ή 4;</p>
+<p>Με <code>4</code>, ο δείκτης είναι 3 και έχεις <code>IndexError</code>. Με <code>0</code>, ο δείκτης είναι <code>-1</code>, και το
+<code>CHOICES[-1]</code> είναι <strong>έγκυρο</strong>: δίνει «χαρτί». Το πρόγραμμα δεν σταματά, αλλά κάνει κάτι που
+ο παίκτης δεν ζήτησε. Αυτό είναι χειρότερο από ένα σφάλμα, γιατί δεν φαίνεται. Γι' αυτό ο
+επόμενος κύκλος αφιερώνεται στον έλεγχο της εισόδου.</p>
+</div>
+<h3 id="17">1.7 Οι κανόνες του παιχνιδιού ως συνθήκες<a class="headerlink" href="#17" title="Permanent link">&para;</a></h3>
+<p>Η πέτρα νικά το ψαλίδι, το ψαλίδι νικά το χαρτί, το χαρτί νικά την πέτρα. Αν οι επιλογές είναι ίδιες,
+έχουμε ισοπαλία. Ο υπολογιστής δεν «ξέρει» τους κανόνες· τους γράφουμε εμείς ως συνθήκες.</p>
+<table>
+<thead>
+<tr>
+<th>Παίκτης \ Υπολογιστής</th>
+<th style="text-align: center;">πέτρα</th>
+<th style="text-align: center;">ψαλίδι</th>
+<th style="text-align: center;">χαρτί</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>πέτρα</strong></td>
+<td style="text-align: center;">ισοπαλία</td>
+<td style="text-align: center;"><strong>νικά ο παίκτης</strong></td>
+<td style="text-align: center;">χάνει ο παίκτης</td>
+</tr>
+<tr>
+<td><strong>ψαλίδι</strong></td>
+<td style="text-align: center;">χάνει ο παίκτης</td>
+<td style="text-align: center;">ισοπαλία</td>
+<td style="text-align: center;"><strong>νικά ο παίκτης</strong></td>
+</tr>
+<tr>
+<td><strong>χαρτί</strong></td>
+<td style="text-align: center;"><strong>νικά ο παίκτης</strong></td>
+<td style="text-align: center;">χάνει ο παίκτης</td>
+<td style="text-align: center;">ισοπαλία</td>
+</tr>
+</tbody>
+</table>
+<p>Η λογική είναι τρεις περιπτώσεις με σειρά:</p>
+<ol>
+<li>Αν οι επιλογές είναι ίδιες: ισοπαλία.</li>
+<li>Αλλιώς, αν ισχύει <strong>ένα από τα τρία</strong> ζευγάρια νίκης του παίκτη: νικά ο παίκτης.</li>
+<li>Σε κάθε άλλη περίπτωση: νικά ο υπολογιστής.</li>
+</ol>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="k">if</span> <span class="n">player</span> <span class="o">==</span> <span class="n">computer</span><span class="p">:</span>
+</span><span id="__span-7-2"><a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a>    <span class="nb">print</span><span class="p">(</span><span class="s2">"Ισοπαλία."</span><span class="p">)</span>
+</span><span id="__span-7-3"><a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a><span class="k">elif</span> <span class="p">(</span>
+</span><span id="__span-7-4"><a id="__codelineno-7-4" name="__codelineno-7-4" href="#__codelineno-7-4"></a>    <span class="p">(</span><span class="n">player</span> <span class="o">==</span> <span class="s2">"πέτρα"</span> <span class="ow">and</span> <span class="n">computer</span> <span class="o">==</span> <span class="s2">"ψαλίδι"</span><span class="p">)</span>
+</span><span id="__span-7-5"><a id="__codelineno-7-5" name="__codelineno-7-5" href="#__codelineno-7-5"></a>    <span class="ow">or</span> <span class="p">(</span><span class="n">player</span> <span class="o">==</span> <span class="s2">"ψαλίδι"</span> <span class="ow">and</span> <span class="n">computer</span> <span class="o">==</span> <span class="s2">"χαρτί"</span><span class="p">)</span>
+</span><span id="__span-7-6"><a id="__codelineno-7-6" name="__codelineno-7-6" href="#__codelineno-7-6"></a>    <span class="ow">or</span> <span class="p">(</span><span class="n">player</span> <span class="o">==</span> <span class="s2">"χαρτί"</span> <span class="ow">and</span> <span class="n">computer</span> <span class="o">==</span> <span class="s2">"πέτρα"</span><span class="p">)</span>
+</span><span id="__span-7-7"><a id="__codelineno-7-7" name="__codelineno-7-7" href="#__codelineno-7-7"></a><span class="p">):</span>
+</span><span id="__span-7-8"><a id="__codelineno-7-8" name="__codelineno-7-8" href="#__codelineno-7-8"></a>    <span class="nb">print</span><span class="p">(</span><span class="s2">"Κέρδισες τον γύρο."</span><span class="p">)</span>
+</span><span id="__span-7-9"><a id="__codelineno-7-9" name="__codelineno-7-9" href="#__codelineno-7-9"></a><span class="k">else</span><span class="p">:</span>
+</span><span id="__span-7-10"><a id="__codelineno-7-10" name="__codelineno-7-10" href="#__codelineno-7-10"></a>    <span class="nb">print</span><span class="p">(</span><span class="s2">"Κέρδισε ο υπολογιστής τον γύρο."</span><span class="p">)</span>
+</span></code></pre></div>
+<p>Τρεις παρατηρήσεις:</p>
+<ul>
+<li>Κάθε ζευγάρι νίκης είναι ένα <strong><code>and</code></strong> (και οι δύο επιλογές ισχύουν ταυτόχρονα). Τα τρία ζευγάρια
+  συνδέονται με <strong><code>or</code></strong> (αρκεί να ισχύει ένα). Είναι ο συνδυασμός <code>and</code>/<code>or</code> του Μαθήματος 1.</li>
+<li>Μέσα σε παρενθέσεις, μια εντολή μπορεί να συνεχίζεται σε πολλές γραμμές. Έτσι η συνθήκη
+  διαβάζεται εύκολα. Η εσοχή μέσα στις παρενθέσεις είναι προαιρετική, αλλά βοηθά.</li>
+<li>Το <code>else</code> δεν χρειάζεται συνθήκη. Όταν δεν είναι ισοπαλία και δεν νικά ο παίκτης, νικά
+  αναγκαστικά ο υπολογιστής. Αυτό ισχύει μόνο αν οι επιλογές είναι έγκυρες· γι' αυτό ο
+  έλεγχος της εισόδου είναι απαραίτητος.</li>
+</ul>
+<h3 id="1_1">Στάδιο 1 — Ένας γύρος<a class="headerlink" href="#1_1" title="Permanent link">&para;</a></h3>
+<p>Άνοιξε το <code>01-one-round.py</code>. Ο υπολογιστής παίζει προς το παρόν πάντα το δεύτερο στοιχείο της
+λίστας, το ψαλίδι. Συμπλήρωσε τα τρία κενά και παίξε με τα <code>1</code>, <code>2</code>, <code>3</code>.</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-8-1"><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a><span class="sd">"""Στάδιο 1 — Ένας γύρος με σταθερή επιλογή υπολογιστή.</span>
+</span><span id="__span-8-2"><a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a>
+</span><span id="__span-8-3"><a id="__codelineno-8-3" name="__codelineno-8-3" href="#__codelineno-8-3"></a><span class="sd">Ο παίκτης διαλέγει 1, 2 ή 3. Ο υπολογιστής παίζει προς το παρόν πάντα το ίδιο</span>
+</span><span id="__span-8-4"><a id="__codelineno-8-4" name="__codelineno-8-4" href="#__codelineno-8-4"></a><span class="sd">(το δεύτερο στοιχείο της λίστας). Το πρόγραμμα λέει ποιος κέρδισε.</span>
+</span><span id="__span-8-5"><a id="__codelineno-8-5" name="__codelineno-8-5" href="#__codelineno-8-5"></a>
+</span><span id="__span-8-6"><a id="__codelineno-8-6" name="__codelineno-8-6" href="#__codelineno-8-6"></a><span class="sd">Συμπλήρωσε τα τρία κενά (____).</span>
+</span><span id="__span-8-7"><a id="__codelineno-8-7" name="__codelineno-8-7" href="#__codelineno-8-7"></a><span class="sd">"""</span>
+</span><span id="__span-8-8"><a id="__codelineno-8-8" name="__codelineno-8-8" href="#__codelineno-8-8"></a>
+</span><span id="__span-8-9"><a id="__codelineno-8-9" name="__codelineno-8-9" href="#__codelineno-8-9"></a><span class="n">CHOICES</span> <span class="o">=</span> <span class="p">[</span><span class="s2">"πέτρα"</span><span class="p">,</span> <span class="s2">"ψαλίδι"</span><span class="p">,</span> <span class="s2">"χαρτί"</span><span class="p">]</span>
+</span><span id="__span-8-10"><a id="__codelineno-8-10" name="__codelineno-8-10" href="#__codelineno-8-10"></a>
+</span><span id="__span-8-11"><a id="__codelineno-8-11" name="__codelineno-8-11" href="#__codelineno-8-11"></a><span class="c1"># TODO 1: ποιος είναι ο δείκτης του τρίτου στοιχείου της λίστας;</span>
+</span><span id="__span-8-12"><a id="__codelineno-8-12" name="__codelineno-8-12" href="#__codelineno-8-12"></a><span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"1 = </span><span class="si">{</span><span class="n">CHOICES</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="si">}</span><span class="s2">, 2 = </span><span class="si">{</span><span class="n">CHOICES</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="si">}</span><span class="s2">, 3 = </span><span class="si">{</span><span class="n">CHOICES</span><span class="p">[</span><span class="n">____</span><span class="p">]</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
+</span><span id="__span-8-13"><a id="__codelineno-8-13" name="__codelineno-8-13" href="#__codelineno-8-13"></a><span class="n">number</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">"Η επιλογή σου: "</span><span class="p">))</span>
+</span><span id="__span-8-14"><a id="__codelineno-8-14" name="__codelineno-8-14" href="#__codelineno-8-14"></a>
+</span><span id="__span-8-15"><a id="__codelineno-8-15" name="__codelineno-8-15" href="#__codelineno-8-15"></a><span class="c1"># TODO 2: το μενού αρχίζει από το 1, οι δείκτες από το 0. Μετάτρεψε τον αριθμό σε δείκτη.</span>
+</span><span id="__span-8-16"><a id="__codelineno-8-16" name="__codelineno-8-16" href="#__codelineno-8-16"></a><span class="n">player</span> <span class="o">=</span> <span class="n">CHOICES</span><span class="p">[</span><span class="n">number</span> <span class="n">____</span> <span class="mi">1</span><span class="p">]</span>
+</span><span id="__span-8-17"><a id="__codelineno-8-17" name="__codelineno-8-17" href="#__codelineno-8-17"></a><span class="n">computer</span> <span class="o">=</span> <span class="n">CHOICES</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+</span><span id="__span-8-18"><a id="__codelineno-8-18" name="__codelineno-8-18" href="#__codelineno-8-18"></a><span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Εσύ: </span><span class="si">{</span><span class="n">player</span><span class="si">}</span><span class="s2"> | Υπολογιστής: </span><span class="si">{</span><span class="n">computer</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
+</span><span id="__span-8-19"><a id="__codelineno-8-19" name="__codelineno-8-19" href="#__codelineno-8-19"></a>
+</span><span id="__span-8-20"><a id="__codelineno-8-20" name="__codelineno-8-20" href="#__codelineno-8-20"></a><span class="k">if</span> <span class="n">player</span> <span class="o">==</span> <span class="n">computer</span><span class="p">:</span>
+</span><span id="__span-8-21"><a id="__codelineno-8-21" name="__codelineno-8-21" href="#__codelineno-8-21"></a>    <span class="nb">print</span><span class="p">(</span><span class="s2">"Ισοπαλία."</span><span class="p">)</span>
+</span><span id="__span-8-22"><a id="__codelineno-8-22" name="__codelineno-8-22" href="#__codelineno-8-22"></a><span class="k">elif</span> <span class="p">(</span>
+</span><span id="__span-8-23"><a id="__codelineno-8-23" name="__codelineno-8-23" href="#__codelineno-8-23"></a>    <span class="p">(</span><span class="n">player</span> <span class="o">==</span> <span class="s2">"πέτρα"</span> <span class="ow">and</span> <span class="n">computer</span> <span class="o">==</span> <span class="s2">"ψαλίδι"</span><span class="p">)</span>
+</span><span id="__span-8-24"><a id="__codelineno-8-24" name="__codelineno-8-24" href="#__codelineno-8-24"></a>    <span class="ow">or</span> <span class="p">(</span><span class="n">player</span> <span class="o">==</span> <span class="s2">"ψαλίδι"</span> <span class="ow">and</span> <span class="n">computer</span> <span class="o">==</span> <span class="s2">"χαρτί"</span><span class="p">)</span>
+</span><span id="__span-8-25"><a id="__codelineno-8-25" name="__codelineno-8-25" href="#__codelineno-8-25"></a>    <span class="c1"># TODO 3: το χαρτί κερδίζει ποιον;</span>
+</span><span id="__span-8-26"><a id="__codelineno-8-26" name="__codelineno-8-26" href="#__codelineno-8-26"></a>    <span class="ow">or</span> <span class="p">(</span><span class="n">player</span> <span class="o">==</span> <span class="s2">"χαρτί"</span> <span class="ow">and</span> <span class="n">computer</span> <span class="o">==</span> <span class="n">____</span><span class="p">)</span>
+</span><span id="__span-8-27"><a id="__codelineno-8-27" name="__codelineno-8-27" href="#__codelineno-8-27"></a><span class="p">):</span>
+</span><span id="__span-8-28"><a id="__codelineno-8-28" name="__codelineno-8-28" href="#__codelineno-8-28"></a>    <span class="nb">print</span><span class="p">(</span><span class="s2">"Κέρδισες τον γύρο."</span><span class="p">)</span>
+</span><span id="__span-8-29"><a id="__codelineno-8-29" name="__codelineno-8-29" href="#__codelineno-8-29"></a><span class="k">else</span><span class="p">:</span>
+</span><span id="__span-8-30"><a id="__codelineno-8-30" name="__codelineno-8-30" href="#__codelineno-8-30"></a>    <span class="nb">print</span><span class="p">(</span><span class="s2">"Κέρδισε ο υπολογιστής τον γύρο."</span><span class="p">)</span>
+</span></code></pre></div>
+<p><strong>Συνέχισε στο Φύλλο εργασίας, Κύκλος 1.</strong></p>
+<hr />
+<h2 id="2_1">Κύκλος 2 — Τυχαία επιλογή και έγκυρη είσοδος<a class="headerlink" href="#2_1" title="Permanent link">&para;</a></h2>
+<p>Σε αυτόν τον κύκλο ο υπολογιστής αρχίζει να παίζει τυχαία, και το πρόγραμμα μαθαίνει να
+ζητά είσοδο ξανά και ξανά, μέχρι να είναι έγκυρη.</p>
+<h3 id="21-randomchoice">2.1 Τυχαίο στοιχείο: <code>random.choice</code><a class="headerlink" href="#21-randomchoice" title="Permanent link">&para;</a></h3>
+<p>Στο Μάθημα 1 η <code>random.randint(a, b)</code> έδινε τυχαίο ακέραιο. Για μια λίστα υπάρχει πιο άμεσος τρόπος:
+η <code>random.choice()</code> διαλέγει ένα τυχαίο <strong>στοιχείο</strong> της λίστας:</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-9-1"><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a><span class="kn">import</span><span class="w"> </span><span class="nn">random</span>
+</span><span id="__span-9-2"><a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a>
+</span><span id="__span-9-3"><a id="__codelineno-9-3" name="__codelineno-9-3" href="#__codelineno-9-3"></a><span class="n">CHOICES</span> <span class="o">=</span> <span class="p">[</span><span class="s2">"πέτρα"</span><span class="p">,</span> <span class="s2">"ψαλίδι"</span><span class="p">,</span> <span class="s2">"χαρτί"</span><span class="p">]</span>
+</span><span id="__span-9-4"><a id="__codelineno-9-4" name="__codelineno-9-4" href="#__codelineno-9-4"></a><span class="n">computer</span> <span class="o">=</span> <span class="n">random</span><span class="o">.</span><span class="n">choice</span><span class="p">(</span><span class="n">CHOICES</span><span class="p">)</span>
+</span></code></pre></div>
+<p>Κάθε στοιχείο έχει την ίδια πιθανότητα (ένα στα τρία). Θα μπορούσες να πετύχεις το ίδιο με
+δείκτη, γράφοντας <code>CHOICES[random.randint(0, len(CHOICES) - 1)]</code>. Δες πόσα πράγματα από αυτό
+το μάθημα συνδυάζονται εκεί: δείκτης, <code>len</code>, <code>- 1</code>, <code>randint</code>. Η <code>random.choice</code> κάνει όλη αυτή τη
+δουλειά με μία κλήση.</p>
+<h3 id="22-while-true-break">2.2 Βρόχος που τον σταματάς εσύ: <code>while True</code> και <code>break</code><a class="headerlink" href="#22-while-true-break" title="Permanent link">&para;</a></h3>
+<p>Μέχρι τώρα ο βρόχος <code>while</code> είχε μια συνθήκη που τον τελείωνε. Μερικές φορές δεν ξέρεις από πριν
+πότε θα τελειώσει: συνεχίζεις μέχρι να συμβεί κάτι μέσα στον βρόχο. Τότε γράφεις:</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-10-1"><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a><span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
+</span><span id="__span-10-2"><a id="__codelineno-10-2" name="__codelineno-10-2" href="#__codelineno-10-2"></a>    <span class="c1"># ... εντολές ...</span>
+</span><span id="__span-10-3"><a id="__codelineno-10-3" name="__codelineno-10-3" href="#__codelineno-10-3"></a>    <span class="k">if</span> <span class="n">κάτι_συνέβη</span><span class="p">:</span>
+</span><span id="__span-10-4"><a id="__codelineno-10-4" name="__codelineno-10-4" href="#__codelineno-10-4"></a>        <span class="k">break</span>
+</span></code></pre></div>
+<ul>
+<li>Το <code>while True:</code> έχει συνθήκη που ισχύει <strong>πάντα</strong>, άρα ο βρόχος δεν σταματά μόνος του.</li>
+<li>Η εντολή <strong><code>break</code></strong> σταματά αμέσως τον βρόχο. Η εκτέλεση συνεχίζεται από την πρώτη γραμμή
+  <strong>μετά</strong> τον βρόχο.</li>
+</ul>
+<p>Αυτός ο βρόχος <em>θέλει</em> έξοδο. Αν ξεχάσεις το <code>break</code>, ή αν δεν εκτελεστεί ποτέ, έχεις ατέρμονα
+βρόχο, όπως στο Μάθημα 1 (σταματάς με <strong>Ctrl + C</strong>).</p>
+<h3 id="23">2.3 Έλεγχος εισόδου: ζήτα μέχρι να είναι έγκυρη<a class="headerlink" href="#23" title="Permanent link">&para;</a></h3>
+<p>Ο παίκτης μπορεί να γράψει οτιδήποτε. Το πρόγραμμα πρέπει να δεχτεί <strong>μόνο</strong> <code>1</code>, <code>2</code> ή <code>3</code>. Αν
+η απάντηση δεν είναι έγκυρη, ζητά ξανά:</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-11-1"><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a><span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
+</span><span id="__span-11-2"><a id="__codelineno-11-2" name="__codelineno-11-2" href="#__codelineno-11-2"></a>    <span class="n">answer</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">"Η επιλογή σου: "</span><span class="p">)</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span>
+</span><span id="__span-11-3"><a id="__codelineno-11-3" name="__codelineno-11-3" href="#__codelineno-11-3"></a>    <span class="k">if</span> <span class="n">answer</span> <span class="ow">in</span> <span class="p">[</span><span class="s2">"1"</span><span class="p">,</span> <span class="s2">"2"</span><span class="p">,</span> <span class="s2">"3"</span><span class="p">]:</span>
+</span><span id="__span-11-4"><a id="__codelineno-11-4" name="__codelineno-11-4" href="#__codelineno-11-4"></a>        <span class="k">break</span>
+</span><span id="__span-11-5"><a id="__codelineno-11-5" name="__codelineno-11-5" href="#__codelineno-11-5"></a>    <span class="nb">print</span><span class="p">(</span><span class="s2">"Η επιλογή πρέπει να είναι 1, 2 ή 3."</span><span class="p">)</span>
+</span><span id="__span-11-6"><a id="__codelineno-11-6" name="__codelineno-11-6" href="#__codelineno-11-6"></a>
+</span><span id="__span-11-7"><a id="__codelineno-11-7" name="__codelineno-11-7" href="#__codelineno-11-7"></a><span class="n">player</span> <span class="o">=</span> <span class="n">CHOICES</span><span class="p">[</span><span class="nb">int</span><span class="p">(</span><span class="n">answer</span><span class="p">)</span> <span class="o">-</span> <span class="mi">1</span><span class="p">]</span>
+</span></code></pre></div>
+<p>Διάβασέ το ως ιστορία:</p>
+<ol>
+<li>Ο βρόχος ξεκινά και ζητά απάντηση.</li>
+<li>Αν η απάντηση ανήκει στη λίστα <code>["1", "2", "3"]</code>, το <code>break</code> βγάζει τον παίκτη από τον βρόχο.</li>
+<li>Αλλιώς, το <code>break</code> δεν εκτελείται, εμφανίζεται το μήνυμα, και ο βρόχος ξαναρχίζει.</li>
+<li>Μόλις βγούμε από τον βρόχο, είμαστε σίγουροι ότι η <code>answer</code> είναι έγκυρη, και η
+   <code>int(answer)</code> δεν θα αποτύχει.</li>
+</ol>
+<p>Τρία σημεία που θέλουν προσοχή:</p>
+<ul>
+<li><strong>Συγκρίνουμε συμβολοσειρές, όχι αριθμούς.</strong> Η <code>input()</code> δίνει <code>str</code>, άρα η <code>answer</code> είναι
+  <code>"2"</code> και όχι <code>2</code>. Η λίστα <code>[1, 2, 3]</code> δεν θα βρει ποτέ την <code>"2"</code> και ο βρόχος δεν θα
+  τελειώσει. Η σωστή λίστα είναι <code>["1", "2", "3"]</code>.</li>
+<li>Η <code>.strip()</code> αφαιρεί τα κενά από την αρχή και το τέλος της συμβολοσειράς. Με αυτήν, το <code>" 2 "</code>
+  γίνεται <code>"2"</code> και γίνεται δεκτό. Είναι μια <strong>μέθοδος</strong> των συμβολοσειρών και τις γνωρίζουμε
+  καλύτερα στο Μάθημα 3.</li>
+<li>Η <code>int()</code> εκτελείται <strong>μετά</strong> τον έλεγχο, όχι πριν. Πριν από τον έλεγχο, μια απάντηση όπως
+  το <code>abc</code> θα την έκανε να αποτύχει.</li>
+</ul>
+<p><strong>Ιχνηλάτηση</strong> για είσοδο <code>x</code>, μετά <code>5</code>, μετά <code>2</code>:</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: center;">Γύρος του βρόχου</th>
+<th style="text-align: center;"><code>answer</code></th>
+<th style="text-align: center;"><code>answer in ["1","2","3"]</code></th>
+<th>Τι γίνεται</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;">1</td>
+<td style="text-align: center;"><code>"x"</code></td>
+<td style="text-align: center;"><code>False</code></td>
+<td>εμφανίζεται το μήνυμα, ο βρόχος συνεχίζει</td>
+</tr>
+<tr>
+<td style="text-align: center;">2</td>
+<td style="text-align: center;"><code>"5"</code></td>
+<td style="text-align: center;"><code>False</code></td>
+<td>εμφανίζεται το μήνυμα, ο βρόχος συνεχίζει</td>
+</tr>
+<tr>
+<td style="text-align: center;">3</td>
+<td style="text-align: center;"><code>"2"</code> (μετά το strip)</td>
+<td style="text-align: center;"><code>True</code></td>
+<td><code>break</code>: ο βρόχος τελειώνει</td>
+</tr>
+</tbody>
+</table>
+<h3 id="2_2">Στάδιο 2 — Τυχαία επιλογή και έγκυρη είσοδος<a class="headerlink" href="#2_2" title="Permanent link">&para;</a></h3>
+<p>Άνοιξε το <code>02-valid-round.py</code>. Συμπλήρωσε τα τέσσερα κενά. Η απόφαση για τον νικητή δίνεται
+έτοιμη από το Στάδιο 1.</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-12-1"><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a><span class="sd">"""Στάδιο 2 — Τυχαία επιλογή υπολογιστή και έγκυρη είσοδος.</span>
+</span><span id="__span-12-2"><a id="__codelineno-12-2" name="__codelineno-12-2" href="#__codelineno-12-2"></a>
+</span><span id="__span-12-3"><a id="__codelineno-12-3" name="__codelineno-12-3" href="#__codelineno-12-3"></a><span class="sd">Το πρόγραμμα ζητά επιλογή μέχρι ο παίκτης να γράψει 1, 2 ή 3, και ο υπολογιστής</span>
+</span><span id="__span-12-4"><a id="__codelineno-12-4" name="__codelineno-12-4" href="#__codelineno-12-4"></a><span class="sd">διαλέγει τυχαία. Η απόφαση για τον νικητή δίνεται έτοιμη από το Στάδιο 1.</span>
+</span><span id="__span-12-5"><a id="__codelineno-12-5" name="__codelineno-12-5" href="#__codelineno-12-5"></a>
+</span><span id="__span-12-6"><a id="__codelineno-12-6" name="__codelineno-12-6" href="#__codelineno-12-6"></a><span class="sd">Συμπλήρωσε τα τέσσερα κενά (____).</span>
+</span><span id="__span-12-7"><a id="__codelineno-12-7" name="__codelineno-12-7" href="#__codelineno-12-7"></a><span class="sd">"""</span>
+</span><span id="__span-12-8"><a id="__codelineno-12-8" name="__codelineno-12-8" href="#__codelineno-12-8"></a>
+</span><span id="__span-12-9"><a id="__codelineno-12-9" name="__codelineno-12-9" href="#__codelineno-12-9"></a><span class="kn">import</span><span class="w"> </span><span class="nn">random</span>
+</span><span id="__span-12-10"><a id="__codelineno-12-10" name="__codelineno-12-10" href="#__codelineno-12-10"></a>
+</span><span id="__span-12-11"><a id="__codelineno-12-11" name="__codelineno-12-11" href="#__codelineno-12-11"></a><span class="n">CHOICES</span> <span class="o">=</span> <span class="p">[</span><span class="s2">"πέτρα"</span><span class="p">,</span> <span class="s2">"ψαλίδι"</span><span class="p">,</span> <span class="s2">"χαρτί"</span><span class="p">]</span>
+</span><span id="__span-12-12"><a id="__codelineno-12-12" name="__codelineno-12-12" href="#__codelineno-12-12"></a>
+</span><span id="__span-12-13"><a id="__codelineno-12-13" name="__codelineno-12-13" href="#__codelineno-12-13"></a><span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"1 = </span><span class="si">{</span><span class="n">CHOICES</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="si">}</span><span class="s2">, 2 = </span><span class="si">{</span><span class="n">CHOICES</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="si">}</span><span class="s2">, 3 = </span><span class="si">{</span><span class="n">CHOICES</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
+</span><span id="__span-12-14"><a id="__codelineno-12-14" name="__codelineno-12-14" href="#__codelineno-12-14"></a>
+</span><span id="__span-12-15"><a id="__codelineno-12-15" name="__codelineno-12-15" href="#__codelineno-12-15"></a><span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
+</span><span id="__span-12-16"><a id="__codelineno-12-16" name="__codelineno-12-16" href="#__codelineno-12-16"></a>    <span class="n">answer</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">"Η επιλογή σου: "</span><span class="p">)</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span>
+</span><span id="__span-12-17"><a id="__codelineno-12-17" name="__codelineno-12-17" href="#__codelineno-12-17"></a>    <span class="c1"># TODO 1: η answer είναι ένα από τα "1", "2", "3" (έλεγχος μέλους λίστας)</span>
+</span><span id="__span-12-18"><a id="__codelineno-12-18" name="__codelineno-12-18" href="#__codelineno-12-18"></a>    <span class="k">if</span> <span class="n">answer</span> <span class="n">____</span> <span class="p">[</span><span class="s2">"1"</span><span class="p">,</span> <span class="s2">"2"</span><span class="p">,</span> <span class="s2">"3"</span><span class="p">]:</span>
+</span><span id="__span-12-19"><a id="__codelineno-12-19" name="__codelineno-12-19" href="#__codelineno-12-19"></a>        <span class="c1"># TODO 2: η επιλογή είναι έγκυρη· βγες από τον βρόχο</span>
+</span><span id="__span-12-20"><a id="__codelineno-12-20" name="__codelineno-12-20" href="#__codelineno-12-20"></a>        <span class="n">____</span>
+</span><span id="__span-12-21"><a id="__codelineno-12-21" name="__codelineno-12-21" href="#__codelineno-12-21"></a>    <span class="nb">print</span><span class="p">(</span><span class="s2">"Η επιλογή πρέπει να είναι 1, 2 ή 3."</span><span class="p">)</span>
+</span><span id="__span-12-22"><a id="__codelineno-12-22" name="__codelineno-12-22" href="#__codelineno-12-22"></a>
+</span><span id="__span-12-23"><a id="__codelineno-12-23" name="__codelineno-12-23" href="#__codelineno-12-23"></a><span class="c1"># TODO 3: η answer είναι κείμενο. Μετάτρεψέ την σε ακέραιο πριν την αφαίρεση.</span>
+</span><span id="__span-12-24"><a id="__codelineno-12-24" name="__codelineno-12-24" href="#__codelineno-12-24"></a><span class="n">player</span> <span class="o">=</span> <span class="n">CHOICES</span><span class="p">[</span><span class="n">____</span> <span class="o">-</span> <span class="mi">1</span><span class="p">]</span>
+</span><span id="__span-12-25"><a id="__codelineno-12-25" name="__codelineno-12-25" href="#__codelineno-12-25"></a><span class="c1"># TODO 4: διάλεξε τυχαίο στοιχείο της λίστας CHOICES</span>
+</span><span id="__span-12-26"><a id="__codelineno-12-26" name="__codelineno-12-26" href="#__codelineno-12-26"></a><span class="n">computer</span> <span class="o">=</span> <span class="n">random</span><span class="o">.</span><span class="n">____</span><span class="p">(</span><span class="n">CHOICES</span><span class="p">)</span>
+</span><span id="__span-12-27"><a id="__codelineno-12-27" name="__codelineno-12-27" href="#__codelineno-12-27"></a><span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Εσύ: </span><span class="si">{</span><span class="n">player</span><span class="si">}</span><span class="s2"> | Υπολογιστής: </span><span class="si">{</span><span class="n">computer</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
+</span><span id="__span-12-28"><a id="__codelineno-12-28" name="__codelineno-12-28" href="#__codelineno-12-28"></a>
+</span><span id="__span-12-29"><a id="__codelineno-12-29" name="__codelineno-12-29" href="#__codelineno-12-29"></a><span class="k">if</span> <span class="n">player</span> <span class="o">==</span> <span class="n">computer</span><span class="p">:</span>
+</span><span id="__span-12-30"><a id="__codelineno-12-30" name="__codelineno-12-30" href="#__codelineno-12-30"></a>    <span class="nb">print</span><span class="p">(</span><span class="s2">"Ισοπαλία."</span><span class="p">)</span>
+</span><span id="__span-12-31"><a id="__codelineno-12-31" name="__codelineno-12-31" href="#__codelineno-12-31"></a><span class="k">elif</span> <span class="p">(</span>
+</span><span id="__span-12-32"><a id="__codelineno-12-32" name="__codelineno-12-32" href="#__codelineno-12-32"></a>    <span class="p">(</span><span class="n">player</span> <span class="o">==</span> <span class="s2">"πέτρα"</span> <span class="ow">and</span> <span class="n">computer</span> <span class="o">==</span> <span class="s2">"ψαλίδι"</span><span class="p">)</span>
+</span><span id="__span-12-33"><a id="__codelineno-12-33" name="__codelineno-12-33" href="#__codelineno-12-33"></a>    <span class="ow">or</span> <span class="p">(</span><span class="n">player</span> <span class="o">==</span> <span class="s2">"ψαλίδι"</span> <span class="ow">and</span> <span class="n">computer</span> <span class="o">==</span> <span class="s2">"χαρτί"</span><span class="p">)</span>
+</span><span id="__span-12-34"><a id="__codelineno-12-34" name="__codelineno-12-34" href="#__codelineno-12-34"></a>    <span class="ow">or</span> <span class="p">(</span><span class="n">player</span> <span class="o">==</span> <span class="s2">"χαρτί"</span> <span class="ow">and</span> <span class="n">computer</span> <span class="o">==</span> <span class="s2">"πέτρα"</span><span class="p">)</span>
+</span><span id="__span-12-35"><a id="__codelineno-12-35" name="__codelineno-12-35" href="#__codelineno-12-35"></a><span class="p">):</span>
+</span><span id="__span-12-36"><a id="__codelineno-12-36" name="__codelineno-12-36" href="#__codelineno-12-36"></a>    <span class="nb">print</span><span class="p">(</span><span class="s2">"Κέρδισες τον γύρο."</span><span class="p">)</span>
+</span><span id="__span-12-37"><a id="__codelineno-12-37" name="__codelineno-12-37" href="#__codelineno-12-37"></a><span class="k">else</span><span class="p">:</span>
+</span><span id="__span-12-38"><a id="__codelineno-12-38" name="__codelineno-12-38" href="#__codelineno-12-38"></a>    <span class="nb">print</span><span class="p">(</span><span class="s2">"Κέρδισε ο υπολογιστής τον γύρο."</span><span class="p">)</span>
+</span></code></pre></div>
+<p><strong>Συνέχισε στο Φύλλο εργασίας, Κύκλος 2.</strong></p>
+<hr />
+<h2 id="3">Κύκλος 3 — Ο αγώνας<a class="headerlink" href="#3" title="Permanent link">&para;</a></h2>
+<p>Ο γύρος δουλεύει. Τώρα θέλουμε πολλούς γύρους, με σκορ, μέχρι να νικήσει κάποιος.</p>
+<h3 id="31">3.1 Πολλαπλή εκχώρηση<a class="headerlink" href="#31" title="Permanent link">&para;</a></h3>
+<p>Δύο μεταβλητές που ξεκινούν από την ίδια τιμή μπορούν να οριστούν μαζί:</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-13-1"><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a><span class="n">player_score</span><span class="p">,</span> <span class="n">computer_score</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span>
+</span></code></pre></div>
+<p>Η Python υπολογίζει πρώτα τη δεξιά πλευρά (το ζευγάρι <code>0, 0</code>) και μετά δίνει στην πρώτη μεταβλητή την
+πρώτη τιμή και στη δεύτερη τη δεύτερη. Είναι ισοδύναμο με δύο ξεχωριστές γραμμές, αλλά
+πιο σύντομο.</p>
+<p>Η ίδια ιδέα λύνει ένα κλασικό πρόβλημα: την <strong>ανταλλαγή</strong> δύο τιμών. Σε άλλες γλώσσες χρειάζεσαι
+τρίτη μεταβλητή. Στην Python:</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-14-1"><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a><span class="n">a</span><span class="p">,</span> <span class="n">b</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span>
+</span><span id="__span-14-2"><a id="__codelineno-14-2" name="__codelineno-14-2" href="#__codelineno-14-2"></a><span class="n">a</span><span class="p">,</span> <span class="n">b</span> <span class="o">=</span> <span class="n">b</span><span class="p">,</span> <span class="n">a</span>
+</span><span id="__span-14-3"><a id="__codelineno-14-3" name="__codelineno-14-3" href="#__codelineno-14-3"></a><span class="nb">print</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">)</span>    <span class="c1"># 2 1</span>
+</span></code></pre></div>
+<p>Η δεξιά πλευρά υπολογίζεται πριν γίνει οποιαδήποτε εκχώρηση, γι' αυτό δεν χάνεται καμία τιμή.</p>
+<h3 id="32">3.2 Φωλιασμένοι βρόχοι<a class="headerlink" href="#32" title="Permanent link">&para;</a></h3>
+<p>Ένας βρόχος μπορεί να βρίσκεται <strong>μέσα σε άλλον βρόχο</strong>. Στο παιχνίδι έχουμε:</p>
+<ul>
+<li>τον <strong>εξωτερικό</strong> βρόχο, που παίζει τους γύρους του αγώνα,</li>
+<li>τον <strong>εσωτερικό</strong> βρόχο (<code>while True</code>), που σε κάθε γύρο ζητά την επιλογή μέχρι να είναι έγκυρη.</li>
+</ul>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-15-1"><a id="__codelineno-15-1" name="__codelineno-15-1" href="#__codelineno-15-1"></a><span class="k">while</span> <span class="n">player_score</span> <span class="o">&lt;</span> <span class="n">WIN_SCORE</span> <span class="ow">and</span> <span class="n">computer_score</span> <span class="o">&lt;</span> <span class="n">WIN_SCORE</span><span class="p">:</span>   <span class="c1"># εξωτερικός: γύροι</span>
+</span><span id="__span-15-2"><a id="__codelineno-15-2" name="__codelineno-15-2" href="#__codelineno-15-2"></a>    <span class="o">...</span>
+</span><span id="__span-15-3"><a id="__codelineno-15-3" name="__codelineno-15-3" href="#__codelineno-15-3"></a>    <span class="k">while</span> <span class="kc">True</span><span class="p">:</span>                                                  <span class="c1"># εσωτερικός: έγκυρη επιλογή</span>
+</span><span id="__span-15-4"><a id="__codelineno-15-4" name="__codelineno-15-4" href="#__codelineno-15-4"></a>        <span class="n">answer</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">"Η επιλογή σου: "</span><span class="p">)</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span>
+</span><span id="__span-15-5"><a id="__codelineno-15-5" name="__codelineno-15-5" href="#__codelineno-15-5"></a>        <span class="k">if</span> <span class="n">answer</span> <span class="ow">in</span> <span class="p">[</span><span class="s2">"1"</span><span class="p">,</span> <span class="s2">"2"</span><span class="p">,</span> <span class="s2">"3"</span><span class="p">]:</span>
+</span><span id="__span-15-6"><a id="__codelineno-15-6" name="__codelineno-15-6" href="#__codelineno-15-6"></a>            <span class="k">break</span>
+</span><span id="__span-15-7"><a id="__codelineno-15-7" name="__codelineno-15-7" href="#__codelineno-15-7"></a>        <span class="nb">print</span><span class="p">(</span><span class="s2">"Η επιλογή πρέπει να είναι 1, 2 ή 3."</span><span class="p">)</span>
+</span><span id="__span-15-8"><a id="__codelineno-15-8" name="__codelineno-15-8" href="#__codelineno-15-8"></a>    <span class="o">...</span>
+</span></code></pre></div>
+<p>Ο κανόνας που πρέπει να θυμάσαι: <strong>για κάθε επανάληψη του εξωτερικού βρόχου, ο εσωτερικός
+εκτελείται ολόκληρος</strong>, από την αρχή.</p>
+<div class="admonition warning">
+<p class="admonition-title">Το <code>break</code> σταματά μόνο τον πιο εσωτερικό βρόχο</p>
+<p>Το <code>break</code> μέσα στον εσωτερικό βρόχο τελειώνει <strong>αυτόν</strong>, και ο εξωτερικός συνεχίζει.
+Δεν τελειώνει ο αγώνας. Αυτό θέλουμε εδώ: μετά τον έλεγχο της επιλογής, ο γύρος συνεχίζει.</p>
+</div>
+<p>Ιχνηλάτηση ενός μικρού παραδείγματος:</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-16-1"><a id="__codelineno-16-1" name="__codelineno-16-1" href="#__codelineno-16-1"></a><span class="n">round_number</span> <span class="o">=</span> <span class="mi">1</span>
+</span><span id="__span-16-2"><a id="__codelineno-16-2" name="__codelineno-16-2" href="#__codelineno-16-2"></a><span class="k">while</span> <span class="n">round_number</span> <span class="o">&lt;=</span> <span class="mi">2</span><span class="p">:</span>
+</span><span id="__span-16-3"><a id="__codelineno-16-3" name="__codelineno-16-3" href="#__codelineno-16-3"></a>    <span class="n">tries</span> <span class="o">=</span> <span class="mi">0</span>
+</span><span id="__span-16-4"><a id="__codelineno-16-4" name="__codelineno-16-4" href="#__codelineno-16-4"></a>    <span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
+</span><span id="__span-16-5"><a id="__codelineno-16-5" name="__codelineno-16-5" href="#__codelineno-16-5"></a>        <span class="n">tries</span> <span class="o">+=</span> <span class="mi">1</span>
+</span><span id="__span-16-6"><a id="__codelineno-16-6" name="__codelineno-16-6" href="#__codelineno-16-6"></a>        <span class="k">if</span> <span class="n">tries</span> <span class="o">==</span> <span class="mi">3</span><span class="p">:</span>
+</span><span id="__span-16-7"><a id="__codelineno-16-7" name="__codelineno-16-7" href="#__codelineno-16-7"></a>            <span class="k">break</span>
+</span><span id="__span-16-8"><a id="__codelineno-16-8" name="__codelineno-16-8" href="#__codelineno-16-8"></a>    <span class="nb">print</span><span class="p">(</span><span class="n">round_number</span><span class="p">,</span> <span class="n">tries</span><span class="p">)</span>
+</span><span id="__span-16-9"><a id="__codelineno-16-9" name="__codelineno-16-9" href="#__codelineno-16-9"></a>    <span class="n">round_number</span> <span class="o">+=</span> <span class="mi">1</span>
+</span></code></pre></div>
+<table>
+<thead>
+<tr>
+<th>Βήμα</th>
+<th style="text-align: center;"><code>round_number</code></th>
+<th><code>tries</code> στον εσωτερικό βρόχο</th>
+<th>Εμφανίζεται</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>εξωτερικός, γύρος 1</td>
+<td style="text-align: center;">1</td>
+<td>1, 2, 3 → <code>break</code></td>
+<td><code>1 3</code></td>
+</tr>
+<tr>
+<td>εξωτερικός, γύρος 2</td>
+<td style="text-align: center;">2</td>
+<td>ξαναρχίζει από 0: 1, 2, 3 → <code>break</code></td>
+<td><code>2 3</code></td>
+</tr>
+<tr>
+<td>έλεγχος <code>3 &lt;= 2</code></td>
+<td style="text-align: center;">3</td>
+<td>—</td>
+<td>ο εξωτερικός τελειώνει</td>
+</tr>
+</tbody>
+</table>
+<h3 id="33">3.3 Πότε τελειώνει ο αγώνας<a class="headerlink" href="#33" title="Permanent link">&para;</a></h3>
+<p>Ο αγώνας συνεχίζεται όσο <strong>κανένας</strong> δεν έχει φτάσει τους πόντους νίκης. Δηλαδή όσο ο παίκτης
+έχει λιγότερους <strong>και</strong> ο υπολογιστής έχει λιγότερους:</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-17-1"><a id="__codelineno-17-1" name="__codelineno-17-1" href="#__codelineno-17-1"></a><span class="k">while</span> <span class="n">player_score</span> <span class="o">&lt;</span> <span class="n">WIN_SCORE</span> <span class="ow">and</span> <span class="n">computer_score</span> <span class="o">&lt;</span> <span class="n">WIN_SCORE</span><span class="p">:</span>
+</span></code></pre></div>
+<p>Είναι η ίδια ιδέα με τη συνθήκη του Μαθήματος 1 (<code>attempts &lt; MAX_ATTEMPTS and not found</code>):
+ο βρόχος συνεχίζει όσο ισχύουν <strong>και</strong> οι δύο συνθήκες συνέχειας. Μόλις ένας από τους δύο φτάσει το
+όριο, η συνθήκη γίνεται ψευδής.</p>
+<p>Μετά τον βρόχο, ο νικητής είναι αυτός που έφτασε το όριο:</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-18-1"><a id="__codelineno-18-1" name="__codelineno-18-1" href="#__codelineno-18-1"></a><span class="k">if</span> <span class="n">player_score</span> <span class="o">==</span> <span class="n">WIN_SCORE</span><span class="p">:</span>
+</span><span id="__span-18-2"><a id="__codelineno-18-2" name="__codelineno-18-2" href="#__codelineno-18-2"></a>    <span class="nb">print</span><span class="p">(</span><span class="s2">"Κέρδισες τον αγώνα."</span><span class="p">)</span>
+</span><span id="__span-18-3"><a id="__codelineno-18-3" name="__codelineno-18-3" href="#__codelineno-18-3"></a><span class="k">else</span><span class="p">:</span>
+</span><span id="__span-18-4"><a id="__codelineno-18-4" name="__codelineno-18-4" href="#__codelineno-18-4"></a>    <span class="nb">print</span><span class="p">(</span><span class="s2">"Κέρδισε ο υπολογιστής τον αγώνα."</span><span class="p">)</span>
+</span></code></pre></div>
+<p>Σε έναν γύρο παίρνει πόντο το πολύ ένας παίκτης, άρα δεν μπορούν να φτάσουν το όριο ταυτόχρονα.</p>
+<h3 id="34">3.4 Ισοπαλίες, σκορ και αριθμός γύρου<a class="headerlink" href="#34" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Σε <strong>ισοπαλία</strong> κανείς δεν παίρνει πόντο, αλλά ο γύρος <strong>μετρά</strong> (ο αριθμός γύρου αυξάνεται).</li>
+<li>Ο πόντος προστίθεται <strong>μέσα στον κλάδο</strong> που αποφασίζει τον νικητή, και όχι μετά από όλους
+  τους κλάδους.</li>
+<li>Το σκορ εμφανίζεται <strong>μετά</strong> την απόφαση, ώστε να δείχνει την ενημερωμένη τιμή.</li>
+<li>Η αύξηση του αριθμού γύρου (<code>round_number += 1</code>) είναι το τελευταίο βήμα του σώματος. Αν
+  ξεχαστεί, ο γύρος εμφανίζεται συνέχεια με τον ίδιο αριθμό.</li>
+</ul>
+<h3 id="35">3.5 Η δομή ολόκληρου του προγράμματος<a class="headerlink" href="#35" title="Permanent link">&para;</a></h3>
+<p>Το πρόγραμμα έχει τρία μέρη, όπως και το Μάθημα 1:</p>
+<ol>
+<li><strong>Προετοιμασία:</strong> <code>import</code>, σταθερές, αρχικές τιμές (<code>player_score</code>, <code>computer_score</code>,
+   <code>round_number</code>), και μήνυμα καλωσορίσματος.</li>
+<li><strong>Βρόχος αγώνα:</strong> σε κάθε γύρο, εμφάνιση του μενού, ζήτηση έγκυρης επιλογής, τυχαία
+   επιλογή υπολογιστή, απόφαση, ενημέρωση σκορ.</li>
+<li><strong>Αποτέλεσμα:</strong> μετά τον βρόχο, ανακοίνωση νικητή.</li>
+</ol>
+<p>Αυτή η διάρθρωση (προετοιμασία, κεντρικός βρόχος, αποτέλεσμα) είναι ο σκελετός κάθε παιχνιδιού, και
+θα τη δεις ξανά στο pygame.</p>
+<h3 id="3-3">Στάδιο 3 — Αγώνας μέχρι τους 3 πόντους<a class="headerlink" href="#3-3" title="Permanent link">&para;</a></h3>
+<p>Άνοιξε το <code>03-match.py</code>. Ο έλεγχος της επιλογής δίνεται έτοιμος μέσα στον εξωτερικό βρόχο.
+Συμπλήρωσε τα έξι κενά.</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-19-1"><a id="__codelineno-19-1" name="__codelineno-19-1" href="#__codelineno-19-1"></a><span class="sd">"""Στάδιο 3 — Αγώνας μέχρι τους 3 πόντους.</span>
+</span><span id="__span-19-2"><a id="__codelineno-19-2" name="__codelineno-19-2" href="#__codelineno-19-2"></a>
+</span><span id="__span-19-3"><a id="__codelineno-19-3" name="__codelineno-19-3" href="#__codelineno-19-3"></a><span class="sd">Ο έλεγχος της επιλογής από το Στάδιο 2 δίνεται έτοιμος, μέσα σε εξωτερικό βρόχο που</span>
+</span><span id="__span-19-4"><a id="__codelineno-19-4" name="__codelineno-19-4" href="#__codelineno-19-4"></a><span class="sd">παίζει γύρους. Πρόσθεσε τα σκορ και τον τερματισμό του αγώνα.</span>
+</span><span id="__span-19-5"><a id="__codelineno-19-5" name="__codelineno-19-5" href="#__codelineno-19-5"></a>
+</span><span id="__span-19-6"><a id="__codelineno-19-6" name="__codelineno-19-6" href="#__codelineno-19-6"></a><span class="sd">Συμπλήρωσε τα έξι κενά (____).</span>
+</span><span id="__span-19-7"><a id="__codelineno-19-7" name="__codelineno-19-7" href="#__codelineno-19-7"></a><span class="sd">"""</span>
+</span><span id="__span-19-8"><a id="__codelineno-19-8" name="__codelineno-19-8" href="#__codelineno-19-8"></a>
+</span><span id="__span-19-9"><a id="__codelineno-19-9" name="__codelineno-19-9" href="#__codelineno-19-9"></a><span class="kn">import</span><span class="w"> </span><span class="nn">random</span>
+</span><span id="__span-19-10"><a id="__codelineno-19-10" name="__codelineno-19-10" href="#__codelineno-19-10"></a>
+</span><span id="__span-19-11"><a id="__codelineno-19-11" name="__codelineno-19-11" href="#__codelineno-19-11"></a><span class="n">CHOICES</span> <span class="o">=</span> <span class="p">[</span><span class="s2">"πέτρα"</span><span class="p">,</span> <span class="s2">"ψαλίδι"</span><span class="p">,</span> <span class="s2">"χαρτί"</span><span class="p">]</span>
+</span><span id="__span-19-12"><a id="__codelineno-19-12" name="__codelineno-19-12" href="#__codelineno-19-12"></a><span class="n">WIN_SCORE</span> <span class="o">=</span> <span class="mi">3</span>
+</span><span id="__span-19-13"><a id="__codelineno-19-13" name="__codelineno-19-13" href="#__codelineno-19-13"></a>
+</span><span id="__span-19-14"><a id="__codelineno-19-14" name="__codelineno-19-14" href="#__codelineno-19-14"></a><span class="c1"># TODO 1: δώσε την τιμή 0 και στις δύο μεταβλητές με μία πολλαπλή εκχώρηση</span>
+</span><span id="__span-19-15"><a id="__codelineno-19-15" name="__codelineno-19-15" href="#__codelineno-19-15"></a><span class="n">player_score</span><span class="p">,</span> <span class="n">computer_score</span> <span class="o">=</span> <span class="n">____</span>
+</span><span id="__span-19-16"><a id="__codelineno-19-16" name="__codelineno-19-16" href="#__codelineno-19-16"></a><span class="n">round_number</span> <span class="o">=</span> <span class="mi">1</span>
+</span><span id="__span-19-17"><a id="__codelineno-19-17" name="__codelineno-19-17" href="#__codelineno-19-17"></a>
+</span><span id="__span-19-18"><a id="__codelineno-19-18" name="__codelineno-19-18" href="#__codelineno-19-18"></a><span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Πέτρα, ψαλίδι, χαρτί. Νικητής όποιος φτάσει πρώτος τους </span><span class="si">{</span><span class="n">WIN_SCORE</span><span class="si">}</span><span class="s2"> πόντους."</span><span class="p">)</span>
+</span><span id="__span-19-19"><a id="__codelineno-19-19" name="__codelineno-19-19" href="#__codelineno-19-19"></a>
+</span><span id="__span-19-20"><a id="__codelineno-19-20" name="__codelineno-19-20" href="#__codelineno-19-20"></a><span class="c1"># TODO 2: συνέχισε όσο ΚΑΝΕΝΑΣ δεν έχει φτάσει τους WIN_SCORE πόντους</span>
+</span><span id="__span-19-21"><a id="__codelineno-19-21" name="__codelineno-19-21" href="#__codelineno-19-21"></a><span class="k">while</span> <span class="n">____</span><span class="p">:</span>
+</span><span id="__span-19-22"><a id="__codelineno-19-22" name="__codelineno-19-22" href="#__codelineno-19-22"></a>    <span class="nb">print</span><span class="p">()</span>
+</span><span id="__span-19-23"><a id="__codelineno-19-23" name="__codelineno-19-23" href="#__codelineno-19-23"></a>    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Γύρος </span><span class="si">{</span><span class="n">round_number</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
+</span><span id="__span-19-24"><a id="__codelineno-19-24" name="__codelineno-19-24" href="#__codelineno-19-24"></a>    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"1 = </span><span class="si">{</span><span class="n">CHOICES</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="si">}</span><span class="s2">, 2 = </span><span class="si">{</span><span class="n">CHOICES</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="si">}</span><span class="s2">, 3 = </span><span class="si">{</span><span class="n">CHOICES</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
+</span><span id="__span-19-25"><a id="__codelineno-19-25" name="__codelineno-19-25" href="#__codelineno-19-25"></a>
+</span><span id="__span-19-26"><a id="__codelineno-19-26" name="__codelineno-19-26" href="#__codelineno-19-26"></a>    <span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
+</span><span id="__span-19-27"><a id="__codelineno-19-27" name="__codelineno-19-27" href="#__codelineno-19-27"></a>        <span class="n">answer</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">"Η επιλογή σου: "</span><span class="p">)</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span>
+</span><span id="__span-19-28"><a id="__codelineno-19-28" name="__codelineno-19-28" href="#__codelineno-19-28"></a>        <span class="k">if</span> <span class="n">answer</span> <span class="ow">in</span> <span class="p">[</span><span class="s2">"1"</span><span class="p">,</span> <span class="s2">"2"</span><span class="p">,</span> <span class="s2">"3"</span><span class="p">]:</span>
+</span><span id="__span-19-29"><a id="__codelineno-19-29" name="__codelineno-19-29" href="#__codelineno-19-29"></a>            <span class="k">break</span>
+</span><span id="__span-19-30"><a id="__codelineno-19-30" name="__codelineno-19-30" href="#__codelineno-19-30"></a>        <span class="nb">print</span><span class="p">(</span><span class="s2">"Η επιλογή πρέπει να είναι 1, 2 ή 3."</span><span class="p">)</span>
+</span><span id="__span-19-31"><a id="__codelineno-19-31" name="__codelineno-19-31" href="#__codelineno-19-31"></a>
+</span><span id="__span-19-32"><a id="__codelineno-19-32" name="__codelineno-19-32" href="#__codelineno-19-32"></a>    <span class="n">player</span> <span class="o">=</span> <span class="n">CHOICES</span><span class="p">[</span><span class="nb">int</span><span class="p">(</span><span class="n">answer</span><span class="p">)</span> <span class="o">-</span> <span class="mi">1</span><span class="p">]</span>
+</span><span id="__span-19-33"><a id="__codelineno-19-33" name="__codelineno-19-33" href="#__codelineno-19-33"></a>    <span class="n">computer</span> <span class="o">=</span> <span class="n">random</span><span class="o">.</span><span class="n">choice</span><span class="p">(</span><span class="n">CHOICES</span><span class="p">)</span>
+</span><span id="__span-19-34"><a id="__codelineno-19-34" name="__codelineno-19-34" href="#__codelineno-19-34"></a>    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Εσύ: </span><span class="si">{</span><span class="n">player</span><span class="si">}</span><span class="s2"> | Υπολογιστής: </span><span class="si">{</span><span class="n">computer</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
+</span><span id="__span-19-35"><a id="__codelineno-19-35" name="__codelineno-19-35" href="#__codelineno-19-35"></a>
+</span><span id="__span-19-36"><a id="__codelineno-19-36" name="__codelineno-19-36" href="#__codelineno-19-36"></a>    <span class="k">if</span> <span class="n">player</span> <span class="o">==</span> <span class="n">computer</span><span class="p">:</span>
+</span><span id="__span-19-37"><a id="__codelineno-19-37" name="__codelineno-19-37" href="#__codelineno-19-37"></a>        <span class="nb">print</span><span class="p">(</span><span class="s2">"Ισοπαλία."</span><span class="p">)</span>
+</span><span id="__span-19-38"><a id="__codelineno-19-38" name="__codelineno-19-38" href="#__codelineno-19-38"></a>    <span class="k">elif</span> <span class="p">(</span>
+</span><span id="__span-19-39"><a id="__codelineno-19-39" name="__codelineno-19-39" href="#__codelineno-19-39"></a>        <span class="p">(</span><span class="n">player</span> <span class="o">==</span> <span class="s2">"πέτρα"</span> <span class="ow">and</span> <span class="n">computer</span> <span class="o">==</span> <span class="s2">"ψαλίδι"</span><span class="p">)</span>
+</span><span id="__span-19-40"><a id="__codelineno-19-40" name="__codelineno-19-40" href="#__codelineno-19-40"></a>        <span class="ow">or</span> <span class="p">(</span><span class="n">player</span> <span class="o">==</span> <span class="s2">"ψαλίδι"</span> <span class="ow">and</span> <span class="n">computer</span> <span class="o">==</span> <span class="s2">"χαρτί"</span><span class="p">)</span>
+</span><span id="__span-19-41"><a id="__codelineno-19-41" name="__codelineno-19-41" href="#__codelineno-19-41"></a>        <span class="ow">or</span> <span class="p">(</span><span class="n">player</span> <span class="o">==</span> <span class="s2">"χαρτί"</span> <span class="ow">and</span> <span class="n">computer</span> <span class="o">==</span> <span class="s2">"πέτρα"</span><span class="p">)</span>
+</span><span id="__span-19-42"><a id="__codelineno-19-42" name="__codelineno-19-42" href="#__codelineno-19-42"></a>    <span class="p">):</span>
+</span><span id="__span-19-43"><a id="__codelineno-19-43" name="__codelineno-19-43" href="#__codelineno-19-43"></a>        <span class="nb">print</span><span class="p">(</span><span class="s2">"Κέρδισες τον γύρο."</span><span class="p">)</span>
+</span><span id="__span-19-44"><a id="__codelineno-19-44" name="__codelineno-19-44" href="#__codelineno-19-44"></a>        <span class="c1"># TODO 3: πρόσθεσε έναν πόντο στον παίκτη</span>
+</span><span id="__span-19-45"><a id="__codelineno-19-45" name="__codelineno-19-45" href="#__codelineno-19-45"></a>        <span class="n">____</span> <span class="o">+=</span> <span class="mi">1</span>
+</span><span id="__span-19-46"><a id="__codelineno-19-46" name="__codelineno-19-46" href="#__codelineno-19-46"></a>    <span class="k">else</span><span class="p">:</span>
+</span><span id="__span-19-47"><a id="__codelineno-19-47" name="__codelineno-19-47" href="#__codelineno-19-47"></a>        <span class="nb">print</span><span class="p">(</span><span class="s2">"Κέρδισε ο υπολογιστής τον γύρο."</span><span class="p">)</span>
+</span><span id="__span-19-48"><a id="__codelineno-19-48" name="__codelineno-19-48" href="#__codelineno-19-48"></a>        <span class="c1"># TODO 4: πρόσθεσε έναν πόντο στον υπολογιστή</span>
+</span><span id="__span-19-49"><a id="__codelineno-19-49" name="__codelineno-19-49" href="#__codelineno-19-49"></a>        <span class="n">____</span> <span class="o">+=</span> <span class="mi">1</span>
+</span><span id="__span-19-50"><a id="__codelineno-19-50" name="__codelineno-19-50" href="#__codelineno-19-50"></a>
+</span><span id="__span-19-51"><a id="__codelineno-19-51" name="__codelineno-19-51" href="#__codelineno-19-51"></a>    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Σκορ: </span><span class="si">{</span><span class="n">player_score</span><span class="si">}</span><span class="s2"> - </span><span class="si">{</span><span class="n">computer_score</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
+</span><span id="__span-19-52"><a id="__codelineno-19-52" name="__codelineno-19-52" href="#__codelineno-19-52"></a>    <span class="c1"># TODO 5: ο επόμενος γύρος έχει αριθμό κατά 1 μεγαλύτερο</span>
+</span><span id="__span-19-53"><a id="__codelineno-19-53" name="__codelineno-19-53" href="#__codelineno-19-53"></a>    <span class="n">round_number</span> <span class="n">____</span> <span class="mi">1</span>
+</span><span id="__span-19-54"><a id="__codelineno-19-54" name="__codelineno-19-54" href="#__codelineno-19-54"></a>
+</span><span id="__span-19-55"><a id="__codelineno-19-55" name="__codelineno-19-55" href="#__codelineno-19-55"></a><span class="nb">print</span><span class="p">()</span>
+</span><span id="__span-19-56"><a id="__codelineno-19-56" name="__codelineno-19-56" href="#__codelineno-19-56"></a><span class="c1"># TODO 6: ο αγώνας τελείωσε. Ο παίκτης νίκησε αν έφτασε τους WIN_SCORE πόντους</span>
+</span><span id="__span-19-57"><a id="__codelineno-19-57" name="__codelineno-19-57" href="#__codelineno-19-57"></a><span class="k">if</span> <span class="n">____</span> <span class="o">==</span> <span class="n">WIN_SCORE</span><span class="p">:</span>
+</span><span id="__span-19-58"><a id="__codelineno-19-58" name="__codelineno-19-58" href="#__codelineno-19-58"></a>    <span class="nb">print</span><span class="p">(</span><span class="s2">"Κέρδισες τον αγώνα."</span><span class="p">)</span>
+</span><span id="__span-19-59"><a id="__codelineno-19-59" name="__codelineno-19-59" href="#__codelineno-19-59"></a><span class="k">else</span><span class="p">:</span>
+</span><span id="__span-19-60"><a id="__codelineno-19-60" name="__codelineno-19-60" href="#__codelineno-19-60"></a>    <span class="nb">print</span><span class="p">(</span><span class="s2">"Κέρδισε ο υπολογιστής τον αγώνα."</span><span class="p">)</span>
+</span></code></pre></div>
+<p><strong>Συνέχισε στο Φύλλο εργασίας, Κύκλος 3.</strong></p>
+<hr />
+<h2 id="4">Κύκλος 4 — Ανθεκτική είσοδος<a class="headerlink" href="#4" title="Permanent link">&para;</a></h2>
+<p>Ο έλεγχος με <code>in</code> δουλεύει όταν οι επιτρεπτές τιμές είναι λίγες και γνωστές: <code>"1"</code>, <code>"2"</code>, <code>"3"</code>.
+Αν όμως δεχόμαστε οποιονδήποτε αριθμό σε ένα εύρος, δεν μπορούμε να γράψουμε όλες τις τιμές. Εδώ
+χρειάζονται οι <strong>εξαιρέσεις</strong>.</p>
+<h3 id="41-try-except">4.1 Εξαιρέσεις: <code>try</code> και <code>except</code><a class="headerlink" href="#41-try-except" title="Permanent link">&para;</a></h3>
+<p>Στο Μάθημα 1 είδες ότι το <code>int("abc")</code> σταματά το πρόγραμμα:</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-20-1"><a id="__codelineno-20-1" name="__codelineno-20-1" href="#__codelineno-20-1"></a>ValueError: invalid literal for int() with base 10: 'abc'
+</span></code></pre></div>
+<p>Το σφάλμα εκτέλεσης που σταματά ένα πρόγραμμα λέγεται <strong>εξαίρεση</strong> (exception). Η <code>ValueError</code> είναι
+ο τύπος της εξαίρεσης. Μπορούμε να <strong>πιάσουμε</strong> μια εξαίρεση και να αποφασίσουμε εμείς τι θα γίνει:</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-21-1"><a id="__codelineno-21-1" name="__codelineno-21-1" href="#__codelineno-21-1"></a><span class="k">try</span><span class="p">:</span>
+</span><span id="__span-21-2"><a id="__codelineno-21-2" name="__codelineno-21-2" href="#__codelineno-21-2"></a>    <span class="n">win_score</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">answer</span><span class="p">)</span>
+</span><span id="__span-21-3"><a id="__codelineno-21-3" name="__codelineno-21-3" href="#__codelineno-21-3"></a><span class="k">except</span> <span class="ne">ValueError</span><span class="p">:</span>
+</span><span id="__span-21-4"><a id="__codelineno-21-4" name="__codelineno-21-4" href="#__codelineno-21-4"></a>    <span class="nb">print</span><span class="p">(</span><span class="s2">"Γράψε έναν ακέραιο αριθμό."</span><span class="p">)</span>
+</span></code></pre></div>
+<p>Πώς εκτελείται:</p>
+<ol>
+<li>Η Python εκτελεί το μπλοκ του <strong><code>try</code></strong>.</li>
+<li>Αν δεν προκύψει εξαίρεση, το μπλοκ του <code>except</code> <strong>παραλείπεται</strong> και το πρόγραμμα συνεχίζει.</li>
+<li>Αν προκύψει εξαίρεση τύπου <code>ValueError</code>, η εκτέλεση του <code>try</code> σταματά <strong>αμέσως</strong> (οι εντολές που
+   απομένουν στο μπλοκ δεν εκτελούνται) και πηγαίνει στο μπλοκ του <strong><code>except ValueError</code></strong>.
+   Μετά, το πρόγραμμα <strong>συνεχίζει κανονικά</strong> κάτω από το <code>try/except</code>.</li>
+</ol>
+<table>
+<thead>
+<tr>
+<th>Είσοδος</th>
+<th>Τι γίνεται στο <code>try</code></th>
+<th style="text-align: center;">Μπλοκ <code>except</code>;</th>
+<th><code>win_score</code> μετά</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>"5"</code></td>
+<td>η <code>int("5")</code> δίνει 5, η εκχώρηση ολοκληρώνεται</td>
+<td style="text-align: center;">δεν εκτελείται</td>
+<td>5</td>
+</tr>
+<tr>
+<td><code>"abc"</code></td>
+<td>η <code>int("abc")</code> προκαλεί <code>ValueError</code>, η εκχώρηση δεν γίνεται</td>
+<td style="text-align: center;">εκτελείται</td>
+<td>δεν έχει οριστεί</td>
+</tr>
+</tbody>
+</table>
+<p>Δύο κανόνες:</p>
+<ul>
+<li><strong>Όρισε τον τύπο της εξαίρεσης</strong> (<code>except ValueError</code>). Αν γράψεις <code>except:</code> χωρίς τύπο, πιάνεις
+  <em>κάθε</em> σφάλμα, ακόμα και τα λάθη του κώδικά σου, και τα κρύβεις. Πιάνουμε μόνο ό,τι περιμένουμε.</li>
+<li>Βάζε στο <code>try</code> <strong>μόνο</strong> τις εντολές που μπορεί να αποτύχουν. Όσο μικρότερο το μπλοκ, τόσο
+  πιο σαφές τι πιάνεις.</li>
+</ul>
+<h3 id="42-continue">4.2 Η εντολή <code>continue</code><a class="headerlink" href="#42-continue" title="Permanent link">&para;</a></h3>
+<p>Το <code>break</code> βγαίνει από τον βρόχο. Το <strong><code>continue</code></strong> κάνει κάτι διαφορετικό: <strong>παραλείπει τις
+υπόλοιπες εντολές του τρέχοντος γύρου</strong> και πηγαίνει στον επόμενο γύρο του ίδιου βρόχου.</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: center;">Εντολή</th>
+<th>Τι κάνει</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;"><code>break</code></td>
+<td>τελειώνει τον βρόχο· η εκτέλεση συνεχίζει <strong>μετά</strong> τον βρόχο</td>
+</tr>
+<tr>
+<td style="text-align: center;"><code>continue</code></td>
+<td>τελειώνει <strong>αυτόν τον γύρο</strong>· η εκτέλεση πηγαίνει στην αρχή του βρόχου (και ελέγχεται ξανά η συνθήκη)</td>
+</tr>
+</tbody>
+</table>
+<p>Στον έλεγχο εισόδου, αν η μετατροπή αποτύχει θέλουμε να ρωτήσουμε ξανά, χωρίς να φτάσουμε στη
+γραμμή που χρησιμοποιεί το <code>win_score</code> (που δεν έχει οριστεί). Το <code>continue</code> κάνει ακριβώς αυτό.</p>
+<h3 id="43">4.3 Αλυσιδωτή σύγκριση<a class="headerlink" href="#43" title="Permanent link">&para;</a></h3>
+<p>Για να ελέγξεις ότι ένας αριθμός είναι ανάμεσα σε δύο όρια, η Python σου επιτρέπει να γράψεις
+τη σύγκριση όπως στα μαθηματικά:</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-22-1"><a id="__codelineno-22-1" name="__codelineno-22-1" href="#__codelineno-22-1"></a><span class="k">if</span> <span class="mi">1</span> <span class="o">&lt;=</span> <span class="n">win_score</span> <span class="o">&lt;=</span> <span class="mi">5</span><span class="p">:</span>
+</span></code></pre></div>
+<p>Είναι ισοδύναμο με <code>win_score &gt;= 1 and win_score &lt;= 5</code>, αλλά διαβάζεται πιο φυσικά και γράφεται
+μία φορά η μεταβλητή. Τα όρια περιλαμβάνονται λόγω των <code>&lt;=</code>.</p>
+<div class="admonition note">
+<p class="admonition-title">Αν έχεις γράψει C</p>
+<p>Στη C, το <code>1 &lt;= n &lt;= 5</code> <strong>δεν</strong> κάνει αυτό. Υπολογίζεται ως <code>(1 &lt;= n) &lt;= 5</code>: η πρώτη σύγκριση
+δίνει 0 ή 1, και το 0 ή 1 είναι πάντα <code>&lt;= 5</code>, άρα η συνθήκη είναι πάντα αληθής. Στη C
+γράφεις <code>n &gt;= 1 &amp;&amp; n &lt;= 5</code>. Η αλυσιδωτή σύγκριση είναι χαρακτηριστικό της Python.</p>
+</div>
+<h3 id="44">4.4 Το πρότυπο «ζήτα μέχρι να είναι έγκυρο» για αριθμούς<a class="headerlink" href="#44" title="Permanent link">&para;</a></h3>
+<p>Συνδυάζοντας όλα τα παραπάνω:</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-23-1"><a id="__codelineno-23-1" name="__codelineno-23-1" href="#__codelineno-23-1"></a><span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
+</span><span id="__span-23-2"><a id="__codelineno-23-2" name="__codelineno-23-2" href="#__codelineno-23-2"></a>    <span class="n">answer</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">"Πόντοι για τη νίκη (1-5): "</span><span class="p">)</span>
+</span><span id="__span-23-3"><a id="__codelineno-23-3" name="__codelineno-23-3" href="#__codelineno-23-3"></a>    <span class="k">try</span><span class="p">:</span>
+</span><span id="__span-23-4"><a id="__codelineno-23-4" name="__codelineno-23-4" href="#__codelineno-23-4"></a>        <span class="n">win_score</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">answer</span><span class="p">)</span>
+</span><span id="__span-23-5"><a id="__codelineno-23-5" name="__codelineno-23-5" href="#__codelineno-23-5"></a>    <span class="k">except</span> <span class="ne">ValueError</span><span class="p">:</span>
+</span><span id="__span-23-6"><a id="__codelineno-23-6" name="__codelineno-23-6" href="#__codelineno-23-6"></a>        <span class="nb">print</span><span class="p">(</span><span class="s2">"Γράψε έναν ακέραιο αριθμό."</span><span class="p">)</span>
+</span><span id="__span-23-7"><a id="__codelineno-23-7" name="__codelineno-23-7" href="#__codelineno-23-7"></a>        <span class="k">continue</span>
+</span><span id="__span-23-8"><a id="__codelineno-23-8" name="__codelineno-23-8" href="#__codelineno-23-8"></a>    <span class="k">if</span> <span class="mi">1</span> <span class="o">&lt;=</span> <span class="n">win_score</span> <span class="o">&lt;=</span> <span class="mi">5</span><span class="p">:</span>
+</span><span id="__span-23-9"><a id="__codelineno-23-9" name="__codelineno-23-9" href="#__codelineno-23-9"></a>        <span class="k">break</span>
+</span><span id="__span-23-10"><a id="__codelineno-23-10" name="__codelineno-23-10" href="#__codelineno-23-10"></a>    <span class="nb">print</span><span class="p">(</span><span class="s2">"Ο αριθμός πρέπει να είναι από 1 έως 5."</span><span class="p">)</span>
+</span></code></pre></div>
+<p>Δύο ξεχωριστοί έλεγχοι, με σειρά:</p>
+<ol>
+<li><strong>Είναι αριθμός;</strong> Το αποφασίζει το <code>try/except</code>. Αν όχι, μήνυμα και <code>continue</code>.</li>
+<li><strong>Είναι μέσα στα όρια;</strong> Το αποφασίζει η αλυσιδωτή σύγκριση. Αν ναι, <code>break</code>. Αν όχι, εμφανίζεται
+   το μήνυμα και ο βρόχος συνεχίζει φυσιολογικά.</li>
+</ol>
+<p>Δεν μπορείς να αντιστρέψεις τη σειρά: ο έλεγχος ορίων χρειάζεται αριθμό, και ο αριθμός υπάρχει
+μόνο αν πέτυχε η μετατροπή.</p>
+<p><strong>Ιχνηλάτηση:</strong></p>
+<table>
+<thead>
+<tr>
+<th>Είσοδος</th>
+<th>Μετατροπή</th>
+<th>Όρια</th>
+<th>Αποτέλεσμα</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>"abc"</code></td>
+<td>αποτυγχάνει → μήνυμα → <code>continue</code></td>
+<td>δεν ελέγχονται</td>
+<td>ρωτά ξανά</td>
+</tr>
+<tr>
+<td><code>"9"</code></td>
+<td>9</td>
+<td><code>1 &lt;= 9 &lt;= 5</code> → <code>False</code> → μήνυμα</td>
+<td>ρωτά ξανά</td>
+</tr>
+<tr>
+<td><code>"3"</code></td>
+<td>3</td>
+<td><code>1 &lt;= 3 &lt;= 5</code> → <code>True</code> → <code>break</code></td>
+<td>δεκτό</td>
+</tr>
+</tbody>
+</table>
+<p>Αυτό το πρότυπο θα το ξαναχρησιμοποιήσεις σε κάθε πρόγραμμα που ζητά αριθμό από τον χρήστη.</p>
+<h3 id="45">4.5 Δοκιμές της εισόδου<a class="headerlink" href="#45" title="Permanent link">&para;</a></h3>
+<p>Ένας έλεγχος εισόδου δοκιμάζεται με τρία είδη τιμών: <strong>έγκυρες</strong>, <strong>άκυρες</strong> και <strong>οριακές</strong>.</p>
+<table>
+<thead>
+<tr>
+<th>Είσοδος</th>
+<th>Τι αναμένουμε</th>
+<th>Γιατί</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>3</code></td>
+<td>γίνεται δεκτό</td>
+<td>έγκυρη</td>
+</tr>
+<tr>
+<td><code>1</code>, <code>5</code></td>
+<td>γίνονται δεκτά</td>
+<td>οριακές έγκυρες τιμές</td>
+</tr>
+<tr>
+<td><code>0</code>, <code>6</code></td>
+<td>απορρίπτονται (εκτός ορίων)</td>
+<td>οριακές άκυρες τιμές</td>
+</tr>
+<tr>
+<td><code>-1</code></td>
+<td>απορρίπτεται</td>
+<td>αρνητικός αριθμός</td>
+</tr>
+<tr>
+<td><code>abc</code></td>
+<td>απορρίπτεται (δεν είναι αριθμός)</td>
+<td>γράμματα</td>
+</tr>
+<tr>
+<td><em>(κενό, μόνο Enter)</em></td>
+<td>απορρίπτεται</td>
+<td>η <code>int("")</code> δίνει <code>ValueError</code></td>
+</tr>
+<tr>
+<td><code>2.5</code></td>
+<td>απορρίπτεται</td>
+<td>η <code>int("2.5")</code> δίνει <code>ValueError</code>: η <code>int</code> δεν δέχεται δεκαδικό κείμενο</td>
+</tr>
+<tr>
+<td><code>4</code> (με κενά)</td>
+<td>γίνεται δεκτό ως 4</td>
+<td>η <code>int</code> αγνοεί τα κενά στην αρχή και το τέλος</td>
+</tr>
+</tbody>
+</table>
+<h3 id="4_1">Στάδιο 4 — Το ολοκληρωμένο παιχνίδι<a class="headerlink" href="#4_1" title="Permanent link">&para;</a></h3>
+<p>Άνοιξε το <code>04-final.py</code>. Ο παίκτης διαλέγει στην αρχή τους πόντους νίκης. Συμπλήρωσε τα πέντε
+κενά και δοκίμασε τις τιμές του πίνακα της ενότητας 4.5.</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-24-1"><a id="__codelineno-24-1" name="__codelineno-24-1" href="#__codelineno-24-1"></a><span class="sd">"""Στάδιο 4 — Τελική έκδοση: ο παίκτης διαλέγει τους πόντους νίκης.</span>
+</span><span id="__span-24-2"><a id="__codelineno-24-2" name="__codelineno-24-2" href="#__codelineno-24-2"></a>
+</span><span id="__span-24-3"><a id="__codelineno-24-3" name="__codelineno-24-3" href="#__codelineno-24-3"></a><span class="sd">Στην αρχή το πρόγραμμα ρωτά πόσους πόντους χρειάζεται ο νικητής (1 έως 5). Η είσοδος</span>
+</span><span id="__span-24-4"><a id="__codelineno-24-4" name="__codelineno-24-4" href="#__codelineno-24-4"></a><span class="sd">ελέγχεται: γράμματα και αριθμοί εκτός ορίων δεν γίνονται δεκτά και ο παίκτης ρωτιέται ξανά.</span>
+</span><span id="__span-24-5"><a id="__codelineno-24-5" name="__codelineno-24-5" href="#__codelineno-24-5"></a>
+</span><span id="__span-24-6"><a id="__codelineno-24-6" name="__codelineno-24-6" href="#__codelineno-24-6"></a><span class="sd">Συμπλήρωσε τα πέντε κενά (____).</span>
+</span><span id="__span-24-7"><a id="__codelineno-24-7" name="__codelineno-24-7" href="#__codelineno-24-7"></a><span class="sd">"""</span>
+</span><span id="__span-24-8"><a id="__codelineno-24-8" name="__codelineno-24-8" href="#__codelineno-24-8"></a>
+</span><span id="__span-24-9"><a id="__codelineno-24-9" name="__codelineno-24-9" href="#__codelineno-24-9"></a><span class="kn">import</span><span class="w"> </span><span class="nn">random</span>
+</span><span id="__span-24-10"><a id="__codelineno-24-10" name="__codelineno-24-10" href="#__codelineno-24-10"></a>
+</span><span id="__span-24-11"><a id="__codelineno-24-11" name="__codelineno-24-11" href="#__codelineno-24-11"></a><span class="n">CHOICES</span> <span class="o">=</span> <span class="p">[</span><span class="s2">"πέτρα"</span><span class="p">,</span> <span class="s2">"ψαλίδι"</span><span class="p">,</span> <span class="s2">"χαρτί"</span><span class="p">]</span>
+</span><span id="__span-24-12"><a id="__codelineno-24-12" name="__codelineno-24-12" href="#__codelineno-24-12"></a>
+</span><span id="__span-24-13"><a id="__codelineno-24-13" name="__codelineno-24-13" href="#__codelineno-24-13"></a><span class="nb">print</span><span class="p">(</span><span class="s2">"Πέτρα, ψαλίδι, χαρτί"</span><span class="p">)</span>
+</span><span id="__span-24-14"><a id="__codelineno-24-14" name="__codelineno-24-14" href="#__codelineno-24-14"></a>
+</span><span id="__span-24-15"><a id="__codelineno-24-15" name="__codelineno-24-15" href="#__codelineno-24-15"></a><span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
+</span><span id="__span-24-16"><a id="__codelineno-24-16" name="__codelineno-24-16" href="#__codelineno-24-16"></a>    <span class="n">answer</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">"Πόντοι για τη νίκη (1-5): "</span><span class="p">)</span>
+</span><span id="__span-24-17"><a id="__codelineno-24-17" name="__codelineno-24-17" href="#__codelineno-24-17"></a>    <span class="c1"># TODO 1: δοκίμασε τη μετατροπή σε ακέραιο (η λέξη-κλειδί που ανοίγει το μπλοκ)</span>
+</span><span id="__span-24-18"><a id="__codelineno-24-18" name="__codelineno-24-18" href="#__codelineno-24-18"></a>    <span class="n">____</span><span class="p">:</span>
+</span><span id="__span-24-19"><a id="__codelineno-24-19" name="__codelineno-24-19" href="#__codelineno-24-19"></a>        <span class="n">win_score</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">answer</span><span class="p">)</span>
+</span><span id="__span-24-20"><a id="__codelineno-24-20" name="__codelineno-24-20" href="#__codelineno-24-20"></a>    <span class="c1"># TODO 2: πιάσε το σφάλμα που προκαλεί η int() όταν το κείμενο δεν είναι αριθμός</span>
+</span><span id="__span-24-21"><a id="__codelineno-24-21" name="__codelineno-24-21" href="#__codelineno-24-21"></a>    <span class="k">except</span> <span class="n">____</span><span class="p">:</span>
+</span><span id="__span-24-22"><a id="__codelineno-24-22" name="__codelineno-24-22" href="#__codelineno-24-22"></a>        <span class="nb">print</span><span class="p">(</span><span class="s2">"Γράψε έναν ακέραιο αριθμό."</span><span class="p">)</span>
+</span><span id="__span-24-23"><a id="__codelineno-24-23" name="__codelineno-24-23" href="#__codelineno-24-23"></a>        <span class="c1"># TODO 3: γύρνα στην αρχή του βρόχου και ρώτα ξανά</span>
+</span><span id="__span-24-24"><a id="__codelineno-24-24" name="__codelineno-24-24" href="#__codelineno-24-24"></a>        <span class="n">____</span>
+</span><span id="__span-24-25"><a id="__codelineno-24-25" name="__codelineno-24-25" href="#__codelineno-24-25"></a>    <span class="c1"># TODO 4: αλυσιδωτή σύγκριση: win_score από 1 έως 5 (με τα δύο όρια μέσα)</span>
+</span><span id="__span-24-26"><a id="__codelineno-24-26" name="__codelineno-24-26" href="#__codelineno-24-26"></a>    <span class="k">if</span> <span class="mi">1</span> <span class="o">&lt;=</span> <span class="n">win_score</span> <span class="o">&lt;=</span> <span class="n">____</span><span class="p">:</span>
+</span><span id="__span-24-27"><a id="__codelineno-24-27" name="__codelineno-24-27" href="#__codelineno-24-27"></a>        <span class="k">break</span>
+</span><span id="__span-24-28"><a id="__codelineno-24-28" name="__codelineno-24-28" href="#__codelineno-24-28"></a>    <span class="nb">print</span><span class="p">(</span><span class="s2">"Ο αριθμός πρέπει να είναι από 1 έως 5."</span><span class="p">)</span>
+</span><span id="__span-24-29"><a id="__codelineno-24-29" name="__codelineno-24-29" href="#__codelineno-24-29"></a>
+</span><span id="__span-24-30"><a id="__codelineno-24-30" name="__codelineno-24-30" href="#__codelineno-24-30"></a><span class="n">player_score</span><span class="p">,</span> <span class="n">computer_score</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span>
+</span><span id="__span-24-31"><a id="__codelineno-24-31" name="__codelineno-24-31" href="#__codelineno-24-31"></a><span class="n">round_number</span> <span class="o">=</span> <span class="mi">1</span>
+</span><span id="__span-24-32"><a id="__codelineno-24-32" name="__codelineno-24-32" href="#__codelineno-24-32"></a>
+</span><span id="__span-24-33"><a id="__codelineno-24-33" name="__codelineno-24-33" href="#__codelineno-24-33"></a><span class="k">while</span> <span class="n">player_score</span> <span class="o">&lt;</span> <span class="n">win_score</span> <span class="ow">and</span> <span class="n">computer_score</span> <span class="o">&lt;</span> <span class="n">win_score</span><span class="p">:</span>
+</span><span id="__span-24-34"><a id="__codelineno-24-34" name="__codelineno-24-34" href="#__codelineno-24-34"></a>    <span class="nb">print</span><span class="p">()</span>
+</span><span id="__span-24-35"><a id="__codelineno-24-35" name="__codelineno-24-35" href="#__codelineno-24-35"></a>    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Γύρος </span><span class="si">{</span><span class="n">round_number</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
+</span><span id="__span-24-36"><a id="__codelineno-24-36" name="__codelineno-24-36" href="#__codelineno-24-36"></a>    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"1 = </span><span class="si">{</span><span class="n">CHOICES</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="si">}</span><span class="s2">, 2 = </span><span class="si">{</span><span class="n">CHOICES</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="si">}</span><span class="s2">, 3 = </span><span class="si">{</span><span class="n">CHOICES</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
+</span><span id="__span-24-37"><a id="__codelineno-24-37" name="__codelineno-24-37" href="#__codelineno-24-37"></a>
+</span><span id="__span-24-38"><a id="__codelineno-24-38" name="__codelineno-24-38" href="#__codelineno-24-38"></a>    <span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
+</span><span id="__span-24-39"><a id="__codelineno-24-39" name="__codelineno-24-39" href="#__codelineno-24-39"></a>        <span class="n">answer</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">"Η επιλογή σου: "</span><span class="p">)</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span>
+</span><span id="__span-24-40"><a id="__codelineno-24-40" name="__codelineno-24-40" href="#__codelineno-24-40"></a>        <span class="k">if</span> <span class="n">answer</span> <span class="ow">in</span> <span class="p">[</span><span class="s2">"1"</span><span class="p">,</span> <span class="s2">"2"</span><span class="p">,</span> <span class="s2">"3"</span><span class="p">]:</span>
+</span><span id="__span-24-41"><a id="__codelineno-24-41" name="__codelineno-24-41" href="#__codelineno-24-41"></a>            <span class="k">break</span>
+</span><span id="__span-24-42"><a id="__codelineno-24-42" name="__codelineno-24-42" href="#__codelineno-24-42"></a>        <span class="nb">print</span><span class="p">(</span><span class="s2">"Η επιλογή πρέπει να είναι 1, 2 ή 3."</span><span class="p">)</span>
+</span><span id="__span-24-43"><a id="__codelineno-24-43" name="__codelineno-24-43" href="#__codelineno-24-43"></a>
+</span><span id="__span-24-44"><a id="__codelineno-24-44" name="__codelineno-24-44" href="#__codelineno-24-44"></a>    <span class="n">player</span> <span class="o">=</span> <span class="n">CHOICES</span><span class="p">[</span><span class="nb">int</span><span class="p">(</span><span class="n">answer</span><span class="p">)</span> <span class="o">-</span> <span class="mi">1</span><span class="p">]</span>
+</span><span id="__span-24-45"><a id="__codelineno-24-45" name="__codelineno-24-45" href="#__codelineno-24-45"></a>    <span class="n">computer</span> <span class="o">=</span> <span class="n">random</span><span class="o">.</span><span class="n">choice</span><span class="p">(</span><span class="n">CHOICES</span><span class="p">)</span>
+</span><span id="__span-24-46"><a id="__codelineno-24-46" name="__codelineno-24-46" href="#__codelineno-24-46"></a>    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Εσύ: </span><span class="si">{</span><span class="n">player</span><span class="si">}</span><span class="s2"> | Υπολογιστής: </span><span class="si">{</span><span class="n">computer</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
+</span><span id="__span-24-47"><a id="__codelineno-24-47" name="__codelineno-24-47" href="#__codelineno-24-47"></a>
+</span><span id="__span-24-48"><a id="__codelineno-24-48" name="__codelineno-24-48" href="#__codelineno-24-48"></a>    <span class="k">if</span> <span class="n">player</span> <span class="o">==</span> <span class="n">computer</span><span class="p">:</span>
+</span><span id="__span-24-49"><a id="__codelineno-24-49" name="__codelineno-24-49" href="#__codelineno-24-49"></a>        <span class="nb">print</span><span class="p">(</span><span class="s2">"Ισοπαλία."</span><span class="p">)</span>
+</span><span id="__span-24-50"><a id="__codelineno-24-50" name="__codelineno-24-50" href="#__codelineno-24-50"></a>    <span class="k">elif</span> <span class="p">(</span>
+</span><span id="__span-24-51"><a id="__codelineno-24-51" name="__codelineno-24-51" href="#__codelineno-24-51"></a>        <span class="p">(</span><span class="n">player</span> <span class="o">==</span> <span class="s2">"πέτρα"</span> <span class="ow">and</span> <span class="n">computer</span> <span class="o">==</span> <span class="s2">"ψαλίδι"</span><span class="p">)</span>
+</span><span id="__span-24-52"><a id="__codelineno-24-52" name="__codelineno-24-52" href="#__codelineno-24-52"></a>        <span class="ow">or</span> <span class="p">(</span><span class="n">player</span> <span class="o">==</span> <span class="s2">"ψαλίδι"</span> <span class="ow">and</span> <span class="n">computer</span> <span class="o">==</span> <span class="s2">"χαρτί"</span><span class="p">)</span>
+</span><span id="__span-24-53"><a id="__codelineno-24-53" name="__codelineno-24-53" href="#__codelineno-24-53"></a>        <span class="ow">or</span> <span class="p">(</span><span class="n">player</span> <span class="o">==</span> <span class="s2">"χαρτί"</span> <span class="ow">and</span> <span class="n">computer</span> <span class="o">==</span> <span class="s2">"πέτρα"</span><span class="p">)</span>
+</span><span id="__span-24-54"><a id="__codelineno-24-54" name="__codelineno-24-54" href="#__codelineno-24-54"></a>    <span class="p">):</span>
+</span><span id="__span-24-55"><a id="__codelineno-24-55" name="__codelineno-24-55" href="#__codelineno-24-55"></a>        <span class="nb">print</span><span class="p">(</span><span class="s2">"Κέρδισες τον γύρο."</span><span class="p">)</span>
+</span><span id="__span-24-56"><a id="__codelineno-24-56" name="__codelineno-24-56" href="#__codelineno-24-56"></a>        <span class="n">player_score</span> <span class="o">+=</span> <span class="mi">1</span>
+</span><span id="__span-24-57"><a id="__codelineno-24-57" name="__codelineno-24-57" href="#__codelineno-24-57"></a>    <span class="k">else</span><span class="p">:</span>
+</span><span id="__span-24-58"><a id="__codelineno-24-58" name="__codelineno-24-58" href="#__codelineno-24-58"></a>        <span class="nb">print</span><span class="p">(</span><span class="s2">"Κέρδισε ο υπολογιστής τον γύρο."</span><span class="p">)</span>
+</span><span id="__span-24-59"><a id="__codelineno-24-59" name="__codelineno-24-59" href="#__codelineno-24-59"></a>        <span class="n">computer_score</span> <span class="o">+=</span> <span class="mi">1</span>
+</span><span id="__span-24-60"><a id="__codelineno-24-60" name="__codelineno-24-60" href="#__codelineno-24-60"></a>
+</span><span id="__span-24-61"><a id="__codelineno-24-61" name="__codelineno-24-61" href="#__codelineno-24-61"></a>    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Σκορ: </span><span class="si">{</span><span class="n">player_score</span><span class="si">}</span><span class="s2"> - </span><span class="si">{</span><span class="n">computer_score</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
+</span><span id="__span-24-62"><a id="__codelineno-24-62" name="__codelineno-24-62" href="#__codelineno-24-62"></a>    <span class="n">round_number</span> <span class="o">+=</span> <span class="mi">1</span>
+</span><span id="__span-24-63"><a id="__codelineno-24-63" name="__codelineno-24-63" href="#__codelineno-24-63"></a>
+</span><span id="__span-24-64"><a id="__codelineno-24-64" name="__codelineno-24-64" href="#__codelineno-24-64"></a><span class="nb">print</span><span class="p">()</span>
+</span><span id="__span-24-65"><a id="__codelineno-24-65" name="__codelineno-24-65" href="#__codelineno-24-65"></a><span class="c1"># TODO 5: ποιος έφτασε τους πόντους νίκης; Συμπλήρωσε τη μεταβλητή του παίκτη</span>
+</span><span id="__span-24-66"><a id="__codelineno-24-66" name="__codelineno-24-66" href="#__codelineno-24-66"></a><span class="k">if</span> <span class="n">____</span> <span class="o">==</span> <span class="n">win_score</span><span class="p">:</span>
+</span><span id="__span-24-67"><a id="__codelineno-24-67" name="__codelineno-24-67" href="#__codelineno-24-67"></a>    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Κέρδισες τον αγώνα με </span><span class="si">{</span><span class="n">player_score</span><span class="si">}</span><span class="s2">-</span><span class="si">{</span><span class="n">computer_score</span><span class="si">}</span><span class="s2">."</span><span class="p">)</span>
+</span><span id="__span-24-68"><a id="__codelineno-24-68" name="__codelineno-24-68" href="#__codelineno-24-68"></a><span class="k">else</span><span class="p">:</span>
+</span><span id="__span-24-69"><a id="__codelineno-24-69" name="__codelineno-24-69" href="#__codelineno-24-69"></a>    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Κέρδισε ο υπολογιστής με </span><span class="si">{</span><span class="n">computer_score</span><span class="si">}</span><span class="s2">-</span><span class="si">{</span><span class="n">player_score</span><span class="si">}</span><span class="s2">."</span><span class="p">)</span>
+</span></code></pre></div>
+<p><strong>Συνέχισε στο Φύλλο εργασίας, Κύκλος 4.</strong></p>
+<hr />
+<h2 id="_5">Έλεγχος πριν ολοκληρώσεις<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h2>
+<ul>
+<li>□ Το πρόγραμμα ρωτά πόσους πόντους χρειάζεται ο νικητής και δέχεται μόνο 1 έως 5.</li>
+<li>□ Μια επιλογή εκτός <code>1</code>, <code>2</code>, <code>3</code> δεν σταματά το πρόγραμμα και δεν χαλά τον γύρο.</li>
+<li>□ Ο υπολογιστής παίζει διαφορετικά σε διαφορετικούς γύρους.</li>
+<li>□ Και οι εννέα συνδυασμοί επιλογών δίνουν το σωστό αποτέλεσμα.</li>
+<li>□ Η ισοπαλία δεν δίνει πόντο, αλλά αυξάνει τον αριθμό γύρου.</li>
+<li>□ Ο αγώνας τελειώνει μόλις κάποιος φτάσει τους πόντους νίκης και ανακοινώνεται ο νικητής.</li>
+<li>□ Μπορείς να εξηγήσεις ποιον βρόχο σταματά κάθε <code>break</code>.</li>
+</ul>
+<h2 id="_6">Για να θυμάσαι<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h2>
+<ul>
+<li>Μια λίστα κρατά πολλά στοιχεία με σειρά. Ο πρώτος δείκτης είναι το 0 και ο τελευταίος το
+  <code>len(λίστα) - 1</code>. Ο αρνητικός δείκτης μετρά από το τέλος.</li>
+<li>Το <code>in</code> ελέγχει αν μια τιμή ανήκει σε λίστα. Η <code>random.choice</code> διαλέγει τυχαίο στοιχείο.</li>
+<li>Το <code>while True</code> με <code>break</code> ζητά είσοδο μέχρι να είναι έγκυρη. Το <code>break</code> σταματά τον <strong>πιο
+  εσωτερικό</strong> βρόχο.</li>
+<li>Ο εσωτερικός βρόχος εκτελείται ολόκληρος σε κάθε επανάληψη του εξωτερικού.</li>
+<li>Η πολλαπλή εκχώρηση <code>a, b = 0, 0</code> δίνει τιμή σε δύο μεταβλητές. Η <code>a, b = b, a</code> τις ανταλλάσσει.</li>
+<li>Το <code>try/except ValueError</code> πιάνει το σφάλμα της <code>int()</code> και επιτρέπει στο πρόγραμμα να
+  συνεχίσει. Πιάνουμε μόνο τον τύπο εξαίρεσης που περιμένουμε.</li>
+<li>Το <code>continue</code> πηγαίνει στον επόμενο γύρο του βρόχου. Το <code>break</code> βγαίνει από τον βρόχο.</li>
+<li>Η αλυσιδωτή σύγκριση <code>1 &lt;= n &lt;= 5</code> ελέγχει εύρος. Έλεγξε την είσοδο με έγκυρες, άκυρες και οριακές
+  τιμές.</li>
+</ul>
+<h2 id="_7">Λεξιλόγιο<a class="headerlink" href="#_7" title="Permanent link">&para;</a></h2>
+<p><strong>λίστα</strong> (list), <strong>στοιχείο</strong>, <strong>δείκτης</strong> (index), <strong>αρνητικός δείκτης</strong>,
+<strong>τροποποιήσιμη</strong> (mutable), <strong>μέθοδος</strong>, <strong>έλεγχος εισόδου</strong>, <strong>φωλιασμένος βρόχος</strong>, <strong>πολλαπλή
+εκχώρηση</strong>, <strong>εξαίρεση</strong> (exception), <strong><code>try</code>/<code>except</code></strong>, <strong>αλυσιδωτή σύγκριση</strong>,
+<strong>οριακή τιμή</strong>, <strong><code>IndexError</code></strong>, <strong><code>ValueError</code></strong>.</p>
+<h2 id="_8">Δική σου εκδοχή<a class="headerlink" href="#_8" title="Permanent link">&para;</a></h2>
+<p>Αν τελειώσεις νωρίτερα, δοκίμασε μία από τις παρακάτω, με <strong>μία αλλαγή τη φορά</strong>:</p>
+<ul>
+<li><strong>Θέμα και μηνύματα:</strong> άλλαξε τα μηνύματα και τα ονόματα των επιλογών, π.χ. με θέμα από το
+  αγαπημένο σου παιχνίδι.</li>
+<li><strong>Ασφάλισε το Μάθημα 1:</strong> πήγαινε στο παιχνίδι «Σπάσε τον κωδικό» και πρόσθεσε έλεγχο εισόδου,
+  ώστε τα γράμματα να μην σταματούν το πρόγραμμα και να <strong>μη χρεώνονται</strong> ως προσπάθεια. Ο αριθμός
+  εκτός ορίων μπορεί επίσης να μη χρεώνεται, με <code>continue</code>.</li>
+<li><strong>Πρόκληση: πέτρα, ψαλίδι, χαρτί, σαύρα, Σποκ.</strong> Πέντε επιλογές, με κανόνες που δεν
+  γράφονται εύκολα με <code>and</code>/<code>or</code>. Δοκίμασε να τους εκφράσεις με τον τελεστή <code>%</code>.</li>
+</ul>
+<details class="tip">
+<summary>Υπόδειξη για την πρόκληση</summary>
+<p>Βάλε τις επιλογές σε λίστα <strong>με αυτή τη σειρά</strong>: <code>["ψαλίδι", "χαρτί", "πέτρα", "σαύρα", "Σποκ"]</code>.
+Η σειρά είναι κυκλική: μετά το «Σποκ» ξανάρχεται το «ψαλίδι». Κάθε στοιχείο νικά τα στοιχεία που
+βρίσκονται <strong>1 και 3 θέσεις μετά</strong> από αυτό, κυκλικά. Αν <code>i</code> είναι ο δείκτης του παίκτη και
+<code>j</code> του υπολογιστή, σκέψου την τιμή <code>(j - i) % 5</code>. Δοκίμασε την πρώτα με τις τιμές που ξέρεις:
+το ψαλίδι (δείκτης 0) κόβει το χαρτί (δείκτης 1) και αποκεφαλίζει τη σαύρα (δείκτης 3).</p>
+</details>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Επιστροφή στην αρχή
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+      
+      <nav class="md-footer__inner md-grid" aria-label="Υποσέλιδο" >
+        
+          
+          <a href="../../01-guess-number/worksheet-01/" class="md-footer__link md-footer__link--prev" aria-label="Προηγούμενο: Φύλλο εργασίας">
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Προηγούμενο
+              </span>
+              <div class="md-ellipsis">
+                Φύλλο εργασίας
+              </div>
+            </div>
+          </a>
+        
+        
+          
+          <a href="../worksheet-02/" class="md-footer__link md-footer__link--next" aria-label="Επόμενο: Φύλλο εργασίας">
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Επόμενο
+              </span>
+              <div class="md-ellipsis">
+                Φύλλο εργασίας
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      © 2026 Θόδωρος Θεμελής — <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.el"
+   target="_blank" rel="noopener">CC BY-NC-SA 4.0</a>
+
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.sections", "navigation.top", "navigation.footer", "content.code.copy", "content.code.annotate", "toc.follow", "search.suggest", "search.highlight"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "\u0391\u03bd\u03c4\u03b9\u03b3\u03c1\u03ac\u03c6\u03b7\u03ba\u03b5 \u03c3\u03c4\u03bf \u03c0\u03c1\u03cc\u03c7\u03b5\u03b9\u03c1\u03bf", "clipboard.copy": "\u0391\u03bd\u03c4\u03b9\u03b3\u03c1\u03b1\u03c6\u03ae \u03c3\u03c4\u03bf \u03c0\u03c1\u03cc\u03c7\u03b5\u03b9\u03c1\u03bf", "search.result.more.one": "1 \u03b1\u03ba\u03cc\u03bc\u03b1 \u03c3\u03b5 \u03b1\u03c5\u03c4\u03ae\u03bd \u03c4\u03b7 \u03c3\u03b5\u03bb\u03af\u03b4\u03b1", "search.result.more.other": "# \u03b1\u03ba\u03cc\u03bc\u03b1 \u03c3\u03b5 \u03b1\u03c5\u03c4\u03ae\u03bd \u03c4\u03b7 \u03c3\u03b5\u03bb\u03af\u03b4\u03b1", "search.result.none": "\u03b4\u03b5\u03bd \u03b2\u03c1\u03ae\u03ba\u03b5 \u03ba\u03ac\u03c0\u03bf\u03b9\u03bf \u03ad\u03b3\u03b3\u03c1\u03b1\u03c6\u03bf", "search.result.one": "1 \u03ad\u03b3\u03b3\u03c1\u03b1\u03c6\u03bf \u03c0\u03bf\u03c5 \u03c4\u03b1\u03b9\u03c1\u03b9\u03ac\u03b6\u03b5\u03b9", "search.result.other": "# \u03ad\u03b3\u03b3\u03c1\u03b1\u03c6\u03b1 \u03c0\u03bf\u03c5 \u03c4\u03b1\u03b9\u03c1\u03b9\u03ac\u03b6\u03bf\u03c5\u03bd", "search.result.placeholder": "\u03a0\u03bb\u03b7\u03ba\u03c4\u03c1\u03bf\u03bb\u03bf\u03b3\u03ae\u03c3\u03c4\u03b5 \u03b3\u03b9\u03b1 \u03bd\u03b1 \u03b1\u03c1\u03c7\u03af\u03c3\u03b5\u03b9 \u03b7 \u03b1\u03bd\u03b1\u03b6\u03ae\u03c4\u03b7\u03c3\u03b7", "search.result.term.missing": "\u039b\u03b5\u03af\u03c0\u03b5\u03b9", "select.version": "\u0395\u03c0\u03b9\u03bb\u03bf\u03b3\u03ae \u03ad\u03ba\u03b4\u03bf\u03c3\u03b7\u03c2"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.d7400e89.min.js"></script>
+      
+    
+  </body>
+</html>

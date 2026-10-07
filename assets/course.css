@@ -1,0 +1,6 @@
+/* Κοινό CSS για τις εκδόσεις σπουδαστή και διδάσκοντα. */
+
+/* Τα ονόματα σε κώδικα στην πρώτη στήλη πίνακα (π.χ. IndentationError) δεν σπάνε σε δύο γραμμές. */
+.md-typeset table:not([class]) td:first-child code {
+  white-space: nowrap;
+}
