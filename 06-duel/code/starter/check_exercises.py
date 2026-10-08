@@ -43,21 +43,21 @@ def run_check(description, function, argument, expected):
 # ---- Άσκηση 1: Point
 
 def point_info(arguments):
-    """Φτιάχνει ένα Point και επιστρέφει τα πεδία του και το κείμενο της describe."""
+    """Φτιάχνει ένα Point και επιστρέφει τις ιδιότητές του και το κείμενο της describe."""
     x, y = arguments
     point = exercises.Point(x, y)
     return point.x, point.y, point.describe()
 
 
 def two_points(unused):
-    """Φτιάχνει δύο Point και επιστρέφει τα πεδία και των δύο: το καθένα πρέπει να κρατά τα δικά του."""
+    """Φτιάχνει δύο Point και επιστρέφει τις ιδιότητες και των δύο: το καθένα πρέπει να κρατά τις δικές του."""
     first = exercises.Point(1, 2)
     second = exercises.Point(5, 6)
     return first.x, first.y, second.x, second.y
 
 
 def changed_point(unused):
-    """Αλλάζει το πεδίο ενός Point και επιστρέφει το κείμενο και των δύο."""
+    """Αλλάζει μια ιδιότητα ενός Point και επιστρέφει το κείμενο και των δύο."""
     first = exercises.Point(1, 2)
     second = exercises.Point(5, 6)
     first.x = 99
@@ -151,12 +151,12 @@ def unchanged_after_call(specs):
 
 print("Άσκηση 1 (κύκλος 1): κλάση Point")
 for arguments, expected in (((3, 4), (3, 4, "(3, 4)")), ((0, 0), (0, 0, "(0, 0)")), ((-1, 2), (-1, 2, "(-1, 2)"))):
-    run_check(f"Point{arguments} -> πεδία και describe {expected}", point_info, arguments, expected)
-run_check("δύο αντικείμενα κρατούν τα δικά τους πεδία", two_points, None, (1, 2, 5, 6))
-run_check("η αλλαγή του πεδίου ενός αντικειμένου δεν αλλάζει το άλλο", changed_point, None, ("(99, 2)", "(5, 6)"))
+    run_check(f"Point{arguments} -> ιδιότητες και describe {expected}", point_info, arguments, expected)
+run_check("δύο αντικείμενα κρατούν τις δικές τους ιδιότητες", two_points, None, (1, 2, 5, 6))
+run_check("η αλλαγή μιας ιδιότητας ενός αντικειμένου δεν αλλάζει το άλλο", changed_point, None, ("(99, 2)", "(5, 6)"))
 
 print("Άσκηση 2 (κύκλος 2): κλάση Stamina")
-run_check("Stamina(10): πεδία value και maximum στην αρχή", stamina_start, 10, (10, 10))
+run_check("Stamina(10): ιδιότητες value και maximum στην αρχή", stamina_start, 10, (10, 10))
 run_check("spend(4), spend(7), spend(6) σε αντοχή 10", stamina_spend, None, (True, 6, False, 6, True, 0, True))
 run_check("rest(3) και rest(100) σε αντοχή 2 από 10", stamina_rest, None, (5, 10, None))
 run_check("is_empty: Stamina(5) και Stamina(0)", stamina_is_empty, None, (False, True))

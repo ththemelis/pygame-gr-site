@@ -25,7 +25,7 @@ class Fighter:
 class Point:
     """Κύκλος 1. Ένα σημείο (x, y).
 
-    Point(x, y): αποθηκεύει τα πεδία x και y.
+    Point(x, y): αποθηκεύει τις ιδιότητες x και y.
     describe(): επιστρέφει κείμενο της μορφής "(3, 4)".
     Κάθε αντικείμενο έχει τα δικά του x και y.
     """
@@ -40,7 +40,7 @@ class Point:
 class Stamina:
     """Κύκλος 2. Η αντοχή ενός μαχητή, από 0 έως maximum.
 
-    Stamina(maximum): πεδία maximum και value. Στην αρχή το value είναι ίσο με το maximum.
+    Stamina(maximum): ιδιότητες maximum και value. Στην αρχή το value είναι ίσο με το maximum.
     spend(amount): αν το value είναι τουλάχιστον amount, το μειώνει κατά amount και επιστρέφει True.
         Αλλιώς δεν αλλάζει τίποτα και επιστρέφει False.
     rest(amount): αυξάνει το value κατά amount, χωρίς να ξεπεράσει το maximum. Δεν επιστρέφει τίποτα.
