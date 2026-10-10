@@ -2045,6 +2045,121 @@
   
 
     
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_14" >
+        
+          
+          <label class="md-nav__link" for="__nav_14" id="__nav_14_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Μάθημα 12 — Το ίδιο παιχνίδι, ολοκληρωμένο
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_14_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_14">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Μάθημα 12 — Το ίδιο παιχνίδι, ολοκληρωμένο
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../12-complete-game/lesson-12/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Μάθημα
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../12-complete-game/worksheet-12/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Φύλλο εργασίας
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
   </ul>
 </nav>
                   </div>
@@ -2845,8 +2960,8 @@
 στο αποτέλεσμα, από αριστερά προς τα δεξιά:</p>
 <div class="language-python highlight"><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="n">guess</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">"Γράμμα: "</span><span class="p">)</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span><span class="o">.</span><span class="n">upper</span><span class="p">()</span>
 </span></code></pre></div>
-<p>Η Python εκτελεί πρώτα την <code>input</code> (δίνει <code>str</code>), μετά την <code>.strip()</code> πάνω σε αυτήν, και μετά την
-<code>.upper()</code> πάνω στο αποτέλεσμα. Στο Μάθημα 2 είδες ήδη την <code>.strip()</code> σε αυτή τη θέση.</p>
+<p>Η Python εκτελεί πρώτα την <code>input</code> (δίνει <code>str</code>), μετά τη <code>.strip()</code> πάνω σε αυτήν, και μετά την
+<code>.upper()</code> πάνω στο αποτέλεσμα. Στο Μάθημα 2 είδες ήδη τη <code>.strip()</code> σε αυτή τη θέση.</p>
 <p><strong>Τα ελληνικά στην <code>.upper()</code>.</strong> Η Python γνωρίζει ελληνικά: το <code>"ς".upper()</code> δίνει <code>"Σ"</code>, άρα ο
 παίκτης μπορεί να γράψει και το τελικό σίγμα. Ένα τονισμένο γράμμα όμως παραμένει τονισμένο:
 το <code>"ά".upper()</code> δίνει <code>"Ά"</code>, που είναι <strong>διαφορετικός χαρακτήρας</strong> από το <code>"Α"</code>. Θα το
@@ -3022,7 +3137,7 @@
 </span><span id="__span-16-7"><a id="__codelineno-16-7" name="__codelineno-16-7" href="#__codelineno-16-7"></a>    <span class="nb">print</span><span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="n">word</span><span class="p">[</span><span class="n">i</span><span class="p">])</span>
 </span></code></pre></div>
 <p>Στη δεύτερη, το <code>range(len(word))</code> δίνει ακριβώς τους έγκυρους δείκτες 0, 1, …, <code>len(word) - 1</code>.
-Χρησιμοποίησέ τη όταν χρειάζεσαι <strong>και τη θέση και το γράμμα</strong>. Όταν χρειάζεσαι μόνο το γράμμα,
+Χρησιμοποίησέ την όταν χρειάζεσαι <strong>και τη θέση και το γράμμα</strong>. Όταν χρειάζεσαι μόνο το γράμμα,
 προτίμησε το <code>for letter in word</code>.</p>
 <h3 id="24-for-while">2.4 <code>for</code> ή <code>while</code>;<a class="headerlink" href="#24-for-while" title="Permanent link">&para;</a></h3>
 <table>
@@ -3262,9 +3377,9 @@
 </span><span id="__span-22-3"><a id="__codelineno-22-3" name="__codelineno-22-3" href="#__codelineno-22-3"></a><span class="s2">" "</span><span class="o">.</span><span class="n">join</span><span class="p">([</span><span class="s2">"Χ"</span><span class="p">,</span> <span class="s2">"Ψ"</span><span class="p">,</span> <span class="s2">"Ζ"</span><span class="p">])</span>        <span class="c1"># 'Χ Ψ Ζ'            ενώνει με κενό ανάμεσα</span>
 </span><span id="__span-22-4"><a id="__codelineno-22-4" name="__codelineno-22-4" href="#__codelineno-22-4"></a><span class="s2">"-"</span><span class="o">.</span><span class="n">join</span><span class="p">([</span><span class="s2">"Χ"</span><span class="p">,</span> <span class="s2">"Ψ"</span><span class="p">,</span> <span class="s2">"Ζ"</span><span class="p">])</span>        <span class="c1"># 'Χ-Ψ-Ζ'</span>
 </span></code></pre></div>
-<p>Στη <code>join</code>, η συμβολοσειρά <strong>πριν από την τελεία</strong> είναι ο διαχωριστής, και οι τιμές της λίστας
+<p>Στην <code>join</code>, η συμβολοσειρά <strong>πριν από την τελεία</strong> είναι ο διαχωριστής, και οι τιμές της λίστας
 πρέπει να είναι <strong>συμβολοσειρές</strong>. Η <code>" ".join([])</code> δίνει κενή συμβολοσειρά.</p>
-<p>Θα την χρησιμοποιήσεις για να εμφανίσεις τα λάθος γράμματα: <code>print("Λάθη:", " ".join(wrong))</code>.</p>
+<p>Θα τη χρησιμοποιήσεις για να εμφανίσεις τα λάθος γράμματα: <code>print("Λάθη:", " ".join(wrong))</code>.</p>
 <h3 id="33">3.3 Σύνολα<a class="headerlink" href="#33" title="Permanent link">&para;</a></h3>
 <p>Για τα γράμματα που έχουν δοκιμαστεί δεν μας ενδιαφέρει η <strong>σειρά</strong>. Μας ενδιαφέρει μόνο <strong>αν
 κάποιο γράμμα έχει δοκιμαστεί ήδη</strong>. Για αυτή τη δουλειά υπάρχει το <strong>σύνολο</strong> (set): μια συλλογή

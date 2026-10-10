@@ -2122,6 +2122,121 @@
   
 
     
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_14" >
+        
+          
+          <label class="md-nav__link" for="__nav_14" id="__nav_14_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Μάθημα 12 — Το ίδιο παιχνίδι, ολοκληρωμένο
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_14_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_14">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Μάθημα 12 — Το ίδιο παιχνίδι, ολοκληρωμένο
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../12-complete-game/lesson-12/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Μάθημα
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../12-complete-game/worksheet-12/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Φύλλο εργασίας
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
   </ul>
 </nav>
                   </div>
@@ -2837,7 +2952,7 @@
 </span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="w">    </span><span class="sd">"""Ένας μαχητής: όνομα, ζωή, δύναμη επίθεσης και θεραπείες που του απομένουν."""</span>
 </span></code></pre></div>
 <p>Η λέξη-κλειδί <strong><code>class</code></strong> ακολουθείται από το όνομα της κλάσης και άνω-κάτω τελεία. Το σώμα γράφεται με
-<strong>εσοχή</strong>, όπως στη <code>def</code>. Όπως ο ορισμός μιας συνάρτησης δεν την εκτελεί, έτσι και ο ορισμός μιας κλάσης
+<strong>εσοχή</strong>, όπως στην <code>def</code>. Όπως ο ορισμός μιας συνάρτησης δεν την εκτελεί, έτσι και ο ορισμός μιας κλάσης
 <strong>δεν φτιάχνει κανέναν μαχητή</strong>: φτιάχνει μόνο το καλούπι.</p>
 <h3 id="14-__init__">1.4 Η μέθοδος αρχικοποίησης <code>__init__</code><a class="headerlink" href="#14-__init__" title="Permanent link">&para;</a></h3>
 <div class="language-python highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="k">class</span><span class="w"> </span><span class="nc">Fighter</span><span class="p">:</span>
@@ -2975,7 +3090,7 @@
 <p>Η <code>describe</code> έχει μία παράμετρο, το <code>self</code>, αλλά την καλείς <strong>χωρίς όρισμα</strong>. Αυτό που βρίσκεται <strong>πριν από
 την τελεία</strong> γίνεται αυτόματα το <code>self</code>:</p>
 <ul>
-<li>στην <code>hero.describe()</code>, το <code>self</code> είναι ο <code>hero</code>,</li>
+<li>στη <code>hero.describe()</code>, το <code>self</code> είναι ο <code>hero</code>,</li>
 <li>στην <code>goblin.describe()</code>, το <code>self</code> είναι ο <code>goblin</code>.</li>
 </ul>
 <p>Αυτό είναι ισοδύναμο με <code>Fighter.describe(hero)</code>, και δείχνει γιατί το <code>self</code> είναι πάντα η πρώτη
@@ -3035,7 +3150,7 @@
 <code>&lt;__main__.Fighter object at 0x00000235C7CE67B0&gt;</code>. Η Python δεν ξέρει πώς να το δείξει. Γι' αυτό γράψαμε τη
 μέθοδο <code>describe</code>.</p>
 <h3 id="1-fighter">Στάδιο 1 — Η κλάση Fighter<a class="headerlink" href="#1-fighter" title="Permanent link">&para;</a></h3>
-<p>Άνοιξε το <code>01-fighters.py</code>. Η κλάση έχει τη μέθοδο αρχικοποίησης και τη <code>describe</code>, και στη συνέχεια
+<p>Άνοιξε το <code>01-fighters.py</code>. Η κλάση έχει τη μέθοδο αρχικοποίησης και την <code>describe</code>, και στη συνέχεια
 φτιάχνονται δύο αντικείμενα. Συμπλήρωσε τα επτά κενά.</p>
 <div class="language-python highlight"><pre><span></span><code><span id="__span-10-1"><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a><span class="sd">"""Στάδιο 1 — Η κλάση Fighter και τα πρώτα αντικείμενα.</span>
 </span><span id="__span-10-2"><a id="__codelineno-10-2" name="__codelineno-10-2" href="#__codelineno-10-2"></a>
@@ -3157,7 +3272,7 @@
 </span><span id="__span-14-5"><a id="__codelineno-14-5" name="__codelineno-14-5" href="#__codelineno-14-5"></a>    <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">restore</span><span class="p">(</span><span class="n">POTION_HEAL</span><span class="p">)</span>
 </span></code></pre></div>
 <h3 id="24">2.4 Μια μέθοδος καλεί άλλη μέθοδο<a class="headerlink" href="#24" title="Permanent link">&para;</a></h3>
-<p>Στην τελευταία γραμμή, η <code>heal</code> καλεί την <code>restore</code> <strong>του ίδιου αντικειμένου</strong>, γράφοντας <code>self.restore(...)</code>.
+<p>Στην τελευταία γραμμή, η <code>heal</code> καλεί τη <code>restore</code> <strong>του ίδιου αντικειμένου</strong>, γράφοντας <code>self.restore(...)</code>.
 Το <code>self.</code> μπροστά είναι υποχρεωτικό: χωρίς αυτό η Python ψάχνει συνάρτηση με το όνομα <code>restore</code> έξω από την κλάση και
 δίνει <code>NameError</code>. Γιατί δύο μέθοδοι; Επειδή η <code>restore</code> χρειάζεται και μόνη της: το παιχνίδι την καλεί για να δώσει
 ζωή μετά από κάθε νίκη, χωρίς φίλτρο. Ό,τι χρειάζεσαι σε δύο σημεία, το γράφεις μία φορά.</p>
@@ -3506,7 +3621,7 @@
 </tr>
 </tbody>
 </table>
-<p>Παρατήρησε ότι στον γύρο 4 η ζωή του Γκόμπλιν πήγε στο 0 και όχι στο -4, χάρη στη <code>take_damage</code>.</p>
+<p>Παρατήρησε ότι στον γύρο 4 η ζωή του Γκόμπλιν πήγε στο 0 και όχι στο -4, χάρη στην <code>take_damage</code>.</p>
 <h3 id="3_1">Στάδιο 3 — Η μάχη<a class="headerlink" href="#3_1" title="Permanent link">&para;</a></h3>
 <p>Άνοιξε το <code>03-battle.py</code>. Η κλάση <code>Fighter</code> και η <code>ask_number</code> δίνονται έτοιμες. Εσύ γράφεις τα βήματα των
 γύρων και της μάχης. Αυτή τη φορά ορισμένα κενά είναι <strong>ολόκληρες γραμμές</strong> (TODO 2 και 7). Συμπλήρωσε τα οκτώ
@@ -3750,7 +3865,7 @@
 </span><span id="__span-29-6"><a id="__codelineno-29-6" name="__codelineno-29-6" href="#__codelineno-29-6"></a>    <span class="n">gained</span> <span class="o">=</span> <span class="n">player</span><span class="o">.</span><span class="n">restore</span><span class="p">(</span><span class="n">REST_AFTER_WIN</span><span class="p">)</span>
 </span></code></pre></div>
 <p>Ο ήρωας είναι <strong>το ίδιο αντικείμενο</strong> σε όλες τις μάχες. Η ζωή και τα φίλτρα του μεταφέρονται από τη μία στην
-άλλη, και ανάμεσά τους παίρνει λίγη ζωή με την <code>restore</code>.</p>
+άλλη, και ανάμεσά τους παίρνει λίγη ζωή με τη <code>restore</code>.</p>
 <h3 id="46">4.6 Δοκιμές του παιχνιδιού<a class="headerlink" href="#46" title="Permanent link">&para;</a></h3>
 <table>
 <thead>
@@ -3799,7 +3914,7 @@
 (<code>Ball</code>), ένας παίκτης. Θα έχουν <strong>ιδιότητες</strong> (<code>x</code>, <code>y</code>, <code>speed</code>) και <strong>μεθόδους</strong> (<code>move</code>, <code>draw</code>), και θα τα φτιάχνεις
 με <code>__init__</code> ακριβώς όπως εδώ.</p>
 <h3 id="4_1">Στάδιο 4 — Το τουρνουά<a class="headerlink" href="#4_1" title="Permanent link">&para;</a></h3>
-<p>Άνοιξε το <code>04-final.py</code>. Οι περισσότερες συναρτήσεις δίνονται έτοιμες από τα προηγούμενα στάδια. Εσύ γράφεις τη
+<p>Άνοιξε το <code>04-final.py</code>. Οι περισσότερες συναρτήσεις δίνονται έτοιμες από τα προηγούμενα στάδια. Εσύ γράφεις την
 μπάρα ζωής, τη λίστα των αντιπάλων και την επανάληψη του τουρνουά. Συμπλήρωσε τα έξι κενά (το TODO 4 είναι
 ολόκληρη γραμμή) και παίξε δύο φορές.</p>
 <div class="language-python highlight"><pre><span></span><code><span id="__span-30-1"><a id="__codelineno-30-1" name="__codelineno-30-1" href="#__codelineno-30-1"></a><span class="sd">"""Στάδιο 4 — Το τουρνουά: λίστα από αντικείμενα.</span>
@@ -3860,7 +3975,7 @@
 </span><span id="__span-30-56"><a id="__codelineno-30-56" name="__codelineno-30-56" href="#__codelineno-30-56"></a><span class="w">        </span><span class="sd">"""Η ζωή ως μπάρα: # για τη ζωή που απομένει και . για αυτή που χάθηκε."""</span>
 </span><span id="__span-30-57"><a id="__codelineno-30-57" name="__codelineno-30-57" href="#__codelineno-30-57"></a>        <span class="c1"># TODO 1: το ποσοστό της ζωής επί το πλάτος της μπάρας, δια τη μέγιστη ζωή</span>
 </span><span id="__span-30-58"><a id="__codelineno-30-58" name="__codelineno-30-58" href="#__codelineno-30-58"></a>        <span class="n">filled</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">health</span> <span class="o">*</span> <span class="n">BAR_WIDTH</span> <span class="o">//</span> <span class="n">____</span>
-</span><span id="__span-30-59"><a id="__codelineno-30-59" name="__codelineno-30-59" href="#__codelineno-30-59"></a>        <span class="c1"># Ένας μαχητής που ζει έχει πάντα τουλάχιστον ένα # στη μπάρα</span>
+</span><span id="__span-30-59"><a id="__codelineno-30-59" name="__codelineno-30-59" href="#__codelineno-30-59"></a>        <span class="c1"># Ένας μαχητής που ζει έχει πάντα τουλάχιστον ένα # στην μπάρα</span>
 </span><span id="__span-30-60"><a id="__codelineno-30-60" name="__codelineno-30-60" href="#__codelineno-30-60"></a>        <span class="k">if</span> <span class="n">filled</span> <span class="o">==</span> <span class="mi">0</span> <span class="ow">and</span> <span class="bp">self</span><span class="o">.</span><span class="n">health</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
 </span><span id="__span-30-61"><a id="__codelineno-30-61" name="__codelineno-30-61" href="#__codelineno-30-61"></a>            <span class="n">filled</span> <span class="o">=</span> <span class="mi">1</span>
 </span><span id="__span-30-62"><a id="__codelineno-30-62" name="__codelineno-30-62" href="#__codelineno-30-62"></a>        <span class="c1"># TODO 2: τα κενά κελιά είναι όσα το πλάτος μείον τα γεμάτα</span>
@@ -4008,7 +4123,7 @@
 </ul>
 <details class="tip">
 <summary>Υπόδειξη για το κρίσιμο χτύπημα</summary>
-<p>Η απόφαση παίρνεται μέσα στη <code>attack</code>, γιατί είναι κανόνας του μαχητή: <code>critical = random.randint(1, 5) == 1</code>.
+<p>Η απόφαση παίρνεται μέσα στην <code>attack</code>, γιατί είναι κανόνας του μαχητή: <code>critical = random.randint(1, 5) == 1</code>.
 Αν είναι αληθής, διπλασίασε τη ζημιά. Το πρόγραμμα όμως πρέπει να μάθει <strong>αν</strong> έγινε κρίσιμο, για να το πει.
 Η μέθοδος μπορεί να επιστρέφει <strong>δύο τιμές</strong> (πλειάδα, όπως στο Μάθημα 4): <code>return damage, critical</code>. Τότε
 όποιος την καλεί γράφει <code>damage, critical = player.attack(enemy)</code>, και πρέπει να αλλάξεις όλα τα σημεία που

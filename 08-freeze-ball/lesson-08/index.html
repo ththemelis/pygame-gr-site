@@ -2133,6 +2133,121 @@
   
 
     
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_14" >
+        
+          
+          <label class="md-nav__link" for="__nav_14" id="__nav_14_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Μάθημα 12 — Το ίδιο παιχνίδι, ολοκληρωμένο
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_14_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_14">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Μάθημα 12 — Το ίδιο παιχνίδι, ολοκληρωμένο
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../12-complete-game/lesson-12/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Μάθημα
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../12-complete-game/worksheet-12/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Φύλλο εργασίας
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
   </ul>
 </nav>
                   </div>
@@ -3117,7 +3232,7 @@
 γιατί εκεί η θέση άλλαζε μόνο σε ακέραιες τιμές.</p>
 </div>
 <h3 id="23-clocktick">2.3 Πόσος χρόνος πέρασε; Η μέθοδος <code>clock.tick</code><a class="headerlink" href="#23-clocktick" title="Permanent link">&para;</a></h3>
-<p>Τη <code>clock.tick(60)</code> τη γνωρίζεις: καθυστερεί τον βρόχο, ώστε να μην ξεπεράσει τα 60 καρέ το δευτερόλεπτο. Επιπλέον
+<p>Την <code>clock.tick(60)</code> τη γνωρίζεις: καθυστερεί τον βρόχο, ώστε να μην ξεπεράσει τα 60 καρέ το δευτερόλεπτο. Επιπλέον
 <strong>επιστρέφει πόσα χιλιοστά του δευτερολέπτου πέρασαν από την προηγούμενη κλήση της</strong>, δηλαδή τη διάρκεια του προηγούμενου
 καρέ. Αν επιστρέψει 17, το καρέ κράτησε 17 χιλιοστά του δευτερολέπτου, δηλαδή 0,017 δευτερόλεπτα. Για να τα κάνεις
 δευτερόλεπτα, διαιρείς με το 1000:</p>
@@ -3255,7 +3370,7 @@
 </span></code></pre></div>
 <p>Δεν χρειάζεται <code>elif</code> ή <code>else</code>: το <code>return</code> τελειώνει τη συνάρτηση μόλις ισχύσει η πρώτη περίπτωση. Η <code>bounce</code> δεν
 μετακινεί τίποτα· η μετακίνηση (<code>ball_x += speed * dt</code>) γίνεται πριν από την κλήση της. Τα όρια είναι παράμετροι, γιατί η
-συνάρτηση δεν γνωρίζει τίποτα για το παράθυρο ή για την ακτίνα της μπάλας. Την <code>bounce</code> θα την γράψεις εσύ στην άσκηση
+συνάρτηση δεν γνωρίζει τίποτα για το παράθυρο ή για την ακτίνα της μπάλας. Την <code>bounce</code> θα τη γράψεις εσύ στην άσκηση
 αυτού του κύκλου, και θα τη χρησιμοποιήσεις στα Στάδια 3 και 4.</p>
 <h3 id="28">2.8 Συνηθισμένα λάθη<a class="headerlink" href="#28" title="Permanent link">&para;</a></h3>
 <table>
@@ -3331,7 +3446,7 @@
 </span><span id="__span-15-30"><a id="__codelineno-15-30" name="__codelineno-15-30" href="#__codelineno-15-30"></a>    <span class="c1"># Πόσα δευτερόλεπτα πέρασαν από το προηγούμενο καρέ (η tick επιστρέφει χιλιοστά του δευτερολέπτου)</span>
 </span><span id="__span-15-31"><a id="__codelineno-15-31" name="__codelineno-15-31" href="#__codelineno-15-31"></a>    <span class="c1"># TODO 1: τα χιλιοστά γίνονται δευτερόλεπτα με διαίρεση με το 1000</span>
 </span><span id="__span-15-32"><a id="__codelineno-15-32" name="__codelineno-15-32" href="#__codelineno-15-32"></a>    <span class="n">dt</span> <span class="o">=</span> <span class="n">clock</span><span class="o">.</span><span class="n">tick</span><span class="p">(</span><span class="mi">60</span><span class="p">)</span> <span class="o">/</span> <span class="n">____</span>
-</span><span id="__span-15-33"><a id="__codelineno-15-33" name="__codelineno-15-33" href="#__codelineno-15-33"></a>    <span class="c1"># TODO 2: κράτα το dt το πολύ ίσο με MAX_DT, ώστε μια καθυστέρηση να μη «πετάξει» την μπάλα</span>
+</span><span id="__span-15-33"><a id="__codelineno-15-33" name="__codelineno-15-33" href="#__codelineno-15-33"></a>    <span class="c1"># TODO 2: κράτα το dt το πολύ ίσο με MAX_DT, ώστε μια καθυστέρηση να μην «πετάξει» την μπάλα</span>
 </span><span id="__span-15-34"><a id="__codelineno-15-34" name="__codelineno-15-34" href="#__codelineno-15-34"></a>    <span class="n">dt</span> <span class="o">=</span> <span class="n">____</span><span class="p">(</span><span class="n">dt</span><span class="p">,</span> <span class="n">MAX_DT</span><span class="p">)</span>
 </span><span id="__span-15-35"><a id="__codelineno-15-35" name="__codelineno-15-35" href="#__codelineno-15-35"></a>
 </span><span id="__span-15-36"><a id="__codelineno-15-36" name="__codelineno-15-36" href="#__codelineno-15-36"></a>    <span class="k">for</span> <span class="n">event</span> <span class="ow">in</span> <span class="n">pygame</span><span class="o">.</span><span class="n">event</span><span class="o">.</span><span class="n">get</span><span class="p">():</span>
@@ -3469,7 +3584,7 @@
 <td><code>PLAYING</code></td>
 <td>η μπάλα</td>
 <td>κόκκινη μπάλα</td>
-<td>παγώνει την μπάλα, δίνει πόντους και περνά στην <code>ROUND_OVER</code></td>
+<td>παγώνει την μπάλα, δίνει πόντους και περνά στη <code>ROUND_OVER</code></td>
 </tr>
 <tr>
 <td><code>ROUND_OVER</code></td>
@@ -3495,7 +3610,7 @@
 </span></code></pre></div>
 <h3 id="33">3.3 Το ίδιο πλήκτρο, άλλη δουλειά<a class="headerlink" href="#33" title="Permanent link">&para;</a></h3>
 <p>Το SPACE σημαίνει άλλο πράγμα σε κάθε κατάσταση, όπως το κλικ στο Μάθημα 7 (ενότητα 4.5). Το χειριζόμαστε με αλυσίδα
-<code>if/elif/else</code> πάνω στην <code>state</code>:</p>
+<code>if/elif/else</code> πάνω στη <code>state</code>:</p>
 <div class="language-python highlight"><pre><span></span><code><span id="__span-20-1"><a id="__codelineno-20-1" name="__codelineno-20-1" href="#__codelineno-20-1"></a><span class="k">elif</span> <span class="n">event</span><span class="o">.</span><span class="n">key</span> <span class="o">==</span> <span class="n">pygame</span><span class="o">.</span><span class="n">K_SPACE</span><span class="p">:</span>
 </span><span id="__span-20-2"><a id="__codelineno-20-2" name="__codelineno-20-2" href="#__codelineno-20-2"></a>    <span class="k">if</span> <span class="n">state</span> <span class="o">==</span> <span class="n">PLAYING</span><span class="p">:</span>
 </span><span id="__span-20-3"><a id="__codelineno-20-3" name="__codelineno-20-3" href="#__codelineno-20-3"></a>        <span class="o">...</span>                          <span class="c1"># πάγωσε την μπάλα και υπολόγισε τους πόντους</span>
@@ -3518,7 +3633,7 @@
 <div class="language-python highlight"><pre><span></span><code><span id="__span-21-1"><a id="__codelineno-21-1" name="__codelineno-21-1" href="#__codelineno-21-1"></a><span class="n">distance</span> <span class="o">=</span> <span class="nb">round</span><span class="p">(</span><span class="nb">abs</span><span class="p">(</span><span class="n">ball_x</span> <span class="o">-</span> <span class="n">ZONE_X</span><span class="p">))</span>
 </span></code></pre></div>
 <p>Η <code>abs</code> δίνει δεκαδικό αριθμό (π.χ. 73,4), γιατί το <code>ball_x</code> είναι δεκαδικό. Η <code>round</code> (Μάθημα 4) τον στρογγυλοποιεί σε
-ακέραιο: 73. Χωρίς την <code>round</code> οι πόντοι θα έβγαιναν δεκαδικοί και το παιχνίδι θα έγραφε «+3.0» αντί για «+3».</p>
+ακέραιο: 73. Χωρίς τη <code>round</code> οι πόντοι θα έβγαιναν δεκαδικοί και το παιχνίδι θα έγραφε «+3.0» αντί για «+3».</p>
 <p>Οι πόντοι: 10 στο κέντρο, ένας λιγότερος για κάθε 10 pixel απόσταση, ποτέ λιγότεροι από 0:</p>
 <div class="language-python highlight"><pre><span></span><code><span id="__span-22-1"><a id="__codelineno-22-1" name="__codelineno-22-1" href="#__codelineno-22-1"></a><span class="n">points</span> <span class="o">=</span> <span class="nb">max</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">10</span> <span class="o">-</span> <span class="n">distance</span> <span class="o">//</span> <span class="mi">10</span><span class="p">)</span>
 </span></code></pre></div>
@@ -3612,7 +3727,7 @@
 </span><span id="__span-24-3"><a id="__codelineno-24-3" name="__codelineno-24-3" href="#__codelineno-24-3"></a>    <span class="n">ball_x</span><span class="p">,</span> <span class="n">speed</span> <span class="o">=</span> <span class="n">bounce</span><span class="p">(</span><span class="n">ball_x</span><span class="p">,</span> <span class="n">speed</span><span class="p">,</span> <span class="n">RADIUS</span><span class="p">,</span> <span class="n">WIDTH</span> <span class="o">-</span> <span class="n">RADIUS</span><span class="p">)</span>
 </span></code></pre></div>
 <p>Όταν η κατάσταση γίνει <code>ROUND_OVER</code>, η συνθήκη δεν ισχύει, η θέση δεν αλλάζει και η μπάλα <strong>μένει</strong> εκεί που ήταν. Η
-σχεδίαση συνεχίζει να την ζωγραφίζει σε κάθε καρέ, στο ίδιο σημείο. Το πάγωμα, λοιπόν, δεν είναι κάτι που κάνεις στη
+σχεδίαση συνεχίζει να τη ζωγραφίζει σε κάθε καρέ, στο ίδιο σημείο. Το πάγωμα, λοιπόν, δεν είναι κάτι που κάνεις στην
 μπάλα· είναι κάτι που <strong>σταματάς</strong> να κάνεις.</p>
 <h3 id="37">3.7 Σχεδίαση ανά κατάσταση<a class="headerlink" href="#37" title="Permanent link">&para;</a></h3>
 <p>Και η σχεδίαση εξαρτάται από την κατάσταση:</p>
@@ -3884,7 +3999,7 @@
 </span><span id="__span-27-2"><a id="__codelineno-27-2" name="__codelineno-27-2" href="#__codelineno-27-2"></a>    <span class="n">ball</span><span class="p">[</span><span class="s2">"x"</span><span class="p">]</span> <span class="o">+=</span> <span class="n">ball</span><span class="p">[</span><span class="s2">"speed"</span><span class="p">]</span> <span class="o">*</span> <span class="n">dt</span>
 </span></code></pre></div>
 <p>Η μεταβλητή <code>ball</code> δείχνει την <strong>ίδια</strong> μπάλα που βρίσκεται στη λίστα, όχι αντίγραφο (Μάθημα 6, αναφορές): όταν αλλάζεις
-το <code>ball["x"]</code>, αλλάζει το λεξικό μέσα στη <code>balls</code>.</p>
+το <code>ball["x"]</code>, αλλάζει το λεξικό μέσα στην <code>balls</code>.</p>
 <h3 id="42">4.2 Φτιάχνοντας τις μπάλες<a class="headerlink" href="#42" title="Permanent link">&para;</a></h3>
 <p>Οι τρεις λωρίδες και οι αρχικές ταχύτητες είναι δύο πλειάδες, με ένα στοιχείο για κάθε λωρίδα:</p>
 <div class="language-python highlight"><pre><span></span><code><span id="__span-28-1"><a id="__codelineno-28-1" name="__codelineno-28-1" href="#__codelineno-28-1"></a><span class="n">LANES</span> <span class="o">=</span> <span class="p">(</span><span class="mi">130</span><span class="p">,</span> <span class="mi">270</span><span class="p">,</span> <span class="mi">410</span><span class="p">)</span>            <span class="c1"># το y κάθε λωρίδας</span>

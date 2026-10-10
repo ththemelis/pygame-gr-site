@@ -2100,6 +2100,121 @@
   
 
     
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_14" >
+        
+          
+          <label class="md-nav__link" for="__nav_14" id="__nav_14_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Μάθημα 12 — Το ίδιο παιχνίδι, ολοκληρωμένο
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_14_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_14">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Μάθημα 12 — Το ίδιο παιχνίδι, ολοκληρωμένο
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../12-complete-game/lesson-12/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Μάθημα
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../12-complete-game/worksheet-12/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Φύλλο εργασίας
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
   </ul>
 </nav>
                   </div>
@@ -2972,7 +3087,7 @@
 <li>Η <code>screen.fill</code> ζωγραφίζει το φόντο. Η <strong><code>pygame.display.flip()</code></strong> δείχνει στην οθόνη το καρέ που ετοιμάστηκε.
   Ό,τι ζωγραφίζεις πηγαίνει πρώτα σε μια κρυφή εικόνα· η <code>flip</code> την εμφανίζει μονομιάς, ώστε να μη βλέπεις το καρέ
   να «χτίζεται» με τρεμόπαιγμα. Η <code>pygame.display.update()</code>, χωρίς ορίσματα, κάνει το ίδιο. Μπορεί όμως να
-  ανανεώσει και μόνο ένα τμήμα της οθόνης· στο υλικό χρησιμοποιούμε πάντα την <code>flip</code>.</li>
+  ανανεώσει και μόνο ένα τμήμα της οθόνης· στο υλικό χρησιμοποιούμε πάντα τη <code>flip</code>.</li>
 <li>Η <strong><code>pygame.quit()</code></strong> μετά τον βρόχο ελευθερώνει τους πόρους που πήρε η <code>pygame.init()</code>.</li>
 </ul>
 <p>Ιχνηλάτηση δύο καρέ, όταν ο παίκτης πατά το X στο δεύτερο:</p>
@@ -3555,7 +3670,7 @@
 <div class="language-python highlight"><pre><span></span><code><span id="__span-20-1"><a id="__codelineno-20-1" name="__codelineno-20-1" href="#__codelineno-20-1"></a><span class="n">screen</span><span class="o">.</span><span class="n">blit</span><span class="p">(</span><span class="n">image</span><span class="p">,</span> <span class="p">(</span><span class="mi">20</span><span class="p">,</span> <span class="mi">20</span><span class="p">))</span>
 </span></code></pre></div>
 <p>Οι δύο εντολές μαζί εμφανίζουν το κείμενο: <code>render</code> για να φτιαχτεί η εικόνα, <code>blit</code> για να μπει στο παράθυρο. Το
-<code>blit</code> ακολουθεί τους ίδιους κανόνες με τη σχεδίαση: αργότερα καλύπτει νωρίτερα, και όλα γίνονται πριν από την <code>flip</code>.
+<code>blit</code> ακολουθεί τους ίδιους κανόνες με τη σχεδίαση: αργότερα καλύπτει νωρίτερα, και όλα γίνονται πριν από τη <code>flip</code>.
 Σε κάθε καρέ ξαναφτιάχνουμε το κείμενο με <code>render</code>, γιατί το σκορ μπορεί να έχει αλλάξει. Για λίγες γραμμές κειμένου
 είναι αρκετά γρήγορο.</p>
 <h3 id="43">4.3 Κείμενο στο κέντρο<a class="headerlink" href="#43" title="Permanent link">&para;</a></h3>
@@ -3798,9 +3913,9 @@
 <details class="tip">
 <summary>Υπόδειξη για την Πρόκληση 1</summary>
 <p>Ένα σημείο είναι μέσα σε κύκλο αν η <strong>απόσταση</strong> από το κέντρο είναι το πολύ ίση με την ακτίνα. Με το
-Πυθαγόρειο θεώρημα, η απόσταση στο τετράγωνο είναι <code>(x - cx) ** 2 + (y - cy) ** 2</code>. Σύγκρινέ την με το
+Πυθαγόρειο θεώρημα, η απόσταση στο τετράγωνο είναι <code>(x - cx) ** 2 + (y - cy) ** 2</code>. Σύγκρινέ τη με το
 <code>radius ** 2</code>: έτσι δεν χρειάζεσαι ρίζα. Γράψε μια συνάρτηση <code>inside_circle(x, y, center_x, center_y, radius)</code>
-που επιστρέφει <code>True</code> ή <code>False</code>, και χρησιμοποίησέ την στη θέση της <code>target.collidepoint(event.pos)</code>.
+που επιστρέφει <code>True</code> ή <code>False</code>, και χρησιμοποίησέ τη στη θέση της <code>target.collidepoint(event.pos)</code>.
 Το κέντρο είναι <code>target.centerx</code>, <code>target.centery</code> και η ακτίνα <code>target.width // 2</code>.</p>
 </details>
 <details class="tip">

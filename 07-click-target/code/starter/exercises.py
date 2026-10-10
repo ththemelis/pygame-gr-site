@@ -29,7 +29,7 @@ def random_position(width, height, size, top=0):
     """Κύκλος 3. Επιστρέφει (x, y): τυχαία θέση για τετράγωνο πλευράς size που χωρά ολόκληρο μέσα στο παράθυρο.
 
     Το x είναι από 0 έως width - size. Το y είναι από top έως height - size (το top αφήνει χώρο
-    για την περιοχή πληροφοριών). Χρησιμοποίησε την random.randint.
+    για την περιοχή πληροφοριών). Χρησιμοποίησε τη random.randint.
     """
     raise NotImplementedError
 

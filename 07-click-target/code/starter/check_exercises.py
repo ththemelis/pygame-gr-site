@@ -63,7 +63,7 @@ def call_inside_rect(arguments):
 # ---- Άσκηση 3: random_position
 
 def positions_with(arguments):
-    """Καλεί την random_position με «τυχαίο» αριθμό που είναι πάντα ο μεγαλύτερος ή ο μικρότερος δυνατός.
+    """Καλεί τη random_position με «τυχαίο» αριθμό που είναι πάντα ο μεγαλύτερος ή ο μικρότερος δυνατός.
 
     Επιστρέφει τη θέση που βγήκε. Έτσι ελέγχουμε τα όρια χωρίς να εξαρτάται το αποτέλεσμα από την τύχη.
     """
@@ -79,7 +79,7 @@ def positions_with(arguments):
 
 
 def limits_asked(args):
-    """Τα (από, μέχρι) που ζήτησε η random_position από την random.randint, ταξινομημένα."""
+    """Τα (από, μέχρι) που ζήτησε η random_position από τη random.randint, ταξινομημένα."""
     calls = []
 
     def recording_randint(low, high):
@@ -148,9 +148,9 @@ run_check("μεγαλύτερα δυνατά x και y για (640, 480, 80)", 
 run_check("μικρότερα δυνατά x και y για (640, 480, 80)", positions_with, ("μικρότερο", (640, 480, 80)), (0, 0))
 run_check("μεγαλύτερα δυνατά με top = 60", positions_with, ("μεγαλύτερο", (640, 480, 80, 60)), (560, 400))
 run_check("μικρότερα δυνατά με top = 60 (το y ξεκινά από το top)", positions_with, ("μικρότερο", (640, 480, 80, 60)), (0, 60))
-run_check("τα όρια που ζητά από την random.randint για (640, 480, 80, 60)", limits_asked, (640, 480, 80, 60),
+run_check("τα όρια που ζητά από τη random.randint για (640, 480, 80, 60)", limits_asked, (640, 480, 80, 60),
           [(0, 560), (60, 400)])
-run_check("τα όρια που ζητά από την random.randint για (100, 100, 10)", limits_asked, (100, 100, 10), [(0, 90), (0, 90)])
+run_check("τα όρια που ζητά από τη random.randint για (100, 100, 10)", limits_asked, (100, 100, 10), [(0, 90), (0, 90)])
 run_check("200 πραγματικές θέσεις: μέσα στα όρια και ακέραιες, όχι πάντα ίδιες", many_positions, (640, 480, 80, 60),
           (True, True))
 

@@ -55,7 +55,7 @@ def lines_in_file(text):
 
 
 def lines_in_missing_file(name):
-    """Καλεί τη count_lines για αρχείο που δεν υπάρχει."""
+    """Καλεί την count_lines για αρχείο που δεν υπάρχει."""
     with tempfile.TemporaryDirectory(ignore_cleanup_errors=True) as folder:
         return exercises.count_lines(os.path.join(folder, name))
 

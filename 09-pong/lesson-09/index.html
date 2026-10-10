@@ -2144,6 +2144,121 @@
   
 
     
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_14" >
+        
+          
+          <label class="md-nav__link" for="__nav_14" id="__nav_14_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Μάθημα 12 — Το ίδιο παιχνίδι, ολοκληρωμένο
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_14_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_14">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Μάθημα 12 — Το ίδιο παιχνίδι, ολοκληρωμένο
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../12-complete-game/lesson-12/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Μάθημα
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../12-complete-game/worksheet-12/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Φύλλο εργασίας
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
   </ul>
 </nav>
                   </div>
@@ -3180,7 +3295,7 @@
   υπολογιστής ή κάτι άλλο. Αυτό την κάνει εύχρηστη και εύκολη στον έλεγχο.</li>
 <li>Η <code>box</code> επιστρέφει πλειάδα, που την καταλαβαίνουν η συνάρτηση <code>pygame.draw.rect</code> και η μέθοδος <code>colliderect</code> (ενότητα 3.2).
   Η κλάση δεν χρειάζεται καν το pygame.</li>
-<li>Το <code>self.y</code> μένει δεκαδικό, και στρογγυλοποιείται μόνο όταν χρειάζεται pixel (στη <code>box</code>).</li>
+<li>Το <code>self.y</code> μένει δεκαδικό, και στρογγυλοποιείται μόνο όταν χρειάζεται pixel (στην <code>box</code>).</li>
 </ul>
 <h3 id="23">2.3 Φτιάχνοντας τα αντικείμενα<a class="headerlink" href="#23" title="Permanent link">&para;</a></h3>
 <div class="language-python highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="n">left</span> <span class="o">=</span> <span class="n">Paddle</span><span class="p">(</span><span class="n">MARGIN</span><span class="p">,</span> <span class="n">PADDLE_START_Y</span><span class="p">,</span> <span class="n">PADDLE_WIDTH</span><span class="p">,</span> <span class="n">PADDLE_HEIGHT</span><span class="p">,</span> <span class="n">PADDLE_SPEED</span><span class="p">,</span> <span class="n">HUD_HEIGHT</span><span class="p">,</span> <span class="n">HEIGHT</span><span class="p">)</span>
@@ -3261,7 +3376,7 @@
 </span><span id="__span-9-4"><a id="__codelineno-9-4" name="__codelineno-9-4" href="#__codelineno-9-4"></a><span class="n">ball</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="n">dt</span><span class="p">)</span>
 </span></code></pre></div>
 <p>Οι τρεις πρώτες γραμμές αντικαθιστούν τις έντεκα του Σταδίου 1 (πλήκτρα, κίνηση και όρια), και η τέταρτη κινεί την μπάλα. Η
-λογική (κατεύθυνση από τα πλήκτρα, μετακίνηση, όρια) μένει στη <code>key_direction</code> και στη <code>move</code>, και γράφεται μία φορά για όσες
+λογική (κατεύθυνση από τα πλήκτρα, μετακίνηση, όρια) μένει στην <code>key_direction</code> και στη <code>move</code>, και γράφεται μία φορά για όσες
 ρακέτες θέλεις. Για μια τρίτη ρακέτα αρκεί ένα ακόμη <code>Paddle(...)</code> και μία γραμμή <code>move</code>.</p>
 <h3 id="27">2.7 Συνηθισμένα λάθη<a class="headerlink" href="#27" title="Permanent link">&para;</a></h3>
 <table>
@@ -4548,7 +4663,7 @@ pixel. Στο χειρότερο καρέ η μπάλα κινείται <code>M
 </details>
 <details class="tip">
 <summary>Υπόδειξη για την Πρόκληση 2</summary>
-<p>Πρόσθεσε στη <code>Ball</code> μια ιδιότητα <code>hits</code>, με αρχική τιμή 0 στην <code>__init__</code> και στην <code>reset</code>. Η <code>bounce_off</code> την αυξάνει
+<p>Πρόσθεσε στην <code>Ball</code> μια ιδιότητα <code>hits</code>, με αρχική τιμή 0 στην <code>__init__</code> και στη <code>reset</code>. Η <code>bounce_off</code> την αυξάνει
 κατά 1 σε κάθε χτύπημα (<code>self.hits += 1</code>). Στο HUD ζωγράφισε το κείμενο
 <code>f"Ανταλλαγές: {ball.hits}"</code> με την <code>draw_centered_text</code>, στη θέση <code>(WIDTH // 2, 30)</code>. Η <code>reset</code> τη μηδενίζει όταν
 τελειώνει ο πόντος, άρα το κείμενο δείχνει πάντα τις ανταλλαγές του τρέχοντος πόντου.</p>

@@ -2122,6 +2122,121 @@
   
 
     
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_14" >
+        
+          
+          <label class="md-nav__link" for="__nav_14" id="__nav_14_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Μάθημα 12 — Το ίδιο παιχνίδι, ολοκληρωμένο
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_14_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_14">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Μάθημα 12 — Το ίδιο παιχνίδι, ολοκληρωμένο
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../12-complete-game/lesson-12/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Μάθημα
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../12-complete-game/worksheet-12/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Φύλλο εργασίας
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
   </ul>
 </nav>
                   </div>
@@ -3001,7 +3116,7 @@ VS Code:</p>
 <p>Θα μπορούσες να γράψεις <strong>απόλυτη διαδρομή</strong> (<code>C:\Users\...\maze.txt</code>), αλλά τότε το πρόγραμμα δουλεύει
 μόνο στον δικό σου υπολογιστή. Οι σχετικές διαδρομές κάνουν το πρόγραμμα και τα αρχεία του μετακινήσιμα.</p>
 <h3 id="18">1.8 Αρχεία και συναρτήσεις<a class="headerlink" href="#18" title="Permanent link">&para;</a></h3>
-<p>Το Στάδιο 1 βάζει την ανάγνωση σε μια συνάρτηση, την <code>load_map</code>. Ακολουθεί έναν κανόνα που ξέρεις από το
+<p>Το Στάδιο 1 βάζει την ανάγνωση σε μια συνάρτηση, τη <code>load_map</code>. Ακολουθεί έναν κανόνα που ξέρεις από το
 Μάθημα 4: <strong>η συνάρτηση κάνει μία δουλειά</strong>. Η <code>load_map</code> διαβάζει και δεν αποφασίζει τι θα πει ο χρήστης.
 Αν το αρχείο λείπει, <strong>επιστρέφει <code>None</code></strong>, και εκείνος που την καλεί αποφασίζει τι θα κάνει (εδώ,
 εμφανίζει μήνυμα):</p>
@@ -3153,7 +3268,7 @@ VS Code:</p>
 τον χαρακτήρα της. Άρα η σειρά είναι <strong>πρώτα η γραμμή, μετά η στήλη: <code>grid[y][x]</code></strong>.</p>
 <div class="admonition warning">
 <p class="admonition-title">Το x και το y γράφονται αντίστροφα</p>
-<p>Μιλάμε για τη θέση ως <strong>(x, y)</strong>, αλλά την διαβάζουμε ως <strong><code>grid[y][x]</code></strong>. Είναι το συνηθέστερο λάθος
+<p>Μιλάμε για τη θέση ως <strong>(x, y)</strong>, αλλά τη διαβάζουμε ως <strong><code>grid[y][x]</code></strong>. Είναι το συνηθέστερο λάθος
 του μαθήματος. Μια βοήθεια: η <code>grid[y]</code> είναι μια ολόκληρη γραμμή και πρέπει να επιλεγεί πρώτη, όπως
 διαλέγεις πρώτα τη σειρά θέατρου και μετά τη θέση.</p>
 </div>
@@ -3272,7 +3387,7 @@ VS Code:</p>
 <div class="language-text highlight"><pre><span></span><code><span id="__span-21-1"><a id="__codelineno-21-1" name="__codelineno-21-1" href="#__codelineno-21-1"></a>TypeError: 'str' object does not support item assignment
 </span></code></pre></div>
 <p>Από το Μάθημα 3 ξέρεις ότι οι συμβολοσειρές <strong>δεν τροποποιούνται</strong>. Η λίστα όμως αλλάζει. Άρα φτιάχνουμε
-<strong>νέα γραμμή</strong> και την βάζουμε στη θέση της παλιάς, με τμήματα (slices):</p>
+<strong>νέα γραμμή</strong> και τη βάζουμε στη θέση της παλιάς, με τμήματα (slices):</p>
 <div class="language-python highlight"><pre><span></span><code><span id="__span-22-1"><a id="__codelineno-22-1" name="__codelineno-22-1" href="#__codelineno-22-1"></a><span class="n">row</span> <span class="o">=</span> <span class="n">grid</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>                           <span class="c1"># "#P.#.$#"</span>
 </span><span id="__span-22-2"><a id="__codelineno-22-2" name="__codelineno-22-2" href="#__codelineno-22-2"></a><span class="n">grid</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="n">row</span><span class="p">[:</span><span class="mi">1</span><span class="p">]</span> <span class="o">+</span> <span class="s2">"."</span> <span class="o">+</span> <span class="n">row</span><span class="p">[</span><span class="mi">2</span><span class="p">:]</span>       <span class="c1"># "#" + "." + ".#.$#"  →  "#..#.$#"</span>
 </span></code></pre></div>
@@ -3555,7 +3670,7 @@ VS Code:</p>
   (επιστρέφει <code>None</code>). Η <code>main</code> ξεχωρίζει τις δύο περιπτώσεις με <code>steps is None</code>.</li>
 </ul>
 <h3 id="37-play">3.7 Η συνάρτηση <code>play</code><a class="headerlink" href="#37-play" title="Permanent link">&para;</a></h3>
-<p>Όλα μαζί στη <code>play</code>:</p>
+<p>Όλα μαζί στην <code>play</code>:</p>
 <div class="language-python highlight"><pre><span></span><code><span id="__span-30-1"><a id="__codelineno-30-1" name="__codelineno-30-1" href="#__codelineno-30-1"></a><span class="k">def</span><span class="w"> </span><span class="nf">play</span><span class="p">(</span><span class="n">grid</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">):</span>
 </span><span id="__span-30-2"><a id="__codelineno-30-2" name="__codelineno-30-2" href="#__codelineno-30-2"></a>    <span class="n">steps</span> <span class="o">=</span> <span class="mi">0</span>
 </span><span id="__span-30-3"><a id="__codelineno-30-3" name="__codelineno-30-3" href="#__codelineno-30-3"></a>    <span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
@@ -3663,7 +3778,7 @@ VS Code:</p>
 </span><span id="__span-31-76"><a id="__codelineno-31-76" name="__codelineno-31-76" href="#__codelineno-31-76"></a>        <span class="k">if</span> <span class="n">key</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">MOVES</span><span class="p">:</span>
 </span><span id="__span-31-77"><a id="__codelineno-31-77" name="__codelineno-31-77" href="#__codelineno-31-77"></a>            <span class="nb">print</span><span class="p">(</span><span class="s2">"Δεν ξέρω αυτό το πλήκτρο."</span><span class="p">)</span>
 </span><span id="__span-31-78"><a id="__codelineno-31-78" name="__codelineno-31-78" href="#__codelineno-31-78"></a>            <span class="k">continue</span>
-</span><span id="__span-31-79"><a id="__codelineno-31-79" name="__codelineno-31-79" href="#__codelineno-31-79"></a>        <span class="c1"># TODO 4: πάρε από το λεξικό MOVES τη μετατόπιση του πλήκτρου και αποσυσκεύασέ την σε dx και dy</span>
+</span><span id="__span-31-79"><a id="__codelineno-31-79" name="__codelineno-31-79" href="#__codelineno-31-79"></a>        <span class="c1"># TODO 4: πάρε από το λεξικό MOVES τη μετατόπιση του πλήκτρου και αποσυσκεύασέ τη σε dx και dy</span>
 </span><span id="__span-31-80"><a id="__codelineno-31-80" name="__codelineno-31-80" href="#__codelineno-31-80"></a>        <span class="n">dx</span><span class="p">,</span> <span class="n">dy</span> <span class="o">=</span> <span class="n">____</span>
 </span><span id="__span-31-81"><a id="__codelineno-31-81" name="__codelineno-31-81" href="#__codelineno-31-81"></a>        <span class="c1"># TODO 5: η νέα στήλη είναι η τωρινή συν τη μετατόπιση dx (η νέα γραμμή δίνεται παρακάτω)</span>
 </span><span id="__span-31-82"><a id="__codelineno-31-82" name="__codelineno-31-82" href="#__codelineno-31-82"></a>        <span class="n">new_x</span> <span class="o">=</span> <span class="n">____</span>
@@ -4133,7 +4248,7 @@ VS Code:</p>
 </details>
 <details class="tip">
 <summary>Υπόδειξη για την πρόκληση</summary>
-<p>Φτιάξε μια συνάρτηση <code>ask_map()</code> με <code>while True</code>: ρωτά το όνομα, καλεί την <code>load_map</code> και, αν το
+<p>Φτιάξε μια συνάρτηση <code>ask_map()</code> με <code>while True</code>: ρωτά το όνομα, καλεί τη <code>load_map</code> και, αν το
 αποτέλεσμα <strong>δεν</strong> είναι <code>None</code>, επιστρέφει <strong>δύο τιμές</strong>, το όνομα και τον χάρτη (πλειάδα). Το όνομα του
 αρχείου ρεκόρ φτιάξ' το από το όνομα του χάρτη, π.χ. <code>"record-" + map_name</code>, και δώσ' το στις
 <code>load_record</code> και <code>save_record</code> αντί για τη σταθερά <code>RECORD_FILE</code>.</p>
