@@ -1,0 +1,4530 @@
+
+<!doctype html>
+<html lang="el" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Εργαστηριακό υλικό μαθήματος — ΣΑΕΚ, Γ΄ εξάμηνο">
+      
+      
+        <meta name="author" content="Θόδωρος Θεμελής">
+      
+      
+        <link rel="canonical" href="https://ththemelis.github.io/pygame-gr-site/15-project-final/lesson-15/">
+      
+      
+        <link rel="prev" href="../../14-project-prototype/worksheet-14/">
+      
+      
+        <link rel="next" href="../worksheet-15/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.7">
+    
+    
+      
+        <title>Μάθημα - Προγραμματισμός εφαρμογών διαδικτύου & παιχνιδιών (Python, pygame)</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.ec1eaa64.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/course.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#15-project-22" class="md-skip">
+          Μετάβαση στο περιεχόμενο
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Κεφαλίδα">
+    <a href="../.." title="Προγραμματισμός εφαρμογών διαδικτύου &amp; παιχνιδιών (Python, pygame)" class="md-header__button md-logo" aria-label="Προγραμματισμός εφαρμογών διαδικτύου & παιχνιδιών (Python, pygame)" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Προγραμματισμός εφαρμογών διαδικτύου & παιχνιδιών (Python, pygame)
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Μάθημα
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Σκοτεινό θέμα"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Σκοτεινό θέμα" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m17.75 4.09-2.53 1.94.91 3.06-2.63-1.81-2.63 1.81.91-3.06-2.53-1.94L12.44 4l1.06-3 1.06 3zm3.5 6.91-1.64 1.25.59 1.98-1.7-1.17-1.7 1.17.59-1.98L15.75 11l2.06-.05L18.5 9l.69 1.95zm-2.28 4.95c.83-.08 1.72 1.1 1.19 1.85-.32.45-.66.87-1.08 1.27C15.17 23 8.84 23 4.94 19.07c-3.91-3.9-3.91-10.24 0-14.14.4-.4.82-.76 1.27-1.08.75-.53 1.93.36 1.85 1.19-.27 2.86.69 5.83 2.89 8.02a9.96 9.96 0 0 0 8.02 2.89m-1.64 2.02a12.08 12.08 0 0 1-7.8-3.47c-2.17-2.19-3.33-5-3.49-7.82-2.81 3.14-2.7 7.96.31 10.98 3.02 3.01 7.84 3.12 10.98.31"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Φωτεινό θέμα"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Φωτεινό θέμα" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 7a5 5 0 0 1 5 5 5 5 0 0 1-5 5 5 5 0 0 1-5-5 5 5 0 0 1 5-5m0 2a3 3 0 0 0-3 3 3 3 0 0 0 3 3 3 3 0 0 0 3-3 3 3 0 0 0-3-3m0-7 2.39 3.42C13.65 5.15 12.84 5 12 5s-1.65.15-2.39.42zM3.34 7l4.16-.35A7.2 7.2 0 0 0 5.94 8.5c-.44.74-.69 1.5-.83 2.29zm.02 10 1.76-3.77a7.131 7.131 0 0 0 2.38 4.14zM20.65 7l-1.77 3.79a7.02 7.02 0 0 0-2.38-4.15zm-.01 10-4.14.36c.59-.51 1.12-1.14 1.54-1.86.42-.73.69-1.5.83-2.29zM12 22l-2.41-3.44c.74.27 1.55.44 2.41.44.82 0 1.63-.17 2.37-.44z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Αναζήτηση" placeholder="Αναζήτηση" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Αναζήτηση">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Καθαρισμός" aria-label="Καθαρισμός" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Αρχικοποίηση αναζήτησης
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Πλοήγηση" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Προγραμματισμός εφαρμογών διαδικτύου &amp; παιχνιδιών (Python, pygame)" class="md-nav__button md-logo" aria-label="Προγραμματισμός εφαρμογών διαδικτύου & παιχνιδιών (Python, pygame)" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    Προγραμματισμός εφαρμογών διαδικτύου & παιχνιδιών (Python, pygame)
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Αρχική
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../setup/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Εγκατάσταση και ρύθμιση
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Μάθημα 1 — Σπάσε τον κωδικό
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Μάθημα 1 — Σπάσε τον κωδικό
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../01-guess-number/lesson-01/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Μάθημα
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../01-guess-number/worksheet-01/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Φύλλο εργασίας
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Μάθημα 2 — Πέτρα, ψαλίδι, χαρτί
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Μάθημα 2 — Πέτρα, ψαλίδι, χαρτί
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../02-rock-paper-scissors/lesson-02/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Μάθημα
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../02-rock-paper-scissors/worksheet-02/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Φύλλο εργασίας
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Μάθημα 3 — Κρεμάλα
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Μάθημα 3 — Κρεμάλα
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../03-hangman/lesson-03/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Μάθημα
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../03-hangman/worksheet-03/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Φύλλο εργασίας
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Μάθημα 4 — Κουίζ γνώσεων
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Μάθημα 4 — Κουίζ γνώσεων
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../04-quiz-console/lesson-04/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Μάθημα
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../04-quiz-console/worksheet-04/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Φύλλο εργασίας
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7" >
+        
+          
+          <label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Φυλλάδιο εξάσκησης (Μαθήματα 2–4)
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Φυλλάδιο εξάσκησης (Μαθήματα 2–4)
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../practice/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Φυλλάδιο
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8" >
+        
+          
+          <label class="md-nav__link" for="__nav_8" id="__nav_8_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Μάθημα 5 — Λαβύρινθος
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_8_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_8">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Μάθημα 5 — Λαβύρινθος
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../05-maze/lesson-05/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Μάθημα
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../05-maze/worksheet-05/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Φύλλο εργασίας
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_9" >
+        
+          
+          <label class="md-nav__link" for="__nav_9" id="__nav_9_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Μάθημα 6 — Μονομαχία
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_9_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_9">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Μάθημα 6 — Μονομαχία
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../06-duel/lesson-06/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Μάθημα
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../06-duel/worksheet-06/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Φύλλο εργασίας
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_10" >
+        
+          
+          <label class="md-nav__link" for="__nav_10" id="__nav_10_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Μάθημα 7 — Πάτα τον στόχο
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_10_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_10">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Μάθημα 7 — Πάτα τον στόχο
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../07-click-target/lesson-07/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Μάθημα
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../07-click-target/worksheet-07/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Φύλλο εργασίας
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_11" >
+        
+          
+          <label class="md-nav__link" for="__nav_11" id="__nav_11_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Μάθημα 8 — Πάγωσε την μπάλα
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_11_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_11">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Μάθημα 8 — Πάγωσε την μπάλα
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../08-freeze-ball/lesson-08/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Μάθημα
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../08-freeze-ball/worksheet-08/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Φύλλο εργασίας
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_12" >
+        
+          
+          <label class="md-nav__link" for="__nav_12" id="__nav_12_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Μάθημα 9 — Pong
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_12_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_12">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Μάθημα 9 — Pong
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../09-pong/lesson-09/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Μάθημα
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../09-pong/worksheet-09/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Φύλλο εργασίας
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_13" >
+        
+          
+          <label class="md-nav__link" for="__nav_13" id="__nav_13_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Μάθημα 10 — Πιάσε τα αστέρια
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_13_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_13">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Μάθημα 10 — Πιάσε τα αστέρια
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../10-catch-stars/lesson-10/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Μάθημα
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../10-catch-stars/worksheet-10/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Φύλλο εργασίας
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_14" >
+        
+          
+          <label class="md-nav__link" for="__nav_14" id="__nav_14_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Μάθημα 11 — Διαστημική αποφυγή
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_14_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_14">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Μάθημα 11 — Διαστημική αποφυγή
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../11-space-dodge/lesson-11/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Μάθημα
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../11-space-dodge/worksheet-11/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Φύλλο εργασίας
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_15" >
+        
+          
+          <label class="md-nav__link" for="__nav_15" id="__nav_15_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Μάθημα 12 — Το ίδιο παιχνίδι, ολοκληρωμένο
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_15_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_15">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Μάθημα 12 — Το ίδιο παιχνίδι, ολοκληρωμένο
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../12-complete-game/lesson-12/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Μάθημα
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../12-complete-game/worksheet-12/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Φύλλο εργασίας
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_16" >
+        
+          
+          <label class="md-nav__link" for="__nav_16" id="__nav_16_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Μάθημα 13 — Φίδι
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_16_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_16">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Μάθημα 13 — Φίδι
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../13-snake/lesson-13/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Μάθημα
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../13-snake/worksheet-13/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Φύλλο εργασίας
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_17" >
+        
+          
+          <label class="md-nav__link" for="__nav_17" id="__nav_17_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Μάθημα 14 — Project (1/2): από την ιδέα στο πρωτότυπο
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_17_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_17">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Μάθημα 14 — Project (1/2): από την ιδέα στο πρωτότυπο
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../14-project-prototype/lesson-14/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Μάθημα
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../14-project-prototype/worksheet-14/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Φύλλο εργασίας
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_18" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_18" id="__nav_18_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Μάθημα 15 — Project (2/2): από το πρωτότυπο στο τελικό παιχνίδι
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_18_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_18">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Μάθημα 15 — Project (2/2): από το πρωτότυπο στο τελικό παιχνίδι
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Μάθημα
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Μάθημα
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Πίνακας περιεχομένων">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Πίνακας περιεχομένων
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Αρχεία εργαστηρίου
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Η αποστολή
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Στο τέλος θα μπορείς
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Πριν αρχίσεις
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Κύκλος 1 — Επέκταση
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Κύκλος 1 — Επέκταση">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#11" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.1 Τι λείπει από το πρωτότυπο
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#12" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.2 Οι κάρτες λειτουργιών
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#13" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.3 Πώς διαλέγετε τι θα φτιάξετε
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#14-project" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.4 Μία κάρτα στο δικό σου project
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#15" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.5 Δύο κάρτες μαζί
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#16" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.6 Το σχέδιο επέκτασης
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Σημείο ελέγχου ΣΕ5 — Το σχέδιο επέκτασης
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Κύκλος 2 — Έλεγχος και αποσφαλμάτωση
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Κύκλος 2 — Έλεγχος και αποσφαλμάτωση">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#21" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.1 Το μήνυμα σφάλματος, με πολλές γραμμές
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#22" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.2 Πώς βρίσκεις το λάθος
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#23" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.3 Ο πίνακας δοκιμών
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#24" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.4 Δοκιμή από άλλο ζεύγος
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#25" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.5 Συνηθισμένα λάθη
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#6" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Σημείο ελέγχου ΣΕ6 — Ο πίνακας δοκιμών
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Κύκλος 3 — Τελική μορφή και τεκμηρίωση
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Κύκλος 3 — Τελική μορφή και τεκμηρίωση">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#31" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.1 Τα τελικά κείμενα
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#32-readme" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.2 Το README
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#33" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.3 Η δήλωση βοήθειας
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#34" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.4 Ο κατάλογος παράδοσης
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#35" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.5 Η παρουσίαση
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#36" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.6 Η ατομική υπεράσπιση
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#37" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.7 Πώς θα βαθμολογηθείτε
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#7-readme" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Σημείο ελέγχου ΣΕ7 — Το τελικό παιχνίδι και το README
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Κύκλος 4 — Φεστιβάλ παιχνιδιών
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Κύκλος 4 — Φεστιβάλ παιχνιδιών">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#41" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.1 Πώς γίνεται το φεστιβάλ
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#42" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.2 Η κάρτα σχολίων
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#43" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.3 Αναστοχασμός
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Έλεγχος πριν ολοκληρώσεις
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Για να θυμάσαι
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Λεξιλόγιο
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_8" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Αν τελειώσεις νωρίτερα
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../worksheet-15/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Φύλλο εργασίας
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_19" >
+        
+          
+          <label class="md-nav__link" for="__nav_19" id="__nav_19_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Project — κάρτες λειτουργιών
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_19_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_19">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Project — κάρτες λειτουργιών
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../cards/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Οδηγός καρτών
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../cards/lives/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Ζωές
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../cards/countdown/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Αντίστροφη μέτρηση
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../cards/levels/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Επίπεδα
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../cards/record/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Ρεκόρ
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../cards/record-file/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Ρεκόρ σε αρχείο
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../cards/mouse/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Κλικ με το ποντίκι
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../cards/gravity/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Βαρύτητα και άλμα
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../cards/pause/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Παύση
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../cards/help-screen/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Οθόνη οδηγιών
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../cards/objects/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Πολλά αντικείμενα
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../cards/collisions/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Συγκρούσεις
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../cards/shuffle/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Ανακάτεμα
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../cards/images/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Εικόνες
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../cards/sounds/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Ήχοι και μουσική
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Πίνακας περιεχομένων">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Πίνακας περιεχομένων
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Αρχεία εργαστηρίου
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Η αποστολή
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Στο τέλος θα μπορείς
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Πριν αρχίσεις
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Κύκλος 1 — Επέκταση
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Κύκλος 1 — Επέκταση">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#11" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.1 Τι λείπει από το πρωτότυπο
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#12" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.2 Οι κάρτες λειτουργιών
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#13" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.3 Πώς διαλέγετε τι θα φτιάξετε
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#14-project" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.4 Μία κάρτα στο δικό σου project
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#15" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.5 Δύο κάρτες μαζί
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#16" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.6 Το σχέδιο επέκτασης
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Σημείο ελέγχου ΣΕ5 — Το σχέδιο επέκτασης
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Κύκλος 2 — Έλεγχος και αποσφαλμάτωση
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Κύκλος 2 — Έλεγχος και αποσφαλμάτωση">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#21" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.1 Το μήνυμα σφάλματος, με πολλές γραμμές
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#22" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.2 Πώς βρίσκεις το λάθος
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#23" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.3 Ο πίνακας δοκιμών
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#24" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.4 Δοκιμή από άλλο ζεύγος
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#25" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.5 Συνηθισμένα λάθη
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#6" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Σημείο ελέγχου ΣΕ6 — Ο πίνακας δοκιμών
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Κύκλος 3 — Τελική μορφή και τεκμηρίωση
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Κύκλος 3 — Τελική μορφή και τεκμηρίωση">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#31" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.1 Τα τελικά κείμενα
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#32-readme" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.2 Το README
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#33" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.3 Η δήλωση βοήθειας
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#34" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.4 Ο κατάλογος παράδοσης
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#35" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.5 Η παρουσίαση
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#36" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.6 Η ατομική υπεράσπιση
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#37" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.7 Πώς θα βαθμολογηθείτε
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#7-readme" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Σημείο ελέγχου ΣΕ7 — Το τελικό παιχνίδι και το README
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Κύκλος 4 — Φεστιβάλ παιχνιδιών
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Κύκλος 4 — Φεστιβάλ παιχνιδιών">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#41" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.1 Πώς γίνεται το φεστιβάλ
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#42" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.2 Η κάρτα σχολίων
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#43" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.3 Αναστοχασμός
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Έλεγχος πριν ολοκληρώσεις
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Για να θυμάσαι
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Λεξιλόγιο
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_8" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Αν τελειώσεις νωρίτερα
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="15-project-22">Μάθημα 15: Project (2/2): από το πρωτότυπο στο τελικό παιχνίδι<a class="headerlink" href="#15-project-22" title="Permanent link">&para;</a></h1>
+<p><strong>Project:</strong> το παιχνίδι σας από το Μάθημα 14· σε αυτό το μάθημα το επεκτείνετε, το ελέγχετε, το τεκμηριώνετε και το παρουσιάζετε στην τάξη<br />
+<strong>Διάρκεια:</strong> 4 κύκλοι × (περίπου 45′ εργασία + 15′ διάλειμμα)</p>
+<div class="admonition info">
+<p class="admonition-title">Φύλλο εργασίας</p>
+<p>Αυτή η σελίδα εξηγεί πώς δουλεύουμε. Οι οδηγίες και τα παραδοτέα κάθε κύκλου βρίσκονται στο
+<a href="../worksheet-15/">Φύλλο εργασίας 15</a>. Δούλεψε με τις δύο σελίδες ανοιχτές.</p>
+</div>
+<h2 id="_1">Αρχεία εργαστηρίου<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
+<p>Σήμερα δεν κατεβάζεις νέα αρχεία. Δουλεύετε στον φάκελο του project σας, με τα <code>game.py</code>, <code>logic.py</code>, <code>check_logic.py</code> και <code>check_project.py</code> του Μαθήματος 14. Αυτό που προστίθεται είναι οι σελίδες των καρτών λειτουργιών:</p>
+<table>
+<thead>
+<tr>
+<th>Σελίδα</th>
+<th>Τι είναι</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="../cards/">Κάρτες λειτουργιών</a></td>
+<td>ο κατάλογος των 14 καρτών και ο τρόπος που διαβάζονται· κάθε κάρτα είναι μια συνταγή για ένα χαρακτηριστικό του παιχνιδιού</td>
+</tr>
+</tbody>
+</table>
+<p>Αν διαλέξετε εικόνες ή ήχους, θα χρειαστείτε και τα <code>make_assets.py</code> (Μάθημα 11) και <code>make_sounds.py</code> (Μάθημα 12), που τα έχετε ήδη.</p>
+<h2 id="_2">Η αποστολή<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
+<p>Στο Μάθημα 14 φτάσατε σε ένα <strong>πρωτότυπο</strong>: παίζεται, έχει έναν βασικό κανόνα και περνά τους πρώτους ελέγχους. Σε αυτό το μάθημα το κάνετε <strong>παιχνίδι</strong>:</p>
+<ol>
+<li>προσθέτετε τα χαρακτηριστικά που λείπουν από την κάρτα project (κύκλος 1),</li>
+<li>το ελέγχετε και διορθώνετε τα λάθη του (κύκλος 2),</li>
+<li>γράφετε τα τελικά κείμενα και το README (κύκλος 3),</li>
+<li>το παρουσιάζετε και παίζετε τα παιχνίδια των άλλων (κύκλος 4).</li>
+</ol>
+<p>Τα τρία τελευταία σημεία ελέγχου είναι:</p>
+<table>
+<thead>
+<tr>
+<th>Σημείο ελέγχου</th>
+<th>Πότε</th>
+<th>Παραδοτέο</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>ΣΕ5</td>
+<td>Μάθημα 15, κύκλος 1</td>
+<td>Σχέδιο επέκτασης</td>
+</tr>
+<tr>
+<td>ΣΕ6</td>
+<td>Μάθημα 15, κύκλος 2</td>
+<td>Πίνακας δοκιμών με τα λάθη που βρέθηκαν και διορθώθηκαν</td>
+</tr>
+<tr>
+<td>ΣΕ7</td>
+<td>Μάθημα 15, κύκλος 3</td>
+<td>Τελικό παιχνίδι και README</td>
+</tr>
+</tbody>
+</table>
+<p>Ο κύκλος 4 δεν έχει σημείο ελέγχου: είναι το <strong>φεστιβάλ παιχνιδιών</strong>.</p>
+<div class="admonition note">
+<p class="admonition-title">Το παιχνίδι παγώνει στο τέλος του κύκλου 2</p>
+<p>Από τον κύκλο 3 και μετά δεν μπαίνουν νέα χαρακτηριστικά: μόνο διορθώσεις, κείμενα, README και παρουσίαση. Ένα παιχνίδι που αλλάζει την τελευταία στιγμή δεν προλαβαίνει να δοκιμαστεί.</p>
+</div>
+<h2 id="_3">Στο τέλος θα μπορείς<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h2>
+<ul>
+<li>να διαλέγεις έως τρία χαρακτηριστικά για το παιχνίδι σου, κάρτες λειτουργιών ή δικούς σου κανόνες, και να γράφεις το σχέδιο επέκτασης με σειρά, χρόνο και νέα κριτήρια.</li>
+<li>να εφαρμόζεις μια κάρτα στο δικό σου project, χωρίς να σβήνεις τον κώδικα που έχεις ήδη.</li>
+<li>να ενώνεις με το χέρι δύο κάρτες που αλλάζουν τα ίδια κομμάτια του κώδικα.</li>
+<li>να διαβάζεις ένα μήνυμα σφάλματος με πολλές γραμμές <code>File</code> και να βρίσκεις πού ξεκίνησε το λάθος.</li>
+<li>να βρίσκεις ένα λάθος με σειρά βημάτων: το επαναλαμβάνεις, το απομονώνεις, τυπώνεις τιμές με <code>print</code> και αλλάζεις ένα πράγμα τη φορά.</li>
+<li>να γράφεις πίνακα δοκιμών και να δοκιμάζεις το παιχνίδι σου με ένα άλλο ζεύγος.</li>
+<li>να γράφεις README με τέσσερις ενότητες και μια ειλικρινή δήλωση βοήθειας.</li>
+<li>να παρουσιάζεις το παιχνίδι σου σε 3′ και να εξηγείς τον κώδικά σου σε ερωτήσεις.</li>
+</ul>
+<h2 id="_4">Πριν αρχίσεις<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h2>
+<ol>
+<li>Μέσα στον φάκελο <code>python-games</code> φτιάξε τον φάκελο <code>15-project-final</code>.</li>
+<li>Αντιγράψτε μέσα του ολόκληρο τον φάκελο του project σας από το <code>14-project-prototype</code>, μαζί με τους υποφακέλους <code>v1</code> και <code>v2</code>. Από εδώ και πέρα δουλεύετε μόνο στον φάκελο του Μαθήματος 15· ο φάκελος του Μαθήματος 14 μένει ως έχει, για να έχετε πάντα το πρωτότυπο.</li>
+<li>Ανοίξτε τον νέο φάκελο στο VS Code και ανοίξτε τερματικό.</li>
+<li>Τρέξτε <code>python check_project.py</code>, για να δείτε από πού ξεκινάτε.</li>
+<li>Διαβάστε την τελευταία εγγραφή του <code>diary.md</code> και την κάρτα project.</li>
+</ol>
+<div class="admonition tip">
+<p class="admonition-title">Ο κύκλος εργασίας</p>
+<p><strong>Αντίγραφο → μία αλλαγή → δοκιμή.</strong> Πριν βάλετε κάτι καινούργιο, κρατάτε αντίγραφο του παιχνιδιού που δουλεύει. Μετά αλλάζετε ένα πράγμα, τρέχετε το <code>check_logic.py</code> και παίζετε. Ό,τι χαλάσει, το βρίσκετε εύκολα, γιατί αλλάξατε μόνο ένα πράγμα.</p>
+</div>
+<hr />
+<h2 id="1">Κύκλος 1 — Επέκταση<a class="headerlink" href="#1" title="Permanent link">&para;</a></h2>
+<p>Στο Μάθημα 14 φτιάξατε τον βασικό κανόνα. Τώρα διαλέγετε τι θα προσθέσετε και το βάζετε στο παιχνίδι σας, με τη βοήθεια των <strong>καρτών λειτουργιών</strong>.</p>
+<h3 id="11">1.1 Τι λείπει από το πρωτότυπο<a class="headerlink" href="#11" title="Permanent link">&para;</a></h3>
+<p>Πάρτε την κάρτα project και παίξτε το πρωτότυπο, όπως στην ενότητα 4.2 του Μαθήματος 14. Για κάθε κριτήριο γράψτε αν δουλεύει ήδη. Τα κριτήρια που δεν δουλεύουν είναι η δουλειά που απομένει.</p>
+<p>Ξαναδείτε και τις τρεις λίστες της ενότητας 2.6 του Μαθήματος 14, στο τέλος του <code>design.md</code>: <strong>πρέπει</strong>, <strong>θα ήθελα</strong> και <strong>αν μείνει χρόνος</strong>. Ο βασικός κανόνας («πρέπει») υπάρχει ήδη. Από τα «θα ήθελα» βγαίνουν οι επεκτάσεις του Μαθήματος 15.</p>
+<h3 id="12">1.2 Οι κάρτες λειτουργιών<a class="headerlink" href="#12" title="Permanent link">&para;</a></h3>
+<p>Μια <strong>κάρτα λειτουργίας</strong> είναι μια συνταγή για ένα χαρακτηριστικό που έχουν πολλά παιχνίδια, όπως οι ζωές ή ο χρόνος. Δείχνει τι ακριβώς γράφεις και σε ποιο αρχείο, πώς το δοκιμάζεις και τι πάει συνήθως στραβά. Κάθε κάρτα είναι γραμμένη πάνω στο <strong>πρότυπο</strong> του Μαθήματος 14 και δουλεύει μόνη της πάνω σε αυτό.</p>
+<p>Πριν διαβάσεις την πρώτη κάρτα, διάβασε τον <a href="../cards/">οδηγό των καρτών</a>: εξηγεί τον τίτλο κάθε μπλοκ κώδικα (π.χ. <code>game.py · αντικατάσταση: draw_hud</code>) και τα σχόλια <code># ← ΝΕΟ</code> και <code># ← ΑΛΛΑΞΕ</code>, που δείχνουν ποιες γραμμές πρόσθεσε ή άλλαξε η κάρτα.</p>
+<table>
+<thead>
+<tr>
+<th>Θέλω …</th>
+<th>Κάρτα</th>
+<th>Χρόνος</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>ο παίκτης να έχει δεύτερη ευκαιρία</td>
+<td><a href="../cards/lives/">Ζωές</a></td>
+<td>20′</td>
+</tr>
+<tr>
+<td>πίεση χρόνου</td>
+<td><a href="../cards/countdown/">Αντίστροφη μέτρηση</a></td>
+<td>15′</td>
+</tr>
+<tr>
+<td>το παιχνίδι να δυσκολεύει όσο προχωρά</td>
+<td><a href="../cards/levels/">Επίπεδα</a></td>
+<td>20′</td>
+</tr>
+<tr>
+<td>το καλύτερο σκορ</td>
+<td><a href="../cards/record/">Ρεκόρ</a></td>
+<td>20′</td>
+</tr>
+<tr>
+<td>το ρεκόρ να μένει και μετά το κλείσιμο</td>
+<td><a href="../cards/record-file/">Ρεκόρ σε αρχείο</a></td>
+<td>20′</td>
+</tr>
+<tr>
+<td>κλικ με το ποντίκι</td>
+<td><a href="../cards/mouse/">Κλικ με το ποντίκι</a></td>
+<td>30′</td>
+</tr>
+<tr>
+<td>πτώση και άλμα</td>
+<td><a href="../cards/gravity/">Βαρύτητα και άλμα</a></td>
+<td>30′</td>
+</tr>
+<tr>
+<td>να παγώνει το παιχνίδι</td>
+<td><a href="../cards/pause/">Παύση</a></td>
+<td>20′</td>
+</tr>
+<tr>
+<td>οθόνη με οδηγίες</td>
+<td><a href="../cards/help-screen/">Οθόνη οδηγιών</a></td>
+<td>20′</td>
+</tr>
+<tr>
+<td>αντικείμενα που εμφανίζονται και φεύγουν</td>
+<td><a href="../cards/objects/">Πολλά αντικείμενα</a></td>
+<td>30′</td>
+</tr>
+<tr>
+<td>να καταλαβαίνει το παιχνίδι πότε δύο αντικείμενα ακουμπούν</td>
+<td><a href="../cards/collisions/">Συγκρούσεις</a></td>
+<td>30′</td>
+</tr>
+<tr>
+<td>τυχαία σειρά</td>
+<td><a href="../cards/shuffle/">Ανακάτεμα</a></td>
+<td>25′</td>
+</tr>
+<tr>
+<td>εικόνες</td>
+<td><a href="../cards/images/">Εικόνες</a></td>
+<td>25′</td>
+</tr>
+<tr>
+<td>ήχους και μουσική</td>
+<td><a href="../cards/sounds/">Ήχοι και μουσική</a></td>
+<td>20′</td>
+</tr>
+</tbody>
+</table>
+<p>Αν δεν βρίσκεις κάρτα για αυτό που θέλεις, φτιάξ' το όπως έφτιαξες τον βασικό κανόνα (Μάθημα 14, ενότητα 4.1): πρώτα τα παραδείγματα, μετά η συνάρτηση, μετά το παιχνίδι. Ρώτα και τον διδάσκοντα.</p>
+<h3 id="13">1.3 Πώς διαλέγετε τι θα φτιάξετε<a class="headerlink" href="#13" title="Permanent link">&para;</a></h3>
+<p>Ό,τι φτιάχνετε σήμερα είναι είτε <strong>κάρτα</strong> είτε <strong>δικός σας κανόνας</strong> (ένα κριτήριο της κάρτας project που δεν υπάρχει σε κάρτα, και το φτιάχνετε όπως τον βασικό κανόνα του Μαθήματος 14). Και για τα δύο ισχύουν οι ίδιοι κανόνες επιλογής:</p>
+<ol>
+<li><strong>Κάθε χαρακτηριστικό υπηρετεί ένα κριτήριο.</strong> Διαλέγετε μια κάρτα επειδή θα προσθέσετε στην κάρτα project ένα κριτήριο «όταν … τότε …» που η κάρτα το κάνει να δουλεύει (π.χ. για τις ζωές: «όταν χαθούν και οι τρεις ζωές, το παιχνίδι τελειώνει»). Αν δεν μπορείτε να γράψετε το κριτήριο, δεν χρειάζεστε την κάρτα. Τα νέα κριτήρια μετρούν στον βαθμό της κατηγορίας «Το παιχνίδι» (ενότητα 3.7).</li>
+<li><strong>Έως τρία χαρακτηριστικά:</strong> δύο σίγουρα και ένα «αν μείνει χρόνος».</li>
+<li><strong>Τα σίγουρα δεν ξεπερνούν τα 40′.</strong> Στους κύκλους 1 και 2 έχετε περίπου 40′ για να γράψετε κώδικα. Για μια κάρτα, ο χρόνος είναι αυτός του πίνακα, που είναι για το πρότυπο· στο δικό σας παιχνίδι θα χρειαστείτε λίγο περισσότερο, γιατί θα προσαρμόσετε ονόματα και θα ενώσετε κώδικα. Για δικό σας κανόνα, υπολογίζετε εσείς (π.χ. 10′ για μια μικρή συνάρτηση με παραδείγματα και τη χρήση της). Γι' αυτό το τρίτο χαρακτηριστικό είναι πάντα «αν μείνει χρόνος», και δεν είναι αποτυχία να μη χωρέσει.</li>
+<li><strong>Δείτε τι χρειάζεται η κάρτα.</strong> Το Ανακάτεμα χρειάζεται την κάρτα Συγκρούσεις και το Ρεκόρ σε αρχείο την κάρτα Ρεκόρ· οι Εικόνες χρειάζονται το <code>make_assets.py</code> και οι Ήχοι το <code>make_sounds.py</code>. Μια κάρτα που χρειάζεται άλλη μετρά και τις δύο στον χρόνο.</li>
+<li><strong>Ένα κριτήριο που δεν θα προλάβετε το σβήνετε από την κάρτα project</strong> πριν από το ΣΕ6, με μια σημείωση στο ημερολόγιο. Η κάρτα πρέπει να μείνει με τουλάχιστον τρία κριτήρια.</li>
+</ol>
+<h3 id="14-project">1.4 Μία κάρτα στο δικό σου project<a class="headerlink" href="#14-project" title="Permanent link">&para;</a></h3>
+<p>Η σειρά είναι πάντα η ίδια:</p>
+<ol>
+<li><strong>Διάβασε ολόκληρη την κάρτα</strong> πριν γράψεις γραμμή: το «Πώς δουλεύει» και το «Έτοιμο όταν».</li>
+<li><strong>Βρες τα ονόματα.</strong> Η κάρτα μιλά για το <code>game["score"]</code>, το <code>PLAYER_SPEED</code> και τα άλλα ονόματα του προτύπου. Αν στο δικό σας παιχνίδι λέγονται αλλιώς, γράψε σε ένα χαρτί τι αντιστοιχεί σε τι.</li>
+<li><strong>Βάλε πρώτα τις δοκιμές</strong> του Βήματος 2 και τρέξε το <code>check_logic.py</code>: αποτυγχάνουν, γιατί η συνάρτηση δεν υπάρχει ακόμη. Μετά βάλε τον κώδικα του <code>logic.py</code> και τρέξ' το ξανά (Μάθημα 14, ενότητα 4.1).</li>
+<li><strong>Βάλε τον κώδικα του <code>game.py</code></strong>, ένα μπλοκ τη φορά, με τη σειρά που γράφονται, και παίξε.</li>
+<li><strong>Σβήσε ό,τι έχει <code>ΣΒΗΣΤΕ ΤΟ</code>.</strong> Είναι προσωρινό: π.χ. στην κάρτα Ζωές, το πλήκτρο Enter προσομοιώνει ένα χτύπημα. Στο δικό σας παιχνίδι το χτύπημα το βρίσκει ο κανόνας σας, και τη <code>hurt</code> την καλείτε από εκεί.</li>
+<li><strong>Έλεγξε το «Έτοιμο όταν»</strong> της κάρτας και κράτησε αντίγραφο σε νέο φάκελο (<code>v3</code>, <code>v4</code>, …), όπως στην ενότητα 3.6 του Μαθήματος 14.</li>
+</ol>
+<p>Το πιο σημαντικό σημείο είναι τα μπλοκ με τίτλο <strong>«αντικατάσταση»</strong>. Το μπλοκ <code>logic.py · αντικατάσταση: new_game</code> της κάρτας Ζωές σβήνει τη <code>new_game</code> και βάζει στη θέση της τη <strong>δική του</strong>, που είναι γραμμένη πάνω στο πρότυπο. Αν εσείς έχετε αλλάξει τη <code>new_game</code>, χάνετε τις αλλαγές σας. Δες ένα παράδειγμα. Ένα ζεύγος που φτιάχνει παιχνίδι με μπαλόνια έχει προσθέσει ένα κλειδί στη <code>new_game</code>:</p>
+<div class="language-python highlight"><span class="filename">logic.py (δικό τους, από το Μάθημα 14)</span><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="k">def</span><span class="w"> </span><span class="nf">new_game</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">):</span>
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="w">    </span><span class="sd">"""Τα δεδομένα ενός νέου παιχνιδιού: ο παίκτης στη θέση (x, y), ο χρόνος και οι πόντοι στο μηδέν."""</span>
+</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>    <span class="k">return</span> <span class="p">{</span><span class="s2">"x"</span><span class="p">:</span> <span class="n">x</span><span class="p">,</span> <span class="s2">"y"</span><span class="p">:</span> <span class="n">y</span><span class="p">,</span> <span class="s2">"time"</span><span class="p">:</span> <span class="mf">0.0</span><span class="p">,</span> <span class="s2">"score"</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span> <span class="s2">"balloon_y"</span><span class="p">:</span> <span class="mf">460.0</span><span class="p">}</span>
+</span></code></pre></div>
+<p>και το χρησιμοποιεί στην <code>update_game</code> (με τη σταθερά <code>BALLOON_SPEED = 60</code> στις ρυθμίσεις):</p>
+<div class="language-python highlight"><span class="filename">game.py (δικό τους, μέσα στην update_game)</span><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>    <span class="n">game</span><span class="p">[</span><span class="s2">"time"</span><span class="p">]</span> <span class="o">+=</span> <span class="n">dt</span>
+</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>    <span class="n">game</span><span class="p">[</span><span class="s2">"balloon_y"</span><span class="p">]</span> <span class="o">-=</span> <span class="n">BALLOON_SPEED</span> <span class="o">*</span> <span class="n">dt</span>
+</span></code></pre></div>
+<p>Βάζουν το μπλοκ της κάρτας Ζωές όπως είναι. Το παιχνίδι σταματά μόλις πατήσουν SPACE στο μενού:</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>Traceback (most recent call last):
+</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>  File "…\game.py", line 179, in &lt;module&gt;
+</span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a>    action = update_game(game, dt)
+</span><span id="__span-2-4"><a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a>  File "…\game.py", line 99, in update_game
+</span><span id="__span-2-5"><a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a>    game["balloon_y"] -= BALLOON_SPEED * dt
+</span><span id="__span-2-6"><a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a>    ~~~~^^^^^^^^^^^^^
+</span><span id="__span-2-7"><a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a>KeyError: 'balloon_y'
+</span></code></pre></div>
+<p>Η κάρτα σβήνει το <code>"balloon_y"</code> από τη <code>new_game</code>. Ο κανόνας είναι:</p>
+<div class="admonition tip">
+<p class="admonition-title">Αντικατάσταση σε κώδικα που έχεις αλλάξει</p>
+<p>Αν το κομμάτι που αντικαθιστά το μπλοκ το έχεις αλλάξει εσύ, <strong>μην το αντικαταστήσεις</strong>. Βάλε το μπλοκ της κάρτας δίπλα στη δική σου συνάρτηση, και πρόσθεσε στη δική σου μόνο ό,τι πρόσθεσε η κάρτα: τις γραμμές με <code># ← ΝΕΟ</code> και <code># ← ΑΛΛΑΞΕ</code>. Η γραμμή <code>def</code> έχει σημαία όταν αλλάζουν τα ορίσματα. Για τη <code>new_game</code> του παραδείγματος, η κάρτα Ζωές προσθέτει ένα όρισμα (<code>lives</code>) και ένα κλειδί (<code>"lives": lives</code>).</p>
+</div>
+<p>Αν το κομμάτι είναι ακόμη όπως στο πρότυπο, η αντικατάσταση είναι ασφαλής.</p>
+<h3 id="15">1.5 Δύο κάρτες μαζί<a class="headerlink" href="#15" title="Permanent link">&para;</a></h3>
+<p>Οι κάρτες είναι γραμμένες η καθεμία πάνω στο πρότυπο, <strong>όχι η μία πάνω στην άλλη</strong>. Αν βάλεις δύο κάρτες χωρίς να σκεφτείς, η δεύτερη σβήνει ό,τι έβαλε η πρώτη στα κοινά κομμάτια. Αυτά συμβαίνουν όταν οι κάρτες εφαρμόζονται με τη σειρά που γράφεται στην πρώτη στήλη:</p>
+<table>
+<thead>
+<tr>
+<th>Κάρτες</th>
+<th>Τι βλέπεις</th>
+<th>Γιατί</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Ζωές, μετά Αντίστροφη μέτρηση</td>
+<td>Η ζώνη δείχνει πόντους και χρόνο, χωρίς ζωές. Όταν πατήσεις Enter: <code>NameError: name 'lose_life' is not defined</code></td>
+<td>Η δεύτερη κάρτα αντικατέστησε την <code>draw_hud</code> και τη γραμμή <code>from logic import …</code>, και έσβησε τα ονόματα της πρώτης</td>
+</tr>
+<tr>
+<td>Ζωές, μετά Παύση</td>
+<td><code>TypeError: new_game() missing 1 required positional argument: 'lives'</code> μόλις τρέξεις το <code>game.py</code></td>
+<td>Η δεύτερη κάρτα αντικατέστησε τον βρόχο και έβαλε ξανά <code>new_game(START_X, START_Y)</code>, με δύο ορίσματα</td>
+</tr>
+<tr>
+<td>Ζωές, μετά Πολλά αντικείμενα</td>
+<td><code>KeyError: 'lives'</code> μόλις πατήσεις SPACE στο μενού</td>
+<td>Η δεύτερη κάρτα αντικατέστησε τη <code>new_game</code> και έσβησε το <code>"lives"</code></td>
+</tr>
+<tr>
+<td>Παύση, μετά Οθόνη οδηγιών</td>
+<td><code>Πέρασαν 24 από 27 δοκιμές. Λάθος: 3.</code> στο <code>check_logic.py</code></td>
+<td>Η δεύτερη κάρτα αντικατέστησε τον πίνακα <code>TRANSITIONS</code> και έσβησε τις γραμμές της πρώτης</td>
+</tr>
+</tbody>
+</table>
+<p>Πρόσεξε ότι η πρώτη γραμμή του πίνακα έχει δύο συμπτώματα, και το πρώτο (οι ζωές που λείπουν από τη ζώνη) δεν δίνει κανένα μήνυμα. Μια ένωση που «δουλεύει» δεν είναι απαραίτητα σωστή: γι' αυτό δοκιμάζεις το παιχνίδι μετά από κάθε κάρτα.</p>
+<p>Η ένωση γίνεται με το χέρι, μπλοκ προς μπλοκ. Ο τίτλος κάθε μπλοκ λέει τι να κάνεις:</p>
+<table>
+<thead>
+<tr>
+<th>Τίτλος του μπλοκ</th>
+<th>Τι κάνεις στη δεύτερη κάρτα</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>… · προσθήκη στο τέλος</code>, <code>game.py · εισαγωγή στην αρχή</code>, <code>game.py · ρυθμίσεις</code>, <code>game.py · κανόνες</code>, <code>game.py · σχεδίαση</code>, <code>check_logic.py · νέες δοκιμές</code></td>
+<td>Το βάζεις όπως είναι: δεν σβήνει τίποτα.</td>
+</tr>
+<tr>
+<td><code>game.py · εισαγωγές από το logic</code></td>
+<td>Δεν αντικαθιστάς τη γραμμή. Προσθέτεις τα νέα ονόματα στη γραμμή <code>from logic import …</code> που έχεις.</td>
+</tr>
+<tr>
+<td><code>… · αντικατάσταση: όνομα</code>, <code>game.py · ο βρόχος του παιχνιδιού</code>, <code>game.py · γραμμή με το: …</code>, <code>check_logic.py · αντικατάσταση δοκιμής: όνομα</code></td>
+<td>Αν το κομμάτι το έχει αλλάξει η πρώτη κάρτα ή εσύ, δεν το αντικαθιστάς: προσθέτεις τις γραμμές με <code># ← ΝΕΟ</code> και <code># ← ΑΛΛΑΞΕ</code>.</td>
+</tr>
+</tbody>
+</table>
+<p>Ως παράδειγμα, ας βάλουμε την Αντίστροφη μέτρηση πάνω στο πρότυπο που έχει ήδη τις Ζωές. Τα μπλοκ της Αντίστροφης μέτρησης που δεν αλλάζουν κοινά κομμάτια τα βάζουμε όπως είναι: την <code>time_left</code> (<code>logic.py · προσθήκη στο τέλος</code>), τις δοκιμές της, τη σταθερά <code>TIME_LIMIT</code> (που αντικαθιστά το <code>DEMO_SECONDS</code>, κάτι που οι Ζωές δεν άγγιξαν) και τη γραμμή της <code>update_game</code> με το <code>&gt;= DEMO_SECONDS</code>. Μένουν δύο μπλοκ που συγκρούονται με τις Ζωές, και τα ενώνουμε. Πρώτα η γραμμή των εισαγωγών, με τα ονόματα και των δύο καρτών:</p>
+<div class="language-python highlight"><span class="filename">game.py · εισαγωγές από το logic</span><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="kn">from</span><span class="w"> </span><span class="nn">logic</span><span class="w"> </span><span class="kn">import</span> <span class="n">GAME_OVER</span><span class="p">,</span> <span class="n">MENU</span><span class="p">,</span> <span class="n">PLAYING</span><span class="p">,</span> <span class="n">lose_life</span><span class="p">,</span> <span class="n">move</span><span class="p">,</span> <span class="n">new_game</span><span class="p">,</span> <span class="n">next_state</span><span class="p">,</span> <span class="n">time_left</span>
+</span></code></pre></div>
+<p>Και μετά η <code>draw_hud</code>, που κρατά τη γραμμή των ζωών και βάζει τον χρόνο στη θέση της οδηγίας, όπως έκανε η κάρτα Αντίστροφη μέτρηση:</p>
+<div class="language-python highlight"><span class="filename">game.py · αντικατάσταση: draw_hud</span><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="k">def</span><span class="w"> </span><span class="nf">draw_hud</span><span class="p">(</span><span class="n">surface</span><span class="p">,</span> <span class="n">font</span><span class="p">,</span> <span class="n">game</span><span class="p">):</span>
+</span><span id="__span-4-2"><a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a><span class="w">    </span><span class="sd">"""Ζωγραφίζει τη ζώνη των ενδείξεων."""</span>
+</span><span id="__span-4-3"><a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a>    <span class="n">left</span> <span class="o">=</span> <span class="n">time_left</span><span class="p">(</span><span class="n">TIME_LIMIT</span><span class="p">,</span> <span class="n">game</span><span class="p">[</span><span class="s2">"time"</span><span class="p">])</span>                                                      <span class="c1"># ← ΝΕΟ</span>
+</span><span id="__span-4-4"><a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a>    <span class="n">pygame</span><span class="o">.</span><span class="n">draw</span><span class="o">.</span><span class="n">rect</span><span class="p">(</span><span class="n">surface</span><span class="p">,</span> <span class="n">HUD_COLOR</span><span class="p">,</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="n">WIDTH</span><span class="p">,</span> <span class="n">HUD_HEIGHT</span><span class="p">))</span>
+</span><span id="__span-4-5"><a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a>    <span class="n">draw_text</span><span class="p">(</span><span class="n">surface</span><span class="p">,</span> <span class="n">font</span><span class="p">,</span> <span class="sa">f</span><span class="s2">"Πόντοι: </span><span class="si">{</span><span class="n">game</span><span class="p">[</span><span class="s1">'score'</span><span class="p">]</span><span class="si">}</span><span class="s2">"</span><span class="p">,</span> <span class="n">YELLOW</span><span class="p">,</span> <span class="p">(</span><span class="mi">20</span><span class="p">,</span> <span class="mi">14</span><span class="p">))</span>
+</span><span id="__span-4-6"><a id="__codelineno-4-6" name="__codelineno-4-6" href="#__codelineno-4-6"></a>    <span class="n">draw_centered_text</span><span class="p">(</span><span class="n">surface</span><span class="p">,</span> <span class="n">font</span><span class="p">,</span> <span class="sa">f</span><span class="s2">"Ζωές: </span><span class="si">{</span><span class="n">game</span><span class="p">[</span><span class="s1">'lives'</span><span class="p">]</span><span class="si">}</span><span class="s2">"</span><span class="p">,</span> <span class="n">WHITE</span><span class="p">,</span> <span class="p">(</span><span class="n">WIDTH</span> <span class="o">//</span> <span class="mi">2</span><span class="p">,</span> <span class="n">HUD_HEIGHT</span> <span class="o">//</span> <span class="mi">2</span><span class="p">))</span>      <span class="c1"># ← ΝΕΟ</span>
+</span><span id="__span-4-7"><a id="__codelineno-4-7" name="__codelineno-4-7" href="#__codelineno-4-7"></a>    <span class="n">draw_text</span><span class="p">(</span><span class="n">surface</span><span class="p">,</span> <span class="n">font</span><span class="p">,</span> <span class="sa">f</span><span class="s2">"Χρόνος: </span><span class="si">{</span><span class="n">left</span><span class="si">}</span><span class="s2">"</span><span class="p">,</span> <span class="n">RED</span> <span class="k">if</span> <span class="n">left</span> <span class="o">&lt;=</span> <span class="mi">10</span> <span class="k">else</span> <span class="n">GREY</span><span class="p">,</span> <span class="p">(</span><span class="n">WIDTH</span> <span class="o">-</span> <span class="mi">180</span><span class="p">,</span> <span class="mi">14</span><span class="p">))</span>     <span class="c1"># ← ΑΛΛΑΞΕ: ο χρόνος αντί για την οδηγία</span>
+</span></code></pre></div>
+<p>Τώρα η ζώνη δείχνει <code>Πόντοι</code>, <code>Ζωές</code> και <code>Χρόνος</code>, το Enter αφαιρεί ζωές και ο χρόνος μετράει προς τα πίσω. Το <code>check_logic.py</code> περνά και τις 28 δοκιμές: 18 του προτύπου, 3 των Ζωών και 7 της Αντίστροφης μέτρησης. Με αυτή τη σειρά δουλεύεις πάντα:</p>
+<ol>
+<li>Εφάρμοσε την πρώτη κάρτα και δοκίμασε. Κράτησε αντίγραφο.</li>
+<li>Για τη δεύτερη, διάβασε πρώτα τους τίτλους όλων των μπλοκ και βρες ποια συγκρούονται.</li>
+<li>Ένωσε τα μπλοκ που συγκρούονται και βάλε τα υπόλοιπα όπως είναι.</li>
+<li>Τρέξε το <code>check_logic.py</code>, παίξε και τρέξε το <code>check_project.py</code>.</li>
+</ol>
+<h3 id="16">1.6 Το σχέδιο επέκτασης<a class="headerlink" href="#16" title="Permanent link">&para;</a></h3>
+<p>Πριν γράψετε κώδικα, γράφετε ένα μικρό σχέδιο, στο αρχείο <code>extension-plan.md</code>. Έχει τρία μέρη: τι λείπει από το πρωτότυπο, τι φτιάχνετε (με σειρά, κριτήριο, χρόνο και σημάδι «σίγουρο» ή «αν μείνει χρόνος») και τι κόβετε αν δεν προλάβετε. Για να δεις πώς γράφεται, ας πούμε ότι το Φίδι του Μαθήματος 13 ήταν δικό σας project, χτισμένο πάνω στο πρότυπο:</p>
+<div class="language-markdown highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="gh"># Σχέδιο επέκτασης: Φίδι</span>
+</span><span id="__span-5-2"><a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a>
+</span><span id="__span-5-3"><a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a><span class="gu">## Τι λείπει από το πρωτότυπο</span>
+</span><span id="__span-5-4"><a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a>
+</span><span id="__span-5-5"><a id="__codelineno-5-5" name="__codelineno-5-5" href="#__codelineno-5-5"></a>| Κριτήριο της κάρτας project | Δουλεύει ήδη; |
+</span><span id="__span-5-6"><a id="__codelineno-5-6" name="__codelineno-5-6" href="#__codelineno-5-6"></a>|---|---|
+</span><span id="__span-5-7"><a id="__codelineno-5-7" name="__codelineno-5-7" href="#__codelineno-5-7"></a>| 1. Όταν το κεφάλι φτάσει στην τροφή, το φίδι μεγαλώνει κατά ένα κελί. | ναι |
+</span><span id="__span-5-8"><a id="__codelineno-5-8" name="__codelineno-5-8" href="#__codelineno-5-8"></a>| 2. Όταν το κεφάλι βγει από το πλέγμα ή μπει στο σώμα του, το παιχνίδι τελειώνει. | ναι |
+</span><span id="__span-5-9"><a id="__codelineno-5-9" name="__codelineno-5-9" href="#__codelineno-5-9"></a>| 3. Το φίδι δεν γυρίζει πίσω. | ναι |
+</span><span id="__span-5-10"><a id="__codelineno-5-10" name="__codelineno-5-10" href="#__codelineno-5-10"></a>| 4. Όσο περισσότεροι οι πόντοι, τόσο πιο γρήγορα κινείται το φίδι. | όχι |
+</span><span id="__span-5-11"><a id="__codelineno-5-11" name="__codelineno-5-11" href="#__codelineno-5-11"></a>
+</span><span id="__span-5-12"><a id="__codelineno-5-12" name="__codelineno-5-12" href="#__codelineno-5-12"></a><span class="gu">## Τι φτιάχνουμε</span>
+</span><span id="__span-5-13"><a id="__codelineno-5-13" name="__codelineno-5-13" href="#__codelineno-5-13"></a>
+</span><span id="__span-5-14"><a id="__codelineno-5-14" name="__codelineno-5-14" href="#__codelineno-5-14"></a>| Σειρά | Τι | Κριτήριο | Λεπτά | Σίγουρο |
+</span><span id="__span-5-15"><a id="__codelineno-5-15" name="__codelineno-5-15" href="#__codelineno-5-15"></a>|---|---|---|---|---|
+</span><span id="__span-5-16"><a id="__codelineno-5-16" name="__codelineno-5-16" href="#__codelineno-5-16"></a>| 1 | δικός μας κανόνας: η <span class="sb">`step_interval`</span> | 4. Όσο περισσότεροι οι πόντοι, τόσο πιο γρήγορα κινείται το φίδι. | 10′ | ναι |
+</span><span id="__span-5-17"><a id="__codelineno-5-17" name="__codelineno-5-17" href="#__codelineno-5-17"></a>| 2 | κάρτα Παύση | 5. Όταν πατηθεί το P, το παιχνίδι παγώνει και ξαναρχίζει με το P. | 20′ | ναι |
+</span><span id="__span-5-18"><a id="__codelineno-5-18" name="__codelineno-5-18" href="#__codelineno-5-18"></a>| 3 | κάρτα Ήχοι και μουσική | 6. Όταν το φίδι τρώει, ακούγεται ήχος. | 20′ | αν μείνει χρόνος |
+</span><span id="__span-5-19"><a id="__codelineno-5-19" name="__codelineno-5-19" href="#__codelineno-5-19"></a>
+</span><span id="__span-5-20"><a id="__codelineno-5-20" name="__codelineno-5-20" href="#__codelineno-5-20"></a>Σύνολο λεπτών των σίγουρων: 30′
+</span><span id="__span-5-21"><a id="__codelineno-5-21" name="__codelineno-5-21" href="#__codelineno-5-21"></a>
+</span><span id="__span-5-22"><a id="__codelineno-5-22" name="__codelineno-5-22" href="#__codelineno-5-22"></a><span class="gu">## Αν δεν προλάβουμε, κόβουμε</span>
+</span><span id="__span-5-23"><a id="__codelineno-5-23" name="__codelineno-5-23" href="#__codelineno-5-23"></a>
+</span><span id="__span-5-24"><a id="__codelineno-5-24" name="__codelineno-5-24" href="#__codelineno-5-24"></a>Τους ήχους: το παιχνίδι μένει σιωπηλό και σβήνουμε το κριτήριο 6 από την κάρτα project.
+</span></code></pre></div>
+<p>Το κριτήριο 4 ήταν ήδη στην κάρτα project και δεν δουλεύει ακόμη: το φτιάχνει η <code>step_interval</code>, που σχεδιάστηκε με τα παραδείγματά της στο Μάθημα 14 (ενότητα 2.4). Δεν είναι κάρτα· είναι δικός τους κανόνας, και μπαίνει πρώτος γιατί από αυτόν εξαρτάται το παιχνίδι. Τα κριτήρια 5 και 6 είναι νέα: τα προσθέτουν στην κάρτα project, γιατί τα υπηρετούν οι κάρτες.</p>
+<h3 id="5">Σημείο ελέγχου ΣΕ5 — Το σχέδιο επέκτασης<a class="headerlink" href="#5" title="Permanent link">&para;</a></h3>
+<p>Το <code>extension-plan.md</code> έχει: τα κριτήρια της κάρτας project με το αν δουλεύουν, έως τρία χαρακτηριστικά (κάρτες ή δικούς σας κανόνες) με σειρά, κριτήριο, χρόνο και σημάδι «ναι» ή «αν μείνει χρόνος», σίγουρα χαρακτηριστικά έως 40′, και τι κόβετε αν δεν προλάβετε. Στην κάρτα project έχετε προσθέσει τα νέα κριτήρια. Ο διδάσκων το υπογράφει και ξεκινάτε με το πρώτο χαρακτηριστικό.</p>
+<p><strong>Συνέχισε στο Φύλλο εργασίας, Κύκλος 1.</strong></p>
+<hr />
+<h2 id="2">Κύκλος 2 — Έλεγχος και αποσφαλμάτωση<a class="headerlink" href="#2" title="Permanent link">&para;</a></h2>
+<p>Κάθε προγραμματιστής βλέπει σφάλματα. Η διαφορά είναι ότι ένας έμπειρος προγραμματιστής τα βρίσκει με σειρά και δεν μαντεύει. Σε αυτόν τον κύκλο μαθαίνετε τη σειρά, φτιάχνετε έναν πίνακα δοκιμών και δοκιμάζετε το παιχνίδι σας μαζί με ένα άλλο ζεύγος.</p>
+<h3 id="21">2.1 Το μήνυμα σφάλματος, με πολλές γραμμές<a class="headerlink" href="#21" title="Permanent link">&para;</a></h3>
+<p>Στο Μάθημα 1 (ενότητα 1.6) διάβασες ένα μήνυμα σφάλματος με μία γραμμή <code>File</code>. Σε ένα παιχνίδι το σφάλμα γίνεται συνήθως μέσα σε μια συνάρτηση που την κάλεσε άλλη, και το μήνυμα έχει <strong>μία γραμμή <code>File</code> για κάθε κλήση</strong>. Δες το σφάλμα της πρώτης γραμμής του πίνακα της ενότητας 1.5: το παιχνίδι με τις Ζωές και την Αντίστροφη μέτρηση, όταν πατάς Enter. Στο δικό σου μήνυμα η διαδρομή του αρχείου είναι ολόκληρη· εδώ την κόψαμε και γράψαμε <code>…</code>.</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>Traceback (most recent call last):
+</span><span id="__span-6-2"><a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a>  File "…\game.py", line 168, in &lt;module&gt;
+</span><span id="__span-6-3"><a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a>    result = hurt(game)                               # ← ΝΕΟ
+</span><span id="__span-6-4"><a id="__codelineno-6-4" name="__codelineno-6-4" href="#__codelineno-6-4"></a>  File "…\game.py", line 106, in hurt
+</span><span id="__span-6-5"><a id="__codelineno-6-5" name="__codelineno-6-5" href="#__codelineno-6-5"></a>    game["lives"] = lose_life(game["lives"])
+</span><span id="__span-6-6"><a id="__codelineno-6-6" name="__codelineno-6-6" href="#__codelineno-6-6"></a>                    ^^^^^^^^^
+</span><span id="__span-6-7"><a id="__codelineno-6-7" name="__codelineno-6-7" href="#__codelineno-6-7"></a>NameError: name 'lose_life' is not defined
+</span></code></pre></div>
+<p>Διάβασέ το <strong>από κάτω προς τα πάνω</strong>:</p>
+<ol>
+<li><strong>Η τελευταία γραμμή</strong> λέει <em>τι</em> πήγε στραβά: <code>NameError</code>, το όνομα <code>lose_life</code> δεν υπάρχει.</li>
+<li><strong>Η τελευταία γραμμή <code>File</code></strong> λέει <em>πού</em>: στο <code>game.py</code>, στη γραμμή 106, μέσα στη συνάρτηση <code>hurt</code>. Από κάτω φαίνονται η γραμμή του κώδικα και το σημείο όπου έγινε το σφάλμα (<code>^^^^^^^^^</code>).</li>
+<li><strong>Οι γραμμές <code>File</code> πιο πάνω</strong> λένε <em>ποιος κάλεσε</em> τη συνάρτηση: στη γραμμή 168, στο κύριο πρόγραμμα (<code>&lt;module&gt;</code>), κλήθηκε η <code>hurt</code>.</li>
+</ol>
+<p>Η γραμμή 106 είναι σωστή. Το λάθος δεν είναι εκεί, αλλά στο ότι το <code>game.py</code> δεν ξέρει το όνομα <code>lose_life</code>. Ρώτα: <strong>από πού έρχεται αυτό το όνομα;</strong> Έρχεται από το <code>logic.py</code> και πρέπει να υπάρχει στη γραμμή <code>from logic import …</code>. Το μήνυμα σου δείχνει πού βρέθηκε το πρόβλημα· η αιτία μπορεί να είναι αλλού.</p>
+<p>Το <code>check_project.py</code> βρίσκει το ίδιο σφάλμα χωρίς να παίξεις, γιατί πατά και το Enter όσο τρέχει το παιχνίδι:</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>Το παιχνίδι
+</span><span id="__span-7-2"><a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a>  [ΛΑΘΟΣ] Το παιχνίδι σταμάτησε με σφάλμα
+</span><span id="__span-7-3"><a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a>      NameError: name 'lose_life' is not defined
+</span><span id="__span-7-4"><a id="__codelineno-7-4" name="__codelineno-7-4" href="#__codelineno-7-4"></a>      γραμμή 106 του game.py, στο καρέ 5
+</span></code></pre></div>
+<p>Τα σφάλματα που θα δεις πιο συχνά σε ένα project:</p>
+<table>
+<thead>
+<tr>
+<th>Σφάλμα</th>
+<th>Συνήθης αιτία στο project</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>NameError</code></td>
+<td>Ξέχασες να εισαγάγεις ένα όνομα από το <code>logic.py</code>, ή το έγραψες αλλιώς</td>
+</tr>
+<tr>
+<td><code>TypeError: … missing 1 required positional argument</code></td>
+<td>Κάλεσες μια συνάρτηση με λιγότερα ορίσματα από όσα ζητά (π.χ. <code>new_game</code> χωρίς τις ζωές)</td>
+</tr>
+<tr>
+<td><code>KeyError</code></td>
+<td>Χρησιμοποιείς ένα κλειδί του <code>game</code> που δεν το φτιάχνει η <code>new_game</code></td>
+</tr>
+<tr>
+<td><code>ImportError: cannot import name …</code></td>
+<td>Η γραμμή <code>from logic import …</code> ζητά όνομα που δεν υπάρχει στο <code>logic.py</code></td>
+</tr>
+<tr>
+<td><code>SyntaxError</code>, <code>IndentationError</code></td>
+<td>Λάθος εσοχή, ή παρένθεση ή εισαγωγικό που δεν έκλεισε, συνήθως μετά από επικόλληση κώδικα</td>
+</tr>
+</tbody>
+</table>
+<h3 id="22">2.2 Πώς βρίσκεις το λάθος<a class="headerlink" href="#22" title="Permanent link">&para;</a></h3>
+<p>Όταν κάτι δεν δουλεύει, ακολούθησε τη σειρά:</p>
+<ol>
+<li><strong>Επανάλαβε το λάθος.</strong> Βρες τα λιγότερα πλήκτρα που το προκαλούν και γράψ' τα. Αν δεν μπορείς να το επαναλάβεις, δεν μπορείς να ξέρεις ότι το διόρθωσες.</li>
+<li><strong>Βρες σε ποιο αρχείο είναι.</strong> Τρέξε το <code>check_logic.py</code>. Αν αποτυγχάνει, το λάθος είναι στο <code>logic.py</code> (ή στο παράδειγμα). Αν περνά, το λάθος είναι στο <code>game.py</code>, ή λείπει ένα παράδειγμα για την περίπτωση που το προκαλεί.</li>
+<li><strong>Τύπωσε τις τιμές.</strong> Βάλε <code>print</code> πριν και μετά από τη γραμμή που υποψιάζεσαι, και δες τι κρατά η μεταβλητή. Γράψε στο τέλος κάθε <code>print</code> το σχόλιο <code># ΣΒΗΣΤΕ ΤΟ</code>: το <code>check_project.py</code> θα σου θυμίσει να το σβήσεις.</li>
+<li><strong>Άλλαξε ένα πράγμα</strong> και δοκίμασε ξανά.</li>
+<li><strong>Κράτησε τη δοκιμή.</strong> Αν το λάθος ήταν στη λογική, πρόσθεσε στο <code>check_logic.py</code> το παράδειγμα που θα το είχε πιάσει. Αν ήταν στο <code>game.py</code>, γράψε στον πίνακα δοκιμών (ενότητα 2.3) τα πλήκτρα που το προκαλούσαν.</li>
+<li><strong>Σβήσε τα <code>print</code>.</strong></li>
+</ol>
+<p>Ένα παράδειγμα, στο παιχνίδι με τις Ζωές. Πατάς Enter και η ένδειξη μένει <code>Ζωές: 3</code>. Η σειρά:</p>
+<ul>
+<li><strong>Βήμα 1:</strong> πατάς SPACE και μετά Enter, και η ένδειξη μένει <code>Ζωές: 3</code> κάθε φορά. Το λάθος επαναλαμβάνεται.</li>
+<li><strong>Βήμα 2:</strong> το <code>check_logic.py</code> δείχνει <code>ΟΛΑ ΟΚ: 21 από 21 δοκιμές.</code> Η <code>lose_life</code> δουλεύει, άρα το λάθος είναι στο <code>game.py</code>, εκεί που τη χρησιμοποιούμε: στη <code>hurt</code>.</li>
+<li><strong>Βήμα 3:</strong> βάζεις δύο <code>print</code> γύρω από την ύποπτη γραμμή:</li>
+</ul>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-8-1"><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a><span class="k">def</span><span class="w"> </span><span class="nf">hurt</span><span class="p">(</span><span class="n">game</span><span class="p">):</span>
+</span><span id="__span-8-2"><a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a><span class="w">    </span><span class="sd">"""Ο παίκτης χτυπήθηκε: χάνει μια ζωή. Επιστρέφει "lose" όταν δεν έμεινε καμία ζωή, αλλιώς None."""</span>
+</span><span id="__span-8-3"><a id="__codelineno-8-3" name="__codelineno-8-3" href="#__codelineno-8-3"></a>    <span class="nb">print</span><span class="p">(</span><span class="s2">"πριν:"</span><span class="p">,</span> <span class="n">game</span><span class="p">[</span><span class="s2">"lives"</span><span class="p">])</span>                  <span class="c1"># ΣΒΗΣΤΕ ΤΟ</span>
+</span><span id="__span-8-4"><a id="__codelineno-8-4" name="__codelineno-8-4" href="#__codelineno-8-4"></a>    <span class="n">lose_life</span><span class="p">(</span><span class="n">game</span><span class="p">[</span><span class="s2">"lives"</span><span class="p">])</span>
+</span><span id="__span-8-5"><a id="__codelineno-8-5" name="__codelineno-8-5" href="#__codelineno-8-5"></a>    <span class="nb">print</span><span class="p">(</span><span class="s2">"μετά:"</span><span class="p">,</span> <span class="n">game</span><span class="p">[</span><span class="s2">"lives"</span><span class="p">])</span>                  <span class="c1"># ΣΒΗΣΤΕ ΤΟ</span>
+</span><span id="__span-8-6"><a id="__codelineno-8-6" name="__codelineno-8-6" href="#__codelineno-8-6"></a>    <span class="k">if</span> <span class="n">game</span><span class="p">[</span><span class="s2">"lives"</span><span class="p">]</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+</span><span id="__span-8-7"><a id="__codelineno-8-7" name="__codelineno-8-7" href="#__codelineno-8-7"></a>        <span class="k">return</span> <span class="s2">"lose"</span>
+</span><span id="__span-8-8"><a id="__codelineno-8-8" name="__codelineno-8-8" href="#__codelineno-8-8"></a>    <span class="k">return</span> <span class="kc">None</span>
+</span></code></pre></div>
+<p>Τρέχεις το παιχνίδι από το τερματικό, πατάς SPACE και μετά δύο φορές Enter. Το <code>print</code> γράφει στο τερματικό, εκεί που έτρεξες το <code>python game.py</code>:</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-9-1"><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a>πριν: 3
+</span><span id="__span-9-2"><a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a>μετά: 3
+</span><span id="__span-9-3"><a id="__codelineno-9-3" name="__codelineno-9-3" href="#__codelineno-9-3"></a>πριν: 3
+</span><span id="__span-9-4"><a id="__codelineno-9-4" name="__codelineno-9-4" href="#__codelineno-9-4"></a>μετά: 3
+</span></code></pre></div>
+<p>Η τιμή δεν αλλάζει, ενώ η <code>lose_life</code> υπολογίζει 2. Άρα η νέα τιμή υπολογίζεται και <strong>δεν αποθηκεύεται</strong>: στη γραμμή <code>lose_life(game["lives"])</code> λείπει το <code>game["lives"] =</code>. Αυτό ήταν το <strong>βήμα 4</strong>: διορθώνεις τη γραμμή και δοκιμάζεις ξανά.</p>
+<p>Το <code>check_project.py</code> δεν θα σε αφήσει να ξεχάσεις τα <code>print</code>, αφού έχουν το <code># ΣΒΗΣΤΕ ΤΟ</code>:</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-10-1"><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a>  [ΛΑΘΟΣ] Έμειναν προσωρινά κομμάτια του προτύπου (σχόλια «ΣΒΗΣΤΕ ΤΟ»)
+</span><span id="__span-10-2"><a id="__codelineno-10-2" name="__codelineno-10-2" href="#__codelineno-10-2"></a>      ...
+</span><span id="__span-10-3"><a id="__codelineno-10-3" name="__codelineno-10-3" href="#__codelineno-10-3"></a>      game.py, γραμμή 106: print("πριν:", game["lives"])                  # ΣΒΗΣΤΕ ΤΟ
+</span><span id="__span-10-4"><a id="__codelineno-10-4" name="__codelineno-10-4" href="#__codelineno-10-4"></a>      game.py, γραμμή 108: print("μετά:", game["lives"])                  # ΣΒΗΣΤΕ ΤΟ
+</span></code></pre></div>
+<p>Στο <strong>βήμα 5</strong>, επειδή το λάθος ήταν στο <code>game.py</code>, γράφεις στον πίνακα δοκιμών τη δοκιμή «Enter μία φορά, αναμένω <code>Ζωές: 2</code>». Στο <strong>βήμα 6</strong> σβήνεις τα δύο <code>print</code>. Και ό,τι σου έμαθε το λάθος μπαίνει στο ημερολόγιο.</p>
+<div class="admonition tip">
+<p class="admonition-title">Το print δεν μαντεύει, μετράει</p>
+<p>Μην αλλάζεις κώδικα «για να δεις». Με ένα <code>print</code> ρωτάς το πρόγραμμα τι ακριβώς γίνεται, και η απάντηση σου λέει σε ποιο σημείο η τιμή παύει να είναι αυτή που περιμένεις. Ένα <code>print</code> μέσα στην <code>update_game</code> γράφει 60 γραμμές το δευτερόλεπτο· βάλ' το εκεί που γίνεται κάτι ενδιαφέρον, όπως στο χτύπημα.</p>
+</div>
+<h3 id="23">2.3 Ο πίνακας δοκιμών<a class="headerlink" href="#23" title="Permanent link">&para;</a></h3>
+<p>Ο πίνακας δοκιμών είναι το αρχείο <code>test-table.md</code>. Κάθε γραμμή του είναι μία δοκιμή: <strong>τι κάνατε</strong>, <strong>τι περιμένατε</strong>, <strong>τι έγινε</strong>, και αν υπήρχε λάθος, <strong>τι διορθώσατε</strong>. Οι δοκιμές που κάνετε πάντα, σε κάθε παιχνίδι:</p>
+<ol>
+<li><strong>Κάθε κριτήριο της κάρτας project</strong>, παίζοντας, μαζί με τα νέα κριτήρια της ενότητας 1.3.</li>
+<li><strong>Η έναρξη:</strong> το πρόγραμμα ανοίγει στο μενού και το SPACE ξεκινά το παιχνίδι.</li>
+<li><strong>Το τέλος και η επανάληψη:</strong> μετά το «Τέλος παιχνιδιού», το SPACE ξεκινά νέο παιχνίδι <strong>από την αρχή</strong>: πόντοι, χρόνος και ζωές όπως στην αρχή.</li>
+<li><strong>Το ESC:</strong> από το παιχνίδι πηγαίνει στο μενού, και από εκεί το SPACE ξεκινά <strong>νέο</strong> παιχνίδι, όχι συνέχεια. Αν θέλετε συνέχεια, πρέπει να τη σχεδιάσετε (κάρτα Παύση).</li>
+<li><strong>Πλήκτρο σε λάθος κατάσταση:</strong> τα πλήκτρα του παιχνιδιού δεν κάνουν τίποτα στο μενού (π.χ. το Enter).</li>
+<li><strong>Οριακές περιπτώσεις:</strong> ο παίκτης στις άκρες της περιοχής δεν βγαίνει έξω, δύο πλήκτρα μαζί, ό,τι έχει όριο (0 ζωές, μέγιστη ταχύτητα).</li>
+<li><strong>Το κλείσιμο:</strong> το X του παραθύρου κλείνει το πρόγραμμα από κάθε οθόνη.</li>
+</ol>
+<p>Ο πίνακας για το παιχνίδι με τις Ζωές και την Αντίστροφη μέτρηση, με το λάθος της ενότητας 2.2:</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: center;">#</th>
+<th>Τι κάναμε</th>
+<th>Τι περιμέναμε</th>
+<th>Τι έγινε</th>
+<th style="text-align: center;">Λάθος;</th>
+<th>Τι διορθώσαμε</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;">1</td>
+<td>SPACE στο μενού</td>
+<td>παιχνίδι με <code>Ζωές: 3</code> και <code>Χρόνος: 30</code></td>
+<td>όπως περιμέναμε</td>
+<td style="text-align: center;">όχι</td>
+<td></td>
+</tr>
+<tr>
+<td style="text-align: center;">2</td>
+<td>Enter μία φορά</td>
+<td><code>Ζωές: 2</code></td>
+<td>έμεινε <code>Ζωές: 3</code></td>
+<td style="text-align: center;">ναι</td>
+<td>στη <code>hurt</code> βάλαμε <code>game["lives"] =</code> μπροστά από τη <code>lose_life</code></td>
+</tr>
+<tr>
+<td style="text-align: center;">3</td>
+<td>Enter τρεις φορές</td>
+<td><code>Ζωές: 0</code> και «Τέλος παιχνιδιού»</td>
+<td>όπως περιμέναμε</td>
+<td style="text-align: center;">όχι</td>
+<td></td>
+</tr>
+<tr>
+<td style="text-align: center;">4</td>
+<td>μετά το τέλος, SPACE</td>
+<td>νέο παιχνίδι με <code>Ζωές: 3</code> και <code>Χρόνος: 30</code></td>
+<td>όπως περιμέναμε</td>
+<td style="text-align: center;">όχι</td>
+<td></td>
+</tr>
+<tr>
+<td style="text-align: center;">5</td>
+<td>ESC στο παιχνίδι, μετά SPACE στο μενού</td>
+<td>νέο παιχνίδι από την αρχή</td>
+<td>όπως περιμέναμε</td>
+<td style="text-align: center;">όχι</td>
+<td></td>
+</tr>
+<tr>
+<td style="text-align: center;">6</td>
+<td>Enter στο μενού</td>
+<td>δεν γίνεται τίποτα</td>
+<td>όπως περιμέναμε</td>
+<td style="text-align: center;">όχι</td>
+<td></td>
+</tr>
+<tr>
+<td style="text-align: center;">7</td>
+<td>αναμονή 30 δευτερολέπτων χωρίς Enter</td>
+<td>«Τέλος παιχνιδιού» στα 30″</td>
+<td>όπως περιμέναμε</td>
+<td style="text-align: center;">όχι</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p>Δύο παρατηρήσεις. Μια δοκιμή «όπως περιμέναμε» έχει αξία: δείχνει ότι κάτι ελέγχθηκε. Και ένας πίνακας χωρίς κανένα λάθος σημαίνει συνήθως ότι δεν δοκιμάσατε αρκετά: ψάξτε στις οριακές περιπτώσεις.</p>
+<h3 id="24">2.4 Δοκιμή από άλλο ζεύγος<a class="headerlink" href="#24" title="Permanent link">&para;</a></h3>
+<p>Εσείς ξέρετε πώς παίζεται το παιχνίδι σας, και γι' αυτό δεν βλέπετε τα προβλήματά του. Ένα άλλο ζεύγος τα βλέπει σε δύο λεπτά. Η δοκιμή γίνεται έτσι:</p>
+<ol>
+<li>Ένα ζεύγος κάθεται στον υπολογιστή σας και παίζει <strong>2′ χωρίς να ρωτήσει τίποτα</strong>. Δεν του εξηγείτε πώς παίζεται: ό,τι χρειάζεται πρέπει να το λέει το ίδιο το παιχνίδι.</li>
+<li>Εσείς παρατηρείτε <strong>χωρίς να μιλάτε</strong> και σημειώνετε: πού δίστασαν, ποιο πλήκτρο πάτησαν που δεν έκανε τίποτα, τι ρώτησαν.</li>
+<li>Συζητάτε <strong>1′</strong> και γράφετε τις παρατηρήσεις στον πίνακα δοκιμών, στην ενότητα «Δοκιμή από άλλο ζεύγος».</li>
+<li>Αλλάζετε ρόλους.</li>
+</ol>
+<p>Δεν διορθώνετε τίποτα την ώρα της δοκιμής, ούτε υπερασπίζεστε το παιχνίδι: ό,τι δεν κατάλαβε ο παίκτης είναι πληροφορία για εσάς.</p>
+<h3 id="25">2.5 Συνηθισμένα λάθη<a class="headerlink" href="#25" title="Permanent link">&para;</a></h3>
+<p>Κάθε κάρτα έχει δικό της πίνακα «Συνηθισμένα λάθη». Αυτά είναι τα λάθη που εμφανίζονται σε όλα τα project:</p>
+<table>
+<thead>
+<tr>
+<th>Τι βλέπεις</th>
+<th>Πιθανή αιτία</th>
+<th>Πού κοιτάς</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Το <code>check_project.py</code> γράφει «Σφάλμα σύνταξης στη γραμμή … του game.py»</td>
+<td>Λάθος εσοχή ή παρένθεση που δεν έκλεισε, συνήθως μετά από επικόλληση</td>
+<td>τη γραμμή που λέει το μήνυμα και την προηγούμενη</td>
+</tr>
+<tr>
+<td>Πατάς ένα πλήκτρο και δεν γίνεται τίποτα, χωρίς μήνυμα</td>
+<td>Η ενέργεια του <code>KEY_ACTIONS</code> γράφεται αλλιώς από την ενέργεια του <code>TRANSITIONS</code> (Μάθημα 14, ενότητα 3.7)</td>
+<td>τα δύο ονόματα, γράμμα προς γράμμα</td>
+</tr>
+<tr>
+<td>Η ένδειξη δεν αλλάζει όσο κι αν παίζεις</td>
+<td>Η νέα τιμή υπολογίζεται και δεν αποθηκεύεται στο <code>game</code></td>
+<td><code>print</code> πριν και μετά τη γραμμή (ενότητα 2.2)</td>
+</tr>
+<tr>
+<td>Μετά το «Τέλος παιχνιδιού», το SPACE δεν ξαναρχίζει το παιχνίδι: η οθόνη τέλους μένει, με τους ίδιους πόντους</td>
+<td>Δεν καλείται η <code>new_game</code> όταν ξεκινά νέο παιχνίδι: ο χρόνος και οι πόντοι μένουν τα παλιά, και ο κανόνας του τέλους ισχύει αμέσως</td>
+<td>τη γραμμή <code>game = new_game(…)</code> της ενέργειας <code>"play"</code> στον βρόχο</td>
+</tr>
+<tr>
+<td>Το <code>check_logic.py</code> περνά, αλλά το παιχνίδι δεν κάνει αυτό που περιμένεις</td>
+<td>Το λάθος είναι στο <code>game.py</code>, ή λείπει παράδειγμα για την περίπτωση</td>
+<td><code>print</code> και πίνακας δοκιμών</td>
+</tr>
+<tr>
+<td><code>FileNotFoundError: No file 'assets/click.wav' found in working directory …</code></td>
+<td>Δεν έτρεξε το <code>make_sounds.py</code> (ή το <code>make_assets.py</code>), ή το παιχνίδι τρέχει από άλλον φάκελο</td>
+<td>ο φάκελος <code>assets</code> δίπλα στο <code>game.py</code></td>
+</tr>
+</tbody>
+</table>
+<h3 id="6">Σημείο ελέγχου ΣΕ6 — Ο πίνακας δοκιμών<a class="headerlink" href="#6" title="Permanent link">&para;</a></h3>
+<p>Το <code>test-table.md</code> έχει τουλάχιστον οκτώ δοκιμές, με τις οριακές περιπτώσεις, τα λάθη που βρήκατε και τι διορθώσατε, και την παρατήρηση ενός άλλου ζεύγους. Το παιχνίδι <strong>παγώνει</strong>: οι κάρτες που δεν χωρούν κόβονται τώρα, όπως λέει το σχέδιο επέκτασης. Έχετε αντίγραφο στον επόμενο φάκελο (<code>v4</code>, αν στον κύκλο 1 φτιάξατε το <code>v3</code>).</p>
+<p><strong>Συνέχισε στο Φύλλο εργασίας, Κύκλος 2.</strong></p>
+<hr />
+<h2 id="3">Κύκλος 3 — Τελική μορφή και τεκμηρίωση<a class="headerlink" href="#3" title="Permanent link">&para;</a></h2>
+<p>Το παιχνίδι είναι παγωμένο. Τώρα το κάνετε να φαίνεται και να εξηγείται σαν ολοκληρωμένο: τελικά κείμενα, README, δήλωση βοήθειας και κατάλογος παράδοσης. Στο τέλος του κύκλου ετοιμάζετε την παρουσίασή σας.</p>
+<h3 id="31">3.1 Τα τελικά κείμενα<a class="headerlink" href="#31" title="Permanent link">&para;</a></h3>
+<p>Παίξε το παιχνίδι σαν να μην το έχεις ξαναδεί και διάβασε ό,τι γράφει στην οθόνη:</p>
+<table>
+<thead>
+<tr>
+<th>Οθόνη</th>
+<th>Πού βρίσκεται στον κώδικα</th>
+<th>Τι ελέγχεις</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Τίτλος παραθύρου</td>
+<td>η σταθερά <code>TITLE</code></td>
+<td>είναι το όνομα του παιχνιδιού σας</td>
+</tr>
+<tr>
+<td>Μενού</td>
+<td>η <code>draw_menu</code></td>
+<td>γράφει τον τίτλο και τα πλήκτρα που χρειάζεται ο παίκτης</td>
+</tr>
+<tr>
+<td>Ενδείξεις</td>
+<td>η <code>draw_hud</code></td>
+<td>δείχνει ό,τι αλλάζει όσο παίζεται (πόντοι, ζωές, χρόνος)</td>
+</tr>
+<tr>
+<td>Τέλος</td>
+<td>η <code>draw_game_over</code></td>
+<td>λέει πώς τελείωσε το παιχνίδι, πόσους πόντους έκανες και ποια πλήκτρα ξαναρχίζουν ή βγάζουν στο μενού</td>
+</tr>
+</tbody>
+</table>
+<p>Ο παίκτης που δεν σας ξέρει πρέπει να καταλαβαίνει πώς παίζεται από το μενού και μόνο. Αν το σχέδιό σας έχει την κάρτα <a href="../cards/help-screen/">Οθόνη οδηγιών</a>, οι οδηγίες είναι σε δική τους οθόνη, που ανοίγει από το μενού. Αλλιώς, επειδή το παιχνίδι είναι παγωμένο και δεν μπαίνει νέα κάρτα, γράψτε τις οδηγίες και τα πλήκτρα στο ίδιο το μενού.</p>
+<p>Μετά καθαρίστε τον κώδικα:</p>
+<ul>
+<li>Σβήστε ό,τι έχει <code>ΣΒΗΣΤΕ ΤΟ</code>: το <code>check_project.py</code> το βρίσκει.</li>
+<li>Σβήστε τα <code>print</code> που κάνατε για να βρείτε λάθη.</li>
+<li>Σβήστε τις σταθερές που δεν τις χρησιμοποιεί πια κανείς.</li>
+<li>Διαβάστε τα ονόματα των συναρτήσεων και των μεταβλητών: λένε τι κάνουν;</li>
+</ul>
+<h3 id="32-readme">3.2 Το README<a class="headerlink" href="#32-readme" title="Permanent link">&para;</a></h3>
+<p>Το README είναι η πρώτη σελίδα του παιχνιδιού σας: το διαβάζει όποιος το ανοίξει. Είναι το αρχείο <code>README.md</code>, με τέσσερις ενότητες που ελέγχει το <code>check_project.py</code>: <strong>Πώς παίζεται</strong>, <strong>Χειρισμός</strong>, <strong>Μέλη και ρόλοι</strong> και <strong>Πηγές και βοήθεια</strong>. Η πρώτη γραμμή είναι ο τίτλος του παιχνιδιού, με ένα <code>#</code> μπροστά, και κάθε ενότητα έχει κείμενο.</p>
+<p>Το πρότυπο του README, με τη λέξη <code>ΣΥΜΠΛΗΡΩΣΤΕ</code> εκεί που γράφετε εσείς, είναι στο φύλλο εργασίας. Αν μείνει στο αρχείο έστω και μία λέξη <code>ΣΥΜΠΛΗΡΩΣΤΕ</code>, ο έλεγχος αποτυγχάνει. Το πρότυπο έχει και μια πέμπτη ενότητα, «Οι έξι κανόνες στον κώδικα», που δεν την ελέγχει το πρόγραμμα: είναι ο πίνακας που φτιάξατε στο Μάθημα 14 (<code>design.md</code>, ενότητα 1) με τα τελικά ονόματα των συναρτήσεων. Θα σας χρειαστεί στην υπεράσπιση, γιατί λέει πού να ψάξετε κάθε κανόνα.</p>
+<p>Έτσι μπορεί να γραφτεί το README ενός παιχνιδιού, αν το Φίδι ήταν δικό σας project:</p>
+<div class="language-markdown highlight"><pre><span></span><code><span id="__span-11-1"><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a><span class="gh"># Φίδι</span>
+</span><span id="__span-11-2"><a id="__codelineno-11-2" name="__codelineno-11-2" href="#__codelineno-11-2"></a>
+</span><span id="__span-11-3"><a id="__codelineno-11-3" name="__codelineno-11-3" href="#__codelineno-11-3"></a>Ο παίκτης οδηγεί ένα φίδι σε πλέγμα, τρώει τροφή για να μεγαλώσει και χάνει αν χτυπήσει τον τοίχο ή το σώμα του.
+</span><span id="__span-11-4"><a id="__codelineno-11-4" name="__codelineno-11-4" href="#__codelineno-11-4"></a>
+</span><span id="__span-11-5"><a id="__codelineno-11-5" name="__codelineno-11-5" href="#__codelineno-11-5"></a><span class="gu">## Πώς παίζεται</span>
+</span><span id="__span-11-6"><a id="__codelineno-11-6" name="__codelineno-11-6" href="#__codelineno-11-6"></a>
+</span><span id="__span-11-7"><a id="__codelineno-11-7" name="__codelineno-11-7" href="#__codelineno-11-7"></a>Το φίδι κινείται συνέχεια, ένα κελί σε κάθε βήμα. Κάθε φορά που το κεφάλι φτάνει στην τροφή, το φίδι μεγαλώνει κατά ένα κελί και ο παίκτης παίρνει έναν πόντο. Όσο περισσότεροι οι πόντοι, τόσο πιο γρήγορα κινείται το φίδι. Το παιχνίδι τελειώνει όταν το κεφάλι βγει από το πλέγμα ή μπει στο σώμα του φιδιού.
+</span><span id="__span-11-8"><a id="__codelineno-11-8" name="__codelineno-11-8" href="#__codelineno-11-8"></a>
+</span><span id="__span-11-9"><a id="__codelineno-11-9" name="__codelineno-11-9" href="#__codelineno-11-9"></a><span class="gu">## Χειρισμός</span>
+</span><span id="__span-11-10"><a id="__codelineno-11-10" name="__codelineno-11-10" href="#__codelineno-11-10"></a>
+</span><span id="__span-11-11"><a id="__codelineno-11-11" name="__codelineno-11-11" href="#__codelineno-11-11"></a><span class="k">-</span><span class="w"> </span>Βέλη ή W, A, S, D: αλλάζουν την κατεύθυνση του φιδιού (δεν γυρίζει πίσω)
+</span><span id="__span-11-12"><a id="__codelineno-11-12" name="__codelineno-11-12" href="#__codelineno-11-12"></a><span class="k">-</span><span class="w"> </span>P: παύση και συνέχεια
+</span><span id="__span-11-13"><a id="__codelineno-11-13" name="__codelineno-11-13" href="#__codelineno-11-13"></a><span class="k">-</span><span class="w"> </span>SPACE: έναρξη από το μενού, και νέο παιχνίδι μετά το τέλος
+</span><span id="__span-11-14"><a id="__codelineno-11-14" name="__codelineno-11-14" href="#__codelineno-11-14"></a><span class="k">-</span><span class="w"> </span>ESC: μενού (από το μενού: έξοδος)
+</span><span id="__span-11-15"><a id="__codelineno-11-15" name="__codelineno-11-15" href="#__codelineno-11-15"></a>
+</span><span id="__span-11-16"><a id="__codelineno-11-16" name="__codelineno-11-16" href="#__codelineno-11-16"></a><span class="gu">## Μέλη και ρόλοι</span>
+</span><span id="__span-11-17"><a id="__codelineno-11-17" name="__codelineno-11-17" href="#__codelineno-11-17"></a>
+</span><span id="__span-11-18"><a id="__codelineno-11-18" name="__codelineno-11-18" href="#__codelineno-11-18"></a><span class="k">-</span><span class="w"> </span>Μέλος Α: οδηγός στο <span class="sb">`logic.py`</span> (οι συναρτήσεις του φιδιού) και στο <span class="sb">`check_logic.py`</span>.
+</span><span id="__span-11-19"><a id="__codelineno-11-19" name="__codelineno-11-19" href="#__codelineno-11-19"></a><span class="k">-</span><span class="w"> </span>Μέλος Β: οδηγός στο <span class="sb">`game.py`</span> (σχεδίαση, ήχοι) και στο README.
+</span><span id="__span-11-20"><a id="__codelineno-11-20" name="__codelineno-11-20" href="#__codelineno-11-20"></a>
+</span><span id="__span-11-21"><a id="__codelineno-11-21" name="__codelineno-11-21" href="#__codelineno-11-21"></a>Αλλάζαμε οδηγό και πλοηγό κάθε 15′.
+</span><span id="__span-11-22"><a id="__codelineno-11-22" name="__codelineno-11-22" href="#__codelineno-11-22"></a>
+</span><span id="__span-11-23"><a id="__codelineno-11-23" name="__codelineno-11-23" href="#__codelineno-11-23"></a><span class="gu">## Πηγές και βοήθεια</span>
+</span><span id="__span-11-24"><a id="__codelineno-11-24" name="__codelineno-11-24" href="#__codelineno-11-24"></a>
+</span><span id="__span-11-25"><a id="__codelineno-11-25" name="__codelineno-11-25" href="#__codelineno-11-25"></a><span class="k">-</span><span class="w"> </span>Οι <span class="sb">`next_cell`</span>, <span class="sb">`turn`</span> και <span class="sb">`step_interval`</span> είναι από το Μάθημα 13.
+</span><span id="__span-11-26"><a id="__codelineno-11-26" name="__codelineno-11-26" href="#__codelineno-11-26"></a><span class="k">-</span><span class="w"> </span>Η παύση είναι η κάρτα Παύση και οι ήχοι είναι η κάρτα Ήχοι και μουσική, με το <span class="sb">`make_sounds.py`</span> του Μαθήματος 12.
+</span><span id="__span-11-27"><a id="__codelineno-11-27" name="__codelineno-11-27" href="#__codelineno-11-27"></a><span class="k">-</span><span class="w"> </span>Εργαλείο ΤΝ: το ρωτήσαμε γιατί το φίδι έμπαινε στο κελί που μόλις είχε αφήσει. Μας εξήγησε ότι ελέγχαμε τη νέα κατεύθυνση μετά την κίνηση. Τη διόρθωση της <span class="sb">`turn`</span> τη γράψαμε εμείς και τη δοκιμάσαμε με το <span class="sb">`check_logic.py`</span>.
+</span><span id="__span-11-28"><a id="__codelineno-11-28" name="__codelineno-11-28" href="#__codelineno-11-28"></a><span class="k">-</span><span class="w"> </span>Δεν αντιγράψαμε κώδικα από το διαδίκτυο.
+</span><span id="__span-11-29"><a id="__codelineno-11-29" name="__codelineno-11-29" href="#__codelineno-11-29"></a>
+</span><span id="__span-11-30"><a id="__codelineno-11-30" name="__codelineno-11-30" href="#__codelineno-11-30"></a><span class="gu">## Οι έξι κανόνες στον κώδικα</span>
+</span><span id="__span-11-31"><a id="__codelineno-11-31" name="__codelineno-11-31" href="#__codelineno-11-31"></a>
+</span><span id="__span-11-32"><a id="__codelineno-11-32" name="__codelineno-11-32" href="#__codelineno-11-32"></a>| Κανόνας | Στο παιχνίδι | Πού βρίσκεται |
+</span><span id="__span-11-33"><a id="__codelineno-11-33" name="__codelineno-11-33" href="#__codelineno-11-33"></a>|---|---|---|
+</span><span id="__span-11-34"><a id="__codelineno-11-34" name="__codelineno-11-34" href="#__codelineno-11-34"></a>| Κίνηση | το φίδι προχωρά ένα κελί σε κάθε βήμα | <span class="sb">`next_cell`</span> (<span class="sb">`logic.py`</span>), <span class="sb">`update_game`</span> (<span class="sb">`game.py`</span>) |
+</span><span id="__span-11-35"><a id="__codelineno-11-35" name="__codelineno-11-35" href="#__codelineno-11-35"></a>| Είσοδος | τα βέλη ή τα W, A, S, D αλλάζουν κατεύθυνση | <span class="sb">`KEY_ACTIONS`</span>, <span class="sb">`read_direction`</span>, <span class="sb">`turn`</span> |
+</span><span id="__span-11-36"><a id="__codelineno-11-36" name="__codelineno-11-36" href="#__codelineno-11-36"></a>| Συγκρούσεις | κεφάλι στην τροφή: μεγαλώνει· κεφάλι στον τοίχο ή στο σώμα: τέλος | <span class="sb">`update_game`</span> (<span class="sb">`game.py`</span>) |
+</span><span id="__span-11-37"><a id="__codelineno-11-37" name="__codelineno-11-37" href="#__codelineno-11-37"></a>| Καταστάσεις | μενού, παιχνίδι, παύση, τέλος | <span class="sb">`TRANSITIONS`</span> και <span class="sb">`next_state`</span> (<span class="sb">`logic.py`</span>) |
+</span><span id="__span-11-38"><a id="__codelineno-11-38" name="__codelineno-11-38" href="#__codelineno-11-38"></a>| Ήχοι και μουσική | ήχος όταν τρώει, και στο τέλος | <span class="sb">`play_sound`</span> (<span class="sb">`game.py`</span>) |
+</span><span id="__span-11-39"><a id="__codelineno-11-39" name="__codelineno-11-39" href="#__codelineno-11-39"></a>| Χρόνος | ένα βήμα κάθε 160 χιλιοστά του δευτερολέπτου, λιγότερα όσο ανεβαίνουν οι πόντοι | <span class="sb">`step_interval`</span> (<span class="sb">`logic.py`</span>) |
+</span></code></pre></div>
+<h3 id="33">3.3 Η δήλωση βοήθειας<a class="headerlink" href="#33" title="Permanent link">&para;</a></h3>
+<p>Στην ενότητα «Πηγές και βοήθεια» γράφετε <strong>όλα</strong> όσα δεν είναι δικά σας: τις κάρτες που χρησιμοποιήσατε, τα μαθήματα από τα οποία πήρατε κώδικα, ό,τι βρήκατε στο διαδίκτυο και κάθε φορά που ζητήσατε βοήθεια από εργαλείο ΤΝ. Για την ΤΝ, για κάθε φορά γράφετε:</p>
+<ul>
+<li><strong>τι ζητήσατε</strong> (π.χ. «γιατί δεν μειώνονται οι ζωές;»),</li>
+<li><strong>τι σας απάντησε</strong> με δικά σας λόγια, και</li>
+<li><strong>τι χρησιμοποιήσατε</strong>: τη διόρθωση που γράψατε εσείς, ή κώδικα που αντιγράψατε.</li>
+</ul>
+<p>Κώδικας που αντιγράφηκε δηλώνεται, και κάθε μέλος πρέπει να μπορεί να τον εξηγήσει στην υπεράσπιση (ενότητα 3.6). Μια δήλωση που λέει «δεν χρησιμοποιήσαμε βοήθεια» είναι δεκτή, όταν είναι αλήθεια. Μια δήλωση που κρύβει βοήθεια φαίνεται στην υπεράσπιση: γράψτε την όπως έγινε.</p>
+<h3 id="34">3.4 Ο κατάλογος παράδοσης<a class="headerlink" href="#34" title="Permanent link">&para;</a></h3>
+<p>Παραδίδετε τον φάκελο <code>15-project-final</code>, με αυτά τα αρχεία:</p>
+<table>
+<thead>
+<tr>
+<th>Αρχείο</th>
+<th>Τι είναι</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>game.py</code>, <code>logic.py</code></td>
+<td>το παιχνίδι και οι κανόνες του</td>
+</tr>
+<tr>
+<td><code>check_logic.py</code>, <code>check_project.py</code></td>
+<td>οι αυτοέλεγχοι</td>
+</tr>
+<tr>
+<td><code>README.md</code></td>
+<td>η τεκμηρίωση (ενότητα 3.2)</td>
+</tr>
+<tr>
+<td><code>project-card.md</code>, <code>design.md</code></td>
+<td>η κάρτα project και το φύλλο σχεδίου (Μάθημα 14)</td>
+</tr>
+<tr>
+<td><code>extension-plan.md</code>, <code>test-table.md</code>, <code>diary.md</code></td>
+<td>το σχέδιο επέκτασης, ο πίνακας δοκιμών και το ημερολόγιο</td>
+</tr>
+<tr>
+<td><code>assets</code></td>
+<td>μόνο αν χρησιμοποιείτε εικόνες ή ήχους, μαζί με τα <code>make_assets.py</code> ή <code>make_sounds.py</code> που τον φτιάχνουν</td>
+</tr>
+<tr>
+<td><code>v1</code>, <code>v2</code>, <code>v3</code>, …</td>
+<td>τα αντίγραφα ανά στάδιο</td>
+</tr>
+</tbody>
+</table>
+<p>Και τρέχετε τον τελευταίο έλεγχο, <code>python check_project.py</code>, ώσπου να γράψει <code>ΟΛΑ ΟΚ</code>. Αν μείνει κάτι από το README του προτύπου, το βλέπεις στο τελευταίο μέρος:</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-12-1"><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a>Το README
+</span><span id="__span-12-2"><a id="__codelineno-12-2" name="__codelineno-12-2" href="#__codelineno-12-2"></a>  [ΛΑΘΟΣ] Το README.md δεν είναι έτοιμο
+</span><span id="__span-12-3"><a id="__codelineno-12-3" name="__codelineno-12-3" href="#__codelineno-12-3"></a>      Έμειναν κομμάτια «ΣΥΜΠΛΗΡΩΣΤΕ» του προτύπου: γράψε εκεί το δικό σου κείμενο
+</span></code></pre></div>
+<p>Όταν όλα είναι σωστά, το αποτέλεσμα είναι (εδώ, για ένα project με τίτλο «Φίδι» και 25 δοκιμές στο <code>check_logic.py</code>):</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-13-1"><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a>Έλεγχος του project στον φάκελο …
+</span><span id="__span-13-2"><a id="__codelineno-13-2" name="__codelineno-13-2" href="#__codelineno-13-2"></a>Αρχεία
+</span><span id="__span-13-3"><a id="__codelineno-13-3" name="__codelineno-13-3" href="#__codelineno-13-3"></a>  [ΟΚ] Το game.py έχει σωστή σύνταξη
+</span><span id="__span-13-4"><a id="__codelineno-13-4" name="__codelineno-13-4" href="#__codelineno-13-4"></a>  [ΟΚ] Το logic.py έχει σωστή σύνταξη
+</span><span id="__span-13-5"><a id="__codelineno-13-5" name="__codelineno-13-5" href="#__codelineno-13-5"></a>  [ΟΚ] Δεν έμειναν προσωρινά κομμάτια του προτύπου
+</span><span id="__span-13-6"><a id="__codelineno-13-6" name="__codelineno-13-6" href="#__codelineno-13-6"></a>Το παιχνίδι
+</span><span id="__span-13-7"><a id="__codelineno-13-7" name="__codelineno-13-7" href="#__codelineno-13-7"></a>  [ΟΚ] Το παιχνίδι έτρεξε 301 καρέ με πλήκτρα και κλικ, χωρίς σφάλμα, και έκλεισε σωστά
+</span><span id="__span-13-8"><a id="__codelineno-13-8" name="__codelineno-13-8" href="#__codelineno-13-8"></a>  [ΟΚ] Ο τίτλος του παραθύρου είναι «Φίδι»
+</span><span id="__span-13-9"><a id="__codelineno-13-9" name="__codelineno-13-9" href="#__codelineno-13-9"></a>Η λογική
+</span><span id="__span-13-10"><a id="__codelineno-13-10" name="__codelineno-13-10" href="#__codelineno-13-10"></a>  [ΟΚ] Περνούν όλες οι δοκιμές του check_logic.py (25)
+</span><span id="__span-13-11"><a id="__codelineno-13-11" name="__codelineno-13-11" href="#__codelineno-13-11"></a>Το README
+</span><span id="__span-13-12"><a id="__codelineno-13-12" name="__codelineno-13-12" href="#__codelineno-13-12"></a>  [ΟΚ] Το README.md έχει τίτλο και όλες τις ενότητες
+</span><span id="__span-13-13"><a id="__codelineno-13-13" name="__codelineno-13-13" href="#__codelineno-13-13"></a>
+</span><span id="__span-13-14"><a id="__codelineno-13-14" name="__codelineno-13-14" href="#__codelineno-13-14"></a>ΟΛΑ ΟΚ: 7 έλεγχοι πέρασαν.
+</span></code></pre></div>
+<p>Το <code>ΟΛΑ ΟΚ</code> δεν σημαίνει ότι το παιχνίδι είναι καλό. Σημαίνει ότι έχει τα αρχεία του, δεν σταματά με σφάλμα και έχει README. Τα υπόλοιπα τα κρίνει ο πίνακας δοκιμών, ο διδάσκων και οι παίκτες.</p>
+<h3 id="35">3.5 Η παρουσίαση<a class="headerlink" href="#35" title="Permanent link">&para;</a></h3>
+<p>Κάθε ζεύγος έχει <strong>3′ επίδειξη και 2′ ερωτήσεις</strong>. Και οι δύο μιλάτε. Μια σειρά που χωρά στα 3′:</p>
+<table>
+<thead>
+<tr>
+<th>Χρόνος</th>
+<th>Τι κάνετε</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>20″</td>
+<td>Λέτε την ιδέα σε μία πρόταση και τα κριτήριά σας.</td>
+</tr>
+<tr>
+<td>90″</td>
+<td>Παίζετε το παιχνίδι ζωντανά και δείχνετε τρία κριτήρια να δουλεύουν.</td>
+</tr>
+<tr>
+<td>40″</td>
+<td>Δείχνετε στον κώδικα μία συνάρτηση του <code>logic.py</code> και το παράδειγμά της στο <code>check_logic.py</code>.</td>
+</tr>
+<tr>
+<td>30″</td>
+<td>Λέτε ένα λάθος που σας δυσκόλεψε και πώς το βρήκατε, και τι θα προσθέτατε αν είχατε περισσότερο χρόνο.</td>
+</tr>
+</tbody>
+</table>
+<p>Πριν το φεστιβάλ, δοκιμάστε την παρουσίαση μία φορά με χρονόμετρο και ανοίξτε το παιχνίδι και τα αρχεία που θα δείξετε. Δεν γράφετε διαφάνειες· το παιχνίδι είναι η παρουσίαση.</p>
+<h3 id="36">3.6 Η ατομική υπεράσπιση<a class="headerlink" href="#36" title="Permanent link">&para;</a></h3>
+<p>Η ατομική υπεράσπιση έχει <strong>25 μονάδες</strong> και δίνεται σε κάθε μέλος ξεχωριστά. Ο διδάσκων σε καλεί, κάποια στιγμή από τον κύκλο 2 μέχρι το τέλος του κύκλου 4, στον υπολογιστή του ζεύγους σου για περίπου 2′. Σου κάνει τρεις ερωτήσεις για τον κώδικα του παιχνιδιού σας, μία από κάθε είδος:</p>
+<table>
+<thead>
+<tr>
+<th>Είδος</th>
+<th style="text-align: center;">Μονάδες</th>
+<th>Τι ζητά</th>
+<th>Παράδειγμα (στο παιχνίδι με Ζωές και Αντίστροφη μέτρηση)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Εξήγηση</td>
+<td style="text-align: center;">9</td>
+<td>να πεις με δικά σου λόγια τι κάνει ένα κομμάτι του κώδικα</td>
+<td>«Τι κάνει η <code>time_left</code> και γιατί έχει το <code>max(0, …)</code>;»</td>
+</tr>
+<tr>
+<td>Πρόβλεψη</td>
+<td style="text-align: center;">8</td>
+<td>να πεις τι θα γίνει αν αλλάξει κάτι</td>
+<td>«Τι θα δούμε στην οθόνη αν το <code>TIME_LIMIT</code> γίνει 10;»</td>
+</tr>
+<tr>
+<td>Αλλαγή</td>
+<td style="text-align: center;">8</td>
+<td>να πεις (και, αν προλάβεις, να κάνεις) μια μικρή αλλαγή</td>
+<td>«Πώς θα δώσουμε 5 ζωές αντί για 3;»</td>
+</tr>
+</tbody>
+</table>
+<p>Η προετοιμασία είναι ένα πράγμα: <strong>να έχεις καταλάβει τον κώδικα που υπάρχει στο παιχνίδι σας</strong>, και ειδικά ό,τι έγραψε ο συνεργάτης σου, ό,τι πήρες από κάρτα και ό,τι πήρες από το διαδίκτυο ή από εργαλείο ΤΝ. Για να το δοκιμάσεις, εξήγησε στον συνεργάτη σου τρεις συναρτήσεις του <code>logic.py</code> και πες του τι θα γίνει αν αλλάξει μία τιμή.</p>
+<p>Όπως είπαμε στην ενότητα 1.8 του Μαθήματος 14, ό,τι δεν μπορείς να εξηγήσεις δεν βαθμολογείται: ούτε στην υπεράσπιση, ούτε στη δική σου βαθμολογία για τον κώδικα και το παιχνίδι.</p>
+<h3 id="37">3.7 Πώς θα βαθμολογηθείτε<a class="headerlink" href="#37" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Τι βαθμολογείται</th>
+<th style="text-align: center;">Μονάδες</th>
+<th>Τι κοιτάζει ο διδάσκων</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Το παιχνίδι, ως προς τα κριτήρια της κάρτας σας</td>
+<td style="text-align: center;">25</td>
+<td>πόσα από τα κριτήρια της κάρτας project, με τα νέα της ενότητας 1.3, δουλεύουν όταν παίζει το παιχνίδι</td>
+</tr>
+<tr>
+<td>Ο σχεδιασμός</td>
+<td style="text-align: center;">10</td>
+<td>βαθμολογήθηκε από το <code>design.md</code>, στο Μάθημα 14</td>
+</tr>
+<tr>
+<td>Ο κώδικας</td>
+<td style="text-align: center;">15</td>
+<td>οι κανόνες είναι μικρές συναρτήσεις στο <code>logic.py</code>, ο κώδικας διαβάζεται, και δεν έμειναν προσωρινά κομμάτια</td>
+</tr>
+<tr>
+<td>Οι δοκιμές</td>
+<td style="text-align: center;">10</td>
+<td>παραδείγματα στο <code>check_logic.py</code> για κάθε συνάρτηση, με οριακές περιπτώσεις, και ο πίνακας δοκιμών</td>
+</tr>
+<tr>
+<td>Το README</td>
+<td style="text-align: center;">10</td>
+<td>οι ενότητες είναι σωστές και χρήσιμες, και η δήλωση βοήθειας λέει ποιος έγραψε τι</td>
+</tr>
+<tr>
+<td>Η παρουσίαση</td>
+<td style="text-align: center;">5</td>
+<td>μέσα στα 3′, δείχνει τα κριτήρια παίζοντας, μιλούν και τα δύο μέλη</td>
+</tr>
+<tr>
+<td><strong>Ομάδα, σύνολο</strong></td>
+<td style="text-align: center;"><strong>75</strong></td>
+<td></td>
+</tr>
+<tr>
+<td>Η ατομική προφορική υπεράσπιση</td>
+<td style="text-align: center;">25</td>
+<td>εξήγηση, πρόβλεψη, αλλαγή (ενότητα 3.6)</td>
+</tr>
+<tr>
+<td><strong>Σύνολο</strong></td>
+<td style="text-align: center;"><strong>100</strong></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h3 id="7-readme">Σημείο ελέγχου ΣΕ7 — Το τελικό παιχνίδι και το README<a class="headerlink" href="#7-readme" title="Permanent link">&para;</a></h3>
+<p>Το <code>check_project.py</code> γράφει <code>ΟΛΑ ΟΚ</code>, το README έχει συμπληρωμένες και τις τέσσερις ενότητες και μια ειλικρινή δήλωση βοήθειας, και το παιχνίδι έχει τα τελικά του κείμενα. Έχετε αντίγραφο στον τελευταίο φάκελο (<code>v5</code>, αν ακολουθήσατε την αρίθμηση). Ο διδάσκων το υπογράφει και ετοιμάζεστε για το φεστιβάλ.</p>
+<p><strong>Συνέχισε στο Φύλλο εργασίας, Κύκλος 3.</strong></p>
+<hr />
+<h2 id="4">Κύκλος 4 — Φεστιβάλ παιχνιδιών<a class="headerlink" href="#4" title="Permanent link">&para;</a></h2>
+<p>Σήμερα δεν γράφετε κώδικα. Παρουσιάζετε το παιχνίδι σας, παίζετε και κρίνετε τα παιχνίδια των άλλων, και κοιτάτε πίσω στη δουλειά των δύο μαθημάτων.</p>
+<h3 id="41">4.1 Πώς γίνεται το φεστιβάλ<a class="headerlink" href="#41" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Ο διδάσκων ορίζει τη <strong>σειρά</strong> των ζευγών. Το ζευγάρι που ακολουθεί έχει ήδη ανοιχτό το παιχνίδι του, στο τερματικό ή στο VS Code, έτοιμο να τρέξει.</li>
+<li>Κάθε ζεύγος έχει <strong>3′ επίδειξη και 2′ ερωτήσεις</strong>, με χρονόμετρο στον προτζέκτορα. Η επίδειξη ακολουθεί τη σειρά της ενότητας 3.5.</li>
+<li>Το κοινό <strong>παρακολουθεί και γράφει</strong> μια κάρτα σχολίων για κάθε παιχνίδι (ενότητα 4.2). Στις ερωτήσεις το κοινό ρωτά για το παιχνίδι και για τον κώδικα, με σεβασμό.</li>
+<li>Αν το παιχνίδι ενός ζεύγους σταματήσει με σφάλμα, δεν σταματά και η παρουσίαση: λέτε τι πιστεύετε ότι πήγε στραβά και διαβάζετε το μήνυμα σφάλματος δυνατά, όπως στην ενότητα 2.1.</li>
+<li>Ο διδάσκων συνεχίζει τις <strong>ατομικές υπερασπίσεις</strong> όσων δεν έχουν ήδη κληθεί, σε στιγμές που δεν διακόπτουν το φεστιβάλ.</li>
+</ul>
+<h3 id="42">4.2 Η κάρτα σχολίων<a class="headerlink" href="#42" title="Permanent link">&para;</a></h3>
+<p>Για κάθε παιχνίδι που βλέπεις γράφεις μία κάρτα, με τρία πράγματα:</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-14-1"><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a>Παιχνίδι: …
+</span><span id="__span-14-2"><a id="__codelineno-14-2" name="__codelineno-14-2" href="#__codelineno-14-2"></a>★ Κάτι που μου άρεσε: …
+</span><span id="__span-14-3"><a id="__codelineno-14-3" name="__codelineno-14-3" href="#__codelineno-14-3"></a>? Μια ερώτηση: …
+</span><span id="__span-14-4"><a id="__codelineno-14-4" name="__codelineno-14-4" href="#__codelineno-14-4"></a>→ Μια πρόταση: …
+</span></code></pre></div>
+<p>Ένα καλό σχόλιο είναι συγκεκριμένο: «Μου άρεσε που ο ήχος αλλάζει όταν χάνεις ζωή» αντί για «ωραίο». Μια πρόταση λέει τι θα άλλαζες και όχι τι σε χάλασε: «Θα έγραφα τα πλήκτρα στο μενού». Οι κάρτες δίνονται στο ζεύγος που φτιάχνει το παιχνίδι, στο τέλος του φεστιβάλ.</p>
+<h3 id="43">4.3 Αναστοχασμός<a class="headerlink" href="#43" title="Permanent link">&para;</a></h3>
+<p>Στο τέλος κάθε μέλος απαντά γραπτώς, ξεχωριστά:</p>
+<ol>
+<li>Τι έγινε καλύτερα από όσο περίμενες;</li>
+<li>Ποιο λάθος σε δίδαξε περισσότερο και τι έμαθες από αυτό;</li>
+<li>Αν είχες άλλες δύο ώρες, τι θα άλλαζες στο παιχνίδι ή στον τρόπο που δουλέψατε;</li>
+</ol>
+<p>Οι απαντήσεις δεν βαθμολογούνται. Ο διδάσκων τις διαβάζει για να καταλάβει τι δούλεψε στο project.</p>
+<p><strong>Συνέχισε στο Φύλλο εργασίας, Κύκλος 4.</strong></p>
+<hr />
+<h2 id="_5">Έλεγχος πριν ολοκληρώσεις<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h2>
+<ul>
+<li>□ Το σχέδιο επέκτασης έχει έως τρία χαρακτηριστικά και η κάρτα project έχει τα νέα κριτήρια.</li>
+<li>□ Κάθε χαρακτηριστικό που βάλατε δουλεύει και έχει τις δοκιμές του στο <code>check_logic.py</code>.</li>
+<li>□ Ο πίνακας δοκιμών έχει τουλάχιστον οκτώ δοκιμές, οριακές περιπτώσεις και την παρατήρηση ενός άλλου ζεύγους.</li>
+<li>□ Το παιχνίδι δεν έχει <code>print</code> ούτε <code>ΣΒΗΣΤΕ ΤΟ</code>, και το <code>check_project.py</code> γράφει <code>ΟΛΑ ΟΚ</code>.</li>
+<li>□ Το README έχει τέσσερις ενότητες, συμπληρωμένες, με δήλωση βοήθειας.</li>
+<li>□ Και οι δύο μπορείτε να εξηγήσετε κάθε συνάρτηση του <code>logic.py</code> και να πείτε τι θα γίνει αν αλλάξει μία τιμή.</li>
+<li>□ Ξέρετε ποιος θα πει τι στην παρουσίαση των 3′.</li>
+</ul>
+<h2 id="_6">Για να θυμάσαι<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h2>
+<ul>
+<li>Κάθε χαρακτηριστικό υπηρετεί ένα <strong>νέο κριτήριο</strong> της κάρτας project. Έως τρία χαρακτηριστικά: δύο σίγουρα και ένα «αν μείνει χρόνος».</li>
+<li>Τα μπλοκ <strong>«αντικατάσταση»</strong> σβήνουν κώδικα. Σε κώδικα που έχεις αλλάξει, προσθέτεις μόνο τις γραμμές με <code># ← ΝΕΟ</code> και <code># ← ΑΛΛΑΞΕ</code>. Οι εισαγωγές <code>from logic import …</code> ενώνονται, δεν αντικαθίστανται.</li>
+<li>Δοκίμασε <strong>μετά από κάθε κάρτα</strong>. Μια ένωση που δεν δίνει σφάλμα μπορεί να έχει χάσει κάτι σιωπηλά.</li>
+<li>Το μήνυμα σφάλματος διαβάζεται <strong>από κάτω προς τα πάνω</strong>: τι, πού, ποιος το κάλεσε. Το λάθος μπορεί να είναι αλλού από τη γραμμή που δείχνει.</li>
+<li>Βρίσκεις ένα λάθος με σειρά: το επαναλαμβάνεις, βρίσκεις το αρχείο, τυπώνεις τιμές, αλλάζεις ένα πράγμα, κρατάς τη δοκιμή, σβήνεις τα <code>print</code>.</li>
+<li>Το <code>check_logic.py</code> που περνά δεν σημαίνει ότι το παιχνίδι είναι σωστό: το λάθος μπορεί να είναι στο <code>game.py</code>.</li>
+<li>Το README έχει τέσσερις ενότητες και μια <strong>δήλωση βοήθειας</strong> που λέει ποιος έγραψε τι.</li>
+<li>Το παιχνίδι <strong>παγώνει</strong> στο τέλος του κύκλου 2. Ό,τι δεν μπορείς να εξηγήσεις στην υπεράσπιση δεν βαθμολογείται.</li>
+</ul>
+<h2 id="_7">Λεξιλόγιο<a class="headerlink" href="#_7" title="Permanent link">&para;</a></h2>
+<p><strong>κάρτα λειτουργίας</strong>, <strong>σχέδιο επέκτασης</strong>, <strong>ένωση καρτών</strong>, <strong>αποσφαλμάτωση</strong> (debugging), <strong>μήνυμα σφάλματος</strong> (traceback), <strong>πίνακας δοκιμών</strong>, <strong>πάγωμα του παιχνιδιού</strong>, <strong>README</strong>, <strong>δήλωση βοήθειας</strong>, <strong>ατομική υπεράσπιση</strong>, <strong>φεστιβάλ</strong>, <strong>κάρτα σχολίων</strong>, <strong>αναστοχασμός</strong>.</p>
+<h2 id="_8">Αν τελειώσεις νωρίτερα<a class="headerlink" href="#_8" title="Permanent link">&para;</a></h2>
+<ul>
+<li>Γράψε στο <code>check_logic.py</code> ένα ακόμη παράδειγμα για μια οριακή περίπτωση που δεν έχεις καλύψει.</li>
+<li>Δες τα «Δοκίμασε και κάτι δικό σου» της κάρτας που έβαλες και δοκίμασε ένα.</li>
+<li>Δώσε το παιχνίδι σε ένα τρίτο ζεύγος και πρόσθεσε τις παρατηρήσεις του στον πίνακα δοκιμών.</li>
+<li>Εξήγησε στον συνεργάτη σου τρεις συναρτήσεις του <code>logic.py</code>, όπως θα έκανες στην υπεράσπιση.</li>
+</ul>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Επιστροφή στην αρχή
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+      
+      <nav class="md-footer__inner md-grid" aria-label="Υποσέλιδο" >
+        
+          
+          <a href="../../14-project-prototype/worksheet-14/" class="md-footer__link md-footer__link--prev" aria-label="Προηγούμενο: Φύλλο εργασίας">
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Προηγούμενο
+              </span>
+              <div class="md-ellipsis">
+                Φύλλο εργασίας
+              </div>
+            </div>
+          </a>
+        
+        
+          
+          <a href="../worksheet-15/" class="md-footer__link md-footer__link--next" aria-label="Επόμενο: Φύλλο εργασίας">
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Επόμενο
+              </span>
+              <div class="md-ellipsis">
+                Φύλλο εργασίας
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      © 2026 Θόδωρος Θεμελής — <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.el"
+   target="_blank" rel="noopener">CC BY-NC-SA 4.0</a>
+
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.sections", "navigation.top", "navigation.footer", "content.code.copy", "content.code.annotate", "toc.follow", "search.suggest", "search.highlight"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "\u0391\u03bd\u03c4\u03b9\u03b3\u03c1\u03ac\u03c6\u03b7\u03ba\u03b5 \u03c3\u03c4\u03bf \u03c0\u03c1\u03cc\u03c7\u03b5\u03b9\u03c1\u03bf", "clipboard.copy": "\u0391\u03bd\u03c4\u03b9\u03b3\u03c1\u03b1\u03c6\u03ae \u03c3\u03c4\u03bf \u03c0\u03c1\u03cc\u03c7\u03b5\u03b9\u03c1\u03bf", "search.result.more.one": "1 \u03b1\u03ba\u03cc\u03bc\u03b1 \u03c3\u03b5 \u03b1\u03c5\u03c4\u03ae\u03bd \u03c4\u03b7 \u03c3\u03b5\u03bb\u03af\u03b4\u03b1", "search.result.more.other": "# \u03b1\u03ba\u03cc\u03bc\u03b1 \u03c3\u03b5 \u03b1\u03c5\u03c4\u03ae\u03bd \u03c4\u03b7 \u03c3\u03b5\u03bb\u03af\u03b4\u03b1", "search.result.none": "\u03b4\u03b5\u03bd \u03b2\u03c1\u03ae\u03ba\u03b5 \u03ba\u03ac\u03c0\u03bf\u03b9\u03bf \u03ad\u03b3\u03b3\u03c1\u03b1\u03c6\u03bf", "search.result.one": "1 \u03ad\u03b3\u03b3\u03c1\u03b1\u03c6\u03bf \u03c0\u03bf\u03c5 \u03c4\u03b1\u03b9\u03c1\u03b9\u03ac\u03b6\u03b5\u03b9", "search.result.other": "# \u03ad\u03b3\u03b3\u03c1\u03b1\u03c6\u03b1 \u03c0\u03bf\u03c5 \u03c4\u03b1\u03b9\u03c1\u03b9\u03ac\u03b6\u03bf\u03c5\u03bd", "search.result.placeholder": "\u03a0\u03bb\u03b7\u03ba\u03c4\u03c1\u03bf\u03bb\u03bf\u03b3\u03ae\u03c3\u03c4\u03b5 \u03b3\u03b9\u03b1 \u03bd\u03b1 \u03b1\u03c1\u03c7\u03af\u03c3\u03b5\u03b9 \u03b7 \u03b1\u03bd\u03b1\u03b6\u03ae\u03c4\u03b7\u03c3\u03b7", "search.result.term.missing": "\u039b\u03b5\u03af\u03c0\u03b5\u03b9", "select.version": "\u0395\u03c0\u03b9\u03bb\u03bf\u03b3\u03ae \u03ad\u03ba\u03b4\u03bf\u03c3\u03b7\u03c2"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.d7400e89.min.js"></script>
+      
+    
+  </body>
+</html>

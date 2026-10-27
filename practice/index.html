@@ -1,0 +1,5658 @@
+
+<!doctype html>
+<html lang="el" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Εργαστηριακό υλικό μαθήματος — ΣΑΕΚ, Γ΄ εξάμηνο">
+      
+      
+        <meta name="author" content="Θόδωρος Θεμελής">
+      
+      
+        <link rel="canonical" href="https://ththemelis.github.io/pygame-gr-site/practice/">
+      
+      
+        <link rel="prev" href="../04-quiz-console/worksheet-04/">
+      
+      
+        <link rel="next" href="../05-maze/lesson-05/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.7">
+    
+    
+      
+        <title>Φυλλάδιο - Προγραμματισμός εφαρμογών διαδικτύου & παιχνιδιών (Python, pygame)</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.ec1eaa64.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/course.css">
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#_1" class="md-skip">
+          Μετάβαση στο περιεχόμενο
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Κεφαλίδα">
+    <a href=".." title="Προγραμματισμός εφαρμογών διαδικτύου &amp; παιχνιδιών (Python, pygame)" class="md-header__button md-logo" aria-label="Προγραμματισμός εφαρμογών διαδικτύου & παιχνιδιών (Python, pygame)" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Προγραμματισμός εφαρμογών διαδικτύου & παιχνιδιών (Python, pygame)
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Φυλλάδιο
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Σκοτεινό θέμα"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Σκοτεινό θέμα" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m17.75 4.09-2.53 1.94.91 3.06-2.63-1.81-2.63 1.81.91-3.06-2.53-1.94L12.44 4l1.06-3 1.06 3zm3.5 6.91-1.64 1.25.59 1.98-1.7-1.17-1.7 1.17.59-1.98L15.75 11l2.06-.05L18.5 9l.69 1.95zm-2.28 4.95c.83-.08 1.72 1.1 1.19 1.85-.32.45-.66.87-1.08 1.27C15.17 23 8.84 23 4.94 19.07c-3.91-3.9-3.91-10.24 0-14.14.4-.4.82-.76 1.27-1.08.75-.53 1.93.36 1.85 1.19-.27 2.86.69 5.83 2.89 8.02a9.96 9.96 0 0 0 8.02 2.89m-1.64 2.02a12.08 12.08 0 0 1-7.8-3.47c-2.17-2.19-3.33-5-3.49-7.82-2.81 3.14-2.7 7.96.31 10.98 3.02 3.01 7.84 3.12 10.98.31"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Φωτεινό θέμα"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Φωτεινό θέμα" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 7a5 5 0 0 1 5 5 5 5 0 0 1-5 5 5 5 0 0 1-5-5 5 5 0 0 1 5-5m0 2a3 3 0 0 0-3 3 3 3 0 0 0 3 3 3 3 0 0 0 3-3 3 3 0 0 0-3-3m0-7 2.39 3.42C13.65 5.15 12.84 5 12 5s-1.65.15-2.39.42zM3.34 7l4.16-.35A7.2 7.2 0 0 0 5.94 8.5c-.44.74-.69 1.5-.83 2.29zm.02 10 1.76-3.77a7.131 7.131 0 0 0 2.38 4.14zM20.65 7l-1.77 3.79a7.02 7.02 0 0 0-2.38-4.15zm-.01 10-4.14.36c.59-.51 1.12-1.14 1.54-1.86.42-.73.69-1.5.83-2.29zM12 22l-2.41-3.44c.74.27 1.55.44 2.41.44.82 0 1.63-.17 2.37-.44z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Αναζήτηση" placeholder="Αναζήτηση" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Αναζήτηση">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Καθαρισμός" aria-label="Καθαρισμός" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Αρχικοποίηση αναζήτησης
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Πλοήγηση" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="Προγραμματισμός εφαρμογών διαδικτύου &amp; παιχνιδιών (Python, pygame)" class="md-nav__button md-logo" aria-label="Προγραμματισμός εφαρμογών διαδικτύου & παιχνιδιών (Python, pygame)" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    Προγραμματισμός εφαρμογών διαδικτύου & παιχνιδιών (Python, pygame)
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Αρχική
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../setup/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Εγκατάσταση και ρύθμιση
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Μάθημα 1 — Σπάσε τον κωδικό
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Μάθημα 1 — Σπάσε τον κωδικό
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../01-guess-number/lesson-01/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Μάθημα
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../01-guess-number/worksheet-01/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Φύλλο εργασίας
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Μάθημα 2 — Πέτρα, ψαλίδι, χαρτί
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Μάθημα 2 — Πέτρα, ψαλίδι, χαρτί
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../02-rock-paper-scissors/lesson-02/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Μάθημα
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../02-rock-paper-scissors/worksheet-02/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Φύλλο εργασίας
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Μάθημα 3 — Κρεμάλα
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Μάθημα 3 — Κρεμάλα
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../03-hangman/lesson-03/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Μάθημα
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../03-hangman/worksheet-03/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Φύλλο εργασίας
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Μάθημα 4 — Κουίζ γνώσεων
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Μάθημα 4 — Κουίζ γνώσεων
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../04-quiz-console/lesson-04/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Μάθημα
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../04-quiz-console/worksheet-04/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Φύλλο εργασίας
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Φυλλάδιο εξάσκησης (Μαθήματα 2–4)
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_7">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Φυλλάδιο εξάσκησης (Μαθήματα 2–4)
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Φυλλάδιο
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Φυλλάδιο
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Πίνακας περιεχομένων">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Πίνακας περιεχομένων
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Αρχεία
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Πώς διαβάζεις τον αυτοέλεγχο
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#44" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Μέρος Α — Συναρτήσεις (44′)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Μέρος Α — Συναρτήσεις (44′)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Υπενθύμιση
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#1-5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Α1. Πρόβλεψη (5′)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Α2. Ιχνηλάτηση κλήσεων (5′)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Α3. Σωστό ή λάθος; (3′)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4-5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Α4. Βρες το σφάλμα (5′)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#5-4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Α5. Συμπλήρωσε τα κενά (4′)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#6-is_even-3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Α6. Γράψε εσύ: is_even (3′)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#7-clamp-4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Α7. Γράψε εσύ: clamp (4′)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#8-grade_text-4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Α8. Γράψε εσύ: grade_text (4′)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#9-repeat_text-4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Α9. Γράψε εσύ: repeat_text (4′)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#10-is_prime-7" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Α10. Πρόκληση: is_prime (7′)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#45" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Μέρος Β — Λίστες (45′)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Μέρος Β — Λίστες (45′)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Υπενθύμιση
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#1-5_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Β1. Πρόβλεψη (5′)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-5_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Β2. Ιχνηλάτηση (5′)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-3_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Β3. Σωστό ή λάθος; (3′)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4-5_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Β4. Βρες το σφάλμα (5′)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#5-4_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Β5. Συμπλήρωσε τα κενά (4′)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#6-count_above-4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Β6. Γράψε εσύ: count_above (4′)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#7-average-3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Β7. Γράψε εσύ: average (3′)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#8-without_negatives-4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Β8. Γράψε εσύ: without_negatives (4′)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#9-second_largest-4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Β9. Γράψε εσύ: second_largest (4′)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#10-remove_duplicates-8" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Β10. Πρόκληση: remove_duplicates (8′)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#50" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Μέρος Γ — Λεξικά (50′)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Μέρος Γ — Λεξικά (50′)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Υπενθύμιση
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#1-5_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Γ1. Πρόβλεψη (5′)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Γ2. Ανάγνωση δομής (3′)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Γ3. Ιχνηλάτηση του προτύπου μέτρησης (4′)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4-3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Γ4. Σωστό ή λάθος; (3′)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#5-4_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Γ5. Βρες το σφάλμα (4′)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#6-4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Γ6. Συμπλήρωσε τα κενά (4′)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#7-count_words-4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Γ7. Γράψε εσύ: count_words (4′)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#8-lookup-3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Γ8. Γράψε εσύ: lookup (3′)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#9-cart_total-4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Γ9. Γράψε εσύ: cart_total (4′)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#10-highest-4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Γ10. Γράψε εσύ: highest (4′)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#11-add_points-4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Γ11. Γράψε εσύ: add_points (4′)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#12-group_by_length-8" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Γ12. Πρόκληση: group_by_length (8′)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#42" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Μέρος Δ — Πλειάδες (42′)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Μέρος Δ — Πλειάδες (42′)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Υπενθύμιση
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#1-5_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Δ1. Πρόβλεψη (5′)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-3_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Δ2. Σωστό ή λάθος; (3′)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-4_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Δ3. Βρες το σφάλμα (4′)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4-4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Δ4. Συμπλήρωσε τα κενά (4′)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#5-manhattan-3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Δ5. Γράψε εσύ: manhattan (3′)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#6-swap_pair-3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Δ6. Γράψε εσύ: swap_pair (3′)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#7-split_name-4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Δ7. Γράψε εσύ: split_name (4′)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#8-stats-4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Δ8. Γράψε εσύ: stats (4′)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#9-richest-4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Δ9. Γράψε εσύ: richest (4′)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#10-closest-8" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Δ10. Πρόκληση: closest (8′)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#50_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Μέρος Ε — Όλα μαζί (50′)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Μέρος Ε — Όλα μαζί (50′)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Ε1. Διάλεξε δομή (4′)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-5_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Ε2. Πρόβλεψη (5′)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#35" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Ε3–Ε5. Η αποθήκη του παιχνιδιού
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-add_item-4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Ε3. Γράψε εσύ: add_item (4′)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4-remove_item-6" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Ε4. Γράψε εσύ: remove_item (6′)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#5-total_items-3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Ε5. Γράψε εσύ: total_items (3′)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#6-averages-5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Ε6. Γράψε εσύ: averages (5′)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#7-best_student-5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Ε7. Γράψε εσύ: best_student (5′)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#8-word_stats-7" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Ε8. Γράψε εσύ: word_stats (7′)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#9-ranking-8" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Ε9. Πρόκληση: ranking (8′)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#10-3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Ε10. Κάρτα εξόδου (3′)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_8" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Αυτοέλεγχος γνώσεων
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_9" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Αν κολλήσεις
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8" >
+        
+          
+          <label class="md-nav__link" for="__nav_8" id="__nav_8_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Μάθημα 5 — Λαβύρινθος
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_8_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_8">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Μάθημα 5 — Λαβύρινθος
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../05-maze/lesson-05/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Μάθημα
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../05-maze/worksheet-05/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Φύλλο εργασίας
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_9" >
+        
+          
+          <label class="md-nav__link" for="__nav_9" id="__nav_9_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Μάθημα 6 — Μονομαχία
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_9_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_9">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Μάθημα 6 — Μονομαχία
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../06-duel/lesson-06/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Μάθημα
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../06-duel/worksheet-06/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Φύλλο εργασίας
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_10" >
+        
+          
+          <label class="md-nav__link" for="__nav_10" id="__nav_10_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Μάθημα 7 — Πάτα τον στόχο
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_10_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_10">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Μάθημα 7 — Πάτα τον στόχο
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../07-click-target/lesson-07/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Μάθημα
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../07-click-target/worksheet-07/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Φύλλο εργασίας
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_11" >
+        
+          
+          <label class="md-nav__link" for="__nav_11" id="__nav_11_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Μάθημα 8 — Πάγωσε την μπάλα
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_11_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_11">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Μάθημα 8 — Πάγωσε την μπάλα
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../08-freeze-ball/lesson-08/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Μάθημα
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../08-freeze-ball/worksheet-08/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Φύλλο εργασίας
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_12" >
+        
+          
+          <label class="md-nav__link" for="__nav_12" id="__nav_12_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Μάθημα 9 — Pong
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_12_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_12">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Μάθημα 9 — Pong
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../09-pong/lesson-09/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Μάθημα
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../09-pong/worksheet-09/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Φύλλο εργασίας
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_13" >
+        
+          
+          <label class="md-nav__link" for="__nav_13" id="__nav_13_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Μάθημα 10 — Πιάσε τα αστέρια
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_13_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_13">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Μάθημα 10 — Πιάσε τα αστέρια
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../10-catch-stars/lesson-10/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Μάθημα
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../10-catch-stars/worksheet-10/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Φύλλο εργασίας
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_14" >
+        
+          
+          <label class="md-nav__link" for="__nav_14" id="__nav_14_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Μάθημα 11 — Διαστημική αποφυγή
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_14_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_14">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Μάθημα 11 — Διαστημική αποφυγή
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../11-space-dodge/lesson-11/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Μάθημα
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../11-space-dodge/worksheet-11/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Φύλλο εργασίας
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_15" >
+        
+          
+          <label class="md-nav__link" for="__nav_15" id="__nav_15_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Μάθημα 12 — Το ίδιο παιχνίδι, ολοκληρωμένο
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_15_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_15">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Μάθημα 12 — Το ίδιο παιχνίδι, ολοκληρωμένο
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../12-complete-game/lesson-12/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Μάθημα
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../12-complete-game/worksheet-12/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Φύλλο εργασίας
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_16" >
+        
+          
+          <label class="md-nav__link" for="__nav_16" id="__nav_16_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Μάθημα 13 — Φίδι
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_16_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_16">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Μάθημα 13 — Φίδι
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../13-snake/lesson-13/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Μάθημα
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../13-snake/worksheet-13/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Φύλλο εργασίας
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_17" >
+        
+          
+          <label class="md-nav__link" for="__nav_17" id="__nav_17_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Μάθημα 14 — Project (1/2): από την ιδέα στο πρωτότυπο
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_17_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_17">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Μάθημα 14 — Project (1/2): από την ιδέα στο πρωτότυπο
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../14-project-prototype/lesson-14/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Μάθημα
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../14-project-prototype/worksheet-14/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Φύλλο εργασίας
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_18" >
+        
+          
+          <label class="md-nav__link" for="__nav_18" id="__nav_18_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Μάθημα 15 — Project (2/2): από το πρωτότυπο στο τελικό παιχνίδι
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_18_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_18">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Μάθημα 15 — Project (2/2): από το πρωτότυπο στο τελικό παιχνίδι
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../15-project-final/lesson-15/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Μάθημα
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../15-project-final/worksheet-15/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Φύλλο εργασίας
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_19" >
+        
+          
+          <label class="md-nav__link" for="__nav_19" id="__nav_19_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Project — κάρτες λειτουργιών
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_19_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_19">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Project — κάρτες λειτουργιών
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../15-project-final/cards/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Οδηγός καρτών
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../15-project-final/cards/lives/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Ζωές
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../15-project-final/cards/countdown/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Αντίστροφη μέτρηση
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../15-project-final/cards/levels/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Επίπεδα
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../15-project-final/cards/record/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Ρεκόρ
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../15-project-final/cards/record-file/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Ρεκόρ σε αρχείο
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../15-project-final/cards/mouse/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Κλικ με το ποντίκι
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../15-project-final/cards/gravity/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Βαρύτητα και άλμα
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../15-project-final/cards/pause/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Παύση
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../15-project-final/cards/help-screen/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Οθόνη οδηγιών
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../15-project-final/cards/objects/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Πολλά αντικείμενα
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../15-project-final/cards/collisions/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Συγκρούσεις
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../15-project-final/cards/shuffle/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Ανακάτεμα
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../15-project-final/cards/images/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Εικόνες
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../15-project-final/cards/sounds/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Ήχοι και μουσική
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Πίνακας περιεχομένων">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Πίνακας περιεχομένων
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Αρχεία
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Πώς διαβάζεις τον αυτοέλεγχο
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#44" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Μέρος Α — Συναρτήσεις (44′)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Μέρος Α — Συναρτήσεις (44′)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Υπενθύμιση
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#1-5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Α1. Πρόβλεψη (5′)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Α2. Ιχνηλάτηση κλήσεων (5′)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Α3. Σωστό ή λάθος; (3′)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4-5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Α4. Βρες το σφάλμα (5′)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#5-4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Α5. Συμπλήρωσε τα κενά (4′)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#6-is_even-3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Α6. Γράψε εσύ: is_even (3′)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#7-clamp-4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Α7. Γράψε εσύ: clamp (4′)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#8-grade_text-4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Α8. Γράψε εσύ: grade_text (4′)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#9-repeat_text-4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Α9. Γράψε εσύ: repeat_text (4′)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#10-is_prime-7" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Α10. Πρόκληση: is_prime (7′)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#45" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Μέρος Β — Λίστες (45′)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Μέρος Β — Λίστες (45′)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Υπενθύμιση
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#1-5_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Β1. Πρόβλεψη (5′)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-5_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Β2. Ιχνηλάτηση (5′)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-3_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Β3. Σωστό ή λάθος; (3′)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4-5_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Β4. Βρες το σφάλμα (5′)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#5-4_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Β5. Συμπλήρωσε τα κενά (4′)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#6-count_above-4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Β6. Γράψε εσύ: count_above (4′)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#7-average-3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Β7. Γράψε εσύ: average (3′)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#8-without_negatives-4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Β8. Γράψε εσύ: without_negatives (4′)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#9-second_largest-4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Β9. Γράψε εσύ: second_largest (4′)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#10-remove_duplicates-8" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Β10. Πρόκληση: remove_duplicates (8′)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#50" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Μέρος Γ — Λεξικά (50′)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Μέρος Γ — Λεξικά (50′)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Υπενθύμιση
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#1-5_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Γ1. Πρόβλεψη (5′)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Γ2. Ανάγνωση δομής (3′)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Γ3. Ιχνηλάτηση του προτύπου μέτρησης (4′)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4-3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Γ4. Σωστό ή λάθος; (3′)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#5-4_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Γ5. Βρες το σφάλμα (4′)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#6-4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Γ6. Συμπλήρωσε τα κενά (4′)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#7-count_words-4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Γ7. Γράψε εσύ: count_words (4′)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#8-lookup-3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Γ8. Γράψε εσύ: lookup (3′)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#9-cart_total-4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Γ9. Γράψε εσύ: cart_total (4′)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#10-highest-4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Γ10. Γράψε εσύ: highest (4′)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#11-add_points-4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Γ11. Γράψε εσύ: add_points (4′)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#12-group_by_length-8" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Γ12. Πρόκληση: group_by_length (8′)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#42" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Μέρος Δ — Πλειάδες (42′)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Μέρος Δ — Πλειάδες (42′)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Υπενθύμιση
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#1-5_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Δ1. Πρόβλεψη (5′)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-3_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Δ2. Σωστό ή λάθος; (3′)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-4_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Δ3. Βρες το σφάλμα (4′)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4-4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Δ4. Συμπλήρωσε τα κενά (4′)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#5-manhattan-3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Δ5. Γράψε εσύ: manhattan (3′)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#6-swap_pair-3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Δ6. Γράψε εσύ: swap_pair (3′)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#7-split_name-4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Δ7. Γράψε εσύ: split_name (4′)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#8-stats-4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Δ8. Γράψε εσύ: stats (4′)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#9-richest-4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Δ9. Γράψε εσύ: richest (4′)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#10-closest-8" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Δ10. Πρόκληση: closest (8′)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#50_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Μέρος Ε — Όλα μαζί (50′)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Μέρος Ε — Όλα μαζί (50′)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Ε1. Διάλεξε δομή (4′)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-5_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Ε2. Πρόβλεψη (5′)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#35" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Ε3–Ε5. Η αποθήκη του παιχνιδιού
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-add_item-4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Ε3. Γράψε εσύ: add_item (4′)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4-remove_item-6" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Ε4. Γράψε εσύ: remove_item (6′)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#5-total_items-3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Ε5. Γράψε εσύ: total_items (3′)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#6-averages-5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Ε6. Γράψε εσύ: averages (5′)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#7-best_student-5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Ε7. Γράψε εσύ: best_student (5′)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#8-word_stats-7" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Ε8. Γράψε εσύ: word_stats (7′)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#9-ranking-8" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Ε9. Πρόκληση: ranking (8′)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#10-3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Ε10. Κάρτα εξόδου (3′)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_8" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Αυτοέλεγχος γνώσεων
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_9" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Αν κολλήσεις
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="_1">Φυλλάδιο εξάσκησης — συναρτήσεις, λίστες, λεξικά, πλειάδες<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h1>
+<p><strong>Για ποιον:</strong> όποιον θέλει περισσότερη εξάσκηση στα Μαθήματα 2–4<br />
+<strong>Διάρκεια:</strong> 5 μέρη, περίπου 45′ το καθένα. Κάθε μέρος στέκεται μόνο του.</p>
+<div class="admonition info">
+<p class="admonition-title">Πώς δουλεύουμε</p>
+<p>Η θεωρία είναι στα μαθήματα: <a href="../02-rock-paper-scissors/lesson-02/">Μάθημα 2</a> (λίστες),
+<a href="../03-hangman/lesson-03/">Μάθημα 3</a> (μέθοδοι λιστών) και <a href="../04-quiz-console/lesson-04/">Μάθημα 4</a>
+(συναρτήσεις, λεξικά, πλειάδες). Εδώ είναι μόνο ασκήσεις, με μια σύντομη υπενθύμιση στην αρχή κάθε μέρους.</p>
+<p>Στις ασκήσεις πρόβλεψης, ιχνηλάτησης, «σωστό ή λάθος» και «βρες το σφάλμα» <strong>γράψε πρώτα την
+απάντησή σου</strong> και μετά τρέξε τον κώδικα στο <code>sandbox.py</code>. Μπορείς να εκτυπώσεις τη σελίδα ή να
+γράφεις τις απαντήσεις στο τετράδιό σου.</p>
+<p>Οι ασκήσεις «Γράψε εσύ» γράφονται στο αρχείο <code>practice.py</code>. Μετά από κάθε μία, τρέξε τον αυτοέλεγχο
+του μέρους (π.χ. <code>python check_practice.py lists</code>) και διάβασε το αποτέλεσμα. Οι ασκήσεις με τίτλο
+«Πρόκληση» είναι για όποιον τελειώνει νωρίτερα.</p>
+</div>
+<h2 id="_2">Αρχεία<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>Αρχείο</th>
+<th>Τι είναι</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="code/starter/practice.py">practice.py</a></td>
+<td>οι 29 συναρτήσεις που γράφεις εσύ (στην αρχή είναι άδειες)</td>
+</tr>
+<tr>
+<td><a href="code/starter/check_practice.py">check_practice.py</a></td>
+<td>ο αυτοέλεγχος των συναρτήσεων</td>
+</tr>
+</tbody>
+</table>
+<p>Κατέβασε και τα δύο αρχεία στον <strong>ίδιο φάκελο</strong>, π.χ. <code>practice</code> μέσα στον <code>python-games</code>. Άνοιξε τον
+φάκελο στο VS Code, άνοιξε τερματικό που δείχνει αυτόν τον φάκελο και φτιάξε ένα κενό <code>sandbox.py</code> για δοκιμές.</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: center;">Μέρος</th>
+<th>Θέμα</th>
+<th>Συναρτήσεις που γράφεις</th>
+<th>Αυτοέλεγχος</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;">Α</td>
+<td>Συναρτήσεις</td>
+<td><code>is_even</code>, <code>clamp</code>, <code>grade_text</code>, <code>repeat_text</code>, <code>is_prime</code></td>
+<td><code>python check_practice.py functions</code></td>
+</tr>
+<tr>
+<td style="text-align: center;">Β</td>
+<td>Λίστες</td>
+<td><code>count_above</code>, <code>average</code>, <code>without_negatives</code>, <code>second_largest</code>, <code>remove_duplicates</code></td>
+<td><code>python check_practice.py lists</code></td>
+</tr>
+<tr>
+<td style="text-align: center;">Γ</td>
+<td>Λεξικά</td>
+<td><code>count_words</code>, <code>lookup</code>, <code>cart_total</code>, <code>highest</code>, <code>add_points</code>, <code>group_by_length</code></td>
+<td><code>python check_practice.py dicts</code></td>
+</tr>
+<tr>
+<td style="text-align: center;">Δ</td>
+<td>Πλειάδες</td>
+<td><code>manhattan</code>, <code>swap_pair</code>, <code>split_name</code>, <code>stats</code>, <code>richest</code>, <code>closest</code></td>
+<td><code>python check_practice.py tuples</code></td>
+</tr>
+<tr>
+<td style="text-align: center;">Ε</td>
+<td>Όλα μαζί</td>
+<td><code>add_item</code>, <code>remove_item</code>, <code>total_items</code>, <code>averages</code>, <code>best_student</code>, <code>word_stats</code>, <code>ranking</code></td>
+<td><code>python check_practice.py mixed</code></td>
+</tr>
+</tbody>
+</table>
+<p>Το Μέρος Α έρχεται πρώτο γιατί σε όλα τα μέρη γράφεις συναρτήσεις. Τα υπόλοιπα μπορείς να τα κάνεις με
+όποια σειρά θέλεις, αφού έχεις δει το αντίστοιχο κομμάτι του Μαθήματος 4.</p>
+<h2 id="_3">Πώς διαβάζεις τον αυτοέλεγχο<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h2>
+<p>Κάθε συνάρτηση του <code>practice.py</code> περιέχει στην αρχή τη γραμμή <code>raise NotImplementedError</code> («δεν έχει γραφτεί
+ακόμη»). <strong>Την αντικαθιστάς με τον κώδικά σου.</strong> Ο αυτοέλεγχος δείχνει μία γραμμή για κάθε συνάρτηση:</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>Μέρος Α — συναρτήσεις
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>  Α6 is_even: [ΟΚ] 8 από 8 δοκιμές
+</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>  Α7 clamp: [ΔΕΝ ΕΙΝΑΙ ΕΤΟΙΜΗ ΑΚΟΜΗ]
+</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>  Α8 grade_text: [ΛΑΘΟΣ] 8 από 9 δοκιμές
+</span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>      grade_text(90) -&gt; 'άριστα'
+</span><span id="__span-0-6"><a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a>          αναμενόμενο: 'άριστα'
+</span><span id="__span-0-7"><a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a>          πήρα:        'πολύ καλά'
+</span><span id="__span-0-8"><a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a>  Α9 repeat_text: [ΔΕΝ ΕΙΝΑΙ ΕΤΟΙΜΗ ΑΚΟΜΗ]
+</span><span id="__span-0-9"><a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a>  Α10 is_prime: [ΔΕΝ ΕΙΝΑΙ ΕΤΟΙΜΗ ΑΚΟΜΗ]
+</span><span id="__span-0-10"><a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a>
+</span><span id="__span-0-11"><a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a>Πέρασαν 16 από 46 δοκιμές. Λάθος: 1. Δεν είναι έτοιμες ακόμη: 29.
+</span><span id="__span-0-12"><a id="__codelineno-0-12" name="__codelineno-0-12" href="#__codelineno-0-12"></a>Έτοιμες συναρτήσεις: 1 από 5.
+</span></code></pre></div>
+<ul>
+<li><strong><code>[ΟΚ]</code>:</strong> η συνάρτηση πέρασε όλες τις δοκιμές της.</li>
+<li><strong><code>[ΛΑΘΟΣ]</code>:</strong> κάποιες δοκιμές απέτυχαν. Από κάτω βλέπεις την κλήση, τι περίμενε ο αυτοέλεγχος και τι
+  πήρε από τη συνάρτησή σου. Στο παράδειγμα, για τον βαθμό 90 περίμενε «άριστα» και πήρε «πολύ καλά».
+  Αν το «πήρα» είναι <code>None</code>, μάλλον έβαλες <code>print</code> αντί για <code>return</code>.</li>
+<li><strong><code>[ΔΕΝ ΕΙΝΑΙ ΕΤΟΙΜΗ ΑΚΟΜΗ]</code>:</strong> η συνάρτηση έχει ακόμη τη γραμμή <code>raise NotImplementedError</code>.</li>
+</ul>
+<p>Όταν περάσουν όλες οι δοκιμές, το τέλος γράφει <code>ΟΛΑ ΟΚ</code>. Μπορείς να τον τρέξεις όποτε θέλεις, και για όλο το
+αρχείο με <code>python check_practice.py</code>. Αν το πρόγραμμά σου κολλήσει και δεν τελειώνει, σταμάτησέ το με <strong>Ctrl + C</strong>.</p>
+<hr />
+<h2 id="44">Μέρος Α — Συναρτήσεις (44′)<a class="headerlink" href="#44" title="Permanent link">&para;</a></h2>
+<h3 id="_4">Υπενθύμιση<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h3>
+<p>Μάθημα 4, ενότητες 1.1–1.9 και 4.1–4.2.</p>
+<ul>
+<li>Το <code>def όνομα(παράμετροι):</code> <strong>ορίζει</strong> μια συνάρτηση. Η κλήση <code>όνομα(ορίσματα)</code> την <strong>εκτελεί</strong>.</li>
+<li>Η <code>return τιμή</code> <strong>επιστρέφει</strong> την τιμή σε αυτόν που κάλεσε τη συνάρτηση και την τελειώνει αμέσως. Η <code>print</code>
+  μόνο εμφανίζει κάτι στην οθόνη. Μια συνάρτηση που δεν φτάνει σε <code>return</code> επιστρέφει <code>None</code>.</li>
+<li>Οι μεταβλητές που δημιουργείς μέσα σε μια συνάρτηση, και οι παράμετροί της, υπάρχουν <strong>μόνο εκεί</strong>.</li>
+<li>Μια παράμετρος με <strong>προεπιλογή</strong> (<code>def f(a, b=5):</code>) μπορεί να παραλειφθεί στην κλήση. Μπορείς να δώσεις
+  ορίσματα και με όνομα: <code>f(1, b=7)</code>.</li>
+<li>Για να κρατήσεις μια τιμή μέσα σε όρια: <code>max(low, min(value, high))</code>.</li>
+</ul>
+<h3 id="1-5">Α1. Πρόβλεψη (5′)<a class="headerlink" href="#1-5" title="Permanent link">&para;</a></h3>
+<p>Γράψε τι εμφανίζει το πρόγραμμα, γραμμή προς γραμμή. Προσοχή: μια εντολή του προγράμματος μπορεί να μην
+εμφανίζει τίποτα.</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="k">def</span><span class="w"> </span><span class="nf">triple</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
+</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>    <span class="k">return</span> <span class="n">x</span> <span class="o">*</span> <span class="mi">3</span>
+</span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>
+</span><span id="__span-1-4"><a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a><span class="k">def</span><span class="w"> </span><span class="nf">say</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
+</span><span id="__span-1-5"><a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a>    <span class="nb">print</span><span class="p">(</span><span class="s2">"Είπα:"</span><span class="p">,</span> <span class="n">x</span><span class="p">)</span>
+</span><span id="__span-1-6"><a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a>
+</span><span id="__span-1-7"><a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a><span class="n">a</span> <span class="o">=</span> <span class="n">triple</span><span class="p">(</span><span class="mi">4</span><span class="p">)</span>
+</span><span id="__span-1-8"><a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a><span class="n">b</span> <span class="o">=</span> <span class="n">say</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
+</span><span id="__span-1-9"><a id="__codelineno-1-9" name="__codelineno-1-9" href="#__codelineno-1-9"></a><span class="nb">print</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
+</span><span id="__span-1-10"><a id="__codelineno-1-10" name="__codelineno-1-10" href="#__codelineno-1-10"></a><span class="nb">print</span><span class="p">(</span><span class="n">b</span><span class="p">)</span>
+</span><span id="__span-1-11"><a id="__codelineno-1-11" name="__codelineno-1-11" href="#__codelineno-1-11"></a><span class="nb">print</span><span class="p">(</span><span class="n">triple</span><span class="p">(</span><span class="n">triple</span><span class="p">(</span><span class="mi">2</span><span class="p">)))</span>
+</span><span id="__span-1-12"><a id="__codelineno-1-12" name="__codelineno-1-12" href="#__codelineno-1-12"></a><span class="n">say</span><span class="p">(</span><span class="n">triple</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span>
+</span></code></pre></div>
+<table>
+<thead>
+<tr>
+<th style="text-align: center;">Γραμμή εξόδου</th>
+<th>Τι εμφανίζεται</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;">1η</td>
+<td></td>
+</tr>
+<tr>
+<td style="text-align: center;">2η</td>
+<td></td>
+</tr>
+<tr>
+<td style="text-align: center;">3η</td>
+<td></td>
+</tr>
+<tr>
+<td style="text-align: center;">4η</td>
+<td></td>
+</tr>
+<tr>
+<td style="text-align: center;">5η</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p>Γιατί η <code>b</code> έχει αυτή την τιμή; __________________________________________</p>
+<h3 id="2-5">Α2. Ιχνηλάτηση κλήσεων (5′)<a class="headerlink" href="#2-5" title="Permanent link">&para;</a></h3>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="k">def</span><span class="w"> </span><span class="nf">apply_discount</span><span class="p">(</span><span class="n">price</span><span class="p">,</span> <span class="n">percent</span><span class="o">=</span><span class="mi">10</span><span class="p">):</span>
+</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>    <span class="k">return</span> <span class="n">price</span> <span class="o">-</span> <span class="n">price</span> <span class="o">*</span> <span class="n">percent</span> <span class="o">/</span> <span class="mi">100</span>
+</span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a>
+</span><span id="__span-2-4"><a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a><span class="k">def</span><span class="w"> </span><span class="nf">label</span><span class="p">(</span><span class="n">price</span><span class="p">):</span>
+</span><span id="__span-2-5"><a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a>    <span class="k">if</span> <span class="n">price</span> <span class="o">&gt;=</span> <span class="mi">50</span><span class="p">:</span>
+</span><span id="__span-2-6"><a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a>        <span class="k">return</span> <span class="s2">"ακριβό"</span>
+</span><span id="__span-2-7"><a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a>    <span class="k">return</span> <span class="s2">"φτηνό"</span>
+</span><span id="__span-2-8"><a id="__codelineno-2-8" name="__codelineno-2-8" href="#__codelineno-2-8"></a>
+</span><span id="__span-2-9"><a id="__codelineno-2-9" name="__codelineno-2-9" href="#__codelineno-2-9"></a><span class="nb">print</span><span class="p">(</span><span class="n">label</span><span class="p">(</span><span class="n">apply_discount</span><span class="p">(</span><span class="mi">80</span><span class="p">)))</span>
+</span><span id="__span-2-10"><a id="__codelineno-2-10" name="__codelineno-2-10" href="#__codelineno-2-10"></a><span class="nb">print</span><span class="p">(</span><span class="n">label</span><span class="p">(</span><span class="n">apply_discount</span><span class="p">(</span><span class="mi">80</span><span class="p">,</span> <span class="mi">50</span><span class="p">)))</span>
+</span><span id="__span-2-11"><a id="__codelineno-2-11" name="__codelineno-2-11" href="#__codelineno-2-11"></a><span class="nb">print</span><span class="p">(</span><span class="n">apply_discount</span><span class="p">(</span><span class="mi">200</span><span class="p">,</span> <span class="n">percent</span><span class="o">=</span><span class="mi">25</span><span class="p">))</span>
+</span></code></pre></div>
+<p>Συμπλήρωσε τις κλήσεις με τη σειρά που εκτελούνται:</p>
+<table>
+<thead>
+<tr>
+<th>Κλήση</th>
+<th>Τιμές παραμέτρων</th>
+<th>Τι επιστρέφει</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>apply_discount(80)</code></td>
+<td><code>price = 80</code>, <code>percent =</code></td>
+<td></td>
+</tr>
+<tr>
+<td><code>label(...)</code> της πρώτης γραμμής</td>
+<td><code>price =</code></td>
+<td></td>
+</tr>
+<tr>
+<td><code>apply_discount(80, 50)</code></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><code>label(...)</code> της δεύτερης γραμμής</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><code>apply_discount(200, percent=25)</code></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p>Τι εμφανίζεται συνολικά; __________________________________________</p>
+<h3 id="3-3">Α3. Σωστό ή λάθος; (3′)<a class="headerlink" href="#3-3" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: center;"></th>
+<th>Πρόταση</th>
+<th style="text-align: center;"></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;">1</td>
+<td>Μια συνάρτηση χωρίς <code>return</code> επιστρέφει <code>None</code>.</td>
+<td style="text-align: center;">Σ / Λ</td>
+</tr>
+<tr>
+<td style="text-align: center;">2</td>
+<td>Μετά το <code>return</code>, η συνάρτηση συνεχίζει με τις επόμενες γραμμές της.</td>
+<td style="text-align: center;">Σ / Λ</td>
+</tr>
+<tr>
+<td style="text-align: center;">3</td>
+<td>Μια μεταβλητή που δημιουργείται μέσα σε μια συνάρτηση φαίνεται και έξω από αυτήν.</td>
+<td style="text-align: center;">Σ / Λ</td>
+</tr>
+<tr>
+<td style="text-align: center;">4</td>
+<td>Αν ο ορισμός είναι <code>def f(a, b=5):</code>, η κλήση <code>f(1)</code> είναι έγκυρη.</td>
+<td style="text-align: center;">Σ / Λ</td>
+</tr>
+<tr>
+<td style="text-align: center;">5</td>
+<td>Αν ο ορισμός είναι <code>def f(a, b):</code>, η κλήση <code>f(1)</code> είναι έγκυρη.</td>
+<td style="text-align: center;">Σ / Λ</td>
+</tr>
+<tr>
+<td style="text-align: center;">6</td>
+<td>Αν η <code>f</code> έχει <code>return</code>, η γραμμή <code>f(3)</code> μόνη της εμφανίζει το αποτέλεσμα στην οθόνη.</td>
+<td style="text-align: center;">Σ / Λ</td>
+</tr>
+</tbody>
+</table>
+<h3 id="4-5">Α4. Βρες το σφάλμα (5′)<a class="headerlink" href="#4-5" title="Permanent link">&para;</a></h3>
+<p>Πρόβλεψε τι συμβαίνει και πώς διορθώνεται.</p>
+<p><strong>1.</strong>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="k">def</span><span class="w"> </span><span class="nf">area</span><span class="p">(</span><span class="n">width</span><span class="p">,</span> <span class="n">height</span><span class="p">):</span>
+</span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>    <span class="n">result</span> <span class="o">=</span> <span class="n">width</span> <span class="o">*</span> <span class="n">height</span>
+</span><span id="__span-3-3"><a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a>
+</span><span id="__span-3-4"><a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a><span class="nb">print</span><span class="p">(</span><span class="n">area</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">))</span>
+</span></code></pre></div>
+Τι εμφανίζεται; __________________________  Διόρθωση: ______________________________</p>
+<p><strong>2.</strong>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="k">def</span><span class="w"> </span><span class="nf">sign</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+</span><span id="__span-4-2"><a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a>    <span class="k">if</span> <span class="n">n</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
+</span><span id="__span-4-3"><a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a>        <span class="k">return</span> <span class="s2">"θετικός"</span>
+</span><span id="__span-4-4"><a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a>    <span class="k">elif</span> <span class="n">n</span> <span class="o">&lt;</span> <span class="mi">0</span><span class="p">:</span>
+</span><span id="__span-4-5"><a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a>        <span class="k">return</span> <span class="s2">"αρνητικός"</span>
+</span><span id="__span-4-6"><a id="__codelineno-4-6" name="__codelineno-4-6" href="#__codelineno-4-6"></a>
+</span><span id="__span-4-7"><a id="__codelineno-4-7" name="__codelineno-4-7" href="#__codelineno-4-7"></a><span class="nb">print</span><span class="p">(</span><span class="n">sign</span><span class="p">(</span><span class="mi">5</span><span class="p">))</span>
+</span><span id="__span-4-8"><a id="__codelineno-4-8" name="__codelineno-4-8" href="#__codelineno-4-8"></a><span class="nb">print</span><span class="p">(</span><span class="n">sign</span><span class="p">(</span><span class="mi">0</span><span class="p">))</span>
+</span></code></pre></div>
+Τι εμφανίζεται; __________________________  Διόρθωση: ______________________________</p>
+<p><strong>3.</strong>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="k">def</span><span class="w"> </span><span class="nf">add</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">):</span>
+</span><span id="__span-5-2"><a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a>    <span class="k">return</span> <span class="n">a</span> <span class="o">+</span> <span class="n">b</span>
+</span><span id="__span-5-3"><a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a>
+</span><span id="__span-5-4"><a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a><span class="nb">print</span><span class="p">(</span><span class="n">add</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">))</span>
+</span></code></pre></div>
+Τι συμβαίνει; __________________________  Διόρθωση: ______________________________</p>
+<p><strong>4.</strong>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="k">def</span><span class="w"> </span><span class="nf">count_up</span><span class="p">():</span>
+</span><span id="__span-6-2"><a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a>    <span class="n">counter</span> <span class="o">=</span> <span class="n">counter</span> <span class="o">+</span> <span class="mi">1</span>
+</span><span id="__span-6-3"><a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a>    <span class="k">return</span> <span class="n">counter</span>
+</span><span id="__span-6-4"><a id="__codelineno-6-4" name="__codelineno-6-4" href="#__codelineno-6-4"></a>
+</span><span id="__span-6-5"><a id="__codelineno-6-5" name="__codelineno-6-5" href="#__codelineno-6-5"></a><span class="n">counter</span> <span class="o">=</span> <span class="mi">0</span>
+</span><span id="__span-6-6"><a id="__codelineno-6-6" name="__codelineno-6-6" href="#__codelineno-6-6"></a><span class="nb">print</span><span class="p">(</span><span class="n">count_up</span><span class="p">())</span>
+</span></code></pre></div>
+Τι συμβαίνει; __________________________  Διόρθωση: ______________________________</p>
+<h3 id="5-4">Α5. Συμπλήρωσε τα κενά (4′)<a class="headerlink" href="#5-4" title="Permanent link">&para;</a></h3>
+<p>Η συνάρτηση προσθέτει ΦΠΑ σε μια τιμή. Αν δεν δοθεί ποσοστό, χρησιμοποιεί 24 (%). Συμπλήρωσε τα τρία κενά
+ώστε να εμφανίζονται οι τιμές των σχολίων:</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="k">def</span><span class="w"> </span><span class="nf">price_with_tax</span><span class="p">(</span><span class="n">price</span><span class="p">,</span> <span class="n">rate</span><span class="o">=</span><span class="n">____</span><span class="p">):</span>
+</span><span id="__span-7-2"><a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a>    <span class="n">tax</span> <span class="o">=</span> <span class="n">price</span> <span class="o">*</span> <span class="n">rate</span> <span class="o">/</span> <span class="n">____</span>
+</span><span id="__span-7-3"><a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a>    <span class="k">return</span> <span class="n">____</span> <span class="o">+</span> <span class="n">tax</span>
+</span><span id="__span-7-4"><a id="__codelineno-7-4" name="__codelineno-7-4" href="#__codelineno-7-4"></a>
+</span><span id="__span-7-5"><a id="__codelineno-7-5" name="__codelineno-7-5" href="#__codelineno-7-5"></a><span class="nb">print</span><span class="p">(</span><span class="n">price_with_tax</span><span class="p">(</span><span class="mi">100</span><span class="p">))</span>        <span class="c1"># 124.0</span>
+</span><span id="__span-7-6"><a id="__codelineno-7-6" name="__codelineno-7-6" href="#__codelineno-7-6"></a><span class="nb">print</span><span class="p">(</span><span class="n">price_with_tax</span><span class="p">(</span><span class="mi">100</span><span class="p">,</span> <span class="mi">13</span><span class="p">))</span>    <span class="c1"># 113.0</span>
+</span></code></pre></div>
+<p>Κενά: ___________  ___________  ___________</p>
+<h3 id="6-is_even-3">Α6. Γράψε εσύ: <code>is_even</code> (3′)<a class="headerlink" href="#6-is_even-3" title="Permanent link">&para;</a></h3>
+<p>Γράψε στο <code>practice.py</code> το σώμα της <code>is_even(number)</code>. Επιστρέφει <code>True</code> αν ο ακέραιος είναι άρτιος και
+<code>False</code> αν είναι περιττός.</p>
+<p>Παραδείγματα: <code>is_even(4)</code> επιστρέφει <code>True</code>, <code>is_even(7)</code> επιστρέφει <code>False</code>, <code>is_even(-3)</code> επιστρέφει <code>False</code>.</p>
+<p><em>Υπόδειξη:</em> ένας ακέραιος είναι άρτιος όταν το υπόλοιπο της διαίρεσης με το 2 είναι 0. Η έκφραση
+<code>number % 2 == 0</code> είναι ήδη <code>True</code> ή <code>False</code>: δεν χρειάζεσαι <code>if</code>. Τρέξε <code>python check_practice.py functions</code>.</p>
+<h3 id="7-clamp-4">Α7. Γράψε εσύ: <code>clamp</code> (4′)<a class="headerlink" href="#7-clamp-4" title="Permanent link">&para;</a></h3>
+<p>Γράψε το σώμα της <code>clamp(value, low, high)</code>. Επιστρέφει την τιμή <code>value</code>, αλλά <strong>όχι μικρότερη από το
+<code>low</code></strong> και <strong>όχι μεγαλύτερη από το <code>high</code></strong>.</p>
+<p>Παραδείγματα: <code>clamp(15, 0, 10)</code> επιστρέφει <code>10</code>, <code>clamp(-3, 0, 10)</code> επιστρέφει <code>0</code>, <code>clamp(5, 0, 10)</code>
+επιστρέφει <code>5</code>.</p>
+<p><em>Υποδείξεις:</em> γράψε την πρώτα με δύο <code>if</code> (ένα για κάθε όριο) και μετά ξαναγράψε τη συνάρτηση σε μία γραμμή με το
+πρότυπο <code>max(low, min(value, high))</code>. Τρέξε τον αυτοέλεγχο και για τις δύο εκδοχές.</p>
+<h3 id="8-grade_text-4">Α8. Γράψε εσύ: <code>grade_text</code> (4′)<a class="headerlink" href="#8-grade_text-4" title="Permanent link">&para;</a></h3>
+<p>Γράψε το σώμα της <code>grade_text(score)</code>. Επιστρέφει κείμενο για έναν βαθμό από 0 έως 100: <strong>από 90</strong>
+<code>"άριστα"</code>, <strong>από 70</strong> <code>"πολύ καλά"</code>, <strong>από 50</strong> <code>"καλά"</code>, αλλιώς <code>"χρειάζεσαι εξάσκηση"</code>.</p>
+<p>Παραδείγματα: <code>grade_text(95)</code> επιστρέφει <code>"άριστα"</code>, <code>grade_text(70)</code> επιστρέφει <code>"πολύ καλά"</code>,
+<code>grade_text(69)</code> επιστρέφει <code>"καλά"</code>, <code>grade_text(49)</code> επιστρέφει <code>"χρειάζεσαι εξάσκηση"</code>.</p>
+<p><em>Υποδείξεις:</em> ξεκίνα από το μεγαλύτερο όριο. Κάθε <code>if</code> έχει <code>return</code>, άρα οι επόμενοι έλεγχοι δεν εκτελούνται
+όταν ισχύει ένας προηγούμενος. Προσοχή στα όρια: το «από 90» σημαίνει <code>score &gt;= 90</code>.</p>
+<h3 id="9-repeat_text-4">Α9. Γράψε εσύ: <code>repeat_text</code> (4′)<a class="headerlink" href="#9-repeat_text-4" title="Permanent link">&para;</a></h3>
+<p>Γράψε το σώμα της <code>repeat_text(text, times=2, separator="-")</code>. Επιστρέφει το κείμενο επαναλαμβανόμενο
+<code>times</code> φορές (τουλάχιστον μία), με το <code>separator</code> ανάμεσά τους. Οι προεπιλογές υπάρχουν ήδη στην πρώτη γραμμή
+της συνάρτησης.</p>
+<p>Παραδείγματα: <code>repeat_text("να")</code> επιστρέφει <code>"να-να"</code>, <code>repeat_text("ε", 3, "")</code> επιστρέφει <code>"εεε"</code>,
+<code>repeat_text("α", 3, separator="+")</code> επιστρέφει <code>"α+α+α"</code>.</p>
+<p><em>Υποδείξεις:</em> ξεκίνα με <code>result = text</code>. Μετά πρόσθεσε το <code>separator + text</code> στο τέλος, <code>times - 1</code> φορές:
+η <code>range(times - 1)</code> σου δίνει τον σωστό αριθμό επαναλήψεων.</p>
+<h3 id="10-is_prime-7">Α10. Πρόκληση: <code>is_prime</code> (7′)<a class="headerlink" href="#10-is_prime-7" title="Permanent link">&para;</a></h3>
+<p>Γράψε το σώμα της <code>is_prime(number)</code>. Επιστρέφει <code>True</code> αν ο ακέραιος είναι <strong>πρώτος</strong> (διαιρείται ακριβώς
+μόνο με το 1 και με τον εαυτό του) και <code>False</code> αλλιώς. Οι αριθμοί μικρότεροι από το 2 δεν είναι πρώτοι.</p>
+<p>Παραδείγματα: <code>is_prime(2)</code> επιστρέφει <code>True</code>, <code>is_prime(9)</code> επιστρέφει <code>False</code>, <code>is_prime(13)</code> επιστρέφει
+<code>True</code>, <code>is_prime(1)</code> επιστρέφει <code>False</code>.</p>
+<p><em>Υποδείξεις:</em> αν ο αριθμός είναι μικρότερος από 2, επίστρεψε αμέσως <code>False</code>. Αλλιώς δοκίμασε τους διαιρέτες με
+<code>for divisor in range(2, number):</code>. Αν το <code>number % divisor</code> είναι 0, βρήκες διαιρέτη και η απάντηση είναι
+<code>False</code> αμέσως. Το <code>return True</code> μπαίνει <strong>έξω από</strong> τον βρόχο, γιατί μόνο όταν τελειώσουν όλοι οι διαιρέτες
+ξέρεις ότι δεν βρέθηκε κανένας.</p>
+<hr />
+<h2 id="45">Μέρος Β — Λίστες (45′)<a class="headerlink" href="#45" title="Permanent link">&para;</a></h2>
+<h3 id="_5">Υπενθύμιση<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h3>
+<p>Μάθημα 2, ενότητες 1.1–1.5, και Μάθημα 3, ενότητες 3.1–3.2.</p>
+<table>
+<thead>
+<tr>
+<th>Θέλω να…</th>
+<th>Γράφω</th>
+<th style="text-align: center;">Αλλάζει τη λίστα;</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>πάρω ένα στοιχείο</td>
+<td><code>x[0]</code>, και <code>x[-1]</code> για το τελευταίο</td>
+<td style="text-align: center;">όχι</td>
+</tr>
+<tr>
+<td>μάθω το πλήθος</td>
+<td><code>len(x)</code></td>
+<td style="text-align: center;">όχι</td>
+</tr>
+<tr>
+<td>ελέγξω αν υπάρχει</td>
+<td><code>a in x</code>, <code>a not in x</code></td>
+<td style="text-align: center;">όχι</td>
+</tr>
+<tr>
+<td>προσθέσω στο τέλος</td>
+<td><code>x.append(a)</code></td>
+<td style="text-align: center;"><strong>ναι</strong></td>
+</tr>
+<tr>
+<td>προσθέσω στη θέση <code>i</code></td>
+<td><code>x.insert(i, a)</code></td>
+<td style="text-align: center;"><strong>ναι</strong></td>
+</tr>
+<tr>
+<td>προσθέσω όλα τα στοιχεία μιας άλλης λίστας</td>
+<td><code>x.extend(άλλη)</code></td>
+<td style="text-align: center;"><strong>ναι</strong></td>
+</tr>
+<tr>
+<td>αφαιρέσω την τιμή <code>a</code></td>
+<td><code>x.remove(a)</code></td>
+<td style="text-align: center;"><strong>ναι</strong></td>
+</tr>
+<tr>
+<td>αφαιρέσω τη θέση <code>i</code></td>
+<td><code>x.pop(i)</code> (επιστρέφει το στοιχείο), <code>del x[i]</code></td>
+<td style="text-align: center;"><strong>ναι</strong></td>
+</tr>
+<tr>
+<td>ταξινομήσω στη θέση της</td>
+<td><code>x.sort()</code> (επιστρέφει <code>None</code>)</td>
+<td style="text-align: center;"><strong>ναι</strong></td>
+</tr>
+<tr>
+<td>πάρω νέα ταξινομημένη λίστα</td>
+<td><code>sorted(x)</code></td>
+<td style="text-align: center;">όχι</td>
+</tr>
+<tr>
+<td>βρω άθροισμα, μικρότερο, μεγαλύτερο</td>
+<td><code>sum(x)</code>, <code>min(x)</code>, <code>max(x)</code></td>
+<td style="text-align: center;">όχι</td>
+</tr>
+</tbody>
+</table>
+<p>Τέσσερα πρότυπα με <code>for</code> που ξαναχρησιμοποιούνται συνέχεια:</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-8-1"><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a><span class="n">numbers</span> <span class="o">=</span> <span class="p">[</span><span class="mi">4</span><span class="p">,</span> <span class="mi">12</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">20</span><span class="p">]</span>
+</span><span id="__span-8-2"><a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a>
+</span><span id="__span-8-3"><a id="__codelineno-8-3" name="__codelineno-8-3" href="#__codelineno-8-3"></a><span class="n">count</span> <span class="o">=</span> <span class="mi">0</span>                       <span class="c1"># μετρητής</span>
+</span><span id="__span-8-4"><a id="__codelineno-8-4" name="__codelineno-8-4" href="#__codelineno-8-4"></a><span class="k">for</span> <span class="n">number</span> <span class="ow">in</span> <span class="n">numbers</span><span class="p">:</span>
+</span><span id="__span-8-5"><a id="__codelineno-8-5" name="__codelineno-8-5" href="#__codelineno-8-5"></a>    <span class="k">if</span> <span class="n">number</span> <span class="o">&gt;</span> <span class="mi">10</span><span class="p">:</span>
+</span><span id="__span-8-6"><a id="__codelineno-8-6" name="__codelineno-8-6" href="#__codelineno-8-6"></a>        <span class="n">count</span> <span class="o">+=</span> <span class="mi">1</span>
+</span><span id="__span-8-7"><a id="__codelineno-8-7" name="__codelineno-8-7" href="#__codelineno-8-7"></a>
+</span><span id="__span-8-8"><a id="__codelineno-8-8" name="__codelineno-8-8" href="#__codelineno-8-8"></a><span class="n">total</span> <span class="o">=</span> <span class="mi">0</span>                       <span class="c1"># άθροισμα</span>
+</span><span id="__span-8-9"><a id="__codelineno-8-9" name="__codelineno-8-9" href="#__codelineno-8-9"></a><span class="k">for</span> <span class="n">number</span> <span class="ow">in</span> <span class="n">numbers</span><span class="p">:</span>
+</span><span id="__span-8-10"><a id="__codelineno-8-10" name="__codelineno-8-10" href="#__codelineno-8-10"></a>    <span class="n">total</span> <span class="o">+=</span> <span class="n">number</span>
+</span><span id="__span-8-11"><a id="__codelineno-8-11" name="__codelineno-8-11" href="#__codelineno-8-11"></a>
+</span><span id="__span-8-12"><a id="__codelineno-8-12" name="__codelineno-8-12" href="#__codelineno-8-12"></a><span class="n">best</span> <span class="o">=</span> <span class="n">numbers</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>               <span class="c1"># μεγαλύτερο</span>
+</span><span id="__span-8-13"><a id="__codelineno-8-13" name="__codelineno-8-13" href="#__codelineno-8-13"></a><span class="k">for</span> <span class="n">number</span> <span class="ow">in</span> <span class="n">numbers</span><span class="p">:</span>
+</span><span id="__span-8-14"><a id="__codelineno-8-14" name="__codelineno-8-14" href="#__codelineno-8-14"></a>    <span class="k">if</span> <span class="n">number</span> <span class="o">&gt;</span> <span class="n">best</span><span class="p">:</span>
+</span><span id="__span-8-15"><a id="__codelineno-8-15" name="__codelineno-8-15" href="#__codelineno-8-15"></a>        <span class="n">best</span> <span class="o">=</span> <span class="n">number</span>
+</span><span id="__span-8-16"><a id="__codelineno-8-16" name="__codelineno-8-16" href="#__codelineno-8-16"></a>
+</span><span id="__span-8-17"><a id="__codelineno-8-17" name="__codelineno-8-17" href="#__codelineno-8-17"></a><span class="n">result</span> <span class="o">=</span> <span class="p">[]</span>                     <span class="c1"># νέα λίστα</span>
+</span><span id="__span-8-18"><a id="__codelineno-8-18" name="__codelineno-8-18" href="#__codelineno-8-18"></a><span class="k">for</span> <span class="n">number</span> <span class="ow">in</span> <span class="n">numbers</span><span class="p">:</span>
+</span><span id="__span-8-19"><a id="__codelineno-8-19" name="__codelineno-8-19" href="#__codelineno-8-19"></a>    <span class="k">if</span> <span class="n">number</span> <span class="o">&gt;</span> <span class="mi">10</span><span class="p">:</span>
+</span><span id="__span-8-20"><a id="__codelineno-8-20" name="__codelineno-8-20" href="#__codelineno-8-20"></a>        <span class="n">result</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">number</span><span class="p">)</span>
+</span></code></pre></div>
+<h3 id="1-5_1">Β1. Πρόβλεψη (5′)<a class="headerlink" href="#1-5_1" title="Permanent link">&para;</a></h3>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-9-1"><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a><span class="n">items</span> <span class="o">=</span> <span class="p">[</span><span class="s2">"α"</span><span class="p">,</span> <span class="s2">"β"</span><span class="p">,</span> <span class="s2">"γ"</span><span class="p">,</span> <span class="s2">"δ"</span><span class="p">]</span>
+</span><span id="__span-9-2"><a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a><span class="nb">print</span><span class="p">(</span><span class="n">items</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">items</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">])</span>
+</span><span id="__span-9-3"><a id="__codelineno-9-3" name="__codelineno-9-3" href="#__codelineno-9-3"></a><span class="nb">print</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">items</span><span class="p">))</span>
+</span><span id="__span-9-4"><a id="__codelineno-9-4" name="__codelineno-9-4" href="#__codelineno-9-4"></a><span class="n">items</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s2">"ε"</span><span class="p">)</span>
+</span><span id="__span-9-5"><a id="__codelineno-9-5" name="__codelineno-9-5" href="#__codelineno-9-5"></a><span class="n">items</span><span class="o">.</span><span class="n">insert</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="s2">"ζ"</span><span class="p">)</span>
+</span><span id="__span-9-6"><a id="__codelineno-9-6" name="__codelineno-9-6" href="#__codelineno-9-6"></a><span class="nb">print</span><span class="p">(</span><span class="n">items</span><span class="p">)</span>
+</span><span id="__span-9-7"><a id="__codelineno-9-7" name="__codelineno-9-7" href="#__codelineno-9-7"></a><span class="n">last</span> <span class="o">=</span> <span class="n">items</span><span class="o">.</span><span class="n">pop</span><span class="p">()</span>
+</span><span id="__span-9-8"><a id="__codelineno-9-8" name="__codelineno-9-8" href="#__codelineno-9-8"></a><span class="nb">print</span><span class="p">(</span><span class="n">last</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">items</span><span class="p">))</span>
+</span><span id="__span-9-9"><a id="__codelineno-9-9" name="__codelineno-9-9" href="#__codelineno-9-9"></a><span class="n">items</span><span class="o">.</span><span class="n">remove</span><span class="p">(</span><span class="s2">"γ"</span><span class="p">)</span>
+</span><span id="__span-9-10"><a id="__codelineno-9-10" name="__codelineno-9-10" href="#__codelineno-9-10"></a><span class="nb">print</span><span class="p">(</span><span class="n">items</span><span class="p">)</span>
+</span><span id="__span-9-11"><a id="__codelineno-9-11" name="__codelineno-9-11" href="#__codelineno-9-11"></a><span class="nb">print</span><span class="p">(</span><span class="s2">"β"</span> <span class="ow">in</span> <span class="n">items</span><span class="p">,</span> <span class="s2">"γ"</span> <span class="ow">in</span> <span class="n">items</span><span class="p">)</span>
+</span></code></pre></div>
+<table>
+<thead>
+<tr>
+<th style="text-align: center;"><code>print</code></th>
+<th>Έξοδος</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;">1η</td>
+<td></td>
+</tr>
+<tr>
+<td style="text-align: center;">2η</td>
+<td></td>
+</tr>
+<tr>
+<td style="text-align: center;">3η</td>
+<td></td>
+</tr>
+<tr>
+<td style="text-align: center;">4η</td>
+<td></td>
+</tr>
+<tr>
+<td style="text-align: center;">5η</td>
+<td></td>
+</tr>
+<tr>
+<td style="text-align: center;">6η</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h3 id="2-5_1">Β2. Ιχνηλάτηση (5′)<a class="headerlink" href="#2-5_1" title="Permanent link">&para;</a></h3>
+<p>Συμπλήρωσε πώς είναι η λίστα <code>numbers</code> μετά από κάθε γραμμή.</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-10-1"><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a><span class="n">numbers</span> <span class="o">=</span> <span class="p">[</span><span class="mi">4</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">15</span><span class="p">]</span>
+</span><span id="__span-10-2"><a id="__codelineno-10-2" name="__codelineno-10-2" href="#__codelineno-10-2"></a><span class="n">numbers</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="mi">16</span><span class="p">)</span>
+</span><span id="__span-10-3"><a id="__codelineno-10-3" name="__codelineno-10-3" href="#__codelineno-10-3"></a><span class="n">numbers</span><span class="o">.</span><span class="n">insert</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">23</span><span class="p">)</span>
+</span><span id="__span-10-4"><a id="__codelineno-10-4" name="__codelineno-10-4" href="#__codelineno-10-4"></a><span class="n">numbers</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
+</span><span id="__span-10-5"><a id="__codelineno-10-5" name="__codelineno-10-5" href="#__codelineno-10-5"></a><span class="n">numbers</span><span class="o">.</span><span class="n">extend</span><span class="p">([</span><span class="mi">42</span><span class="p">,</span> <span class="mi">4</span><span class="p">])</span>
+</span><span id="__span-10-6"><a id="__codelineno-10-6" name="__codelineno-10-6" href="#__codelineno-10-6"></a><span class="n">numbers</span><span class="o">.</span><span class="n">remove</span><span class="p">(</span><span class="mi">4</span><span class="p">)</span>
+</span><span id="__span-10-7"><a id="__codelineno-10-7" name="__codelineno-10-7" href="#__codelineno-10-7"></a><span class="n">numbers</span><span class="o">.</span><span class="n">sort</span><span class="p">()</span>
+</span></code></pre></div>
+<table>
+<thead>
+<tr>
+<th>Γραμμή</th>
+<th>Η <code>numbers</code> μετά</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>numbers = [4, 8, 15]</code></td>
+<td><code>[4, 8, 15]</code></td>
+</tr>
+<tr>
+<td><code>numbers.append(16)</code></td>
+<td></td>
+</tr>
+<tr>
+<td><code>numbers.insert(0, 23)</code></td>
+<td></td>
+</tr>
+<tr>
+<td><code>numbers.pop(2)</code></td>
+<td></td>
+</tr>
+<tr>
+<td><code>numbers.extend([42, 4])</code></td>
+<td></td>
+</tr>
+<tr>
+<td><code>numbers.remove(4)</code></td>
+<td></td>
+</tr>
+<tr>
+<td><code>numbers.sort()</code></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p>Τι επέστρεψε η <code>numbers.pop(2)</code>; ____________  Πόσα στοιχεία έχει η λίστα στο τέλος; ____________</p>
+<h3 id="3-3_1">Β3. Σωστό ή λάθος; (3′)<a class="headerlink" href="#3-3_1" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: center;"></th>
+<th>Πρόταση</th>
+<th style="text-align: center;"></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;">1</td>
+<td>Η <code>x.sort()</code> επιστρέφει μια νέα ταξινομημένη λίστα.</td>
+<td style="text-align: center;">Σ / Λ</td>
+</tr>
+<tr>
+<td style="text-align: center;">2</td>
+<td>Η <code>sorted(x)</code> αφήνει τη λίστα <code>x</code> όπως ήταν.</td>
+<td style="text-align: center;">Σ / Λ</td>
+</tr>
+<tr>
+<td style="text-align: center;">3</td>
+<td>Αν <code>x = [1, 2, 3]</code>, το <code>x[3]</code> δίνει <code>3</code>.</td>
+<td style="text-align: center;">Σ / Λ</td>
+</tr>
+<tr>
+<td style="text-align: center;">4</td>
+<td>Η <code>x.append([5, 6])</code> προσθέτει δύο στοιχεία στη λίστα <code>x</code>.</td>
+<td style="text-align: center;">Σ / Λ</td>
+</tr>
+<tr>
+<td style="text-align: center;">5</td>
+<td>Το <code>len([])</code> είναι <code>0</code>.</td>
+<td style="text-align: center;">Σ / Λ</td>
+</tr>
+<tr>
+<td style="text-align: center;">6</td>
+<td>Η <code>x.remove(9)</code> δίνει σφάλμα όταν το 9 δεν υπάρχει στη λίστα <code>x</code>.</td>
+<td style="text-align: center;">Σ / Λ</td>
+</tr>
+</tbody>
+</table>
+<h3 id="4-5_1">Β4. Βρες το σφάλμα (5′)<a class="headerlink" href="#4-5_1" title="Permanent link">&para;</a></h3>
+<p><strong>1.</strong>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-11-1"><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a><span class="n">colors</span> <span class="o">=</span> <span class="p">[</span><span class="s2">"κόκκινο"</span><span class="p">,</span> <span class="s2">"πράσινο"</span><span class="p">,</span> <span class="s2">"μπλε"</span><span class="p">]</span>
+</span><span id="__span-11-2"><a id="__codelineno-11-2" name="__codelineno-11-2" href="#__codelineno-11-2"></a><span class="nb">print</span><span class="p">(</span><span class="n">colors</span><span class="p">[</span><span class="mi">3</span><span class="p">])</span>
+</span></code></pre></div>
+Τι συμβαίνει; __________________________  Διόρθωση: ______________________________</p>
+<p><strong>2.</strong>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-12-1"><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a><span class="n">numbers</span> <span class="o">=</span> <span class="p">[</span><span class="mi">3</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">]</span>
+</span><span id="__span-12-2"><a id="__codelineno-12-2" name="__codelineno-12-2" href="#__codelineno-12-2"></a><span class="n">numbers</span> <span class="o">=</span> <span class="n">numbers</span><span class="o">.</span><span class="n">sort</span><span class="p">()</span>
+</span><span id="__span-12-3"><a id="__codelineno-12-3" name="__codelineno-12-3" href="#__codelineno-12-3"></a><span class="nb">print</span><span class="p">(</span><span class="n">numbers</span><span class="p">)</span>
+</span></code></pre></div>
+Τι εμφανίζεται; __________________________  Διόρθωση: ______________________________</p>
+<p><strong>3.</strong>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-13-1"><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a><span class="n">names</span> <span class="o">=</span> <span class="p">[</span><span class="s2">"Άννα"</span><span class="p">,</span> <span class="s2">"Νίκη"</span><span class="p">]</span>
+</span><span id="__span-13-2"><a id="__codelineno-13-2" name="__codelineno-13-2" href="#__codelineno-13-2"></a><span class="n">names</span><span class="o">.</span><span class="n">remove</span><span class="p">(</span><span class="s2">"Άρης"</span><span class="p">)</span>
+</span><span id="__span-13-3"><a id="__codelineno-13-3" name="__codelineno-13-3" href="#__codelineno-13-3"></a><span class="nb">print</span><span class="p">(</span><span class="n">names</span><span class="p">)</span>
+</span></code></pre></div>
+Τι συμβαίνει; __________________________  Διόρθωση: ______________________________</p>
+<p><strong>4.</strong>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-14-1"><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a><span class="n">total</span> <span class="o">=</span> <span class="mi">0</span>
+</span><span id="__span-14-2"><a id="__codelineno-14-2" name="__codelineno-14-2" href="#__codelineno-14-2"></a><span class="k">for</span> <span class="n">n</span> <span class="ow">in</span> <span class="p">[</span><span class="mi">4</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">10</span><span class="p">]:</span>
+</span><span id="__span-14-3"><a id="__codelineno-14-3" name="__codelineno-14-3" href="#__codelineno-14-3"></a>    <span class="n">total</span> <span class="o">=</span> <span class="n">n</span>
+</span><span id="__span-14-4"><a id="__codelineno-14-4" name="__codelineno-14-4" href="#__codelineno-14-4"></a><span class="nb">print</span><span class="p">(</span><span class="n">total</span><span class="p">)</span>
+</span></code></pre></div>
+Τι εμφανίζεται; __________________________  Τι θα έπρεπε; ____________  Διόρθωση: ____________________</p>
+<h3 id="5-4_1">Β5. Συμπλήρωσε τα κενά (4′)<a class="headerlink" href="#5-4_1" title="Permanent link">&para;</a></h3>
+<p><strong>1.</strong> Η συνάρτηση βρίσκει τον μεγαλύτερο αριθμό μιας μη κενής λίστας (χωρίς τη <code>max</code>):</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-15-1"><a id="__codelineno-15-1" name="__codelineno-15-1" href="#__codelineno-15-1"></a><span class="k">def</span><span class="w"> </span><span class="nf">largest</span><span class="p">(</span><span class="n">numbers</span><span class="p">):</span>
+</span><span id="__span-15-2"><a id="__codelineno-15-2" name="__codelineno-15-2" href="#__codelineno-15-2"></a>    <span class="n">best</span> <span class="o">=</span> <span class="n">____</span>
+</span><span id="__span-15-3"><a id="__codelineno-15-3" name="__codelineno-15-3" href="#__codelineno-15-3"></a>    <span class="k">for</span> <span class="n">number</span> <span class="ow">in</span> <span class="n">numbers</span><span class="p">:</span>
+</span><span id="__span-15-4"><a id="__codelineno-15-4" name="__codelineno-15-4" href="#__codelineno-15-4"></a>        <span class="k">if</span> <span class="n">number</span> <span class="n">____</span> <span class="n">best</span><span class="p">:</span>
+</span><span id="__span-15-5"><a id="__codelineno-15-5" name="__codelineno-15-5" href="#__codelineno-15-5"></a>            <span class="n">best</span> <span class="o">=</span> <span class="n">____</span>
+</span><span id="__span-15-6"><a id="__codelineno-15-6" name="__codelineno-15-6" href="#__codelineno-15-6"></a>    <span class="k">return</span> <span class="n">best</span>
+</span><span id="__span-15-7"><a id="__codelineno-15-7" name="__codelineno-15-7" href="#__codelineno-15-7"></a>
+</span><span id="__span-15-8"><a id="__codelineno-15-8" name="__codelineno-15-8" href="#__codelineno-15-8"></a><span class="nb">print</span><span class="p">(</span><span class="n">largest</span><span class="p">([</span><span class="mi">3</span><span class="p">,</span> <span class="mi">9</span><span class="p">,</span> <span class="mi">4</span><span class="p">]))</span>      <span class="c1"># 9</span>
+</span></code></pre></div>
+<p>Κενά: ___________  ___________  ___________</p>
+<p><strong>2.</strong> Το πρόγραμμα φτιάχνει τη λίστα με τα μήκη των λέξεων:</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-16-1"><a id="__codelineno-16-1" name="__codelineno-16-1" href="#__codelineno-16-1"></a><span class="n">words</span> <span class="o">=</span> <span class="p">[</span><span class="s2">"ήλιος"</span><span class="p">,</span> <span class="s2">"φεγγάρι"</span><span class="p">,</span> <span class="s2">"αστέρι"</span><span class="p">]</span>
+</span><span id="__span-16-2"><a id="__codelineno-16-2" name="__codelineno-16-2" href="#__codelineno-16-2"></a><span class="n">lengths</span> <span class="o">=</span> <span class="n">____</span>
+</span><span id="__span-16-3"><a id="__codelineno-16-3" name="__codelineno-16-3" href="#__codelineno-16-3"></a><span class="k">for</span> <span class="n">word</span> <span class="ow">in</span> <span class="n">words</span><span class="p">:</span>
+</span><span id="__span-16-4"><a id="__codelineno-16-4" name="__codelineno-16-4" href="#__codelineno-16-4"></a>    <span class="n">lengths</span><span class="o">.</span><span class="n">____</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">word</span><span class="p">))</span>
+</span><span id="__span-16-5"><a id="__codelineno-16-5" name="__codelineno-16-5" href="#__codelineno-16-5"></a><span class="nb">print</span><span class="p">(</span><span class="n">lengths</span><span class="p">)</span>                 <span class="c1"># [5, 7, 6]</span>
+</span></code></pre></div>
+<p>Κενά: ___________  ___________</p>
+<h3 id="6-count_above-4">Β6. Γράψε εσύ: <code>count_above</code> (4′)<a class="headerlink" href="#6-count_above-4" title="Permanent link">&para;</a></h3>
+<p>Γράψε το σώμα της <code>count_above(numbers, limit)</code>. Επιστρέφει <strong>πόσοι</strong> αριθμοί της λίστας είναι
+μεγαλύτεροι από το <code>limit</code> (αυστηρά).</p>
+<p>Παραδείγματα: <code>count_above([5, 12, 7, 20], 6)</code> επιστρέφει <code>3</code>, <code>count_above([], 3)</code> επιστρέφει <code>0</code>,
+<code>count_above([1, 1, 1], 1)</code> επιστρέφει <code>0</code>.</p>
+<p><em>Υπόδειξη:</em> είναι το πρότυπο του μετρητή. Τρέξε <code>python check_practice.py lists</code>.</p>
+<h3 id="7-average-3">Β7. Γράψε εσύ: <code>average</code> (3′)<a class="headerlink" href="#7-average-3" title="Permanent link">&para;</a></h3>
+<p>Γράψε το σώμα της <code>average(numbers)</code>. Επιστρέφει τον μέσο όρο μιας μη κενής λίστας αριθμών.</p>
+<p>Παραδείγματα: <code>average([2, 4, 9])</code> επιστρέφει <code>5.0</code>, <code>average([7])</code> επιστρέφει <code>7.0</code>, <code>average([1, 2])</code>
+επιστρέφει <code>1.5</code>.</p>
+<p><em>Υπόδειξη:</em> χρειάζεσαι μόνο τις <code>sum</code>, <code>len</code> και τη διαίρεση <code>/</code>.</p>
+<h3 id="8-without_negatives-4">Β8. Γράψε εσύ: <code>without_negatives</code> (4′)<a class="headerlink" href="#8-without_negatives-4" title="Permanent link">&para;</a></h3>
+<p>Γράψε το σώμα της <code>without_negatives(numbers)</code>. Επιστρέφει <strong>νέα</strong> λίστα με τους αριθμούς που δεν είναι
+αρνητικοί (το 0 μένει), με την ίδια σειρά. <strong>Δεν αλλάζει</strong> τη λίστα που παίρνει.</p>
+<p>Παραδείγματα: <code>without_negatives([3, -1, 0, -7, 5])</code> επιστρέφει <code>[3, 0, 5]</code>, <code>without_negatives([])</code>
+επιστρέφει <code>[]</code>, <code>without_negatives([-2, -9])</code> επιστρέφει <code>[]</code>.</p>
+<p><em>Υπόδειξη:</em> πρότυπο της νέας λίστας: ξεκίνα με <code>result = []</code> και πρόσθεσε με <code>append</code>. Μην αφαιρείς
+στοιχεία από τη <code>numbers</code>: ο αυτοέλεγχος το εντοπίζει.</p>
+<h3 id="9-second_largest-4">Β9. Γράψε εσύ: <code>second_largest</code> (4′)<a class="headerlink" href="#9-second_largest-4" title="Permanent link">&para;</a></h3>
+<p>Γράψε το σώμα της <code>second_largest(numbers)</code>. Επιστρέφει το <strong>δεύτερο μεγαλύτερο</strong> στοιχείο μιας λίστας με
+τουλάχιστον δύο αριθμούς. Αν ο μεγαλύτερος υπάρχει δύο φορές, μετράει δύο φορές. <strong>Δεν αλλάζει</strong> τη λίστα που
+παίρνει.</p>
+<p>Παραδείγματα: <code>second_largest([5, 9, 7])</code> επιστρέφει <code>7</code>, <code>second_largest([4, 4, 2])</code> επιστρέφει <code>4</code>,
+<code>second_largest([1, 2])</code> επιστρέφει <code>1</code>.</p>
+<p><em>Υπόδειξη:</em> η <code>sorted(numbers)</code> δίνει νέα ταξινομημένη λίστα, και ο δείκτης <code>-2</code> δείχνει το προτελευταίο
+στοιχείο της. Η <code>numbers.sort()</code> θα άλλαζε τη λίστα του καλούντα.</p>
+<h3 id="10-remove_duplicates-8">Β10. Πρόκληση: <code>remove_duplicates</code> (8′)<a class="headerlink" href="#10-remove_duplicates-8" title="Permanent link">&para;</a></h3>
+<p>Γράψε το σώμα της <code>remove_duplicates(items)</code>. Επιστρέφει <strong>νέα</strong> λίστα με κάθε στοιχείο μία φορά, με τη σειρά
+που εμφανίστηκε πρώτη φορά. <strong>Δεν αλλάζει</strong> τη λίστα που παίρνει.</p>
+<p>Παραδείγματα: <code>remove_duplicates([3, 1, 3, 2, 1])</code> επιστρέφει <code>[3, 1, 2]</code>, <code>remove_duplicates([])</code>
+επιστρέφει <code>[]</code>, <code>remove_duplicates(["α", "α", "α"])</code> επιστρέφει <code>["α"]</code>.</p>
+<p><em>Υπόδειξη:</em> ξεκίνα με κενή λίστα <code>result</code>. Για κάθε στοιχείο, πρόσθεσέ το με <code>append</code> μόνο αν <code>item not in result</code>.
+Το <code>set</code> δεν κρατά τη σειρά των στοιχείων, άρα δεν κάνει για αυτή την άσκηση.</p>
+<hr />
+<h2 id="50">Μέρος Γ — Λεξικά (50′)<a class="headerlink" href="#50" title="Permanent link">&para;</a></h2>
+<h3 id="_6">Υπενθύμιση<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h3>
+<p>Μάθημα 4, ενότητες 2.1–2.8.</p>
+<table>
+<thead>
+<tr>
+<th>Θέλω να…</th>
+<th>Γράφω</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>φτιάξω λεξικό</td>
+<td><code>d = {"α": 1, "β": 2}</code> ή κενό <code>d = {}</code></td>
+</tr>
+<tr>
+<td>διαβάσω μια τιμή (σφάλμα <code>KeyError</code> αν λείπει το κλειδί)</td>
+<td><code>d["α"]</code></td>
+</tr>
+<tr>
+<td>διαβάσω μια τιμή με προεπιλογή</td>
+<td><code>d.get("α", 0)</code></td>
+</tr>
+<tr>
+<td>ελέγξω αν υπάρχει <strong>κλειδί</strong></td>
+<td><code>"α" in d</code></td>
+</tr>
+<tr>
+<td>αλλάξω ή προσθέσω</td>
+<td><code>d["α"] = 5</code></td>
+</tr>
+<tr>
+<td>διαγράψω</td>
+<td><code>del d["α"]</code>, ή <code>d.pop("α")</code> (επιστρέφει την τιμή)</td>
+</tr>
+<tr>
+<td>πάρω το πλήθος των ζευγών</td>
+<td><code>len(d)</code></td>
+</tr>
+<tr>
+<td>διατρέξω τα κλειδιά</td>
+<td><code>for key in d:</code></td>
+</tr>
+<tr>
+<td>διατρέξω τις τιμές</td>
+<td><code>for value in d.values():</code></td>
+</tr>
+<tr>
+<td>διατρέξω κλειδί και τιμή μαζί</td>
+<td><code>for key, value in d.items():</code></td>
+</tr>
+</tbody>
+</table>
+<p>Το <strong>πρότυπο μέτρησης</strong>: πόσες φορές εμφανίζεται κάθε τιμή.</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-17-1"><a id="__codelineno-17-1" name="__codelineno-17-1" href="#__codelineno-17-1"></a><span class="n">counts</span> <span class="o">=</span> <span class="p">{}</span>
+</span><span id="__span-17-2"><a id="__codelineno-17-2" name="__codelineno-17-2" href="#__codelineno-17-2"></a><span class="k">for</span> <span class="n">item</span> <span class="ow">in</span> <span class="p">[</span><span class="s2">"α"</span><span class="p">,</span> <span class="s2">"β"</span><span class="p">,</span> <span class="s2">"α"</span><span class="p">]:</span>
+</span><span id="__span-17-3"><a id="__codelineno-17-3" name="__codelineno-17-3" href="#__codelineno-17-3"></a>    <span class="n">counts</span><span class="p">[</span><span class="n">item</span><span class="p">]</span> <span class="o">=</span> <span class="n">counts</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">item</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span> <span class="o">+</span> <span class="mi">1</span>
+</span><span id="__span-17-4"><a id="__codelineno-17-4" name="__codelineno-17-4" href="#__codelineno-17-4"></a><span class="nb">print</span><span class="p">(</span><span class="n">counts</span><span class="p">)</span>          <span class="c1"># {'α': 2, 'β': 1}</span>
+</span></code></pre></div>
+<h3 id="1-5_2">Γ1. Πρόβλεψη (5′)<a class="headerlink" href="#1-5_2" title="Permanent link">&para;</a></h3>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-18-1"><a id="__codelineno-18-1" name="__codelineno-18-1" href="#__codelineno-18-1"></a><span class="n">stock</span> <span class="o">=</span> <span class="p">{</span><span class="s2">"μήλα"</span><span class="p">:</span> <span class="mi">5</span><span class="p">,</span> <span class="s2">"αχλάδια"</span><span class="p">:</span> <span class="mi">2</span><span class="p">}</span>
+</span><span id="__span-18-2"><a id="__codelineno-18-2" name="__codelineno-18-2" href="#__codelineno-18-2"></a><span class="n">stock</span><span class="p">[</span><span class="s2">"μπανάνες"</span><span class="p">]</span> <span class="o">=</span> <span class="mi">7</span>
+</span><span id="__span-18-3"><a id="__codelineno-18-3" name="__codelineno-18-3" href="#__codelineno-18-3"></a><span class="n">stock</span><span class="p">[</span><span class="s2">"μήλα"</span><span class="p">]</span> <span class="o">=</span> <span class="n">stock</span><span class="p">[</span><span class="s2">"μήλα"</span><span class="p">]</span> <span class="o">-</span> <span class="mi">1</span>
+</span><span id="__span-18-4"><a id="__codelineno-18-4" name="__codelineno-18-4" href="#__codelineno-18-4"></a><span class="nb">print</span><span class="p">(</span><span class="n">stock</span><span class="p">[</span><span class="s2">"μήλα"</span><span class="p">],</span> <span class="nb">len</span><span class="p">(</span><span class="n">stock</span><span class="p">))</span>
+</span><span id="__span-18-5"><a id="__codelineno-18-5" name="__codelineno-18-5" href="#__codelineno-18-5"></a><span class="nb">print</span><span class="p">(</span><span class="s2">"αχλάδια"</span> <span class="ow">in</span> <span class="n">stock</span><span class="p">,</span> <span class="mi">2</span> <span class="ow">in</span> <span class="n">stock</span><span class="p">)</span>
+</span><span id="__span-18-6"><a id="__codelineno-18-6" name="__codelineno-18-6" href="#__codelineno-18-6"></a><span class="nb">print</span><span class="p">(</span><span class="n">stock</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">"πορτοκάλια"</span><span class="p">,</span> <span class="mi">0</span><span class="p">))</span>
+</span><span id="__span-18-7"><a id="__codelineno-18-7" name="__codelineno-18-7" href="#__codelineno-18-7"></a><span class="k">del</span> <span class="n">stock</span><span class="p">[</span><span class="s2">"αχλάδια"</span><span class="p">]</span>
+</span><span id="__span-18-8"><a id="__codelineno-18-8" name="__codelineno-18-8" href="#__codelineno-18-8"></a><span class="nb">print</span><span class="p">(</span><span class="n">stock</span><span class="p">)</span>
+</span><span id="__span-18-9"><a id="__codelineno-18-9" name="__codelineno-18-9" href="#__codelineno-18-9"></a><span class="n">total</span> <span class="o">=</span> <span class="mi">0</span>
+</span><span id="__span-18-10"><a id="__codelineno-18-10" name="__codelineno-18-10" href="#__codelineno-18-10"></a><span class="k">for</span> <span class="n">name</span> <span class="ow">in</span> <span class="n">stock</span><span class="p">:</span>
+</span><span id="__span-18-11"><a id="__codelineno-18-11" name="__codelineno-18-11" href="#__codelineno-18-11"></a>    <span class="n">total</span> <span class="o">+=</span> <span class="n">stock</span><span class="p">[</span><span class="n">name</span><span class="p">]</span>
+</span><span id="__span-18-12"><a id="__codelineno-18-12" name="__codelineno-18-12" href="#__codelineno-18-12"></a><span class="nb">print</span><span class="p">(</span><span class="n">total</span><span class="p">)</span>
+</span></code></pre></div>
+<table>
+<thead>
+<tr>
+<th style="text-align: center;"><code>print</code></th>
+<th>Έξοδος</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;">1η</td>
+<td></td>
+</tr>
+<tr>
+<td style="text-align: center;">2η</td>
+<td></td>
+</tr>
+<tr>
+<td style="text-align: center;">3η</td>
+<td></td>
+</tr>
+<tr>
+<td style="text-align: center;">4η</td>
+<td></td>
+</tr>
+<tr>
+<td style="text-align: center;">5η</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h3 id="2-3">Γ2. Ανάγνωση δομής (3′)<a class="headerlink" href="#2-3" title="Permanent link">&para;</a></h3>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-19-1"><a id="__codelineno-19-1" name="__codelineno-19-1" href="#__codelineno-19-1"></a><span class="n">team</span> <span class="o">=</span> <span class="p">{</span>
+</span><span id="__span-19-2"><a id="__codelineno-19-2" name="__codelineno-19-2" href="#__codelineno-19-2"></a>    <span class="s2">"name"</span><span class="p">:</span> <span class="s2">"Αετοί"</span><span class="p">,</span>
+</span><span id="__span-19-3"><a id="__codelineno-19-3" name="__codelineno-19-3" href="#__codelineno-19-3"></a>    <span class="s2">"players"</span><span class="p">:</span> <span class="p">[</span><span class="s2">"Άννα"</span><span class="p">,</span> <span class="s2">"Νίκη"</span><span class="p">,</span> <span class="s2">"Άρης"</span><span class="p">],</span>
+</span><span id="__span-19-4"><a id="__codelineno-19-4" name="__codelineno-19-4" href="#__codelineno-19-4"></a>    <span class="s2">"scores"</span><span class="p">:</span> <span class="p">{</span><span class="s2">"Άννα"</span><span class="p">:</span> <span class="mi">12</span><span class="p">,</span> <span class="s2">"Νίκη"</span><span class="p">:</span> <span class="mi">7</span><span class="p">,</span> <span class="s2">"Άρης"</span><span class="p">:</span> <span class="mi">9</span><span class="p">},</span>
+</span><span id="__span-19-5"><a id="__codelineno-19-5" name="__codelineno-19-5" href="#__codelineno-19-5"></a><span class="p">}</span>
+</span></code></pre></div>
+<p>Γράψε την τιμή κάθε έκφρασης:</p>
+<table>
+<thead>
+<tr>
+<th>Έκφραση</th>
+<th>Τιμή</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>len(team)</code></td>
+<td></td>
+</tr>
+<tr>
+<td><code>team["name"]</code></td>
+<td></td>
+</tr>
+<tr>
+<td><code>team["players"][1]</code></td>
+<td></td>
+</tr>
+<tr>
+<td><code>len(team["players"])</code></td>
+<td></td>
+</tr>
+<tr>
+<td><code>team["scores"]["Άρης"]</code></td>
+<td></td>
+</tr>
+<tr>
+<td><code>team["scores"][team["players"][0]]</code></td>
+<td></td>
+</tr>
+<tr>
+<td><code>"Νίκη" in team["scores"]</code></td>
+<td></td>
+</tr>
+<tr>
+<td><code>"Νίκη" in team</code></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h3 id="3-4">Γ3. Ιχνηλάτηση του προτύπου μέτρησης (4′)<a class="headerlink" href="#3-4" title="Permanent link">&para;</a></h3>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-20-1"><a id="__codelineno-20-1" name="__codelineno-20-1" href="#__codelineno-20-1"></a><span class="n">votes</span> <span class="o">=</span> <span class="p">[</span><span class="s2">"Α"</span><span class="p">,</span> <span class="s2">"Β"</span><span class="p">,</span> <span class="s2">"Α"</span><span class="p">,</span> <span class="s2">"Γ"</span><span class="p">,</span> <span class="s2">"Β"</span><span class="p">,</span> <span class="s2">"Α"</span><span class="p">]</span>
+</span><span id="__span-20-2"><a id="__codelineno-20-2" name="__codelineno-20-2" href="#__codelineno-20-2"></a><span class="n">counts</span> <span class="o">=</span> <span class="p">{}</span>
+</span><span id="__span-20-3"><a id="__codelineno-20-3" name="__codelineno-20-3" href="#__codelineno-20-3"></a><span class="k">for</span> <span class="n">vote</span> <span class="ow">in</span> <span class="n">votes</span><span class="p">:</span>
+</span><span id="__span-20-4"><a id="__codelineno-20-4" name="__codelineno-20-4" href="#__codelineno-20-4"></a>    <span class="n">counts</span><span class="p">[</span><span class="n">vote</span><span class="p">]</span> <span class="o">=</span> <span class="n">counts</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">vote</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span> <span class="o">+</span> <span class="mi">1</span>
+</span></code></pre></div>
+<p>Συμπλήρωσε τον πίνακα για κάθε επανάληψη:</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: center;">Επανάληψη</th>
+<th style="text-align: center;"><code>vote</code></th>
+<th style="text-align: center;"><code>counts.get(vote, 0)</code></th>
+<th>Το <code>counts</code> μετά</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;">1</td>
+<td style="text-align: center;"><code>Α</code></td>
+<td style="text-align: center;">0</td>
+<td><code>{'Α': 1}</code></td>
+</tr>
+<tr>
+<td style="text-align: center;">2</td>
+<td style="text-align: center;"><code>Β</code></td>
+<td style="text-align: center;"></td>
+<td></td>
+</tr>
+<tr>
+<td style="text-align: center;">3</td>
+<td style="text-align: center;"><code>Α</code></td>
+<td style="text-align: center;"></td>
+<td></td>
+</tr>
+<tr>
+<td style="text-align: center;">4</td>
+<td style="text-align: center;"><code>Γ</code></td>
+<td style="text-align: center;"></td>
+<td></td>
+</tr>
+<tr>
+<td style="text-align: center;">5</td>
+<td style="text-align: center;"><code>Β</code></td>
+<td style="text-align: center;"></td>
+<td></td>
+</tr>
+<tr>
+<td style="text-align: center;">6</td>
+<td style="text-align: center;"><code>Α</code></td>
+<td style="text-align: center;"></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p>Τι θα γινόταν στην πρώτη επανάληψη αν η γραμμή ήταν <code>counts[vote] = counts[vote] + 1</code>; ____________________________</p>
+<h3 id="4-3">Γ4. Σωστό ή λάθος; (3′)<a class="headerlink" href="#4-3" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: center;"></th>
+<th>Πρόταση</th>
+<th style="text-align: center;"></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;">1</td>
+<td>Το <code>d["x"]</code> δίνει <code>None</code> όταν το κλειδί <code>"x"</code> δεν υπάρχει.</td>
+<td style="text-align: center;">Σ / Λ</td>
+</tr>
+<tr>
+<td style="text-align: center;">2</td>
+<td>Το <code>d.get("x")</code> δίνει <code>None</code> όταν το κλειδί <code>"x"</code> δεν υπάρχει.</td>
+<td style="text-align: center;">Σ / Λ</td>
+</tr>
+<tr>
+<td style="text-align: center;">3</td>
+<td>Το <code>"Νίκη" in d</code> ελέγχει τις τιμές του λεξικού.</td>
+<td style="text-align: center;">Σ / Λ</td>
+</tr>
+<tr>
+<td style="text-align: center;">4</td>
+<td>Σε ένα λεξικό μπορούν να υπάρχουν δύο ίδια κλειδιά.</td>
+<td style="text-align: center;">Σ / Λ</td>
+</tr>
+<tr>
+<td style="text-align: center;">5</td>
+<td>Μια λίστα μπορεί να είναι κλειδί σε λεξικό.</td>
+<td style="text-align: center;">Σ / Λ</td>
+</tr>
+<tr>
+<td style="text-align: center;">6</td>
+<td>Μια λίστα μπορεί να είναι τιμή σε λεξικό.</td>
+<td style="text-align: center;">Σ / Λ</td>
+</tr>
+<tr>
+<td style="text-align: center;">7</td>
+<td>Το <code>for key in d:</code> διατρέχει τα κλειδιά του λεξικού.</td>
+<td style="text-align: center;">Σ / Λ</td>
+</tr>
+</tbody>
+</table>
+<h3 id="5-4_2">Γ5. Βρες το σφάλμα (4′)<a class="headerlink" href="#5-4_2" title="Permanent link">&para;</a></h3>
+<p><strong>1.</strong>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-21-1"><a id="__codelineno-21-1" name="__codelineno-21-1" href="#__codelineno-21-1"></a><span class="n">prices</span> <span class="o">=</span> <span class="p">{</span><span class="s2">"ψωμί"</span><span class="p">:</span> <span class="mf">1.5</span><span class="p">}</span>
+</span><span id="__span-21-2"><a id="__codelineno-21-2" name="__codelineno-21-2" href="#__codelineno-21-2"></a><span class="nb">print</span><span class="p">(</span><span class="n">prices</span><span class="p">[</span><span class="s2">"γάλα"</span><span class="p">])</span>
+</span></code></pre></div>
+Τι συμβαίνει; __________________________  Δύο τρόποι να το αποφύγεις: ______________________________</p>
+<p><strong>2.</strong>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-22-1"><a id="__codelineno-22-1" name="__codelineno-22-1" href="#__codelineno-22-1"></a><span class="n">scores</span> <span class="o">=</span> <span class="p">{</span><span class="s2">"Άννα"</span><span class="p">:</span> <span class="mi">5</span><span class="p">}</span>
+</span><span id="__span-22-2"><a id="__codelineno-22-2" name="__codelineno-22-2" href="#__codelineno-22-2"></a><span class="n">scores</span><span class="p">[</span><span class="s2">"Νίκη"</span><span class="p">]</span> <span class="o">+=</span> <span class="mi">1</span>
+</span></code></pre></div>
+Τι συμβαίνει; __________________________  Διόρθωση: ______________________________</p>
+<p><strong>3.</strong>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-23-1"><a id="__codelineno-23-1" name="__codelineno-23-1" href="#__codelineno-23-1"></a><span class="n">d</span> <span class="o">=</span> <span class="p">{</span><span class="s2">"α"</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="s2">"β"</span><span class="p">:</span> <span class="mi">2</span><span class="p">}</span>
+</span><span id="__span-23-2"><a id="__codelineno-23-2" name="__codelineno-23-2" href="#__codelineno-23-2"></a><span class="k">for</span> <span class="n">key</span><span class="p">,</span> <span class="n">value</span> <span class="ow">in</span> <span class="n">d</span><span class="p">:</span>
+</span><span id="__span-23-3"><a id="__codelineno-23-3" name="__codelineno-23-3" href="#__codelineno-23-3"></a>    <span class="nb">print</span><span class="p">(</span><span class="n">key</span><span class="p">,</span> <span class="n">value</span><span class="p">)</span>
+</span></code></pre></div>
+Τι συμβαίνει; __________________________  Διόρθωση: ______________________________</p>
+<p><strong>4.</strong>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-24-1"><a id="__codelineno-24-1" name="__codelineno-24-1" href="#__codelineno-24-1"></a><span class="n">inventory</span> <span class="o">=</span> <span class="p">{</span><span class="s2">"σπαθί"</span><span class="p">:</span> <span class="mi">1</span><span class="p">}</span>
+</span><span id="__span-24-2"><a id="__codelineno-24-2" name="__codelineno-24-2" href="#__codelineno-24-2"></a><span class="n">inventory</span> <span class="o">=</span> <span class="n">inventory</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="s2">"σπαθί"</span><span class="p">)</span>
+</span><span id="__span-24-3"><a id="__codelineno-24-3" name="__codelineno-24-3" href="#__codelineno-24-3"></a><span class="nb">print</span><span class="p">(</span><span class="n">inventory</span><span class="p">)</span>
+</span></code></pre></div>
+Τι εμφανίζεται; __________________________  Διόρθωση: ______________________________</p>
+<h3 id="6-4">Γ6. Συμπλήρωσε τα κενά (4′)<a class="headerlink" href="#6-4" title="Permanent link">&para;</a></h3>
+<p>Η <code>sell</code> μειώνει κατά 1 το απόθεμα ενός προϊόντος. Όταν το απόθεμα φτάσει στο 0, το προϊόν διαγράφεται από
+το λεξικό. Συμπλήρωσε τα τρία κενά:</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-25-1"><a id="__codelineno-25-1" name="__codelineno-25-1" href="#__codelineno-25-1"></a><span class="k">def</span><span class="w"> </span><span class="nf">sell</span><span class="p">(</span><span class="n">stock</span><span class="p">,</span> <span class="n">name</span><span class="p">):</span>
+</span><span id="__span-25-2"><a id="__codelineno-25-2" name="__codelineno-25-2" href="#__codelineno-25-2"></a>    <span class="n">stock</span><span class="p">[</span><span class="n">name</span><span class="p">]</span> <span class="o">=</span> <span class="n">stock</span><span class="p">[</span><span class="n">name</span><span class="p">]</span> <span class="n">____</span> <span class="mi">1</span>
+</span><span id="__span-25-3"><a id="__codelineno-25-3" name="__codelineno-25-3" href="#__codelineno-25-3"></a>    <span class="k">if</span> <span class="n">stock</span><span class="p">[</span><span class="n">name</span><span class="p">]</span> <span class="o">==</span> <span class="n">____</span><span class="p">:</span>
+</span><span id="__span-25-4"><a id="__codelineno-25-4" name="__codelineno-25-4" href="#__codelineno-25-4"></a>        <span class="n">____</span> <span class="n">stock</span><span class="p">[</span><span class="n">name</span><span class="p">]</span>
+</span><span id="__span-25-5"><a id="__codelineno-25-5" name="__codelineno-25-5" href="#__codelineno-25-5"></a>
+</span><span id="__span-25-6"><a id="__codelineno-25-6" name="__codelineno-25-6" href="#__codelineno-25-6"></a><span class="n">stock</span> <span class="o">=</span> <span class="p">{</span><span class="s2">"μήλα"</span><span class="p">:</span> <span class="mi">2</span><span class="p">}</span>
+</span><span id="__span-25-7"><a id="__codelineno-25-7" name="__codelineno-25-7" href="#__codelineno-25-7"></a><span class="n">sell</span><span class="p">(</span><span class="n">stock</span><span class="p">,</span> <span class="s2">"μήλα"</span><span class="p">)</span>
+</span><span id="__span-25-8"><a id="__codelineno-25-8" name="__codelineno-25-8" href="#__codelineno-25-8"></a><span class="nb">print</span><span class="p">(</span><span class="n">stock</span><span class="p">)</span>        <span class="c1"># {'μήλα': 1}</span>
+</span><span id="__span-25-9"><a id="__codelineno-25-9" name="__codelineno-25-9" href="#__codelineno-25-9"></a><span class="n">sell</span><span class="p">(</span><span class="n">stock</span><span class="p">,</span> <span class="s2">"μήλα"</span><span class="p">)</span>
+</span><span id="__span-25-10"><a id="__codelineno-25-10" name="__codelineno-25-10" href="#__codelineno-25-10"></a><span class="nb">print</span><span class="p">(</span><span class="n">stock</span><span class="p">)</span>        <span class="c1"># {}</span>
+</span></code></pre></div>
+<p>Κενά: ___________  ___________  ___________</p>
+<h3 id="7-count_words-4">Γ7. Γράψε εσύ: <code>count_words</code> (4′)<a class="headerlink" href="#7-count_words-4" title="Permanent link">&para;</a></h3>
+<p>Γράψε το σώμα της <code>count_words(words)</code>. Επιστρέφει λεξικό που λέει <strong>πόσες φορές</strong> υπάρχει κάθε λέξη της
+λίστας.</p>
+<p>Παραδείγματα: <code>count_words(["α", "β", "α"])</code> επιστρέφει <code>{"α": 2, "β": 1}</code>, <code>count_words([])</code>
+επιστρέφει <code>{}</code>.</p>
+<p><em>Υπόδειξη:</em> το πρότυπο μέτρησης της υπενθύμισης. Τρέξε <code>python check_practice.py dicts</code>.</p>
+<h3 id="8-lookup-3">Γ8. Γράψε εσύ: <code>lookup</code> (3′)<a class="headerlink" href="#8-lookup-3" title="Permanent link">&para;</a></h3>
+<p>Γράψε το σώμα της <code>lookup(book, name)</code>. Το <code>book</code> είναι λεξικό με κλειδί ένα όνομα και τιμή έναν αριθμό
+τηλεφώνου. Επιστρέφει τον αριθμό του ονόματος, ή το κείμενο <code>"άγνωστο"</code> αν το όνομα δεν υπάρχει.</p>
+<p>Παραδείγματα: <code>lookup({"Άννα": "6970000001"}, "Άννα")</code> επιστρέφει <code>"6970000001"</code>, <code>lookup({}, "Άρης")</code>
+επιστρέφει <code>"άγνωστο"</code>, <code>lookup({"Άννα": "6970000001"}, "άννα")</code> επιστρέφει <code>"άγνωστο"</code>.</p>
+<p><em>Υπόδειξη:</em> μία γραμμή αρκεί, με τη μέθοδο <code>.get</code> και δεύτερο όρισμα.</p>
+<h3 id="9-cart_total-4">Γ9. Γράψε εσύ: <code>cart_total</code> (4′)<a class="headerlink" href="#9-cart_total-4" title="Permanent link">&para;</a></h3>
+<p>Γράψε το σώμα της <code>cart_total(cart, prices)</code>. Το <code>cart</code> λέει πόσα <strong>τεμάχια</strong> έχει κάθε προϊόν και το <code>prices</code>
+πόσο κοστίζει <strong>το ένα τεμάχιο</strong>. Επιστρέφει το συνολικό κόστος.</p>
+<p>Παραδείγματα: <code>cart_total({"ψωμί": 2, "γάλα": 3}, {"ψωμί": 1.5, "γάλα": 1.0, "τυρί": 5.0})</code> επιστρέφει <code>6.0</code>,
+<code>cart_total({}, {"ψωμί": 1.5})</code> επιστρέφει <code>0</code>.</p>
+<p><em>Υπόδειξη:</em> διέτρεξε τα προϊόντα του <code>cart</code> (όχι του <code>prices</code>: το <code>prices</code> έχει και προϊόντα που δεν αγόρασες).
+Για κάθε προϊόν πρόσθεσε <code>cart[item] * prices[item]</code> σε ένα άθροισμα.</p>
+<h3 id="10-highest-4">Γ10. Γράψε εσύ: <code>highest</code> (4′)<a class="headerlink" href="#10-highest-4" title="Permanent link">&para;</a></h3>
+<p>Γράψε το σώμα της <code>highest(scores)</code>. Το <code>scores</code> είναι μη κενό λεξικό με κλειδί το όνομα και τιμή τους πόντους.
+Επιστρέφει το <strong>όνομα</strong> (το κλειδί) με τους περισσότερους πόντους. Πρέπει να δουλεύει και όταν οι πόντοι είναι
+αρνητικοί.</p>
+<p>Παραδείγματα: <code>highest({"Άννα": 40, "Νίκη": 55, "Άρης": 31})</code> επιστρέφει <code>"Νίκη"</code>, <code>highest({"α": -5, "β": -2})</code>
+επιστρέφει <code>"β"</code>.</p>
+<p><em>Υπόδειξη:</em> είναι το πρότυπο «μεγαλύτερο» του Μέρους Β, μόνο που κρατάς το <strong>κλειδί</strong>. Ξεκίνα με το πρώτο κλειδί:
+<code>names = list(scores)</code> και <code>best = names[0]</code>. Μην ξεκινήσεις από το 0: οι πόντοι μπορεί να είναι αρνητικοί.</p>
+<h3 id="11-add_points-4">Γ11. Γράψε εσύ: <code>add_points</code> (4′)<a class="headerlink" href="#11-add_points-4" title="Permanent link">&para;</a></h3>
+<p>Γράψε το σώμα της <code>add_points(scores, name, points)</code>. Προσθέτει <code>points</code> πόντους στον παίκτη <code>name</code> του
+λεξικού <code>scores</code>. Αν ο παίκτης δεν υπάρχει, ξεκινά από το 0. Η συνάρτηση <strong>αλλάζει το λεξικό</strong> και δεν
+επιστρέφει τίποτα (δεν χρειάζεται <code>return</code>).</p>
+<p>Παράδειγμα: αν <code>scores = {"Άννα": 5}</code>, μετά την <code>add_points(scores, "Άννα", 3)</code> το <code>scores</code> είναι
+<code>{"Άννα": 8}</code>, και μετά την <code>add_points(scores, "Νίκη", 4)</code> είναι <code>{"Άννα": 8, "Νίκη": 4}</code>.</p>
+<p><em>Υπόδειξη:</em> μία γραμμή με το <code>.get</code>, όπως στο πρότυπο μέτρησης. Εδώ δεν υπάρχει <code>return</code>: το αποτέλεσμα είναι η
+αλλαγή του λεξικού.</p>
+<h3 id="12-group_by_length-8">Γ12. Πρόκληση: <code>group_by_length</code> (8′)<a class="headerlink" href="#12-group_by_length-8" title="Permanent link">&para;</a></h3>
+<p>Γράψε το σώμα της <code>group_by_length(words)</code>. Επιστρέφει λεξικό που έχει για κλειδί ένα <strong>μήκος</strong> και για τιμή τη
+<strong>λίστα</strong> με τις λέξεις αυτού του μήκους, με τη σειρά που εμφανίζονται.</p>
+<p>Παραδείγματα: <code>group_by_length(["α", "βγ", "δ"])</code> επιστρέφει <code>{1: ["α", "δ"], 2: ["βγ"]}</code>,
+<code>group_by_length([])</code> επιστρέφει <code>{}</code>.</p>
+<p><em>Υπόδειξη:</em> για κάθε λέξη βρες το μήκος της. Αν το μήκος δεν είναι ακόμη κλειδί (<code>length not in groups</code>), βάλε
+του κενή λίστα. Μετά κάνε <code>append</code> της λέξης σε αυτή τη λίστα.</p>
+<hr />
+<h2 id="42">Μέρος Δ — Πλειάδες (42′)<a class="headerlink" href="#42" title="Permanent link">&para;</a></h2>
+<h3 id="_7">Υπενθύμιση<a class="headerlink" href="#_7" title="Permanent link">&para;</a></h3>
+<p>Μάθημα 4, ενότητες 3.1–3.4 και 3.7.</p>
+<ul>
+<li>Η πλειάδα γράφεται με παρενθέσεις και κόμματα: <code>point = (3, 4)</code>. Η πλειάδα με ένα στοιχείο θέλει κόμμα:
+  <code>(5,)</code>. Το <code>(5)</code> είναι απλώς ο αριθμός 5.</li>
+<li>Έχει δείκτες (<code>point[0]</code>), <code>len</code> και <code>in</code>, και διατρέχεται με <code>for</code>, όπως η λίστα. <strong>Δεν αλλάζει</strong>:
+  το <code>point[0] = 9</code> δίνει <code>TypeError</code>.</li>
+<li><strong>Αποσυσκευασία:</strong> <code>x, y = point</code>. Το πλήθος των μεταβλητών πρέπει να ταιριάζει με το πλήθος των στοιχείων.</li>
+<li>Η <code>return a, b</code> επιστρέφει <strong>μία πλειάδα</strong>. Ο καλών τη χωρίζει: <code>low, high = min_max(numbers)</code>.</li>
+<li>Η <code>d.items()</code> δίνει τα ζεύγη <code>(κλειδί, τιμή)</code> ενός λεξικού: <code>for key, value in d.items():</code>.</li>
+<li>Δύο πλειάδες είναι ίσες όταν έχουν τα ίδια στοιχεία με την <strong>ίδια σειρά</strong>: <code>(1, 2) == (1, 2)</code>, αλλά
+  <code>(1, 2) != (2, 1)</code>.</li>
+</ul>
+<h3 id="1-5_3">Δ1. Πρόβλεψη (5′)<a class="headerlink" href="#1-5_3" title="Permanent link">&para;</a></h3>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-26-1"><a id="__codelineno-26-1" name="__codelineno-26-1" href="#__codelineno-26-1"></a><span class="n">point</span> <span class="o">=</span> <span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">)</span>
+</span><span id="__span-26-2"><a id="__codelineno-26-2" name="__codelineno-26-2" href="#__codelineno-26-2"></a><span class="n">x</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="n">point</span>
+</span><span id="__span-26-3"><a id="__codelineno-26-3" name="__codelineno-26-3" href="#__codelineno-26-3"></a><span class="nb">print</span><span class="p">(</span><span class="n">x</span> <span class="o">+</span> <span class="n">y</span><span class="p">,</span> <span class="n">point</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="nb">len</span><span class="p">(</span><span class="n">point</span><span class="p">))</span>
+</span><span id="__span-26-4"><a id="__codelineno-26-4" name="__codelineno-26-4" href="#__codelineno-26-4"></a>
+</span><span id="__span-26-5"><a id="__codelineno-26-5" name="__codelineno-26-5" href="#__codelineno-26-5"></a><span class="k">def</span><span class="w"> </span><span class="nf">split_time</span><span class="p">(</span><span class="n">seconds</span><span class="p">):</span>
+</span><span id="__span-26-6"><a id="__codelineno-26-6" name="__codelineno-26-6" href="#__codelineno-26-6"></a>    <span class="k">return</span> <span class="n">seconds</span> <span class="o">//</span> <span class="mi">60</span><span class="p">,</span> <span class="n">seconds</span> <span class="o">%</span> <span class="mi">60</span>
+</span><span id="__span-26-7"><a id="__codelineno-26-7" name="__codelineno-26-7" href="#__codelineno-26-7"></a>
+</span><span id="__span-26-8"><a id="__codelineno-26-8" name="__codelineno-26-8" href="#__codelineno-26-8"></a><span class="n">minutes</span><span class="p">,</span> <span class="n">rest</span> <span class="o">=</span> <span class="n">split_time</span><span class="p">(</span><span class="mi">135</span><span class="p">)</span>
+</span><span id="__span-26-9"><a id="__codelineno-26-9" name="__codelineno-26-9" href="#__codelineno-26-9"></a><span class="nb">print</span><span class="p">(</span><span class="n">minutes</span><span class="p">,</span> <span class="n">rest</span><span class="p">)</span>
+</span><span id="__span-26-10"><a id="__codelineno-26-10" name="__codelineno-26-10" href="#__codelineno-26-10"></a><span class="nb">print</span><span class="p">(</span><span class="n">split_time</span><span class="p">(</span><span class="mi">135</span><span class="p">))</span>
+</span><span id="__span-26-11"><a id="__codelineno-26-11" name="__codelineno-26-11" href="#__codelineno-26-11"></a><span class="nb">print</span><span class="p">(</span><span class="n">split_time</span><span class="p">(</span><span class="mi">59</span><span class="p">)</span> <span class="o">==</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">59</span><span class="p">))</span>
+</span><span id="__span-26-12"><a id="__codelineno-26-12" name="__codelineno-26-12" href="#__codelineno-26-12"></a>
+</span><span id="__span-26-13"><a id="__codelineno-26-13" name="__codelineno-26-13" href="#__codelineno-26-13"></a><span class="n">a</span><span class="p">,</span> <span class="n">b</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span>
+</span><span id="__span-26-14"><a id="__codelineno-26-14" name="__codelineno-26-14" href="#__codelineno-26-14"></a><span class="n">a</span><span class="p">,</span> <span class="n">b</span> <span class="o">=</span> <span class="n">b</span><span class="p">,</span> <span class="n">a</span>
+</span><span id="__span-26-15"><a id="__codelineno-26-15" name="__codelineno-26-15" href="#__codelineno-26-15"></a><span class="nb">print</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">)</span>
+</span><span id="__span-26-16"><a id="__codelineno-26-16" name="__codelineno-26-16" href="#__codelineno-26-16"></a>
+</span><span id="__span-26-17"><a id="__codelineno-26-17" name="__codelineno-26-17" href="#__codelineno-26-17"></a><span class="n">pairs</span> <span class="o">=</span> <span class="p">[(</span><span class="s2">"α"</span><span class="p">,</span> <span class="mi">1</span><span class="p">),</span> <span class="p">(</span><span class="s2">"β"</span><span class="p">,</span> <span class="mi">2</span><span class="p">)]</span>
+</span><span id="__span-26-18"><a id="__codelineno-26-18" name="__codelineno-26-18" href="#__codelineno-26-18"></a><span class="k">for</span> <span class="n">letter</span><span class="p">,</span> <span class="n">number</span> <span class="ow">in</span> <span class="n">pairs</span><span class="p">:</span>
+</span><span id="__span-26-19"><a id="__codelineno-26-19" name="__codelineno-26-19" href="#__codelineno-26-19"></a>    <span class="nb">print</span><span class="p">(</span><span class="n">letter</span> <span class="o">*</span> <span class="n">number</span><span class="p">)</span>
+</span></code></pre></div>
+<table>
+<thead>
+<tr>
+<th style="text-align: center;">Γραμμή εξόδου</th>
+<th>Τι εμφανίζεται</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;">1η</td>
+<td></td>
+</tr>
+<tr>
+<td style="text-align: center;">2η</td>
+<td></td>
+</tr>
+<tr>
+<td style="text-align: center;">3η</td>
+<td></td>
+</tr>
+<tr>
+<td style="text-align: center;">4η</td>
+<td></td>
+</tr>
+<tr>
+<td style="text-align: center;">5η</td>
+<td></td>
+</tr>
+<tr>
+<td style="text-align: center;">6η</td>
+<td></td>
+</tr>
+<tr>
+<td style="text-align: center;">7η</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h3 id="2-3_1">Δ2. Σωστό ή λάθος; (3′)<a class="headerlink" href="#2-3_1" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: center;"></th>
+<th>Πρόταση</th>
+<th style="text-align: center;"></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;">1</td>
+<td>Η πλειάδα <code>t = (1, 2)</code> αλλάζει με την εντολή <code>t[0] = 5</code>.</td>
+<td style="text-align: center;">Σ / Λ</td>
+</tr>
+<tr>
+<td style="text-align: center;">2</td>
+<td>Το <code>(5)</code> είναι πλειάδα με ένα στοιχείο.</td>
+<td style="text-align: center;">Σ / Λ</td>
+</tr>
+<tr>
+<td style="text-align: center;">3</td>
+<td>Η <code>return a, b</code> επιστρέφει μία πλειάδα.</td>
+<td style="text-align: center;">Σ / Λ</td>
+</tr>
+<tr>
+<td style="text-align: center;">4</td>
+<td>Η εντολή <code>x, y = (1, 2, 3)</code> δουλεύει κανονικά.</td>
+<td style="text-align: center;">Σ / Λ</td>
+</tr>
+<tr>
+<td style="text-align: center;">5</td>
+<td>Οι πλειάδες <code>(1, 2)</code> και <code>(2, 1)</code> είναι ίσες.</td>
+<td style="text-align: center;">Σ / Λ</td>
+</tr>
+<tr>
+<td style="text-align: center;">6</td>
+<td>Μια πλειάδα μπορεί να είναι κλειδί σε λεξικό.</td>
+<td style="text-align: center;">Σ / Λ</td>
+</tr>
+<tr>
+<td style="text-align: center;">7</td>
+<td>Το <code>len((4, 5, 6))</code> είναι <code>3</code>.</td>
+<td style="text-align: center;">Σ / Λ</td>
+</tr>
+</tbody>
+</table>
+<h3 id="3-4_1">Δ3. Βρες το σφάλμα (4′)<a class="headerlink" href="#3-4_1" title="Permanent link">&para;</a></h3>
+<p><strong>1.</strong>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-27-1"><a id="__codelineno-27-1" name="__codelineno-27-1" href="#__codelineno-27-1"></a><span class="n">point</span> <span class="o">=</span> <span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">)</span>
+</span><span id="__span-27-2"><a id="__codelineno-27-2" name="__codelineno-27-2" href="#__codelineno-27-2"></a><span class="n">point</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="mi">10</span>
+</span></code></pre></div>
+Τι συμβαίνει; __________________________  Διόρθωση: ______________________________</p>
+<p><strong>2.</strong>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-28-1"><a id="__codelineno-28-1" name="__codelineno-28-1" href="#__codelineno-28-1"></a><span class="n">x</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>
+</span></code></pre></div>
+Τι συμβαίνει; __________________________  Διόρθωση: ______________________________</p>
+<p><strong>3.</strong>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-29-1"><a id="__codelineno-29-1" name="__codelineno-29-1" href="#__codelineno-29-1"></a><span class="k">def</span><span class="w"> </span><span class="nf">min_max</span><span class="p">(</span><span class="n">numbers</span><span class="p">):</span>
+</span><span id="__span-29-2"><a id="__codelineno-29-2" name="__codelineno-29-2" href="#__codelineno-29-2"></a>    <span class="k">return</span> <span class="nb">min</span><span class="p">(</span><span class="n">numbers</span><span class="p">),</span> <span class="nb">max</span><span class="p">(</span><span class="n">numbers</span><span class="p">)</span>
+</span><span id="__span-29-3"><a id="__codelineno-29-3" name="__codelineno-29-3" href="#__codelineno-29-3"></a>
+</span><span id="__span-29-4"><a id="__codelineno-29-4" name="__codelineno-29-4" href="#__codelineno-29-4"></a><span class="n">low</span> <span class="o">=</span> <span class="n">min_max</span><span class="p">([</span><span class="mi">4</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">7</span><span class="p">])</span>
+</span><span id="__span-29-5"><a id="__codelineno-29-5" name="__codelineno-29-5" href="#__codelineno-29-5"></a><span class="nb">print</span><span class="p">(</span><span class="n">low</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span>
+</span></code></pre></div>
+Τι συμβαίνει; __________________________  Διόρθωση: ______________________________</p>
+<p><strong>4.</strong>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-30-1"><a id="__codelineno-30-1" name="__codelineno-30-1" href="#__codelineno-30-1"></a><span class="n">size</span> <span class="o">=</span> <span class="p">(</span><span class="mi">5</span><span class="p">)</span>
+</span><span id="__span-30-2"><a id="__codelineno-30-2" name="__codelineno-30-2" href="#__codelineno-30-2"></a><span class="nb">print</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">size</span><span class="p">))</span>
+</span></code></pre></div>
+Τι συμβαίνει; __________________________  Διόρθωση: ______________________________</p>
+<h3 id="4-4">Δ4. Συμπλήρωσε τα κενά (4′)<a class="headerlink" href="#4-4" title="Permanent link">&para;</a></h3>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-31-1"><a id="__codelineno-31-1" name="__codelineno-31-1" href="#__codelineno-31-1"></a><span class="k">def</span><span class="w"> </span><span class="nf">divide</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">):</span>
+</span><span id="__span-31-2"><a id="__codelineno-31-2" name="__codelineno-31-2" href="#__codelineno-31-2"></a>    <span class="k">return</span> <span class="n">a</span> <span class="n">____</span> <span class="n">b</span><span class="p">,</span> <span class="n">a</span> <span class="n">____</span> <span class="n">b</span>          <span class="c1"># πηλίκο και υπόλοιπο</span>
+</span><span id="__span-31-3"><a id="__codelineno-31-3" name="__codelineno-31-3" href="#__codelineno-31-3"></a>
+</span><span id="__span-31-4"><a id="__codelineno-31-4" name="__codelineno-31-4" href="#__codelineno-31-4"></a><span class="n">quotient</span><span class="p">,</span> <span class="n">remainder</span> <span class="o">=</span> <span class="n">____</span><span class="p">(</span><span class="mi">17</span><span class="p">,</span> <span class="mi">5</span><span class="p">)</span>
+</span><span id="__span-31-5"><a id="__codelineno-31-5" name="__codelineno-31-5" href="#__codelineno-31-5"></a><span class="nb">print</span><span class="p">(</span><span class="n">quotient</span><span class="p">,</span> <span class="n">remainder</span><span class="p">)</span>             <span class="c1"># 3 2</span>
+</span><span id="__span-31-6"><a id="__codelineno-31-6" name="__codelineno-31-6" href="#__codelineno-31-6"></a>
+</span><span id="__span-31-7"><a id="__codelineno-31-7" name="__codelineno-31-7" href="#__codelineno-31-7"></a><span class="n">scores</span> <span class="o">=</span> <span class="p">{</span><span class="s2">"Άννα"</span><span class="p">:</span> <span class="mi">40</span><span class="p">,</span> <span class="s2">"Νίκη"</span><span class="p">:</span> <span class="mi">55</span><span class="p">}</span>
+</span><span id="__span-31-8"><a id="__codelineno-31-8" name="__codelineno-31-8" href="#__codelineno-31-8"></a><span class="k">for</span> <span class="n">name</span><span class="p">,</span> <span class="n">points</span> <span class="ow">in</span> <span class="n">scores</span><span class="o">.</span><span class="n">____</span><span class="p">():</span>
+</span><span id="__span-31-9"><a id="__codelineno-31-9" name="__codelineno-31-9" href="#__codelineno-31-9"></a>    <span class="nb">print</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="n">points</span><span class="p">)</span>                <span class="c1"># Άννα 40  και μετά  Νίκη 55</span>
+</span></code></pre></div>
+<p>Κενά: ___________  ___________  ___________  ___________</p>
+<h3 id="5-manhattan-3">Δ5. Γράψε εσύ: <code>manhattan</code> (3′)<a class="headerlink" href="#5-manhattan-3" title="Permanent link">&para;</a></h3>
+<p>Γράψε το σώμα της <code>manhattan(a, b)</code>. Τα <code>a</code> και <code>b</code> είναι σημεία <code>(x, y)</code>. Επιστρέφει πόσα βήματα, οριζόντια και
+κάθετα, χωρίζουν τα δύο σημεία: <code>|x1 - x2| + |y1 - y2|</code>.</p>
+<p>Παραδείγματα: <code>manhattan((1, 2), (4, 6))</code> επιστρέφει <code>7</code>, <code>manhattan((0, 0), (0, 0))</code> επιστρέφει <code>0</code>,
+<code>manhattan((-1, -1), (2, 3))</code> επιστρέφει <code>7</code>.</p>
+<p><em>Υπόδειξη:</em> το <code>a[0]</code> είναι το <code>x</code> του πρώτου σημείου. Η <code>abs</code> δίνει την απόλυτη τιμή. Τρέξε
+<code>python check_practice.py tuples</code>.</p>
+<h3 id="6-swap_pair-3">Δ6. Γράψε εσύ: <code>swap_pair</code> (3′)<a class="headerlink" href="#6-swap_pair-3" title="Permanent link">&para;</a></h3>
+<p>Γράψε το σώμα της <code>swap_pair(pair)</code>. Επιστρέφει <strong>νέα πλειάδα</strong> με τα δύο στοιχεία του ζεύγους με ανάποδη
+σειρά.</p>
+<p>Παραδείγματα: <code>swap_pair((1, "α"))</code> επιστρέφει <code>("α", 1)</code>, <code>swap_pair(("x", "y"))</code> επιστρέφει <code>("y", "x")</code>.</p>
+<p><em>Υπόδειξη:</em> αποσυσκεύασε το ζεύγος σε δύο μεταβλητές (<code>first, second = pair</code>) και επίστρεψέ τες ανάποδα.</p>
+<h3 id="7-split_name-4">Δ7. Γράψε εσύ: <code>split_name</code> (4′)<a class="headerlink" href="#7-split_name-4" title="Permanent link">&para;</a></h3>
+<p>Γράψε το σώμα της <code>split_name(full_name)</code>. Παίρνει ένα ονοματεπώνυμο με δύο λέξεις και επιστρέφει την πλειάδα
+<code>(όνομα, επώνυμο)</code>.</p>
+<p>Παραδείγματα: <code>split_name("Μαρία Παπαδοπούλου")</code> επιστρέφει <code>("Μαρία", "Παπαδοπούλου")</code>,
+<code>split_name("  Άννα   Κ ")</code> επιστρέφει <code>("Άννα", "Κ")</code>.</p>
+<p><em>Υπόδειξη:</em> η <code>.split()</code> χωρίς όρισμα κόβει στα κενά και αγνοεί τα επιπλέον κενά. Αποσυσκεύασε το αποτέλεσμά της
+σε δύο μεταβλητές.</p>
+<h3 id="8-stats-4">Δ8. Γράψε εσύ: <code>stats</code> (4′)<a class="headerlink" href="#8-stats-4" title="Permanent link">&para;</a></h3>
+<p>Γράψε το σώμα της <code>stats(numbers)</code>. Επιστρέφει <strong>μία πλειάδα</strong> <code>(μικρότερος, μεγαλύτερος, μέσος όρος)</code> μιας μη
+κενής λίστας αριθμών. <strong>Δεν αλλάζει</strong> τη λίστα που παίρνει.</p>
+<p>Παραδείγματα: <code>stats([2, 4, 9])</code> επιστρέφει <code>(2, 9, 5.0)</code>, <code>stats([7])</code> επιστρέφει <code>(7, 7, 7.0)</code>.</p>
+<p><em>Υπόδειξη:</em> οι <code>min</code>, <code>max</code> και <code>sum</code> δουλεύουν με ολόκληρη τη λίστα. Στο τέλος, <code>return</code> με τρεις τιμές χωρισμένες
+με κόμμα.</p>
+<h3 id="9-richest-4">Δ9. Γράψε εσύ: <code>richest</code> (4′)<a class="headerlink" href="#9-richest-4" title="Permanent link">&para;</a></h3>
+<p>Γράψε το σώμα της <code>richest(players)</code>. Το <code>players</code> είναι μη κενή λίστα από πλειάδες <code>(όνομα, νομίσματα)</code>.
+Επιστρέφει <strong>ολόκληρη την πλειάδα</strong> του παίκτη με τα περισσότερα νομίσματα. Σε ισοβαθμία επιστρέφει την πρώτη.</p>
+<p>Παραδείγματα: <code>richest([("Άννα", 5), ("Βασίλης", 9), ("Γεωργία", 7)])</code> επιστρέφει <code>("Βασίλης", 9)</code>,
+<code>richest([("α", 3), ("β", 3)])</code> επιστρέφει <code>("α", 3)</code>.</p>
+<p><em>Υπόδειξη:</em> πρότυπο «μεγαλύτερο» (Μέρος Β), μόνο που συγκρίνεις το <code>player[1]</code> και κρατάς ολόκληρο το <code>player</code>.
+Για να κρατηθεί η πρώτη σε ισοβαθμία, χρησιμοποίησε <code>&gt;</code> και όχι <code>&gt;=</code>.</p>
+<h3 id="10-closest-8">Δ10. Πρόκληση: <code>closest</code> (8′)<a class="headerlink" href="#10-closest-8" title="Permanent link">&para;</a></h3>
+<p>Γράψε το σώμα της <code>closest(points, target)</code>. Επιστρέφει το σημείο της λίστας <code>points</code> που είναι <strong>πιο κοντά</strong> στο
+σημείο <code>target</code>, με μέτρο την απόσταση της <code>manhattan</code>. Σε ισοβαθμία επιστρέφει το πρώτο. Η λίστα δεν είναι κενή.</p>
+<p>Παραδείγματα: <code>closest([(0, 0), (5, 5), (2, 3)], (3, 3))</code> επιστρέφει <code>(2, 3)</code>,
+<code>closest([(1, 0), (0, 1)], (0, 0))</code> επιστρέφει <code>(1, 0)</code>.</p>
+<p><em>Υπόδειξη:</em> μπορείς να καλέσεις τη δική σου <code>manhattan</code> μέσα στη συνάρτηση. Αν δεν την έχεις γράψει ακόμη, ο
+αυτοέλεγχος θα σου το πει.</p>
+<hr />
+<h2 id="50_1">Μέρος Ε — Όλα μαζί (50′)<a class="headerlink" href="#50_1" title="Permanent link">&para;</a></h2>
+<h3 id="1-4">Ε1. Διάλεξε δομή (4′)<a class="headerlink" href="#1-4" title="Permanent link">&para;</a></h3>
+<p>Για κάθε περίπτωση γράψε ποια δομή ταιριάζει: <strong>λίστα</strong>, <strong>πλειάδα</strong>, <strong>σύνολο</strong> ή <strong>λεξικό</strong>. Αν υπάρχουν
+δύο επίπεδα (π.χ. «λίστα από λεξικά»), γράψε και τα δύο.</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: center;"></th>
+<th>Περίπτωση</th>
+<th>Δομή</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;">1</td>
+<td>Οι βαθμοί ενός μαθητή σε 5 διαγωνίσματα, με τη σειρά που δόθηκαν</td>
+<td></td>
+</tr>
+<tr>
+<td style="text-align: center;">2</td>
+<td>Οι συντεταγμένες <code>(x, y)</code> ενός σημείου, που δεν αλλάζουν</td>
+<td></td>
+</tr>
+<tr>
+<td style="text-align: center;">3</td>
+<td>Πόσα τεμάχια έχει κάθε αντικείμενο μιας αποθήκης</td>
+<td></td>
+</tr>
+<tr>
+<td style="text-align: center;">4</td>
+<td>Τα γράμματα που δοκίμασε ο παίκτης, χωρίς επαναλήψεις και χωρίς να μας νοιάζει η σειρά</td>
+<td></td>
+</tr>
+<tr>
+<td style="text-align: center;">5</td>
+<td>Το χρώμα ενός pixel, <code>(255, 128, 0)</code></td>
+<td></td>
+</tr>
+<tr>
+<td style="text-align: center;">6</td>
+<td>Οι ερωτήσεις ενός κουίζ, με τη σειρά που θα γίνουν, με κείμενο, επιλογές και σωστή απάντηση η καθεμία</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h3 id="2-5_2">Ε2. Πρόβλεψη (5′)<a class="headerlink" href="#2-5_2" title="Permanent link">&para;</a></h3>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-32-1"><a id="__codelineno-32-1" name="__codelineno-32-1" href="#__codelineno-32-1"></a><span class="n">students</span> <span class="o">=</span> <span class="p">[(</span><span class="s2">"Άννα"</span><span class="p">,</span> <span class="p">[</span><span class="mi">7</span><span class="p">,</span> <span class="mi">9</span><span class="p">]),</span> <span class="p">(</span><span class="s2">"Νίκη"</span><span class="p">,</span> <span class="p">[</span><span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">10</span><span class="p">])]</span>
+</span><span id="__span-32-2"><a id="__codelineno-32-2" name="__codelineno-32-2" href="#__codelineno-32-2"></a><span class="k">for</span> <span class="n">name</span><span class="p">,</span> <span class="n">marks</span> <span class="ow">in</span> <span class="n">students</span><span class="p">:</span>
+</span><span id="__span-32-3"><a id="__codelineno-32-3" name="__codelineno-32-3" href="#__codelineno-32-3"></a>    <span class="nb">print</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">marks</span><span class="p">),</span> <span class="nb">max</span><span class="p">(</span><span class="n">marks</span><span class="p">))</span>
+</span><span id="__span-32-4"><a id="__codelineno-32-4" name="__codelineno-32-4" href="#__codelineno-32-4"></a>
+</span><span id="__span-32-5"><a id="__codelineno-32-5" name="__codelineno-32-5" href="#__codelineno-32-5"></a><span class="n">report</span> <span class="o">=</span> <span class="p">{}</span>
+</span><span id="__span-32-6"><a id="__codelineno-32-6" name="__codelineno-32-6" href="#__codelineno-32-6"></a><span class="k">for</span> <span class="n">name</span><span class="p">,</span> <span class="n">marks</span> <span class="ow">in</span> <span class="n">students</span><span class="p">:</span>
+</span><span id="__span-32-7"><a id="__codelineno-32-7" name="__codelineno-32-7" href="#__codelineno-32-7"></a>    <span class="n">report</span><span class="p">[</span><span class="n">name</span><span class="p">]</span> <span class="o">=</span> <span class="nb">sum</span><span class="p">(</span><span class="n">marks</span><span class="p">)</span>
+</span><span id="__span-32-8"><a id="__codelineno-32-8" name="__codelineno-32-8" href="#__codelineno-32-8"></a><span class="nb">print</span><span class="p">(</span><span class="n">report</span><span class="p">)</span>
+</span><span id="__span-32-9"><a id="__codelineno-32-9" name="__codelineno-32-9" href="#__codelineno-32-9"></a>
+</span><span id="__span-32-10"><a id="__codelineno-32-10" name="__codelineno-32-10" href="#__codelineno-32-10"></a><span class="n">best</span> <span class="o">=</span> <span class="n">students</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+</span><span id="__span-32-11"><a id="__codelineno-32-11" name="__codelineno-32-11" href="#__codelineno-32-11"></a><span class="nb">print</span><span class="p">(</span><span class="n">best</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">best</span><span class="p">[</span><span class="mi">1</span><span class="p">][</span><span class="mi">2</span><span class="p">])</span>
+</span></code></pre></div>
+<table>
+<thead>
+<tr>
+<th style="text-align: center;">Γραμμή εξόδου</th>
+<th>Τι εμφανίζεται</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;">1η</td>
+<td></td>
+</tr>
+<tr>
+<td style="text-align: center;">2η</td>
+<td></td>
+</tr>
+<tr>
+<td style="text-align: center;">3η</td>
+<td></td>
+</tr>
+<tr>
+<td style="text-align: center;">4η</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h3 id="35">Ε3–Ε5. Η αποθήκη του παιχνιδιού<a class="headerlink" href="#35" title="Permanent link">&para;</a></h3>
+<p>Η αποθήκη ενός παιχνιδιού είναι <strong>λεξικό</strong>: κλειδί το όνομα του αντικειμένου και τιμή πόσα τεμάχια έχει ο
+παίκτης. Θα γράψεις τρεις συναρτήσεις για αυτήν. Έτσι πρέπει να δουλεύουν όταν τελειώσεις:</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-33-1"><a id="__codelineno-33-1" name="__codelineno-33-1" href="#__codelineno-33-1"></a><span class="n">inventory</span> <span class="o">=</span> <span class="p">{}</span>
+</span><span id="__span-33-2"><a id="__codelineno-33-2" name="__codelineno-33-2" href="#__codelineno-33-2"></a><span class="n">add_item</span><span class="p">(</span><span class="n">inventory</span><span class="p">,</span> <span class="s2">"σπαθί"</span><span class="p">)</span>
+</span><span id="__span-33-3"><a id="__codelineno-33-3" name="__codelineno-33-3" href="#__codelineno-33-3"></a><span class="n">add_item</span><span class="p">(</span><span class="n">inventory</span><span class="p">,</span> <span class="s2">"φίλτρο"</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>
+</span><span id="__span-33-4"><a id="__codelineno-33-4" name="__codelineno-33-4" href="#__codelineno-33-4"></a><span class="nb">print</span><span class="p">(</span><span class="n">inventory</span><span class="p">)</span>                              <span class="c1"># {'σπαθί': 1, 'φίλτρο': 3}</span>
+</span><span id="__span-33-5"><a id="__codelineno-33-5" name="__codelineno-33-5" href="#__codelineno-33-5"></a><span class="nb">print</span><span class="p">(</span><span class="n">remove_item</span><span class="p">(</span><span class="n">inventory</span><span class="p">,</span> <span class="s2">"φίλτρο"</span><span class="p">,</span> <span class="mi">2</span><span class="p">))</span>    <span class="c1"># True</span>
+</span><span id="__span-33-6"><a id="__codelineno-33-6" name="__codelineno-33-6" href="#__codelineno-33-6"></a><span class="nb">print</span><span class="p">(</span><span class="n">remove_item</span><span class="p">(</span><span class="n">inventory</span><span class="p">,</span> <span class="s2">"σπαθί"</span><span class="p">))</span>        <span class="c1"># True</span>
+</span><span id="__span-33-7"><a id="__codelineno-33-7" name="__codelineno-33-7" href="#__codelineno-33-7"></a><span class="nb">print</span><span class="p">(</span><span class="n">remove_item</span><span class="p">(</span><span class="n">inventory</span><span class="p">,</span> <span class="s2">"ασπίδα"</span><span class="p">))</span>       <span class="c1"># False</span>
+</span><span id="__span-33-8"><a id="__codelineno-33-8" name="__codelineno-33-8" href="#__codelineno-33-8"></a><span class="nb">print</span><span class="p">(</span><span class="n">inventory</span><span class="p">)</span>                              <span class="c1"># {'φίλτρο': 1}</span>
+</span><span id="__span-33-9"><a id="__codelineno-33-9" name="__codelineno-33-9" href="#__codelineno-33-9"></a><span class="nb">print</span><span class="p">(</span><span class="n">total_items</span><span class="p">(</span><span class="n">inventory</span><span class="p">))</span>                 <span class="c1"># 1</span>
+</span></code></pre></div>
+<h3 id="3-add_item-4">Ε3. Γράψε εσύ: <code>add_item</code> (4′)<a class="headerlink" href="#3-add_item-4" title="Permanent link">&para;</a></h3>
+<p>Γράψε το σώμα της <code>add_item(inventory, name, amount=1)</code>. Προσθέτει <code>amount</code> τεμάχια του αντικειμένου <code>name</code> στο
+λεξικό <code>inventory</code>. Αν το αντικείμενο δεν υπάρχει, ξεκινά από το 0. Το <code>amount</code> είναι τουλάχιστον 1. Η συνάρτηση
+<strong>αλλάζει το λεξικό</strong> και δεν επιστρέφει τίποτα.</p>
+<p>Παράδειγμα: αν <code>inventory = {"σπαθί": 1}</code>, μετά την <code>add_item(inventory, "φίλτρο", 3)</code> το <code>inventory</code> είναι
+<code>{"σπαθί": 1, "φίλτρο": 3}</code>, και μετά την <code>add_item(inventory, "σπαθί")</code> είναι <code>{"σπαθί": 2, "φίλτρο": 3}</code>.</p>
+<p><em>Υπόδειξη:</em> είναι η <code>add_points</code> του Μέρους Γ, με άλλα ονόματα και με προεπιλογή <code>amount=1</code>. Τρέξε
+<code>python check_practice.py mixed</code>.</p>
+<h3 id="4-remove_item-6">Ε4. Γράψε εσύ: <code>remove_item</code> (6′)<a class="headerlink" href="#4-remove_item-6" title="Permanent link">&para;</a></h3>
+<p>Γράψε το σώμα της <code>remove_item(inventory, name, amount=1)</code>. Αν το αντικείμενο <code>name</code> υπάρχει με <strong>τουλάχιστον</strong>
+<code>amount</code> τεμάχια, τα αφαιρεί και επιστρέφει <code>True</code>. Αν μετά την αφαίρεση μείνουν 0 τεμάχια, το κλειδί
+<strong>διαγράφεται</strong> από το λεξικό. Αλλιώς δεν αλλάζει τίποτα και επιστρέφει <code>False</code>. Το <code>amount</code> είναι τουλάχιστον 1.</p>
+<p>Παράδειγμα: με <code>inventory = {"σπαθί": 1, "φίλτρο": 3}</code>, η <code>remove_item(inventory, "φίλτρο", 2)</code> επιστρέφει
+<code>True</code> και το λεξικό γίνεται <code>{"σπαθί": 1, "φίλτρο": 1}</code>. Η <code>remove_item(inventory, "φίλτρο", 5)</code> επιστρέφει
+<code>False</code> και το λεξικό δεν αλλάζει.</p>
+<p><em>Υποδείξεις:</em> ο έλεγχος <code>inventory.get(name, 0) &gt;= amount</code> καλύπτει και τα δύο «όχι»: το αντικείμενο που λείπει
+και το αντικείμενο με λίγα τεμάχια. Το πρότυπο της <code>sell</code> του Γ6 σε βοηθά για τη διαγραφή.</p>
+<h3 id="5-total_items-3">Ε5. Γράψε εσύ: <code>total_items</code> (3′)<a class="headerlink" href="#5-total_items-3" title="Permanent link">&para;</a></h3>
+<p>Γράψε το σώμα της <code>total_items(inventory)</code>. Επιστρέφει πόσα τεμάχια έχει <strong>συνολικά</strong> η αποθήκη, δηλαδή το
+άθροισμα των τιμών του λεξικού.</p>
+<p>Παραδείγματα: <code>total_items({"σπαθί": 1, "φίλτρο": 3})</code> επιστρέφει <code>4</code>, <code>total_items({})</code> επιστρέφει <code>0</code>.</p>
+<p><em>Υπόδειξη:</em> μπορείς να διατρέξεις τα κλειδιά και να προσθέτεις <code>inventory[name]</code>, ή να διατρέξεις τις <code>.values()</code>.</p>
+<h3 id="6-averages-5">Ε6. Γράψε εσύ: <code>averages</code> (5′)<a class="headerlink" href="#6-averages-5" title="Permanent link">&para;</a></h3>
+<p>Ένα βαθμολόγιο είναι <strong>λίστα από πλειάδες</strong> <code>(όνομα, λίστα βαθμών)</code>, π.χ.
+<code>[("Άννα", [8, 9, 10]), ("Βασίλης", [5, 6])]</code>.</p>
+<p>Γράψε το σώμα της <code>averages(students)</code>. Επιστρέφει <strong>λεξικό</strong> με τον μέσο όρο κάθε μαθητή. Κάθε μαθητής έχει
+τουλάχιστον έναν βαθμό.</p>
+<p>Παραδείγματα: <code>averages([("Άννα", [8, 9, 10]), ("Βασίλης", [5, 6])])</code> επιστρέφει <code>{"Άννα": 9.0, "Βασίλης": 5.5}</code>,
+<code>averages([])</code> επιστρέφει <code>{}</code>.</p>
+<p><em>Υπόδειξη:</em> <code>for name, marks in students:</code> χωρίζει κάθε πλειάδα σε όνομα και βαθμούς. Ο μέσος όρος είναι
+<code>sum(marks) / len(marks)</code>.</p>
+<h3 id="7-best_student-5">Ε7. Γράψε εσύ: <code>best_student</code> (5′)<a class="headerlink" href="#7-best_student-5" title="Permanent link">&para;</a></h3>
+<p>Γράψε το σώμα της <code>best_student(students)</code>. Επιστρέφει την <strong>πλειάδα</strong> <code>(όνομα, μέσος όρος)</code> του μαθητή με τον
+μεγαλύτερο μέσο όρο, από μια μη κενή λίστα σαν της προηγούμενης άσκησης. Σε ισοβαθμία επιστρέφει τον πρώτο.</p>
+<p>Παραδείγματα: <code>best_student([("Άννα", [8, 9, 10]), ("Βασίλης", [5, 6])])</code> επιστρέφει <code>("Άννα", 9.0)</code>,
+<code>best_student([("α", [6, 8]), ("β", [7])])</code> επιστρέφει <code>("α", 7.0)</code>.</p>
+<p><em>Υπόδειξη:</em> μπορείς να καλέσεις την <code>averages</code> που έγραψες και μετά να βρεις το μεγαλύτερο όπως στη <code>highest</code>.</p>
+<h3 id="8-word_stats-7">Ε8. Γράψε εσύ: <code>word_stats</code> (7′)<a class="headerlink" href="#8-word_stats-7" title="Permanent link">&para;</a></h3>
+<p>Γράψε το σώμα της <code>word_stats(text)</code>. Παίρνει ένα κείμενο με λέξεις χωρισμένες με κενά (χωρίς σημεία στίξης) και
+επιστρέφει <strong>πλειάδα</strong> με τρία στοιχεία: πόσες λέξεις έχει, πόσες <strong>διαφορετικές</strong> λέξεις έχει, και ποια λέξη
+εμφανίζεται πιο συχνά. Τα πεζά και τα κεφαλαία θεωρούνται ίδια και η λέξη επιστρέφεται με πεζά. Σε ισοβαθμία,
+επιστρέφεται η λέξη που εμφανίστηκε πρώτη. Για κενό κείμενο επιστρέφει <code>(0, 0, "")</code>.</p>
+<p>Παραδείγματα: <code>word_stats("ναι όχι ναι ίσως")</code> επιστρέφει <code>(4, 3, "ναι")</code>, <code>word_stats("Α α β")</code> επιστρέφει
+<code>(3, 2, "α")</code>, <code>word_stats("")</code> επιστρέφει <code>(0, 0, "")</code>.</p>
+<p><em>Υποδείξεις:</em> <code>words = text.lower().split()</code>. Μέτρησε τις λέξεις με το πρότυπο μέτρησης και βρες την πιο συχνή
+με το πρότυπο «μεγαλύτερο». Το πλήθος των διαφορετικών λέξεων είναι το <code>len</code> του λεξικού μέτρησης.</p>
+<h3 id="9-ranking-8">Ε9. Πρόκληση: <code>ranking</code> (8′)<a class="headerlink" href="#9-ranking-8" title="Permanent link">&para;</a></h3>
+<p>Γράψε το σώμα της <code>ranking(scores)</code>. Το <code>scores</code> έχει για κάθε παίκτη τη <strong>λίστα</strong> με τους πόντους των
+παιχνιδιών του. Επιστρέφει <strong>λίστα με τα ονόματα</strong>, από τον παίκτη με τον μεγαλύτερο αριθμό στη λίστα του μέχρι
+τον παίκτη με τον μικρότερο. Υποθέτουμε ότι τα μέγιστα των παικτών είναι διαφορετικά και ότι κάθε λίστα έχει
+τουλάχιστον έναν αριθμό.</p>
+<p>Παράδειγμα: <code>ranking({"Άννα": [30, 50], "Νίκη": [40], "Άρης": [10, 60, 20]})</code> επιστρέφει
+<code>["Άρης", "Άννα", "Νίκη"]</code>.</p>
+<p><em>Υποδείξεις:</em> φτιάξε μια λίστα από πλειάδες <code>(μέγιστο, όνομα)</code> και ταξινόμησε τη λίστα με <code>.sort()</code>: οι πλειάδες
+ταξινομούνται με βάση το πρώτο στοιχείο τους. Η σειρά που προκύπτει είναι από τον μικρότερο στον μεγαλύτερο, άρα
+χρειάζεται να τη γυρίσεις ανάποδα. Δεν υπάρχει ενσωματωμένη συνάρτηση που να το κάνει, αλλά μπορείς να βάλεις
+κάθε όνομα στην <strong>αρχή</strong> της νέας λίστας με <code>names.insert(0, όνομα)</code>.</p>
+<h3 id="10-3">Ε10. Κάρτα εξόδου (3′)<a class="headerlink" href="#10-3" title="Permanent link">&para;</a></h3>
+<ol>
+<li>Πότε διαλέγεις λεξικό και πότε λίστα; __________________________________________</li>
+<li>Γιατί η <code>add_item</code> δεν έχει <code>return</code>; __________________________________________</li>
+<li>Σε ποια άσκηση του φυλλαδίου δυσκολεύτηκες περισσότερο και γιατί; _________________________________</li>
+</ol>
+<hr />
+<h2 id="_8">Αυτοέλεγχος γνώσεων<a class="headerlink" href="#_8" title="Permanent link">&para;</a></h2>
+<ul>
+<li>□ Ξέρω τη διαφορά ανάμεσα σε <code>print</code> και <code>return</code>, και τι επιστρέφει μια συνάρτηση χωρίς <code>return</code>.</li>
+<li>□ Ξέρω ποιες μέθοδοι αλλάζουν μια λίστα και ποιες δίνουν νέα τιμή (<code>.sort()</code> και <code>sorted</code>).</li>
+<li>□ Γράφω τα τέσσερα πρότυπα με <code>for</code>: μετρητή, άθροισμα, μεγαλύτερο, νέα λίστα.</li>
+<li>□ Ξέρω πότε το <code>d[k]</code> δίνει σφάλμα και πότε δίνει τιμή το <code>d.get(k, προεπιλογή)</code>.</li>
+<li>□ Μπορώ να γράψω το πρότυπο μέτρησης με λεξικό χωρίς να το κοιτάξω.</li>
+<li>□ Ξέρω τι σημαίνει <code>x, y = κάτι</code> και πώς επιστρέφονται πολλές τιμές.</li>
+<li>□ Μπορώ να διαλέξω ανάμεσα σε λίστα, πλειάδα, σύνολο και λεξικό για ένα συγκεκριμένο πρόβλημα.</li>
+<li>□ Διαβάζω εκφράσεις όπως <code>team["scores"][team["players"][0]]</code> από αριστερά προς τα δεξιά.</li>
+<li>□ Το <code>python check_practice.py</code> δείχνει <code>ΟΛΑ ΟΚ</code>.</li>
+</ul>
+<h2 id="_9">Αν κολλήσεις<a class="headerlink" href="#_9" title="Permanent link">&para;</a></h2>
+<ol>
+<li>Διάβασε τι σου λέει ο αυτοέλεγχος: την κλήση που απέτυχε, το «αναμενόμενο» και το «πήρα».</li>
+<li>Δοκίμασε την ίδια κλήση στο <code>sandbox.py</code>, με <code>print(...)</code> γύρω από αυτήν, και δες τι επιστρέφει η συνάρτησή σου.</li>
+<li>Γράψε σε σχόλιο ένα μικρό παράδειγμα με το χέρι, βήμα προς βήμα, όπως στις ασκήσεις ιχνηλάτησης.</li>
+<li>Αν δεν βγαίνει ακόμη, ξαναδιάβασε την υπενθύμιση του μέρους και ρώτα τον διδάσκοντα.</li>
+</ol>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Επιστροφή στην αρχή
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+      
+      <nav class="md-footer__inner md-grid" aria-label="Υποσέλιδο" >
+        
+          
+          <a href="../04-quiz-console/worksheet-04/" class="md-footer__link md-footer__link--prev" aria-label="Προηγούμενο: Φύλλο εργασίας">
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Προηγούμενο
+              </span>
+              <div class="md-ellipsis">
+                Φύλλο εργασίας
+              </div>
+            </div>
+          </a>
+        
+        
+          
+          <a href="../05-maze/lesson-05/" class="md-footer__link md-footer__link--next" aria-label="Επόμενο: Μάθημα">
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Επόμενο
+              </span>
+              <div class="md-ellipsis">
+                Μάθημα
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      © 2026 Θόδωρος Θεμελής — <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.el"
+   target="_blank" rel="noopener">CC BY-NC-SA 4.0</a>
+
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "..", "features": ["navigation.sections", "navigation.top", "navigation.footer", "content.code.copy", "content.code.annotate", "toc.follow", "search.suggest", "search.highlight"], "search": "../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "\u0391\u03bd\u03c4\u03b9\u03b3\u03c1\u03ac\u03c6\u03b7\u03ba\u03b5 \u03c3\u03c4\u03bf \u03c0\u03c1\u03cc\u03c7\u03b5\u03b9\u03c1\u03bf", "clipboard.copy": "\u0391\u03bd\u03c4\u03b9\u03b3\u03c1\u03b1\u03c6\u03ae \u03c3\u03c4\u03bf \u03c0\u03c1\u03cc\u03c7\u03b5\u03b9\u03c1\u03bf", "search.result.more.one": "1 \u03b1\u03ba\u03cc\u03bc\u03b1 \u03c3\u03b5 \u03b1\u03c5\u03c4\u03ae\u03bd \u03c4\u03b7 \u03c3\u03b5\u03bb\u03af\u03b4\u03b1", "search.result.more.other": "# \u03b1\u03ba\u03cc\u03bc\u03b1 \u03c3\u03b5 \u03b1\u03c5\u03c4\u03ae\u03bd \u03c4\u03b7 \u03c3\u03b5\u03bb\u03af\u03b4\u03b1", "search.result.none": "\u03b4\u03b5\u03bd \u03b2\u03c1\u03ae\u03ba\u03b5 \u03ba\u03ac\u03c0\u03bf\u03b9\u03bf \u03ad\u03b3\u03b3\u03c1\u03b1\u03c6\u03bf", "search.result.one": "1 \u03ad\u03b3\u03b3\u03c1\u03b1\u03c6\u03bf \u03c0\u03bf\u03c5 \u03c4\u03b1\u03b9\u03c1\u03b9\u03ac\u03b6\u03b5\u03b9", "search.result.other": "# \u03ad\u03b3\u03b3\u03c1\u03b1\u03c6\u03b1 \u03c0\u03bf\u03c5 \u03c4\u03b1\u03b9\u03c1\u03b9\u03ac\u03b6\u03bf\u03c5\u03bd", "search.result.placeholder": "\u03a0\u03bb\u03b7\u03ba\u03c4\u03c1\u03bf\u03bb\u03bf\u03b3\u03ae\u03c3\u03c4\u03b5 \u03b3\u03b9\u03b1 \u03bd\u03b1 \u03b1\u03c1\u03c7\u03af\u03c3\u03b5\u03b9 \u03b7 \u03b1\u03bd\u03b1\u03b6\u03ae\u03c4\u03b7\u03c3\u03b7", "search.result.term.missing": "\u039b\u03b5\u03af\u03c0\u03b5\u03b9", "select.version": "\u0395\u03c0\u03b9\u03bb\u03bf\u03b3\u03ae \u03ad\u03ba\u03b4\u03bf\u03c3\u03b7\u03c2"}, "version": null}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.d7400e89.min.js"></script>
+      
+    
+  </body>
+</html>
