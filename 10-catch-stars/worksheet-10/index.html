@@ -25,7 +25,7 @@
       
       
       <link rel="icon" href="../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.7">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.8.0">
     
     
       
@@ -33,10 +33,10 @@
       
     
     
-      <link rel="stylesheet" href="../../assets/stylesheets/main.ec1eaa64.min.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/main.57a0d79d.min.css">
       
         
-        <link rel="stylesheet" href="../../assets/stylesheets/palette.ab4e12ef.min.css">
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.fb2fffe2.min.css">
       
       
 
@@ -3679,10 +3679,10 @@ pixel ανά καρέ.</p>
 </tr>
 </tbody>
 </table>
-<p>Τι εμφανίζει η <code>print(ys)</code>;  <strong><em>_</em></strong><strong><em>_</em></strong><strong><em>_</em></strong><strong><em>_</em></strong>__<br />
+<p>Τι εμφανίζει η <code>print(ys)</code>;  ______________________________<br />
 Ποιο στοιχείο έπρεπε να φύγει αλλά έμεινε;  ______<br />
-Ποια στοιχεία της αρχικής λίστας δεν διάβασε ποτέ ο <code>for</code>;  <strong><em>_</em></strong><strong><em>_</em></strong><strong><em>_</em></strong><strong><em>_</em></strong>__<br />
-Ποια λίστα θα έδινε ένας βρόχος που φτιάχνει <strong>νέα</strong> λίστα με όσα στοιχεία είναι <code>&lt;= 500</code> (όπως η <code>remove_fallen</code>);  <strong><em>_</em></strong><strong><em>_</em></strong><strong><em>_</em></strong><strong><em>_</em></strong>__</p>
+Ποια στοιχεία της αρχικής λίστας δεν διάβασε ποτέ ο <code>for</code>;  ______________________________<br />
+Ποια λίστα θα έδινε ένας βρόχος που φτιάχνει <strong>νέα</strong> λίστα με όσα στοιχεία είναι <code>&lt;= 500</code> (όπως η <code>remove_fallen</code>);  ______________________________</p>
 <h3 id="2">Γ. Σωστό ή λάθος; (2′)<a class="headerlink" href="#2" title="Permanent link">&para;</a></h3>
 <table>
 <thead>
@@ -3728,14 +3728,14 @@ pixel ανά καρέ.</p>
 </span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a>    <span class="k">if</span> <span class="n">star</span><span class="o">.</span><span class="n">y</span> <span class="o">&gt;</span> <span class="n">HEIGHT</span> <span class="o">+</span> <span class="n">STAR_RADIUS</span><span class="p">:</span>
 </span><span id="__span-2-4"><a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a>        <span class="n">stars</span><span class="o">.</span><span class="n">remove</span><span class="p">(</span><span class="n">star</span><span class="p">)</span>
 </span></code></pre></div>
-Τι κίνδυνο έχει αυτός ο κώδικας;  <strong><em>_</em></strong><strong><em>_</em></strong><strong><em>_</em></strong><strong><em>_</em></strong>__<br />
-Διόρθωση:  <strong><em>_</em></strong><strong><em>_</em></strong><strong><em>_</em></strong><strong><em>_</em></strong>__</p>
+Τι κίνδυνο έχει αυτός ο κώδικας;  ______________________________<br />
+Διόρθωση:  ______________________________</p>
 <p><strong>2.</strong>
 <div class="language-python highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="k">elif</span> <span class="n">event</span><span class="o">.</span><span class="n">type</span> <span class="o">==</span> <span class="n">pygame</span><span class="o">.</span><span class="n">MOUSEBUTTONDOWN</span><span class="p">:</span>
 </span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>    <span class="n">stars</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">Star</span><span class="p">(</span><span class="n">event</span><span class="o">.</span><span class="n">pos</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">HUD_HEIGHT</span> <span class="o">+</span> <span class="n">STAR_RADIUS</span><span class="p">))</span>
 </span></code></pre></div>
-Τι μήνυμα βλέπεις;  <strong><em>_</em></strong><strong><em>_</em></strong><strong><em>_</em></strong><strong><em>_</em></strong>__<br />
-Διόρθωση:  <strong><em>_</em></strong><strong><em>_</em></strong><strong><em>_</em></strong><strong><em>_</em></strong>__</p>
+Τι μήνυμα βλέπεις;  ______________________________<br />
+Διόρθωση:  ______________________________</p>
 <p><strong>3.</strong>
 <div class="language-python highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="k">def</span><span class="w"> </span><span class="nf">remove_fallen</span><span class="p">(</span><span class="n">stars</span><span class="p">,</span> <span class="n">limit</span><span class="p">):</span>
 </span><span id="__span-4-2"><a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a>    <span class="n">remaining</span> <span class="o">=</span> <span class="p">[]</span>
@@ -3745,8 +3745,8 @@ pixel ανά καρέ.</p>
 </span><span id="__span-4-6"><a id="__codelineno-4-6" name="__codelineno-4-6" href="#__codelineno-4-6"></a>        <span class="k">return</span> <span class="n">remaining</span>
 </span></code></pre></div>
 Στο πρόγραμμα, η πρώτη εκτέλεση της <code>stars = remove_fallen(stars, HEIGHT + STAR_RADIUS)</code> γίνεται με κενή λίστα, και μετά
-ο βρόχος <code>for star in stars:</code> διατρέχει το αποτέλεσμα. Τι μήνυμα βλέπεις;  <strong><em>_</em></strong><strong><em>_</em></strong><strong><em>_</em></strong><strong><em>_</em></strong>__<br />
-Διόρθωση:  <strong><em>_</em></strong><strong><em>_</em></strong><strong><em>_</em></strong><strong><em>_</em></strong>__</p>
+ο βρόχος <code>for star in stars:</code> διατρέχει το αποτέλεσμα. Τι μήνυμα βλέπεις;  ______________________________<br />
+Διόρθωση:  ______________________________</p>
 <h3 id="1-01-fallingpy-7">Ε. Στάδιο 1 — <code>01-falling.py</code> (7′)<a class="headerlink" href="#1-01-fallingpy-7" title="Permanent link">&para;</a></h3>
 <ol>
 <li>Συμπλήρωσε τα επτά κενά (<code>TODO 1</code> έως <code>TODO 7</code>) και τρέξε το πρόγραμμα. Κάνε κλικ σε διάφορα σημεία του παραθύρου.</li>
@@ -3779,7 +3779,7 @@ pixel ανά καρέ.</p>
 </tbody>
 </table>
 <p>Με την πρώτη αλλαγή, κάνε πέντε κλικ και περίμενε δέκα δευτερόλεπτα. Τι δείχνει η ένδειξη «Αστέρια στη λίστα»;  ______<br />
-Πού βρίσκονται τα αστέρια, αφού δεν τα βλέπεις πια;  <strong><em>_</em></strong><strong><em>_</em></strong><strong><em>_</em></strong><strong><em>_</em></strong>__</p>
+Πού βρίσκονται τα αστέρια, αφού δεν τα βλέπεις πια;  ______________________________</p>
 <h3 id="remove_fallen-8">ΣΤ. Γράψε εσύ: <code>remove_fallen</code> (8′)<a class="headerlink" href="#remove_fallen-8" title="Permanent link">&para;</a></h3>
 <p>Στο <code>exercises.py</code>, γράψε το σώμα της <code>remove_fallen(stars, limit)</code>. Παίρνει μια λίστα αστεριών, αντικειμένων που έχουν
 ιδιότητα <code>y</code>, και ένα όριο, και επιστρέφει <strong>νέα</strong> λίστα με τα αστέρια που δεν έχουν περάσει το όριο: όσα έχουν <code>y &lt;= limit</code>.
@@ -3790,9 +3790,9 @@ pixel ανά καρέ.</p>
 μένουν. Στο τέλος γράψε <code>return remaining</code>. Μη χρησιμοποιήσεις τη <code>remove</code> (ενότητα 1.6). Τρέξε <code>python check_exercises.py</code>.</p>
 <h3 id="3_1">Ζ. Κάρτα εξόδου (3′)<a class="headerlink" href="#3_1" title="Permanent link">&para;</a></h3>
 <ol>
-<li>Γιατί τα αστέρια κρατιούνται σε μια λίστα και όχι σε μεταβλητές <code>star1</code>, <code>star2</code>, …;  <strong><em>_</em></strong><strong><em>_</em></strong><strong><em>_</em></strong><strong><em>_</em></strong>__</li>
-<li>Γιατί η <code>remove_fallen</code> φτιάχνει νέα λίστα αντί να βγάζει αστέρια από τη λίστα που διατρέχει;  <strong><em>_</em></strong><strong><em>_</em></strong><strong><em>_</em></strong><strong><em>_</em></strong>__</li>
-<li>Τι δείχνει το <code>len(stars)</code>;  <strong><em>_</em></strong><strong><em>_</em></strong><strong><em>_</em></strong><strong><em>_</em></strong>__</li>
+<li>Γιατί τα αστέρια κρατιούνται σε μια λίστα και όχι σε μεταβλητές <code>star1</code>, <code>star2</code>, …;  ______________________________</li>
+<li>Γιατί η <code>remove_fallen</code> φτιάχνει νέα λίστα αντί να βγάζει αστέρια από τη λίστα που διατρέχει;  ______________________________</li>
+<li>Τι δείχνει το <code>len(stars)</code>;  ______________________________</li>
 </ol>
 <hr />
 <h2 id="2-46">Κύκλος 2 — Ο χρονιστής (46′)<a class="headerlink" href="#2-46" title="Permanent link">&para;</a></h2>
@@ -3959,8 +3959,8 @@ pixel ανά καρέ.</p>
 </span><span id="__span-5-3"><a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a>    <span class="n">pygame</span><span class="o">.</span><span class="n">time</span><span class="o">.</span><span class="n">set_timer</span><span class="p">(</span><span class="n">SPAWN_STAR</span><span class="p">,</span> <span class="mi">1000</span><span class="p">)</span>
 </span><span id="__span-5-4"><a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a>    <span class="n">dt</span> <span class="o">=</span> <span class="nb">min</span><span class="p">(</span><span class="n">clock</span><span class="o">.</span><span class="n">tick</span><span class="p">(</span><span class="mi">60</span><span class="p">)</span> <span class="o">/</span> <span class="mi">1000</span><span class="p">,</span> <span class="n">MAX_DT</span><span class="p">)</span>
 </span></code></pre></div>
-Τι βλέπεις στο παράθυρο;  <strong><em>_</em></strong><strong><em>_</em></strong><strong><em>_</em></strong><strong><em>_</em></strong>__<br />
-Διόρθωση:  <strong><em>_</em></strong><strong><em>_</em></strong><strong><em>_</em></strong><strong><em>_</em></strong>__</p>
+Τι βλέπεις στο παράθυρο;  ______________________________<br />
+Διόρθωση:  ______________________________</p>
 <p><strong>2.</strong>
 <div class="language-python highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="n">SPAWN_STAR</span> <span class="o">=</span> <span class="n">pygame</span><span class="o">.</span><span class="n">USEREVENT</span> <span class="o">+</span> <span class="mi">1</span>
 </span><span id="__span-6-2"><a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a><span class="n">pygame</span><span class="o">.</span><span class="n">time</span><span class="o">.</span><span class="n">set_timer</span><span class="p">(</span><span class="n">SPAWN_STAR</span><span class="p">,</span> <span class="mi">1000</span><span class="p">)</span>
@@ -3969,13 +3969,13 @@ pixel ανά καρέ.</p>
 <div class="language-python highlight"><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>    <span class="k">elif</span> <span class="n">event</span><span class="o">.</span><span class="n">type</span> <span class="o">==</span> <span class="n">pygame</span><span class="o">.</span><span class="n">USEREVENT</span><span class="p">:</span>
 </span><span id="__span-7-2"><a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a>        <span class="n">stars</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">Star</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">HUD_HEIGHT</span> <span class="o">+</span> <span class="n">STAR_RADIUS</span><span class="p">,</span> <span class="n">speed</span><span class="p">))</span>
 </span></code></pre></div>
-Τι βλέπεις στο παράθυρο;  <strong><em>_</em></strong><strong><em>_</em></strong><strong><em>_</em></strong><strong><em>_</em></strong>__<br />
-Διόρθωση:  <strong><em>_</em></strong><strong><em>_</em></strong><strong><em>_</em></strong><strong><em>_</em></strong>__</p>
+Τι βλέπεις στο παράθυρο;  ______________________________<br />
+Διόρθωση:  ______________________________</p>
 <p><strong>3.</strong>
 <div class="language-python highlight"><pre><span></span><code><span id="__span-8-1"><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a><span class="n">pygame</span><span class="o">.</span><span class="n">time</span><span class="o">.</span><span class="n">set_timer</span><span class="p">(</span><span class="n">SPAWN_STAR</span><span class="p">)</span>
 </span></code></pre></div>
-Τι μήνυμα βλέπεις;  <strong><em>_</em></strong><strong><em>_</em></strong><strong><em>_</em></strong><strong><em>_</em></strong>__<br />
-Διόρθωση:  <strong><em>_</em></strong><strong><em>_</em></strong><strong><em>_</em></strong><strong><em>_</em></strong>__</p>
+Τι μήνυμα βλέπεις;  ______________________________<br />
+Διόρθωση:  ______________________________</p>
 <h3 id="2-02-timerpy-7">Ε. Στάδιο 2 — <code>02-timer.py</code> (7′)<a class="headerlink" href="#2-02-timerpy-7" title="Permanent link">&para;</a></h3>
 <ol>
 <li>Συμπλήρωσε τα έξι κενά (<code>TODO 1</code> έως <code>TODO 6</code>) και τρέξε το πρόγραμμα.</li>
@@ -4019,9 +4019,9 @@ pixel ανά καρέ.</p>
 <code>score // 3</code>. Η <code>max</code> δεν αφήνει το αποτέλεσμα να πέσει κάτω από 400. Τρέξε <code>python check_exercises.py</code>.</p>
 <h3 id="3_3">Ζ. Κάρτα εξόδου (3′)<a class="headerlink" href="#3_3" title="Permanent link">&para;</a></h3>
 <ol>
-<li>Τι είναι το <code>pygame.USEREVENT</code> και γιατί προσθέτουμε <code>+ 1</code>;  <strong><em>_</em></strong><strong><em>_</em></strong><strong><em>_</em></strong><strong><em>_</em></strong>__</li>
-<li>Τι κάνει η <code>set_timer</code>, και σε ποια μονάδα δίνεται το διάστημα;  <strong><em>_</em></strong><strong><em>_</em></strong><strong><em>_</em></strong><strong><em>_</em></strong>__</li>
-<li>Ποια η διαφορά ανάμεσα στο <code>created</code> και στο <code>len(stars)</code>;  <strong><em>_</em></strong><strong><em>_</em></strong><strong><em>_</em></strong><strong><em>_</em></strong>__</li>
+<li>Τι είναι το <code>pygame.USEREVENT</code> και γιατί προσθέτουμε <code>+ 1</code>;  ______________________________</li>
+<li>Τι κάνει η <code>set_timer</code>, και σε ποια μονάδα δίνεται το διάστημα;  ______________________________</li>
+<li>Ποια η διαφορά ανάμεσα στο <code>created</code> και στο <code>len(stars)</code>;  ______________________________</li>
 </ol>
 <hr />
 <h2 id="3-49">Κύκλος 3 — Καλάθι και απόσταση (49′)<a class="headerlink" href="#3-49" title="Permanent link">&para;</a></h2>
@@ -4125,7 +4125,7 @@ pixel ανά καρέ.</p>
 </tbody>
 </table>
 <p>Ποια τιμή θα είχε το <code>lives</code> χωρίς τη <code>max(0, …)</code>;  ______<br />
-Ποια αστέρια βγήκαν στο δεύτερο πέρασμα και γιατί;  <strong><em>_</em></strong><strong><em>_</em></strong><strong><em>_</em></strong><strong><em>_</em></strong>__</p>
+Ποια αστέρια βγήκαν στο δεύτερο πέρασμα και γιατί;  ______________________________</p>
 <h3 id="2_2">Γ. Σωστό ή λάθος; (2′)<a class="headerlink" href="#2_2" title="Permanent link">&para;</a></h3>
 <table>
 <thead>
@@ -4168,21 +4168,21 @@ pixel ανά καρέ.</p>
 <div class="language-python highlight"><pre><span></span><code><span id="__span-9-1"><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a><span class="k">def</span><span class="w"> </span><span class="nf">distance</span><span class="p">(</span><span class="n">x1</span><span class="p">,</span> <span class="n">y1</span><span class="p">,</span> <span class="n">x2</span><span class="p">,</span> <span class="n">y2</span><span class="p">):</span>
 </span><span id="__span-9-2"><a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a>    <span class="k">return</span> <span class="n">math</span><span class="o">.</span><span class="n">hypot</span><span class="p">(</span><span class="n">x1</span><span class="p">,</span> <span class="n">y1</span><span class="p">,</span> <span class="n">x2</span><span class="p">,</span> <span class="n">y2</span><span class="p">)</span>
 </span></code></pre></div>
-Η <code>distance(0, 0, 3, 4)</code> δίνει σωστά <code>5.0</code>. Τι δίνει η <code>distance(1, 1, 1, 1)</code>, και τι έπρεπε να δίνει;  <strong><em>_</em></strong><strong><em>_</em></strong><strong><em>_</em></strong><strong><em>_</em></strong>__<br />
-Διόρθωση:  <strong><em>_</em></strong><strong><em>_</em></strong><strong><em>_</em></strong><strong><em>_</em></strong>__</p>
+Η <code>distance(0, 0, 3, 4)</code> δίνει σωστά <code>5.0</code>. Τι δίνει η <code>distance(1, 1, 1, 1)</code>, και τι έπρεπε να δίνει;  ______________________________<br />
+Διόρθωση:  ______________________________</p>
 <p><strong>2.</strong>
 <div class="language-python highlight"><pre><span></span><code><span id="__span-10-1"><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a><span class="k">def</span><span class="w"> </span><span class="nf">distance</span><span class="p">(</span><span class="n">x1</span><span class="p">,</span> <span class="n">y1</span><span class="p">,</span> <span class="n">x2</span><span class="p">,</span> <span class="n">y2</span><span class="p">):</span>
 </span><span id="__span-10-2"><a id="__codelineno-10-2" name="__codelineno-10-2" href="#__codelineno-10-2"></a>    <span class="k">return</span> <span class="n">math</span><span class="o">.</span><span class="n">hypot</span><span class="p">(</span><span class="n">x2</span> <span class="o">-</span> <span class="n">x1</span><span class="p">,</span> <span class="n">y2</span> <span class="o">-</span> <span class="n">y1</span><span class="p">)</span>
 </span></code></pre></div>
-Στο πρόγραμμα λείπει η εντολή <code>import math</code>. Τι μήνυμα βλέπεις όταν καλείται η <code>distance</code>;  <strong><em>_</em></strong><strong><em>_</em></strong><strong><em>_</em></strong><strong><em>_</em></strong>__<br />
-Διόρθωση:  <strong><em>_</em></strong><strong><em>_</em></strong><strong><em>_</em></strong><strong><em>_</em></strong>__</p>
+Στο πρόγραμμα λείπει η εντολή <code>import math</code>. Τι μήνυμα βλέπεις όταν καλείται η <code>distance</code>;  ______________________________<br />
+Διόρθωση:  ______________________________</p>
 <p><strong>3.</strong>
 <div class="language-python highlight"><pre><span></span><code><span id="__span-11-1"><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a><span class="k">def</span><span class="w"> </span><span class="nf">touches</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">basket</span><span class="p">):</span>
 </span><span id="__span-11-2"><a id="__codelineno-11-2" name="__codelineno-11-2" href="#__codelineno-11-2"></a>    <span class="n">left</span><span class="p">,</span> <span class="n">top</span><span class="p">,</span> <span class="n">width</span><span class="p">,</span> <span class="n">height</span> <span class="o">=</span> <span class="n">basket</span><span class="o">.</span><span class="n">box</span><span class="p">()</span>
 </span><span id="__span-11-3"><a id="__codelineno-11-3" name="__codelineno-11-3" href="#__codelineno-11-3"></a>    <span class="k">return</span> <span class="n">circle_touches_rect</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">x</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">y</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">radius</span><span class="p">,</span> <span class="n">left</span><span class="p">,</span> <span class="n">top</span><span class="p">,</span> <span class="n">width</span><span class="p">)</span>
 </span></code></pre></div>
-Τι μήνυμα βλέπεις;  <strong><em>_</em></strong><strong><em>_</em></strong><strong><em>_</em></strong><strong><em>_</em></strong>__<br />
-Διόρθωση:  <strong><em>_</em></strong><strong><em>_</em></strong><strong><em>_</em></strong><strong><em>_</em></strong>__</p>
+Τι μήνυμα βλέπεις;  ______________________________<br />
+Διόρθωση:  ______________________________</p>
 <h3 id="3-03-catchpy-8">Ε. Στάδιο 3 — <code>03-catch.py</code> (8′)<a class="headerlink" href="#3-03-catchpy-8" title="Permanent link">&para;</a></h3>
 <ol>
 <li>Συμπλήρωσε τα οκτώ κενά (<code>TODO 1</code> έως <code>TODO 8</code>) και παίξε ένα λεπτό. Το Στάδιο 3 δεν έχει τέλος.</li>
@@ -4215,7 +4215,7 @@ pixel ανά καρέ.</p>
 </tbody>
 </table>
 <p>Με <code>STAR_RADIUS = 30</code>, αλλάζει το σχήμα του αστεριού στην οθόνη;  ______<br />
-Τι άλλαξε τότε στο παιχνίδι, και ποιο κομμάτι του κώδικα αποφασίζει αν ένα αστέρι πιάστηκε;  <strong><em>_</em></strong><strong><em>_</em></strong><strong><em>_</em></strong><strong><em>_</em></strong>__</p>
+Τι άλλαξε τότε στο παιχνίδι, και ποιο κομμάτι του κώδικα αποφασίζει αν ένα αστέρι πιάστηκε;  ______________________________</p>
 <h3 id="distance-circle_touches_rect-9">ΣΤ. Γράψε εσύ: <code>distance</code> και <code>circle_touches_rect</code> (9′)<a class="headerlink" href="#distance-circle_touches_rect-9" title="Permanent link">&para;</a></h3>
 <p>Στο <code>exercises.py</code>, γράψε το σώμα δύο συναρτήσεων.</p>
 <p><strong>Μέρος 1 (3′).</strong> Η <code>distance(x1, y1, x2, y2)</code> επιστρέφει την απόσταση ανάμεσα στα σημεία <code>(x1, y1)</code> και <code>(x2, y2)</code>, με το
@@ -4231,9 +4231,9 @@ module <code>math</code> (έτοιμο στο αρχείο). Παραδείγμ�
 <code>distance</code> που μόλις έγραψες. Πρόσεξε αν η σύγκριση είναι <code>&lt;</code> ή <code>&lt;=</code>. Τρέξε <code>python check_exercises.py</code>.</p>
 <h3 id="3_5">Ζ. Κάρτα εξόδου (3′)<a class="headerlink" href="#3_5" title="Permanent link">&para;</a></h3>
 <ol>
-<li>Γιατί δεν συγκρίνουμε την απόσταση του κέντρου του αστεριού από το κέντρο του καλαθιού;  <strong><em>_</em></strong><strong><em>_</em></strong><strong><em>_</em></strong><strong><em>_</em></strong>__</li>
-<li>Πώς βρίσκεται το πλησιέστερο σημείο ενός ορθογωνίου σε ένα κέντρο;  <strong><em>_</em></strong><strong><em>_</em></strong><strong><em>_</em></strong><strong><em>_</em></strong>__</li>
-<li>Τι κάνει κάθε πέρασμα: ποια αστέρια βγάζει από τη λίστα και τι αλλάζει στο παιχνίδι;  <strong><em>_</em></strong><strong><em>_</em></strong><strong><em>_</em></strong><strong><em>_</em></strong>__</li>
+<li>Γιατί δεν συγκρίνουμε την απόσταση του κέντρου του αστεριού από το κέντρο του καλαθιού;  ______________________________</li>
+<li>Πώς βρίσκεται το πλησιέστερο σημείο ενός ορθογωνίου σε ένα κέντρο;  ______________________________</li>
+<li>Τι κάνει κάθε πέρασμα: ποια αστέρια βγάζει από τη λίστα και τι αλλάζει στο παιχνίδι;  ______________________________</li>
 </ol>
 <hr />
 <h2 id="4-48">Κύκλος 4 — Νίκη, ήττα και δυσκολία (48′)<a class="headerlink" href="#4-48" title="Permanent link">&para;</a></h2>
@@ -4297,7 +4297,7 @@ module <code>math</code> (έτοιμο στο αρχείο). Παραδείγμ�
 </tr>
 </tbody>
 </table>
-<p>Γιατί η <code>game_status(15, 0, 15)</code> δεν επιστρέφει <code>"lost"</code>;  <strong><em>_</em></strong><strong><em>_</em></strong><strong><em>_</em></strong><strong><em>_</em></strong>__<br />
+<p>Γιατί η <code>game_status(15, 0, 15)</code> δεν επιστρέφει <code>"lost"</code>;  ______________________________<br />
 Τι θα επέστρεφε, αν αλλάζαμε τη σειρά των δύο ελέγχων μέσα στη συνάρτηση;  ______</p>
 <h3 id="6_3">Β. Ιχνηλάτηση: πόντοι, ζωές και χρονιστής (6′)<a class="headerlink" href="#6_3" title="Permanent link">&para;</a></h3>
 <p>Για να χωρέσει στον πίνακα, το παιχνίδι έχει <code>GOAL = 6</code>. Ξεκινά με 0 πόντους, 3 ζωές και <code>state = PLAYING</code>, και πριν από τον
@@ -4359,8 +4359,8 @@ module <code>math</code> (έτοιμο στο αρχείο). Παραδείγμ�
 </tr>
 </tbody>
 </table>
-<p>Στο βήμα 3 η <code>set_timer</code> καλείται δύο φορές στο ίδιο καρέ. Ποια κλήση ισχύει στο τέλος και γιατί;  <strong><em>_</em></strong><strong><em>_</em></strong><strong><em>_</em></strong><strong><em>_</em></strong>__<br />
-Ένα συμβάν <code>SPAWN_STAR</code> περίμενε ήδη στην ουρά τη στιγμή που τελείωσε το παιχνίδι. Τι κάνει ο βρόχος όταν το βρει;  <strong><em>_</em></strong><strong><em>_</em></strong><strong><em>_</em></strong><strong><em>_</em></strong>__</p>
+<p>Στο βήμα 3 η <code>set_timer</code> καλείται δύο φορές στο ίδιο καρέ. Ποια κλήση ισχύει στο τέλος και γιατί;  ______________________________<br />
+Ένα συμβάν <code>SPAWN_STAR</code> περίμενε ήδη στην ουρά τη στιγμή που τελείωσε το παιχνίδι. Τι κάνει ο βρόχος όταν το βρει;  ______________________________</p>
 <h3 id="4-04-finalpy-8">Γ. Στάδιο 4 — <code>04-final.py</code> (8′)<a class="headerlink" href="#4-04-finalpy-8" title="Permanent link">&para;</a></h3>
 <ol>
 <li>Συμπλήρωσε τα οκτώ κενά (<code>TODO 1</code> έως <code>TODO 8</code>) και παίξε δύο ολόκληρα παιχνίδια.</li>
@@ -4393,7 +4393,7 @@ module <code>math</code> (έτοιμο στο αρχείο). Παραδείγμ�
 </tr>
 </tbody>
 </table>
-<p>Ποιες δύο γραμμές του προγράμματος εμποδίζουν να εμφανίζονται νέα αστέρια στην οθόνη του τέλους;  <strong><em>_</em></strong><strong><em>_</em></strong><strong><em>_</em></strong><strong><em>_</em></strong>__</p>
+<p>Ποιες δύο γραμμές του προγράμματος εμποδίζουν να εμφανίζονται νέα αστέρια στην οθόνη του τέλους;  ______________________________</p>
 <h3 id="4">Δ. Δοκιμές (4′)<a class="headerlink" href="#4" title="Permanent link">&para;</a></h3>
 <p>Πρόβλεψε και μετά δοκίμασε στο <code>04-final.py</code>:</p>
 <table>
@@ -4451,9 +4451,9 @@ module <code>math</code> (έτοιμο στο αρχείο). Παραδείγμ�
 </ol>
 <h3 id="3_6">ΣΤ. Κάρτα εξόδου (3′)<a class="headerlink" href="#3_6" title="Permanent link">&para;</a></h3>
 <ol>
-<li>Πώς αποφασίζει το πρόγραμμα ότι το παιχνίδι τελείωσε, και τι γίνεται αν συμβούν νίκη και ήττα στο ίδιο καρέ;  <strong><em>_</em></strong><strong><em>_</em></strong><strong><em>_</em></strong><strong><em>_</em></strong>__</li>
-<li>Γιατί ο χρονιστής ξαναρυθμίζεται μόνο όταν αλλάζει το διάστημα και όχι σε κάθε καρέ;  <strong><em>_</em></strong><strong><em>_</em></strong><strong><em>_</em></strong><strong><em>_</em></strong>__</li>
-<li>Τι κάνει ο βρόχος με ένα συμβάν <code>SPAWN_STAR</code> όταν το παιχνίδι δεν παίζεται;  <strong><em>_</em></strong><strong><em>_</em></strong><strong><em>_</em></strong><strong><em>_</em></strong>__</li>
+<li>Πώς αποφασίζει το πρόγραμμα ότι το παιχνίδι τελείωσε, και τι γίνεται αν συμβούν νίκη και ήττα στο ίδιο καρέ;  ______________________________</li>
+<li>Γιατί ο χρονιστής ξαναρυθμίζεται μόνο όταν αλλάζει το διάστημα και όχι σε κάθε καρέ;  ______________________________</li>
+<li>Τι κάνει ο βρόχος με ένα συμβάν <code>SPAWN_STAR</code> όταν το παιχνίδι δεν παίζεται;  ______________________________</li>
 </ol>
 <hr />
 <h2 id="_1">Αυτοέλεγχος<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
@@ -4567,10 +4567,10 @@ module <code>math</code> (έτοιμο στο αρχείο). Παραδείγμ�
     
       
       
-      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.sections", "navigation.top", "navigation.footer", "content.code.copy", "content.code.annotate", "toc.follow", "search.suggest", "search.highlight"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "\u0391\u03bd\u03c4\u03b9\u03b3\u03c1\u03ac\u03c6\u03b7\u03ba\u03b5 \u03c3\u03c4\u03bf \u03c0\u03c1\u03cc\u03c7\u03b5\u03b9\u03c1\u03bf", "clipboard.copy": "\u0391\u03bd\u03c4\u03b9\u03b3\u03c1\u03b1\u03c6\u03ae \u03c3\u03c4\u03bf \u03c0\u03c1\u03cc\u03c7\u03b5\u03b9\u03c1\u03bf", "search.result.more.one": "1 \u03b1\u03ba\u03cc\u03bc\u03b1 \u03c3\u03b5 \u03b1\u03c5\u03c4\u03ae\u03bd \u03c4\u03b7 \u03c3\u03b5\u03bb\u03af\u03b4\u03b1", "search.result.more.other": "# \u03b1\u03ba\u03cc\u03bc\u03b1 \u03c3\u03b5 \u03b1\u03c5\u03c4\u03ae\u03bd \u03c4\u03b7 \u03c3\u03b5\u03bb\u03af\u03b4\u03b1", "search.result.none": "\u03b4\u03b5\u03bd \u03b2\u03c1\u03ae\u03ba\u03b5 \u03ba\u03ac\u03c0\u03bf\u03b9\u03bf \u03ad\u03b3\u03b3\u03c1\u03b1\u03c6\u03bf", "search.result.one": "1 \u03ad\u03b3\u03b3\u03c1\u03b1\u03c6\u03bf \u03c0\u03bf\u03c5 \u03c4\u03b1\u03b9\u03c1\u03b9\u03ac\u03b6\u03b5\u03b9", "search.result.other": "# \u03ad\u03b3\u03b3\u03c1\u03b1\u03c6\u03b1 \u03c0\u03bf\u03c5 \u03c4\u03b1\u03b9\u03c1\u03b9\u03ac\u03b6\u03bf\u03c5\u03bd", "search.result.placeholder": "\u03a0\u03bb\u03b7\u03ba\u03c4\u03c1\u03bf\u03bb\u03bf\u03b3\u03ae\u03c3\u03c4\u03b5 \u03b3\u03b9\u03b1 \u03bd\u03b1 \u03b1\u03c1\u03c7\u03af\u03c3\u03b5\u03b9 \u03b7 \u03b1\u03bd\u03b1\u03b6\u03ae\u03c4\u03b7\u03c3\u03b7", "search.result.term.missing": "\u039b\u03b5\u03af\u03c0\u03b5\u03b9", "select.version": "\u0395\u03c0\u03b9\u03bb\u03bf\u03b3\u03ae \u03ad\u03ba\u03b4\u03bf\u03c3\u03b7\u03c2"}, "version": null}</script>
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.sections", "navigation.top", "navigation.footer", "content.code.copy", "content.code.annotate", "toc.follow", "search.suggest", "search.highlight"], "search": "../../assets/javascripts/workers/search.a7633da7.min.js", "tags": null, "translations": {"clipboard.copied": "\u0391\u03bd\u03c4\u03b9\u03b3\u03c1\u03ac\u03c6\u03b7\u03ba\u03b5 \u03c3\u03c4\u03bf \u03c0\u03c1\u03cc\u03c7\u03b5\u03b9\u03c1\u03bf", "clipboard.copy": "\u0391\u03bd\u03c4\u03b9\u03b3\u03c1\u03b1\u03c6\u03ae \u03c3\u03c4\u03bf \u03c0\u03c1\u03cc\u03c7\u03b5\u03b9\u03c1\u03bf", "search.result.more.one": "1 \u03b1\u03ba\u03cc\u03bc\u03b1 \u03c3\u03b5 \u03b1\u03c5\u03c4\u03ae\u03bd \u03c4\u03b7 \u03c3\u03b5\u03bb\u03af\u03b4\u03b1", "search.result.more.other": "# \u03b1\u03ba\u03cc\u03bc\u03b1 \u03c3\u03b5 \u03b1\u03c5\u03c4\u03ae\u03bd \u03c4\u03b7 \u03c3\u03b5\u03bb\u03af\u03b4\u03b1", "search.result.none": "\u03b4\u03b5\u03bd \u03b2\u03c1\u03ae\u03ba\u03b5 \u03ba\u03ac\u03c0\u03bf\u03b9\u03bf \u03ad\u03b3\u03b3\u03c1\u03b1\u03c6\u03bf", "search.result.one": "1 \u03ad\u03b3\u03b3\u03c1\u03b1\u03c6\u03bf \u03c0\u03bf\u03c5 \u03c4\u03b1\u03b9\u03c1\u03b9\u03ac\u03b6\u03b5\u03b9", "search.result.other": "# \u03ad\u03b3\u03b3\u03c1\u03b1\u03c6\u03b1 \u03c0\u03bf\u03c5 \u03c4\u03b1\u03b9\u03c1\u03b9\u03ac\u03b6\u03bf\u03c5\u03bd", "search.result.placeholder": "\u03a0\u03bb\u03b7\u03ba\u03c4\u03c1\u03bf\u03bb\u03bf\u03b3\u03ae\u03c3\u03c4\u03b5 \u03b3\u03b9\u03b1 \u03bd\u03b1 \u03b1\u03c1\u03c7\u03af\u03c3\u03b5\u03b9 \u03b7 \u03b1\u03bd\u03b1\u03b6\u03ae\u03c4\u03b7\u03c3\u03b7", "search.result.term.missing": "\u039b\u03b5\u03af\u03c0\u03b5\u03b9", "select.version": "\u0395\u03c0\u03b9\u03bb\u03bf\u03b3\u03ae \u03ad\u03ba\u03b4\u03bf\u03c3\u03b7\u03c2"}, "version": null}</script>
     
     
-      <script src="../../assets/javascripts/bundle.d7400e89.min.js"></script>
+      <script src="../../assets/javascripts/bundle.c21346df.min.js"></script>
       
     
   </body>

@@ -25,7 +25,7 @@
       
       
       <link rel="icon" href="../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.7">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.8.0">
     
     
       
@@ -33,10 +33,10 @@
       
     
     
-      <link rel="stylesheet" href="../../assets/stylesheets/main.ec1eaa64.min.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/main.57a0d79d.min.css">
       
         
-        <link rel="stylesheet" href="../../assets/stylesheets/palette.ab4e12ef.min.css">
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.fb2fffe2.min.css">
       
       
 
@@ -3621,7 +3621,7 @@
 </tbody>
 </table>
 <p>Πού βρίσκεται το κέντρο του ορθογωνίου της τελευταίας γραμμής;  ______<br />
-Πόσο πλατύ είναι το ορθογώνιο που βρίσκεται ανάμεσα στο <code>left</code> και στο <code>right</code>, και πώς το βρίσκεις από αυτά τα δύο;  <strong><em>_</em></strong><strong><em>_</em></strong><strong><em>_</em></strong><strong><em>_</em></strong>__</p>
+Πόσο πλατύ είναι το ορθογώνιο που βρίσκεται ανάμεσα στο <code>left</code> και στο <code>right</code>, και πώς το βρίσκεις από αυτά τα δύο;  ______________________________</p>
 <h3 id="clamp_ip-6">Β. Ιχνηλάτηση: το ποντίκι και η <code>clamp_ip</code> (6′)<a class="headerlink" href="#clamp_ip-6" title="Permanent link">&para;</a></h3>
 <p>Το διαστημόπλοιο είναι 64 × 48 και η περιοχή παιχνιδιού είναι η <code>PLAY_AREA = pygame.Rect(0, 60, 640, 420)</code>. Κάθε γραμμή είναι ένα
 συμβάν <code>MOUSEMOTION</code>, και ο βρόχος κάνει <code>ship_rect.center = event.pos</code> και μετά <code>ship_rect.clamp_ip(PLAY_AREA)</code>.
@@ -3674,8 +3674,8 @@
 </tr>
 </tbody>
 </table>
-<p>Για ποιες τιμές του <code>x</code> και του <code>y</code> το κέντρο μένει όπως το έδωσε το ποντίκι;  <strong><em>_</em></strong><strong><em>_</em></strong><strong><em>_</em></strong><strong><em>_</em></strong>__<br />
-Αν το διαστημόπλοιο ήταν 128 × 96, από ποιο έως ποιο <code>x</code> θα μπορούσε να είναι το κέντρο του;  <strong><em>_</em></strong><strong><em>_</em></strong><strong><em>_</em></strong><strong><em>_</em></strong>__</p>
+<p>Για ποιες τιμές του <code>x</code> και του <code>y</code> το κέντρο μένει όπως το έδωσε το ποντίκι;  ______________________________<br />
+Αν το διαστημόπλοιο ήταν 128 × 96, από ποιο έως ποιο <code>x</code> θα μπορούσε να είναι το κέντρο του;  ______________________________</p>
 <h3 id="2">Γ. Σωστό ή λάθος; (2′)<a class="headerlink" href="#2" title="Permanent link">&para;</a></h3>
 <table>
 <thead>
@@ -3719,21 +3719,21 @@
 <div class="language-python highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="n">ship_image</span> <span class="o">=</span> <span class="n">pygame</span><span class="o">.</span><span class="n">image</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="s2">"assets/ship.png"</span><span class="p">)</span><span class="o">.</span><span class="n">convert_alpha</span><span class="p">()</span>
 </span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="n">screen</span> <span class="o">=</span> <span class="n">pygame</span><span class="o">.</span><span class="n">display</span><span class="o">.</span><span class="n">set_mode</span><span class="p">((</span><span class="n">WIDTH</span><span class="p">,</span> <span class="n">HEIGHT</span><span class="p">))</span>
 </span></code></pre></div>
-Τι μήνυμα βλέπεις;  <strong><em>_</em></strong><strong><em>_</em></strong><strong><em>_</em></strong><strong><em>_</em></strong>__<br />
-Διόρθωση:  <strong><em>_</em></strong><strong><em>_</em></strong><strong><em>_</em></strong><strong><em>_</em></strong>__</p>
+Τι μήνυμα βλέπεις;  ______________________________<br />
+Διόρθωση:  ______________________________</p>
 <p><strong>2.</strong>
 <div class="language-python highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="n">ship_image</span> <span class="o">=</span> <span class="n">load_image</span><span class="p">(</span><span class="s2">"assets/ship.png"</span><span class="p">)</span>
 </span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="n">pygame</span><span class="o">.</span><span class="n">transform</span><span class="o">.</span><span class="n">scale</span><span class="p">(</span><span class="n">ship_image</span><span class="p">,</span> <span class="p">(</span><span class="mi">64</span><span class="p">,</span> <span class="mi">48</span><span class="p">))</span>
 </span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="n">ship_rect</span> <span class="o">=</span> <span class="n">ship_image</span><span class="o">.</span><span class="n">get_rect</span><span class="p">(</span><span class="n">center</span><span class="o">=</span><span class="p">(</span><span class="mi">320</span><span class="p">,</span> <span class="mi">410</span><span class="p">))</span>
 </span></code></pre></div>
 Ποιο είναι το <code>ship_rect.size</code>;  ______<br />
-Διόρθωση:  <strong><em>_</em></strong><strong><em>_</em></strong><strong><em>_</em></strong><strong><em>_</em></strong>__</p>
+Διόρθωση:  ______________________________</p>
 <p><strong>3.</strong>
 <div class="language-python highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="k">elif</span> <span class="n">event</span><span class="o">.</span><span class="n">type</span> <span class="o">==</span> <span class="n">pygame</span><span class="o">.</span><span class="n">MOUSEMOTION</span><span class="p">:</span>
 </span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>    <span class="n">ship_rect</span><span class="o">.</span><span class="n">center</span> <span class="o">=</span> <span class="n">event</span><span class="o">.</span><span class="n">pos</span>
 </span></code></pre></div>
 Το ποντίκι πηγαίνει στο <code>(5, 5)</code>. Ποια είναι η πάνω αριστερή γωνία του <code>ship_rect</code> (64 × 48);  ______<br />
-Τι βλέπεις στην οθόνη και ποια γραμμή λείπει;  <strong><em>_</em></strong><strong><em>_</em></strong><strong><em>_</em></strong><strong><em>_</em></strong>__</p>
+Τι βλέπεις στην οθόνη και ποια γραμμή λείπει;  ______________________________</p>
 <h3 id="1-01-imagespy-7">Ε. Στάδιο 1 — <code>01-images.py</code> (7′)<a class="headerlink" href="#1-01-imagespy-7" title="Permanent link">&para;</a></h3>
 <ol>
 <li>Συμπλήρωσε τα οκτώ κενά (<code>TODO 1</code> έως <code>TODO 8</code>) και τρέξε το πρόγραμμα. Κίνησε το ποντίκι σε όλο το παράθυρο.</li>
@@ -3766,7 +3766,7 @@
 </tbody>
 </table>
 <p>Με <code>SHIP_WIDTH = 100</code>, τι δείχνει η ένδειξη «Μέγεθος»;  ______<br />
-Με την <code>convert()</code>, τι χρώμα έχουν τα pixel γύρω από το σχήμα του διαστημόπλοιου, και γιατί;  <strong><em>_</em></strong><strong><em>_</em></strong><strong><em>_</em></strong><strong><em>_</em></strong>__<br />
+Με την <code>convert()</code>, τι χρώμα έχουν τα pixel γύρω από το σχήμα του διαστημόπλοιου, και γιατί;  ______________________________<br />
 Με την τρίτη αλλαγή, τι δείχνει η ένδειξη «Κέντρο» όταν το ποντίκι είναι στην πάνω αριστερή γωνία του παραθύρου;  ______</p>
 <h3 id="fit_size-8">ΣΤ. Γράψε εσύ: <code>fit_size</code> (8′)<a class="headerlink" href="#fit_size-8" title="Permanent link">&para;</a></h3>
 <p>Στο <code>exercises.py</code>, γράψε το σώμα της <code>fit_size(width, height, new_width)</code>. Επιστρέφει το μέγεθος <code>(πλάτος, ύψος)</code> που έχει μια
@@ -3779,9 +3779,9 @@
 βέβαιος για τη στρογγυλοποίηση, δοκίμασε στο <code>sandbox.py</code> τις <code>round(33.6)</code> και <code>int(33.6)</code>. Τρέξε <code>python check_exercises.py</code>.</p>
 <h3 id="3_1">Ζ. Κάρτα εξόδου (3′)<a class="headerlink" href="#3_1" title="Permanent link">&para;</a></h3>
 <ol>
-<li>Γιατί η <code>pygame.image.load</code> καλείται μία φορά πριν από τον βρόχο και όχι μέσα σε αυτόν;  <strong><em>_</em></strong><strong><em>_</em></strong><strong><em>_</em></strong><strong><em>_</em></strong>__</li>
-<li>Γιατί το ύψος μιας εικόνας που μικραίνει δεν πρέπει να δίνεται όπως μας κάνει κέφι, και πώς το υπολογίζουμε;  <strong><em>_</em></strong><strong><em>_</em></strong><strong><em>_</em></strong><strong><em>_</em></strong>__</li>
-<li>Τι κάνει η <code>clamp_ip</code> και τι σημαίνει το <code>_ip</code>;  <strong><em>_</em></strong><strong><em>_</em></strong><strong><em>_</em></strong><strong><em>_</em></strong>__</li>
+<li>Γιατί η <code>pygame.image.load</code> καλείται μία φορά πριν από τον βρόχο και όχι μέσα σε αυτόν;  ______________________________</li>
+<li>Γιατί το ύψος μιας εικόνας που μικραίνει δεν πρέπει να δίνεται όπως μας κάνει κέφι, και πώς το υπολογίζουμε;  ______________________________</li>
+<li>Τι κάνει η <code>clamp_ip</code> και τι σημαίνει το <code>_ip</code>;  ______________________________</li>
 </ol>
 <hr />
 <h2 id="2-sprites-48">Κύκλος 2 — Sprites και αστεροειδείς (48′)<a class="headerlink" href="#2-sprites-48" title="Permanent link">&para;</a></h2>
@@ -3950,18 +3950,18 @@
 <div class="language-python highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="k">def</span><span class="w"> </span><span class="nf">update</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">dt</span><span class="p">):</span>
 </span><span id="__span-4-2"><a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a>    <span class="bp">self</span><span class="o">.</span><span class="n">y</span> <span class="o">+=</span> <span class="bp">self</span><span class="o">.</span><span class="n">speed</span> <span class="o">*</span> <span class="n">dt</span>
 </span></code></pre></div>
-Τι βλέπεις στην οθόνη και τι δείχνει η ένδειξη «Στη λίστα»;  <strong><em>_</em></strong><strong><em>_</em></strong><strong><em>_</em></strong><strong><em>_</em></strong>__<br />
-Διόρθωση:  <strong><em>_</em></strong><strong><em>_</em></strong><strong><em>_</em></strong><strong><em>_</em></strong>__</p>
+Τι βλέπεις στην οθόνη και τι δείχνει η ένδειξη «Στη λίστα»;  ______________________________<br />
+Διόρθωση:  ______________________________</p>
 <p><strong>2.</strong>
 <div class="language-python highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="n">x</span> <span class="o">=</span> <span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">WIDTH</span><span class="p">)</span>
 </span></code></pre></div>
 Στη θέση του <code>x</code> μπαίνει το κέντρο ενός αστεροειδή με εικόνα 72 × 72. Αν βγει <code>x = 0</code>, ποιο είναι το <code>rect.left</code>;  ______<br />
-Τι φαίνεται στην οθόνη και ποια είναι η σωστή γραμμή;  <strong><em>_</em></strong><strong><em>_</em></strong><strong><em>_</em></strong><strong><em>_</em></strong>__</p>
+Τι φαίνεται στην οθόνη και ποια είναι η σωστή γραμμή;  ______________________________</p>
 <p><strong>3.</strong>
 <div class="language-python highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="k">return</span> <span class="n">Asteroid</span><span class="p">(</span><span class="n">image</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">HUD_HEIGHT</span> <span class="o">-</span> <span class="n">image</span><span class="o">.</span><span class="n">get_height</span><span class="p">()</span> <span class="o">//</span> <span class="mi">2</span><span class="p">)</span>
 </span></code></pre></div>
-Τι μήνυμα βλέπεις;  <strong><em>_</em></strong><strong><em>_</em></strong><strong><em>_</em></strong><strong><em>_</em></strong>__<br />
-Διόρθωση:  <strong><em>_</em></strong><strong><em>_</em></strong><strong><em>_</em></strong><strong><em>_</em></strong>__</p>
+Τι μήνυμα βλέπεις;  ______________________________<br />
+Διόρθωση:  ______________________________</p>
 <h3 id="2-02-asteroidspy-7">Ε. Στάδιο 2 — <code>02-asteroids.py</code> (7′)<a class="headerlink" href="#2-02-asteroidspy-7" title="Permanent link">&para;</a></h3>
 <ol>
 <li>Συμπλήρωσε τα οκτώ κενά (<code>TODO 1</code> έως <code>TODO 8</code>) και τρέξε το πρόγραμμα. Περίμενε μερικά δευτερόλεπτα και δες από πού ξεκινούν οι
@@ -3994,9 +3994,9 @@
 </tr>
 </tbody>
 </table>
-<p>Με την πρώτη αλλαγή, τι κάνει η ένδειξη «Στη λίστα»;  <strong><em>_</em></strong><strong><em>_</em></strong><strong><em>_</em></strong><strong><em>_</em></strong>__<br />
-Με τη δεύτερη αλλαγή, πού φαίνονται οι νέοι αστεροειδείς όταν ξεκινούν;  <strong><em>_</em></strong><strong><em>_</em></strong><strong><em>_</em></strong><strong><em>_</em></strong>__<br />
-Με την τρίτη αλλαγή, πέφτουν οι αστεροειδείς πιο γρήγορα ή πιο αργά, και γιατί;  <strong><em>_</em></strong><strong><em>_</em></strong><strong><em>_</em></strong><strong><em>_</em></strong>__</p>
+<p>Με την πρώτη αλλαγή, τι κάνει η ένδειξη «Στη λίστα»;  ______________________________<br />
+Με τη δεύτερη αλλαγή, πού φαίνονται οι νέοι αστεροειδείς όταν ξεκινούν;  ______________________________<br />
+Με την τρίτη αλλαγή, πέφτουν οι αστεροειδείς πιο γρήγορα ή πιο αργά, και γιατί;  ______________________________</p>
 <h3 id="asteroid-10">ΣΤ. Γράψε εσύ: η κλάση <code>Asteroid</code> (10′)<a class="headerlink" href="#asteroid-10" title="Permanent link">&para;</a></h3>
 <p>Στο <code>exercises.py</code>, γράψε την κλάση <code>Asteroid</code>. Η <code>Asteroid(image, x, y, speed)</code> δέχεται την εικόνα του αστεροειδή (μια
 επιφάνεια), τη θέση του κέντρου του <code>(x, y)</code> και την ταχύτητά του σε pixel το δευτερόλεπτο. Έχει τις ιδιότητες:</p>
@@ -4034,9 +4034,9 @@
 (ενότητα 2.3). Τρέξε <code>python check_exercises.py</code>.</p>
 <h3 id="3_3">Ζ. Κάρτα εξόδου (3′)<a class="headerlink" href="#3_3" title="Permanent link">&para;</a></h3>
 <ol>
-<li>Τι είναι ένα sprite, και ποιες δύο ιδιότητες έχει κάθε sprite του παιχνιδιού μας;  <strong><em>_</em></strong><strong><em>_</em></strong><strong><em>_</em></strong><strong><em>_</em></strong>__</li>
-<li>Γιατί ο αστεροειδής κρατά τα <code>x</code> και <code>y</code> ξεχωριστά από το <code>rect</code>;  <strong><em>_</em></strong><strong><em>_</em></strong><strong><em>_</em></strong><strong><em>_</em></strong>__</li>
-<li>Με ποια σειρά ζωγραφίζονται το φόντο, οι αστεροειδείς, το διαστημόπλοιο και το HUD, και γιατί;  <strong><em>_</em></strong><strong><em>_</em></strong><strong><em>_</em></strong><strong><em>_</em></strong>__</li>
+<li>Τι είναι ένα sprite, και ποιες δύο ιδιότητες έχει κάθε sprite του παιχνιδιού μας;  ______________________________</li>
+<li>Γιατί ο αστεροειδής κρατά τα <code>x</code> και <code>y</code> ξεχωριστά από το <code>rect</code>;  ______________________________</li>
+<li>Με ποια σειρά ζωγραφίζονται το φόντο, οι αστεροειδείς, το διαστημόπλοιο και το HUD, και γιατί;  ______________________________</li>
 </ol>
 <hr />
 <h2 id="3-49">Κύκλος 3 — Συγκρούσεις και ζωές (49′)<a class="headerlink" href="#3-49" title="Permanent link">&para;</a></h2>
@@ -4115,7 +4115,7 @@
 </tbody>
 </table>
 <p>Ποια είναι η <strong>μικρότερη</strong> οριζόντια απόσταση ανάμεσα στα κέντρα για την οποία ο αστεροειδής εικόνας 1 <strong>δεν</strong> χτυπά το
-διαστημόπλοιο, και πώς τη βρίσκεις από τα πλάτη των κουτιών;  <strong><em>_</em></strong><strong><em>_</em></strong><strong><em>_</em></strong><strong><em>_</em></strong>__</p>
+διαστημόπλοιο, και πώς τη βρίσκεις από τα πλάτη των κουτιών;  ______________________________</p>
 <h3 id="6_2">Β. Ιχνηλάτηση: ένα καρέ με τρεις δρόμους (6′)<a class="headerlink" href="#6_2" title="Permanent link">&para;</a></h3>
 <p>Το διαστημόπλοιο είναι στο <code>(320, 300)</code>. Οι πόντοι είναι 8 και οι ζωές 1. Πέντε αστεροειδείς βρίσκονται στις θέσεις του πίνακα
 <strong>μετά</strong> την <code>update</code>, με τη σειρά της λίστας. Για κάθε έναν γράψε τι κάνει ο βρόχος του Σταδίου 3: «χτύπημα», «πόντος» ή
@@ -4214,14 +4214,14 @@
 <div class="language-python highlight"><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="k">def</span><span class="w"> </span><span class="nf">collides</span><span class="p">(</span><span class="n">asteroid</span><span class="p">,</span> <span class="n">ship</span><span class="p">):</span>
 </span><span id="__span-7-2"><a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a>    <span class="k">return</span> <span class="n">hitbox</span><span class="p">(</span><span class="n">asteroid</span><span class="o">.</span><span class="n">rect</span><span class="p">)</span><span class="o">.</span><span class="n">colliderect</span><span class="p">(</span><span class="n">ship</span><span class="p">)</span>
 </span></code></pre></div>
-Τι μήνυμα βλέπεις;  <strong><em>_</em></strong><strong><em>_</em></strong><strong><em>_</em></strong><strong><em>_</em></strong>__<br />
-Διόρθωση:  <strong><em>_</em></strong><strong><em>_</em></strong><strong><em>_</em></strong><strong><em>_</em></strong>__</p>
+Τι μήνυμα βλέπεις;  ______________________________<br />
+Διόρθωση:  ______________________________</p>
 <p><strong>2.</strong>
 <div class="language-python highlight"><pre><span></span><code><span id="__span-8-1"><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a><span class="k">def</span><span class="w"> </span><span class="nf">hitbox</span><span class="p">(</span><span class="n">rect</span><span class="p">):</span>
 </span><span id="__span-8-2"><a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a>    <span class="k">return</span> <span class="n">rect</span><span class="o">.</span><span class="n">inflate</span><span class="p">(</span><span class="n">rect</span><span class="o">.</span><span class="n">width</span> <span class="o">//</span> <span class="mi">4</span><span class="p">,</span> <span class="n">rect</span><span class="o">.</span><span class="n">height</span> <span class="o">//</span> <span class="mi">4</span><span class="p">)</span>
 </span></code></pre></div>
 Για το <code>Rect(288, 276, 64, 48)</code> του διαστημόπλοιου, ποιο είναι το μέγεθος του αποτελέσματος;  ______<br />
-Τι παρατηρεί ο παίκτης και ποια είναι η σωστή γραμμή;  <strong><em>_</em></strong><strong><em>_</em></strong><strong><em>_</em></strong><strong><em>_</em></strong>__</p>
+Τι παρατηρεί ο παίκτης και ποια είναι η σωστή γραμμή;  ______________________________</p>
 <p><strong>3.</strong>
 <div class="language-python highlight"><pre><span></span><code><span id="__span-9-1"><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a><span class="k">for</span> <span class="n">asteroid</span> <span class="ow">in</span> <span class="n">asteroids</span><span class="p">:</span>
 </span><span id="__span-9-2"><a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a>    <span class="n">asteroid</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="n">dt</span><span class="p">)</span>
@@ -4232,8 +4232,8 @@
 </span><span id="__span-9-7"><a id="__codelineno-9-7" name="__codelineno-9-7" href="#__codelineno-9-7"></a>    <span class="k">else</span><span class="p">:</span>
 </span><span id="__span-9-8"><a id="__codelineno-9-8" name="__codelineno-9-8" href="#__codelineno-9-8"></a>        <span class="n">remaining</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">asteroid</span><span class="p">)</span>
 </span></code></pre></div>
-Τι γίνεται με έναν αστεροειδή που χτυπά το διαστημόπλοιο, στο επόμενο καρέ;  <strong><em>_</em></strong><strong><em>_</em></strong><strong><em>_</em></strong><strong><em>_</em></strong>__<br />
-Διόρθωση:  <strong><em>_</em></strong><strong><em>_</em></strong><strong><em>_</em></strong><strong><em>_</em></strong>__</p>
+Τι γίνεται με έναν αστεροειδή που χτυπά το διαστημόπλοιο, στο επόμενο καρέ;  ______________________________<br />
+Διόρθωση:  ______________________________</p>
 <h3 id="3-03-collisionspy-8">Ε. Στάδιο 3 — <code>03-collisions.py</code> (8′)<a class="headerlink" href="#3-03-collisionspy-8" title="Permanent link">&para;</a></h3>
 <ol>
 <li>Συμπλήρωσε τα οκτώ κενά (<code>TODO 1</code> έως <code>TODO 8</code>) και παίξε ένα λεπτό. Το Στάδιο 3 δεν έχει τέλος.</li>
@@ -4265,9 +4265,9 @@
 </tr>
 </tbody>
 </table>
-<p>Με την πρώτη αλλαγή, πότε νομίζεις ότι χτυπήθηκες άδικα, και γιατί;  <strong><em>_</em></strong><strong><em>_</em></strong><strong><em>_</em></strong><strong><em>_</em></strong>__<br />
-Με τη δεύτερη αλλαγή, γίνεται πιο εύκολο ή πιο δύσκολο να χτυπηθείς, και πόσο μεγάλο είναι τώρα το κουτί του διαστημόπλοιου;  <strong><em>_</em></strong><strong><em>_</em></strong><strong><em>_</em></strong><strong><em>_</em></strong>__<br />
-Με την τρίτη αλλαγή, αλλάζουν οι θέσεις των εικονιδίων;  <strong><em>_</em></strong><strong><em>_</em></strong><strong><em>_</em></strong><strong><em>_</em></strong>__</p>
+<p>Με την πρώτη αλλαγή, πότε νομίζεις ότι χτυπήθηκες άδικα, και γιατί;  ______________________________<br />
+Με τη δεύτερη αλλαγή, γίνεται πιο εύκολο ή πιο δύσκολο να χτυπηθείς, και πόσο μεγάλο είναι τώρα το κουτί του διαστημόπλοιου;  ______________________________<br />
+Με την τρίτη αλλαγή, αλλάζουν οι θέσεις των εικονιδίων;  ______________________________</p>
 <h3 id="hitbox-rects_overlap-9">ΣΤ. Γράψε εσύ: <code>hitbox</code> και <code>rects_overlap</code> (9′)<a class="headerlink" href="#hitbox-rects_overlap-9" title="Permanent link">&para;</a></h3>
 <p>Στο <code>exercises.py</code>, γράψε δύο συναρτήσεις που δουλεύουν με πλειάδες <code>(left, top, width, height)</code> αντί για <code>Rect</code>.</p>
 <p><strong>Μέρος 1 (3′).</strong> Η <code>hitbox(box)</code> δέχεται το ορθογώνιο <code>box = (left, top, width, height)</code> ενός sprite και επιστρέφει το κουτί
@@ -4285,9 +4285,9 @@
 <code>python check_exercises.py</code>.</p>
 <h3 id="3_5">Ζ. Κάρτα εξόδου (3′)<a class="headerlink" href="#3_5" title="Permanent link">&para;</a></h3>
 <ol>
-<li>Γιατί το κουτί σύγκρουσης είναι μικρότερο από το <code>rect</code>;  <strong><em>_</em></strong><strong><em>_</em></strong><strong><em>_</em></strong><strong><em>_</em></strong>__</li>
-<li>Ποιες τρεις δυνατότητες έχει κάθε αστεροειδής σε κάθε καρέ, και γιατί έχει σημασία η σειρά των <code>if</code> και <code>elif</code>;  <strong><em>_</em></strong><strong><em>_</em></strong><strong><em>_</em></strong><strong><em>_</em></strong>__</li>
-<li>Πώς δείχνουμε τις ζωές στο HUD, και ποιο εικονίδιο εξαφανίζεται όταν χάνεις μία ζωή;  <strong><em>_</em></strong><strong><em>_</em></strong><strong><em>_</em></strong><strong><em>_</em></strong>__</li>
+<li>Γιατί το κουτί σύγκρουσης είναι μικρότερο από το <code>rect</code>;  ______________________________</li>
+<li>Ποιες τρεις δυνατότητες έχει κάθε αστεροειδής σε κάθε καρέ, και γιατί έχει σημασία η σειρά των <code>if</code> και <code>elif</code>;  ______________________________</li>
+<li>Πώς δείχνουμε τις ζωές στο HUD, και ποιο εικονίδιο εξαφανίζεται όταν χάνεις μία ζωή;  ______________________________</li>
 </ol>
 <hr />
 <h2 id="4-48">Κύκλος 4 — Το ολοκληρωμένο παιχνίδι (48′)<a class="headerlink" href="#4-48" title="Permanent link">&para;</a></h2>
@@ -4339,7 +4339,7 @@
 </tr>
 </tbody>
 </table>
-<p>Από ποιους πόντους και μετά δεν μικραίνει άλλο το διάστημα, και γιατί;  <strong><em>_</em></strong><strong><em>_</em></strong><strong><em>_</em></strong><strong><em>_</em></strong>__<br />
+<p>Από ποιους πόντους και μετά δεν μικραίνει άλλο το διάστημα, και γιατί;  ______________________________<br />
 Από ποιους πόντους και μετά δεν μεγαλώνει άλλο η μέγιστη ταχύτητα;  ______</p>
 <h3 id="6_3">Β. Ιχνηλάτηση: πόντοι, ζωές και χρονιστής (6′)<a class="headerlink" href="#6_3" title="Permanent link">&para;</a></h3>
 <p>Το παιχνίδι ξεκινά με 0 πόντους, 3 ζωές και <code>state = PLAYING</code>, και πριν από τον βρόχο καλείται η <code>set_timer(SPAWN_ASTEROID, 800)</code>.
@@ -4409,8 +4409,8 @@
 </tr>
 </tbody>
 </table>
-<p>Στο βήμα 4, ποιες θα ήταν οι ζωές χωρίς τη <code>max(0, …)</code>, και τι θα συνέβαινε στο παιχνίδι;  <strong><em>_</em></strong><strong><em>_</em></strong><strong><em>_</em></strong><strong><em>_</em></strong>__<br />
-Ένα συμβάν <code>SPAWN_ASTEROID</code> περίμενε ήδη στην ουρά τη στιγμή που τελείωσε το παιχνίδι. Τι κάνει ο βρόχος όταν το βρει;  <strong><em>_</em></strong><strong><em>_</em></strong><strong><em>_</em></strong><strong><em>_</em></strong>__</p>
+<p>Στο βήμα 4, ποιες θα ήταν οι ζωές χωρίς τη <code>max(0, …)</code>, και τι θα συνέβαινε στο παιχνίδι;  ______________________________<br />
+Ένα συμβάν <code>SPAWN_ASTEROID</code> περίμενε ήδη στην ουρά τη στιγμή που τελείωσε το παιχνίδι. Τι κάνει ο βρόχος όταν το βρει;  ______________________________</p>
 <h3 id="4-04-finalpy-8">Γ. Στάδιο 4 — <code>04-final.py</code> (8′)<a class="headerlink" href="#4-04-finalpy-8" title="Permanent link">&para;</a></h3>
 <ol>
 <li>Συμπλήρωσε τα επτά κενά (<code>TODO 1</code> έως <code>TODO 7</code>) και παίξε δύο ολόκληρα παιχνίδια.</li>
@@ -4443,8 +4443,8 @@
 </tr>
 </tbody>
 </table>
-<p>Με τη δεύτερη αλλαγή, τι φαίνεται στην οθόνη του τέλους;  <strong><em>_</em></strong><strong><em>_</em></strong><strong><em>_</em></strong><strong><em>_</em></strong>__<br />
-Με την τρίτη αλλαγή, τι συμβαίνει μετά τον πέμπτο πόντο και γιατί;  <strong><em>_</em></strong><strong><em>_</em></strong><strong><em>_</em></strong><strong><em>_</em></strong>__</p>
+<p>Με τη δεύτερη αλλαγή, τι φαίνεται στην οθόνη του τέλους;  ______________________________<br />
+Με την τρίτη αλλαγή, τι συμβαίνει μετά τον πέμπτο πόντο και γιατί;  ______________________________</p>
 <h3 id="4">Δ. Δοκιμές (4′)<a class="headerlink" href="#4" title="Permanent link">&para;</a></h3>
 <p>Πρόβλεψε και μετά δοκίμασε στο <code>04-final.py</code>:</p>
 <table>
@@ -4503,9 +4503,9 @@
 </ol>
 <h3 id="3_6">ΣΤ. Κάρτα εξόδου (3′)<a class="headerlink" href="#3_6" title="Permanent link">&para;</a></h3>
 <ol>
-<li>Πώς αποφασίζει το πρόγραμμα ότι το παιχνίδι τελείωσε, και τι κάνει τότε με τους αστεροειδείς και τον χρονιστή;  <strong><em>_</em></strong><strong><em>_</em></strong><strong><em>_</em></strong><strong><em>_</em></strong>__</li>
-<li>Γιατί ο χρονιστής ξαναρυθμίζεται μόνο όταν αλλάζει το διάστημα και όχι σε κάθε καρέ;  <strong><em>_</em></strong><strong><em>_</em></strong><strong><em>_</em></strong><strong><em>_</em></strong>__</li>
-<li>Ποιες τρεις έννοιες του σημερινού μαθήματος θα χρησιμοποιούσες σε ένα δικό σου παιχνίδι με εικόνες, και πού;  <strong><em>_</em></strong><strong><em>_</em></strong><strong><em>_</em></strong><strong><em>_</em></strong>__</li>
+<li>Πώς αποφασίζει το πρόγραμμα ότι το παιχνίδι τελείωσε, και τι κάνει τότε με τους αστεροειδείς και τον χρονιστή;  ______________________________</li>
+<li>Γιατί ο χρονιστής ξαναρυθμίζεται μόνο όταν αλλάζει το διάστημα και όχι σε κάθε καρέ;  ______________________________</li>
+<li>Ποιες τρεις έννοιες του σημερινού μαθήματος θα χρησιμοποιούσες σε ένα δικό σου παιχνίδι με εικόνες, και πού;  ______________________________</li>
 </ol>
 <hr />
 <h2 id="_1">Αυτοέλεγχος<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
@@ -4620,10 +4620,10 @@
     
       
       
-      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.sections", "navigation.top", "navigation.footer", "content.code.copy", "content.code.annotate", "toc.follow", "search.suggest", "search.highlight"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "\u0391\u03bd\u03c4\u03b9\u03b3\u03c1\u03ac\u03c6\u03b7\u03ba\u03b5 \u03c3\u03c4\u03bf \u03c0\u03c1\u03cc\u03c7\u03b5\u03b9\u03c1\u03bf", "clipboard.copy": "\u0391\u03bd\u03c4\u03b9\u03b3\u03c1\u03b1\u03c6\u03ae \u03c3\u03c4\u03bf \u03c0\u03c1\u03cc\u03c7\u03b5\u03b9\u03c1\u03bf", "search.result.more.one": "1 \u03b1\u03ba\u03cc\u03bc\u03b1 \u03c3\u03b5 \u03b1\u03c5\u03c4\u03ae\u03bd \u03c4\u03b7 \u03c3\u03b5\u03bb\u03af\u03b4\u03b1", "search.result.more.other": "# \u03b1\u03ba\u03cc\u03bc\u03b1 \u03c3\u03b5 \u03b1\u03c5\u03c4\u03ae\u03bd \u03c4\u03b7 \u03c3\u03b5\u03bb\u03af\u03b4\u03b1", "search.result.none": "\u03b4\u03b5\u03bd \u03b2\u03c1\u03ae\u03ba\u03b5 \u03ba\u03ac\u03c0\u03bf\u03b9\u03bf \u03ad\u03b3\u03b3\u03c1\u03b1\u03c6\u03bf", "search.result.one": "1 \u03ad\u03b3\u03b3\u03c1\u03b1\u03c6\u03bf \u03c0\u03bf\u03c5 \u03c4\u03b1\u03b9\u03c1\u03b9\u03ac\u03b6\u03b5\u03b9", "search.result.other": "# \u03ad\u03b3\u03b3\u03c1\u03b1\u03c6\u03b1 \u03c0\u03bf\u03c5 \u03c4\u03b1\u03b9\u03c1\u03b9\u03ac\u03b6\u03bf\u03c5\u03bd", "search.result.placeholder": "\u03a0\u03bb\u03b7\u03ba\u03c4\u03c1\u03bf\u03bb\u03bf\u03b3\u03ae\u03c3\u03c4\u03b5 \u03b3\u03b9\u03b1 \u03bd\u03b1 \u03b1\u03c1\u03c7\u03af\u03c3\u03b5\u03b9 \u03b7 \u03b1\u03bd\u03b1\u03b6\u03ae\u03c4\u03b7\u03c3\u03b7", "search.result.term.missing": "\u039b\u03b5\u03af\u03c0\u03b5\u03b9", "select.version": "\u0395\u03c0\u03b9\u03bb\u03bf\u03b3\u03ae \u03ad\u03ba\u03b4\u03bf\u03c3\u03b7\u03c2"}, "version": null}</script>
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.sections", "navigation.top", "navigation.footer", "content.code.copy", "content.code.annotate", "toc.follow", "search.suggest", "search.highlight"], "search": "../../assets/javascripts/workers/search.a7633da7.min.js", "tags": null, "translations": {"clipboard.copied": "\u0391\u03bd\u03c4\u03b9\u03b3\u03c1\u03ac\u03c6\u03b7\u03ba\u03b5 \u03c3\u03c4\u03bf \u03c0\u03c1\u03cc\u03c7\u03b5\u03b9\u03c1\u03bf", "clipboard.copy": "\u0391\u03bd\u03c4\u03b9\u03b3\u03c1\u03b1\u03c6\u03ae \u03c3\u03c4\u03bf \u03c0\u03c1\u03cc\u03c7\u03b5\u03b9\u03c1\u03bf", "search.result.more.one": "1 \u03b1\u03ba\u03cc\u03bc\u03b1 \u03c3\u03b5 \u03b1\u03c5\u03c4\u03ae\u03bd \u03c4\u03b7 \u03c3\u03b5\u03bb\u03af\u03b4\u03b1", "search.result.more.other": "# \u03b1\u03ba\u03cc\u03bc\u03b1 \u03c3\u03b5 \u03b1\u03c5\u03c4\u03ae\u03bd \u03c4\u03b7 \u03c3\u03b5\u03bb\u03af\u03b4\u03b1", "search.result.none": "\u03b4\u03b5\u03bd \u03b2\u03c1\u03ae\u03ba\u03b5 \u03ba\u03ac\u03c0\u03bf\u03b9\u03bf \u03ad\u03b3\u03b3\u03c1\u03b1\u03c6\u03bf", "search.result.one": "1 \u03ad\u03b3\u03b3\u03c1\u03b1\u03c6\u03bf \u03c0\u03bf\u03c5 \u03c4\u03b1\u03b9\u03c1\u03b9\u03ac\u03b6\u03b5\u03b9", "search.result.other": "# \u03ad\u03b3\u03b3\u03c1\u03b1\u03c6\u03b1 \u03c0\u03bf\u03c5 \u03c4\u03b1\u03b9\u03c1\u03b9\u03ac\u03b6\u03bf\u03c5\u03bd", "search.result.placeholder": "\u03a0\u03bb\u03b7\u03ba\u03c4\u03c1\u03bf\u03bb\u03bf\u03b3\u03ae\u03c3\u03c4\u03b5 \u03b3\u03b9\u03b1 \u03bd\u03b1 \u03b1\u03c1\u03c7\u03af\u03c3\u03b5\u03b9 \u03b7 \u03b1\u03bd\u03b1\u03b6\u03ae\u03c4\u03b7\u03c3\u03b7", "search.result.term.missing": "\u039b\u03b5\u03af\u03c0\u03b5\u03b9", "select.version": "\u0395\u03c0\u03b9\u03bb\u03bf\u03b3\u03ae \u03ad\u03ba\u03b4\u03bf\u03c3\u03b7\u03c2"}, "version": null}</script>
     
     
-      <script src="../../assets/javascripts/bundle.d7400e89.min.js"></script>
+      <script src="../../assets/javascripts/bundle.c21346df.min.js"></script>
       
     
   </body>

@@ -25,7 +25,7 @@
       
       
       <link rel="icon" href="../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.7">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.8.0">
     
     
       
@@ -33,10 +33,10 @@
       
     
     
-      <link rel="stylesheet" href="../../assets/stylesheets/main.ec1eaa64.min.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/main.57a0d79d.min.css">
       
         
-        <link rel="stylesheet" href="../../assets/stylesheets/palette.ab4e12ef.min.css">
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.fb2fffe2.min.css">
       
       
 
@@ -3611,8 +3611,8 @@
 </tr>
 </tbody>
 </table>
-<p>Σε ποιο pixel <code>(x, y)</code> ζωγραφίζεται η πάνω αριστερή γωνία του κελιού <code>(7, 4)</code>;  <strong><em>_</em></strong><strong><em>_</em></strong><strong><em>_</em></strong><strong><em>_</em></strong>__<br />
-Ποιες κλήσεις της <code>turn</code> δείχνουν ότι το φίδι δεν γυρίζει πίσω;  <strong><em>_</em></strong><strong><em>_</em></strong><strong><em>_</em></strong><strong><em>_</em></strong>__</p>
+<p>Σε ποιο pixel <code>(x, y)</code> ζωγραφίζεται η πάνω αριστερή γωνία του κελιού <code>(7, 4)</code>;  ______________________________<br />
+Ποιες κλήσεις της <code>turn</code> δείχνουν ότι το φίδι δεν γυρίζει πίσω;  ______________________________</p>
 <h3 id="6">Β. Ιχνηλάτηση: πλήκτρα και βήματα (6′)<a class="headerlink" href="#6" title="Permanent link">&para;</a></h3>
 <p>Το φίδι του Σταδίου 1 ξεκινά με <code>snake = [(16, 10), (15, 10), (14, 10)]</code>, <code>direction = (1, 0)</code> και <code>next_direction = (1, 0)</code>. Για κάθε
 συμβάν γράψε τις τιμές <strong>μετά</strong> από αυτό. Το <code>STEP</code> εκτελεί <code>direction = next_direction</code> και κινεί το φίδι· κάθε πλήκτρο εκτελεί
@@ -3700,8 +3700,8 @@
 </tr>
 </tbody>
 </table>
-<p>Στο βήμα 4 το φίδι πηγαίνει προς τα πάνω και ο παίκτης πατά Αριστερά. Γιατί στο βήμα 6 το φίδι δεν έχει στρίψει αριστερά;  <strong><em>_</em></strong><strong><em>_</em></strong><strong><em>_</em></strong><strong><em>_</em></strong>__<br />
-Στο βήμα 9 το φίδι πηγαίνει προς τα δεξιά. Τι κάνει η <code>turn</code>, και πού βρίσκεται το κεφάλι μετά το βήμα 10;  <strong><em>_</em></strong><strong><em>_</em></strong><strong><em>_</em></strong><strong><em>_</em></strong>__</p>
+<p>Στο βήμα 4 το φίδι πηγαίνει προς τα πάνω και ο παίκτης πατά Αριστερά. Γιατί στο βήμα 6 το φίδι δεν έχει στρίψει αριστερά;  ______________________________<br />
+Στο βήμα 9 το φίδι πηγαίνει προς τα δεξιά. Τι κάνει η <code>turn</code>, και πού βρίσκεται το κεφάλι μετά το βήμα 10;  ______________________________</p>
 <h3 id="2">Γ. Σωστό ή λάθος; (2′)<a class="headerlink" href="#2" title="Permanent link">&para;</a></h3>
 <table>
 <thead>
@@ -3745,8 +3745,8 @@
 <div class="language-python highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="k">def</span><span class="w"> </span><span class="nf">next_cell</span><span class="p">(</span><span class="n">cell</span><span class="p">,</span> <span class="n">direction</span><span class="p">):</span>
 </span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>    <span class="k">return</span> <span class="n">cell</span> <span class="o">+</span> <span class="n">direction</span>
 </span></code></pre></div>
-Τι επιστρέφει η <code>next_cell((5, 3), (1, 0))</code>, και τι σφάλμα δίνει η γραμμή <code>col, row = cell</code> της <code>cell_rect</code> όταν πάρει αυτό το αποτέλεσμα;  <strong><em>_</em></strong><strong><em>_</em></strong><strong><em>_</em></strong><strong><em>_</em></strong>__<br />
-Διόρθωση:  <strong><em>_</em></strong><strong><em>_</em></strong><strong><em>_</em></strong><strong><em>_</em></strong>__</p>
+Τι επιστρέφει η <code>next_cell((5, 3), (1, 0))</code>, και τι σφάλμα δίνει η γραμμή <code>col, row = cell</code> της <code>cell_rect</code> όταν πάρει αυτό το αποτέλεσμα;  ______________________________<br />
+Διόρθωση:  ______________________________</p>
 <p><strong>2.</strong>
 <div class="language-python highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="k">def</span><span class="w"> </span><span class="nf">move_snake</span><span class="p">(</span><span class="n">snake</span><span class="p">,</span> <span class="n">direction</span><span class="p">,</span> <span class="n">grow</span><span class="p">):</span>
 </span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>    <span class="n">new_head</span> <span class="o">=</span> <span class="n">next_cell</span><span class="p">(</span><span class="n">snake</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">direction</span><span class="p">)</span>
@@ -3754,8 +3754,8 @@
 </span><span id="__span-2-4"><a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a>        <span class="k">return</span> <span class="p">[</span><span class="n">new_head</span><span class="p">]</span> <span class="o">+</span> <span class="n">snake</span>
 </span><span id="__span-2-5"><a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a>    <span class="k">return</span> <span class="n">new_head</span> <span class="o">+</span> <span class="n">snake</span><span class="p">[:</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
 </span></code></pre></div>
-Τι σφάλμα βλέπεις στο πρώτο βήμα, όταν το φίδι κινείται χωρίς να τρώει;  <strong><em>_</em></strong><strong><em>_</em></strong><strong><em>_</em></strong><strong><em>_</em></strong>__<br />
-Διόρθωση:  <strong><em>_</em></strong><strong><em>_</em></strong><strong><em>_</em></strong><strong><em>_</em></strong>__</p>
+Τι σφάλμα βλέπεις στο πρώτο βήμα, όταν το φίδι κινείται χωρίς να τρώει;  ______________________________<br />
+Διόρθωση:  ______________________________</p>
 <p><strong>3.</strong>
 <div class="language-python highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>        <span class="k">elif</span> <span class="n">action</span> <span class="o">==</span> <span class="s2">"step"</span><span class="p">:</span>
 </span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>            <span class="n">snake</span> <span class="o">=</span> <span class="n">move_snake</span><span class="p">(</span><span class="n">snake</span><span class="p">,</span> <span class="n">direction</span><span class="p">,</span> <span class="kc">False</span><span class="p">)</span>
@@ -3763,8 +3763,8 @@
 </span><span id="__span-3-4"><a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a>            <span class="n">direction</span> <span class="o">=</span> <span class="n">DIRECTIONS</span><span class="p">[</span><span class="n">action</span><span class="p">]</span>
 </span></code></pre></div>
 Το φίδι πηγαίνει δεξιά και πατάς Αριστερά. Πού θα βρεθεί το νέο κεφάλι στο επόμενο βήμα, όταν το κεφάλι ήταν στο <code>(16, 10)</code>, και τι θα γινόταν
-στον Κύκλο 3;  <strong><em>_</em></strong><strong><em>_</em></strong><strong><em>_</em></strong><strong><em>_</em></strong>__<br />
-Διόρθωση:  <strong><em>_</em></strong><strong><em>_</em></strong><strong><em>_</em></strong><strong><em>_</em></strong>__</p>
+στον Κύκλο 3;  ______________________________<br />
+Διόρθωση:  ______________________________</p>
 <h3 id="1-01-gridpy-7">Ε. Στάδιο 1 — <code>01-grid.py</code> (7′)<a class="headerlink" href="#1-01-gridpy-7" title="Permanent link">&para;</a></h3>
 <ol>
 <li>Συμπλήρωσε τα οκτώ κενά (<code>TODO 1</code> έως <code>TODO 8</code>) και τρέξε το πρόγραμμα. Στρίψε προς όλες τις κατευθύνσεις, με βέλη και με W, A, S, D, και
@@ -3797,9 +3797,9 @@
 </tr>
 </tbody>
 </table>
-<p>Με την πρώτη αλλαγή, πόσα βήματα το δευτερόλεπτο κάνει το φίδι;  <strong><em>_</em></strong><strong><em>_</em></strong><strong><em>_</em></strong><strong><em>_</em></strong>__<br />
-Με τη δεύτερη, ποιο είναι το μέγεθος του παραθύρου, σε pixel;  <strong><em>_</em></strong><strong><em>_</em></strong><strong><em>_</em></strong><strong><em>_</em></strong>__<br />
-Με την τρίτη, πώς φαίνεται το πλέγμα;  <strong><em>_</em></strong><strong><em>_</em></strong><strong><em>_</em></strong><strong><em>_</em></strong>__</p>
+<p>Με την πρώτη αλλαγή, πόσα βήματα το δευτερόλεπτο κάνει το φίδι;  ______________________________<br />
+Με τη δεύτερη, ποιο είναι το μέγεθος του παραθύρου, σε pixel;  ______________________________<br />
+Με την τρίτη, πώς φαίνεται το πλέγμα;  ______________________________</p>
 <h3 id="next_cell-turn-8">ΣΤ. Γράψε εσύ: <code>next_cell</code> και <code>turn</code> (8′)<a class="headerlink" href="#next_cell-turn-8" title="Permanent link">&para;</a></h3>
 <p>Στο <code>exercises.py</code> γράψε τις δύο συναρτήσεις.</p>
 <ol>
@@ -3814,9 +3814,9 @@
 <code>(dx, dy)</code> είναι η <code>(-dx, -dy)</code>, και οι πλειάδες συγκρίνονται με <code>==</code>. Τρέξε <code>python check_exercises.py</code>.</p>
 <h3 id="3_1">Ζ. Κάρτα εξόδου (3′)<a class="headerlink" href="#3_1" title="Permanent link">&para;</a></h3>
 <ol>
-<li>Πώς μετατρέπεις ένα κελί <code>(col, row)</code> σε θέση pixel <code>(x, y)</code>;  <strong><em>_</em></strong><strong><em>_</em></strong><strong><em>_</em></strong><strong><em>_</em></strong>__</li>
-<li>Γιατί το κεφάλι του φιδιού είναι το πρώτο στοιχείο της λίστας και όχι το τελευταίο;  <strong><em>_</em></strong><strong><em>_</em></strong><strong><em>_</em></strong><strong><em>_</em></strong>__</li>
-<li>Γιατί υπάρχουν δύο μεταβλητές κατεύθυνσης, η <code>direction</code> και η <code>next_direction</code>;  <strong><em>_</em></strong><strong><em>_</em></strong><strong><em>_</em></strong><strong><em>_</em></strong>__</li>
+<li>Πώς μετατρέπεις ένα κελί <code>(col, row)</code> σε θέση pixel <code>(x, y)</code>;  ______________________________</li>
+<li>Γιατί το κεφάλι του φιδιού είναι το πρώτο στοιχείο της λίστας και όχι το τελευταίο;  ______________________________</li>
+<li>Γιατί υπάρχουν δύο μεταβλητές κατεύθυνσης, η <code>direction</code> και η <code>next_direction</code>;  ______________________________</li>
 </ol>
 <hr />
 <h2 id="2-48">Κύκλος 2 — Τροφή και ανάπτυξη (48′)<a class="headerlink" href="#2-48" title="Permanent link">&para;</a></h2>
@@ -3859,8 +3859,8 @@
 </tr>
 </tbody>
 </table>
-<p>Πόσα κελιά έχει το φίδι μετά τη δεύτερη κλήση και πόσα μετά την πρώτη;  <strong><em>_</em></strong><strong><em>_</em></strong><strong><em>_</em></strong><strong><em>_</em></strong>__<br />
-Ποια κλήση «ξεχνά» την ουρά του φιδιού και ποια την κρατά;  <strong><em>_</em></strong><strong><em>_</em></strong><strong><em>_</em></strong><strong><em>_</em></strong>__</p>
+<p>Πόσα κελιά έχει το φίδι μετά τη δεύτερη κλήση και πόσα μετά την πρώτη;  ______________________________<br />
+Ποια κλήση «ξεχνά» την ουρά του φιδιού και ποια την κρατά;  ______________________________</p>
 <h3 id="5">Β. Ιχνηλάτηση: ένα φίδι που τρώει (5′)<a class="headerlink" href="#5" title="Permanent link">&para;</a></h3>
 <p>Το φίδι του Σταδίου 2 ξεκινά με <code>snake = [(5, 3), (4, 3), (3, 3)]</code>, κατεύθυνση δεξιά και τροφή στο <code>(7, 3)</code>. Όταν το φίδι φάει, η
 <code>place_food</code> βάζει διαδοχικά τροφή στα <code>(7, 5)</code> και στα <code>(2, 2)</code>. Συμπλήρωσε τον πίνακα <strong>μετά</strong> από κάθε συμβάν.</p>
@@ -3933,8 +3933,8 @@
 </tr>
 </tbody>
 </table>
-<p>Σε ποια βήματα ξαναβγαίνει τροφή και σε ποια όχι; Τι έχουν κοινό τα βήματα που βγαίνει νέα τροφή;  <strong><em>_</em></strong><strong><em>_</em></strong><strong><em>_</em></strong><strong><em>_</em></strong>__<br />
-Πόσα κελιά έχει το φίδι στο τέλος, και πόσους πόντους έχει;  <strong><em>_</em></strong><strong><em>_</em></strong><strong><em>_</em></strong><strong><em>_</em></strong>__</p>
+<p>Σε ποια βήματα ξαναβγαίνει τροφή και σε ποια όχι; Τι έχουν κοινό τα βήματα που βγαίνει νέα τροφή;  ______________________________<br />
+Πόσα κελιά έχει το φίδι στο τέλος, και πόσους πόντους έχει;  ______________________________</p>
 <h3 id="2_1">Γ. Σωστό ή λάθος; (2′)<a class="headerlink" href="#2_1" title="Permanent link">&para;</a></h3>
 <table>
 <thead>
@@ -3980,13 +3980,13 @@
 </span><span id="__span-4-3"><a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a>            <span class="k">if</span> <span class="p">(</span><span class="n">col</span><span class="p">,</span> <span class="n">row</span><span class="p">)</span> <span class="ow">in</span> <span class="n">snake</span><span class="p">:</span>
 </span><span id="__span-4-4"><a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a>                <span class="n">free</span><span class="o">.</span><span class="n">append</span><span class="p">((</span><span class="n">col</span><span class="p">,</span> <span class="n">row</span><span class="p">))</span>
 </span></code></pre></div>
-Πού εμφανίζεται η τροφή;  <strong><em>_</em></strong><strong><em>_</em></strong><strong><em>_</em></strong><strong><em>_</em></strong>__<br />
-Διόρθωση:  <strong><em>_</em></strong><strong><em>_</em></strong><strong><em>_</em></strong><strong><em>_</em></strong>__</p>
+Πού εμφανίζεται η τροφή;  ______________________________<br />
+Διόρθωση:  ______________________________</p>
 <p><strong>2.</strong>
 <div class="language-python highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>            <span class="n">eating</span> <span class="o">=</span> <span class="n">snake</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">==</span> <span class="n">food</span>
 </span></code></pre></div>
-Πότε φαίνεται ότι το φίδι έφαγε, σε σχέση με το βήμα που το κεφάλι περνά πάνω από την τροφή;  <strong><em>_</em></strong><strong><em>_</em></strong><strong><em>_</em></strong><strong><em>_</em></strong>__<br />
-Διόρθωση:  <strong><em>_</em></strong><strong><em>_</em></strong><strong><em>_</em></strong><strong><em>_</em></strong>__</p>
+Πότε φαίνεται ότι το φίδι έφαγε, σε σχέση με το βήμα που το κεφάλι περνά πάνω από την τροφή;  ______________________________<br />
+Διόρθωση:  ______________________________</p>
 <p><strong>3.</strong>
 <div class="language-python highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>        <span class="k">elif</span> <span class="n">action</span> <span class="o">==</span> <span class="s2">"step"</span><span class="p">:</span>
 </span><span id="__span-6-2"><a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a>            <span class="n">direction</span> <span class="o">=</span> <span class="n">next_direction</span>
@@ -3995,8 +3995,8 @@
 </span><span id="__span-6-5"><a id="__codelineno-6-5" name="__codelineno-6-5" href="#__codelineno-6-5"></a>            <span class="n">score</span> <span class="o">+=</span> <span class="mi">1</span>
 </span><span id="__span-6-6"><a id="__codelineno-6-6" name="__codelineno-6-6" href="#__codelineno-6-6"></a>            <span class="n">food</span> <span class="o">=</span> <span class="n">place_food</span><span class="p">(</span><span class="n">snake</span><span class="p">,</span> <span class="n">COLS</span><span class="p">,</span> <span class="n">ROWS</span><span class="p">)</span>
 </span></code></pre></div>
-Τι συμβαίνει με τους πόντους και με την τροφή σε κάθε βήμα;  <strong><em>_</em></strong><strong><em>_</em></strong><strong><em>_</em></strong><strong><em>_</em></strong>__<br />
-Διόρθωση:  <strong><em>_</em></strong><strong><em>_</em></strong><strong><em>_</em></strong><strong><em>_</em></strong>__</p>
+Τι συμβαίνει με τους πόντους και με την τροφή σε κάθε βήμα;  ______________________________<br />
+Διόρθωση:  ______________________________</p>
 <h3 id="2-02-foodpy-7">Ε. Στάδιο 2 — <code>02-food.py</code> (7′)<a class="headerlink" href="#2-02-foodpy-7" title="Permanent link">&para;</a></h3>
 <ol>
 <li>Συμπλήρωσε τα οκτώ κενά (<code>TODO 1</code> έως <code>TODO 8</code>) και παίξε μέχρι να φας πέντε φορές.</li>
@@ -4028,9 +4028,9 @@
 </tr>
 </tbody>
 </table>
-<p>Με την πρώτη αλλαγή, πόσα pixel είναι η ακτίνα του κύκλου και πώς φαίνεται σε σχέση με το κελί;  <strong><em>_</em></strong><strong><em>_</em></strong><strong><em>_</em></strong><strong><em>_</em></strong>__<br />
-Με τη δεύτερη, πόσα κελιά έχει το φίδι μετά από δέκα βήματα;  <strong><em>_</em></strong><strong><em>_</em></strong><strong><em>_</em></strong><strong><em>_</em></strong>__<br />
-Με την τρίτη, σε ποιο κελί εμφανίζεται η πρώτη τροφή;  <strong><em>_</em></strong><strong><em>_</em></strong><strong><em>_</em></strong><strong><em>_</em></strong>__</p>
+<p>Με την πρώτη αλλαγή, πόσα pixel είναι η ακτίνα του κύκλου και πώς φαίνεται σε σχέση με το κελί;  ______________________________<br />
+Με τη δεύτερη, πόσα κελιά έχει το φίδι μετά από δέκα βήματα;  ______________________________<br />
+Με την τρίτη, σε ποιο κελί εμφανίζεται η πρώτη τροφή;  ______________________________</p>
 <h3 id="move_snake-place_food-10">ΣΤ. Γράψε εσύ: <code>move_snake</code> και <code>place_food</code> (10′)<a class="headerlink" href="#move_snake-place_food-10" title="Permanent link">&para;</a></h3>
 <p>Στο <code>exercises.py</code> γράψε τις δύο συναρτήσεις.</p>
 <ol>
@@ -4049,9 +4049,9 @@
 <code>python check_exercises.py</code>.</p>
 <h3 id="3_3">Ζ. Κάρτα εξόδου (3′)<a class="headerlink" href="#3_3" title="Permanent link">&para;</a></h3>
 <ol>
-<li>Τι κάνει η <code>move_snake</code> όταν το <code>grow</code> είναι <code>True</code> και τι όταν είναι <code>False</code>;  <strong><em>_</em></strong><strong><em>_</em></strong><strong><em>_</em></strong><strong><em>_</em></strong>__</li>
-<li>Γιατί η <code>place_food</code> φτιάχνει πρώτα τη λίστα των ελεύθερων κελιών, αντί να διαλέγει τυχαία κελιά μέχρι να βρει ένα ελεύθερο;  <strong><em>_</em></strong><strong><em>_</em></strong><strong><em>_</em></strong><strong><em>_</em></strong>__</li>
-<li>Γιατί η νέα τροφή μπαίνει μετά την κίνηση του φιδιού;  <strong><em>_</em></strong><strong><em>_</em></strong><strong><em>_</em></strong><strong><em>_</em></strong>__</li>
+<li>Τι κάνει η <code>move_snake</code> όταν το <code>grow</code> είναι <code>True</code> και τι όταν είναι <code>False</code>;  ______________________________</li>
+<li>Γιατί η <code>place_food</code> φτιάχνει πρώτα τη λίστα των ελεύθερων κελιών, αντί να διαλέγει τυχαία κελιά μέχρι να βρει ένα ελεύθερο;  ______________________________</li>
+<li>Γιατί η νέα τροφή μπαίνει μετά την κίνηση του φιδιού;  ______________________________</li>
 </ol>
 <hr />
 <h2 id="3-49">Κύκλος 3 — Συγκρούσεις και τέλος (49′)<a class="headerlink" href="#3-49" title="Permanent link">&para;</a></h2>
@@ -4102,8 +4102,8 @@
 </tr>
 </tbody>
 </table>
-<p>Ποια είναι η τελευταία στήλη και ποια η τελευταία γραμμή του πλέγματος;  <strong><em>_</em></strong><strong><em>_</em></strong><strong><em>_</em></strong><strong><em>_</em></strong>__<br />
-Σε ποια κλήση το κεφάλι ακουμπά το σώμα χωρίς να πέφτει πάνω του;  <strong><em>_</em></strong><strong><em>_</em></strong><strong><em>_</em></strong><strong><em>_</em></strong>__</p>
+<p>Ποια είναι η τελευταία στήλη και ποια η τελευταία γραμμή του πλέγματος;  ______________________________<br />
+Σε ποια κλήση το κεφάλι ακουμπά το σώμα χωρίς να πέφτει πάνω του;  ______________________________</p>
 <h3 id="6_1">Β. Ιχνηλάτηση: γύρω από την ουρά (6′)<a class="headerlink" href="#6_1" title="Permanent link">&para;</a></h3>
 <p>Ένα φίδι έξι κελιών είναι <code>snake = [(4, 3), (3, 3), (2, 3), (2, 2), (3, 2), (4, 2)]</code>: το κεφάλι είναι στο <code>(4, 3)</code>, η ουρά στο <code>(4, 2)</code>, και το
 φίδι πηγαίνει δεξιά. Σε κάθε βήμα το <code>snake</code> γίνεται το <code>new_snake</code>, εκτός αν το φίδι χτυπήσει. Συμπλήρωσε τον πίνακα.</p>
@@ -4145,8 +4145,8 @@
 </tr>
 </tbody>
 </table>
-<p>Σε ποια βήματα το νέο κεφάλι μπαίνει στο κελί της ουράς, και γιατί αυτό δεν είναι σύγκρουση;  <strong><em>_</em></strong><strong><em>_</em></strong><strong><em>_</em></strong><strong><em>_</em></strong>__<br />
-Αν το βήμα 1 ήταν βήμα που τρώει (<code>grow = True</code>), τι θα γινόταν;  <strong><em>_</em></strong><strong><em>_</em></strong><strong><em>_</em></strong><strong><em>_</em></strong>__</p>
+<p>Σε ποια βήματα το νέο κεφάλι μπαίνει στο κελί της ουράς, και γιατί αυτό δεν είναι σύγκρουση;  ______________________________<br />
+Αν το βήμα 1 ήταν βήμα που τρώει (<code>grow = True</code>), τι θα γινόταν;  ______________________________</p>
 <h3 id="2_2">Γ. Σωστό ή λάθος; (2′)<a class="headerlink" href="#2_2" title="Permanent link">&para;</a></h3>
 <table>
 <thead>
@@ -4193,21 +4193,21 @@
 </span><span id="__span-7-4"><a id="__codelineno-7-4" name="__codelineno-7-4" href="#__codelineno-7-4"></a>        <span class="k">return</span> <span class="kc">True</span>
 </span><span id="__span-7-5"><a id="__codelineno-7-5" name="__codelineno-7-5" href="#__codelineno-7-5"></a>    <span class="k">return</span> <span class="n">snake</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="ow">in</span> <span class="n">snake</span>
 </span></code></pre></div>
-Πότε τελειώνει το παιχνίδι;  <strong><em>_</em></strong><strong><em>_</em></strong><strong><em>_</em></strong><strong><em>_</em></strong>__<br />
-Διόρθωση:  <strong><em>_</em></strong><strong><em>_</em></strong><strong><em>_</em></strong><strong><em>_</em></strong>__</p>
+Πότε τελειώνει το παιχνίδι;  ______________________________<br />
+Διόρθωση:  ______________________________</p>
 <p><strong>2.</strong>
 <div class="language-python highlight"><pre><span></span><code><span id="__span-8-1"><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a>    <span class="k">if</span> <span class="n">col</span> <span class="o">&lt;</span> <span class="mi">0</span> <span class="ow">or</span> <span class="n">col</span> <span class="o">&gt;</span> <span class="n">cols</span> <span class="ow">or</span> <span class="n">row</span> <span class="o">&lt;</span> <span class="mi">0</span> <span class="ow">or</span> <span class="n">row</span> <span class="o">&gt;</span> <span class="n">rows</span><span class="p">:</span>
 </span><span id="__span-8-2"><a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a>        <span class="k">return</span> <span class="kc">True</span>
 </span></code></pre></div>
-Πόσα κελιά έξω από το πλέγμα μπορεί να φτάσει το κεφάλι πριν τελειώσει το παιχνίδι, προς τα δεξιά;  <strong><em>_</em></strong><strong><em>_</em></strong><strong><em>_</em></strong><strong><em>_</em></strong>__<br />
-Διόρθωση:  <strong><em>_</em></strong><strong><em>_</em></strong><strong><em>_</em></strong><strong><em>_</em></strong>__</p>
+Πόσα κελιά έξω από το πλέγμα μπορεί να φτάσει το κεφάλι πριν τελειώσει το παιχνίδι, προς τα δεξιά;  ______________________________<br />
+Διόρθωση:  ______________________________</p>
 <p><strong>3.</strong>
 <div class="language-python highlight"><pre><span></span><code><span id="__span-9-1"><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a>            <span class="n">new_snake</span> <span class="o">=</span> <span class="n">move_snake</span><span class="p">(</span><span class="n">snake</span><span class="p">,</span> <span class="n">direction</span><span class="p">,</span> <span class="n">eating</span><span class="p">)</span>
 </span><span id="__span-9-2"><a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a>            <span class="k">if</span> <span class="n">is_dead</span><span class="p">(</span><span class="n">snake</span><span class="p">,</span> <span class="n">COLS</span><span class="p">,</span> <span class="n">ROWS</span><span class="p">):</span>
 </span><span id="__span-9-3"><a id="__codelineno-9-3" name="__codelineno-9-3" href="#__codelineno-9-3"></a>                <span class="n">state</span> <span class="o">=</span> <span class="n">GAME_OVER</span>
 </span></code></pre></div>
-Πότε τελειώνει το παιχνίδι, σε σχέση με το βήμα που το κεφάλι βγαίνει από το πλέγμα;  <strong><em>_</em></strong><strong><em>_</em></strong><strong><em>_</em></strong><strong><em>_</em></strong>__<br />
-Διόρθωση:  <strong><em>_</em></strong><strong><em>_</em></strong><strong><em>_</em></strong><strong><em>_</em></strong>__</p>
+Πότε τελειώνει το παιχνίδι, σε σχέση με το βήμα που το κεφάλι βγαίνει από το πλέγμα;  ______________________________<br />
+Διόρθωση:  ______________________________</p>
 <h3 id="3-03-collisionspy-8">Ε. Στάδιο 3 — <code>03-collisions.py</code> (8′)<a class="headerlink" href="#3-03-collisionspy-8" title="Permanent link">&para;</a></h3>
 <ol>
 <li>Συμπλήρωσε τα οκτώ κενά (<code>TODO 1</code> έως <code>TODO 8</code>) και δοκίμασε και τους τέσσερις τοίχους, ένα χτύπημα στο σώμα και το νέο παιχνίδι.</li>
@@ -4239,9 +4239,9 @@
 </tr>
 </tbody>
 </table>
-<p>Με την πρώτη αλλαγή, σε ποια στήλη μένει το κεφάλι όταν τελειώνει το παιχνίδι, αν το φίδι πηγαίνει δεξιά;  <strong><em>_</em></strong><strong><em>_</em></strong><strong><em>_</em></strong><strong><em>_</em></strong>__<br />
-Με τη δεύτερη, αλλάζει κάτι που φαίνεται στο παιχνίδι; Γιατί;  <strong><em>_</em></strong><strong><em>_</em></strong><strong><em>_</em></strong><strong><em>_</em></strong>__<br />
-Με την τρίτη, τι γίνεται στο νέο παιχνίδι αν το προηγούμενο τελείωσε κινούμενο προς τα αριστερά;  <strong><em>_</em></strong><strong><em>_</em></strong><strong><em>_</em></strong><strong><em>_</em></strong>__</p>
+<p>Με την πρώτη αλλαγή, σε ποια στήλη μένει το κεφάλι όταν τελειώνει το παιχνίδι, αν το φίδι πηγαίνει δεξιά;  ______________________________<br />
+Με τη δεύτερη, αλλάζει κάτι που φαίνεται στο παιχνίδι; Γιατί;  ______________________________<br />
+Με την τρίτη, τι γίνεται στο νέο παιχνίδι αν το προηγούμενο τελείωσε κινούμενο προς τα αριστερά;  ______________________________</p>
 <h3 id="is_dead-9">ΣΤ. Γράψε εσύ: <code>is_dead</code> (9′)<a class="headerlink" href="#is_dead-9" title="Permanent link">&para;</a></h3>
 <p>Στο <code>exercises.py</code> γράψε τη συνάρτηση <code>is_dead(snake, cols, rows)</code>. Επιστρέφει <code>True</code> αν το κεφάλι του φιδιού, δηλαδή το πρώτο κελί του
 <code>snake</code>, είναι έξω από το πλέγμα με <code>cols</code> στήλες και <code>rows</code> γραμμές, ή βρίσκεται στο ίδιο κελί με κάποιο άλλο κελί του φιδιού. Αλλιώς
@@ -4252,9 +4252,9 @@
 έως <code>rows - 1</code>. Για το σώμα ψάξε το κεφάλι μέσα στο <code>snake[1:]</code>. Τρέξε <code>python check_exercises.py</code>.</p>
 <h3 id="3_5">Ζ. Κάρτα εξόδου (3′)<a class="headerlink" href="#3_5" title="Permanent link">&para;</a></h3>
 <ol>
-<li>Γιατί ελέγχουμε το <code>new_snake</code> και όχι το <code>snake</code>;  <strong><em>_</em></strong><strong><em>_</em></strong><strong><em>_</em></strong><strong><em>_</em></strong>__</li>
-<li>Γιατί η <code>is_dead</code> ψάχνει το κεφάλι στο <code>snake[1:]</code> και όχι στο <code>snake</code>;  <strong><em>_</em></strong><strong><em>_</em></strong><strong><em>_</em></strong><strong><em>_</em></strong>__</li>
-<li>Τι κάνει η <code>pygame.time.set_timer(STEP, 0)</code> και γιατί χρειάζεται η <code>pygame.time.set_timer(STEP, START_INTERVAL)</code> στο νέο παιχνίδι;  <strong><em>_</em></strong><strong><em>_</em></strong><strong><em>_</em></strong><strong><em>_</em></strong>__</li>
+<li>Γιατί ελέγχουμε το <code>new_snake</code> και όχι το <code>snake</code>;  ______________________________</li>
+<li>Γιατί η <code>is_dead</code> ψάχνει το κεφάλι στο <code>snake[1:]</code> και όχι στο <code>snake</code>;  ______________________________</li>
+<li>Τι κάνει η <code>pygame.time.set_timer(STEP, 0)</code> και γιατί χρειάζεται η <code>pygame.time.set_timer(STEP, START_INTERVAL)</code> στο νέο παιχνίδι;  ______________________________</li>
 </ol>
 <hr />
 <h2 id="4-48">Κύκλος 4 — Ταχύτητα και ολοκλήρωση (48′)<a class="headerlink" href="#4-48" title="Permanent link">&para;</a></h2>
@@ -4301,8 +4301,8 @@
 </tr>
 </tbody>
 </table>
-<p>Με πόσους πόντους φτάνει το φίδι στη μέγιστη ταχύτητα;  <strong><em>_</em></strong><strong><em>_</em></strong><strong><em>_</em></strong><strong><em>_</em></strong>__<br />
-Πόσα βήματα το δευτερόλεπτο κάνει τότε;  <strong><em>_</em></strong><strong><em>_</em></strong><strong><em>_</em></strong><strong><em>_</em></strong>__</p>
+<p>Με πόσους πόντους φτάνει το φίδι στη μέγιστη ταχύτητα;  ______________________________<br />
+Πόσα βήματα το δευτερόλεπτο κάνει τότε;  ______________________________</p>
 <h3 id="6_2">Β. Ιχνηλάτηση: τέσσερα παιχνίδια και το ρεκόρ (6′)<a class="headerlink" href="#6_2" title="Permanent link">&para;</a></h3>
 <p>Το παιχνίδι ανοίγει με <code>best = 0</code>. Παίζονται τέσσερα παιχνίδια με τους πόντους του πίνακα. Σε κάθε γραμμή, γράψε την τιμή του <code>new_record</code>,
 την τιμή του <code>best</code> <strong>μετά</strong> το παιχνίδι και το κείμενο που γράφει το πλαίσιο.</p>
@@ -4352,8 +4352,8 @@
 </tr>
 </tbody>
 </table>
-<p>Αν η σύγκριση ήταν <code>score &gt;= best</code>, ποια παιχνίδια θα έγραφαν «Νέο ρεκόρ»;  <strong><em>_</em></strong><strong><em>_</em></strong><strong><em>_</em></strong><strong><em>_</em></strong>__<br />
-Τι θα έγραφε το πλαίσιο σε κάθε παιχνίδι, αν η γραμμή <code>best = max(best, score)</code> έμπαινε <strong>πριν</strong> από τη γραμμή <code>new_record = score &gt; best</code>;  <strong><em>_</em></strong><strong><em>_</em></strong><strong><em>_</em></strong><strong><em>_</em></strong>__</p>
+<p>Αν η σύγκριση ήταν <code>score &gt;= best</code>, ποια παιχνίδια θα έγραφαν «Νέο ρεκόρ»;  ______________________________<br />
+Τι θα έγραφε το πλαίσιο σε κάθε παιχνίδι, αν η γραμμή <code>best = max(best, score)</code> έμπαινε <strong>πριν</strong> από τη γραμμή <code>new_record = score &gt; best</code>;  ______________________________</p>
 <h3 id="4-04-finalpy-8">Γ. Στάδιο 4 — <code>04-final.py</code> (8′)<a class="headerlink" href="#4-04-finalpy-8" title="Permanent link">&para;</a></h3>
 <ol>
 <li>Συμπλήρωσε τα οκτώ κενά (<code>TODO 1</code> έως <code>TODO 8</code>) και παίξε δύο ολόκληρα παιχνίδια. Δες το ρεκόρ στο HUD και στο πλαίσιο.</li>
@@ -4385,9 +4385,9 @@
 </tr>
 </tbody>
 </table>
-<p>Με την πρώτη αλλαγή, με πόσους πόντους σταματά να επιταχύνει το φίδι;  <strong><em>_</em></strong><strong><em>_</em></strong><strong><em>_</em></strong><strong><em>_</em></strong>__<br />
-Με τη δεύτερη, με πόσους πόντους φτάνει στα 70 χιλιοστά του δευτερολέπτου;  <strong><em>_</em></strong><strong><em>_</em></strong><strong><em>_</em></strong><strong><em>_</em></strong>__<br />
-Με την τρίτη, τι γράφει το πλαίσιο όταν ισοφαρίσεις το ρεκόρ;  <strong><em>_</em></strong><strong><em>_</em></strong><strong><em>_</em></strong><strong><em>_</em></strong>__</p>
+<p>Με την πρώτη αλλαγή, με πόσους πόντους σταματά να επιταχύνει το φίδι;  ______________________________<br />
+Με τη δεύτερη, με πόσους πόντους φτάνει στα 70 χιλιοστά του δευτερολέπτου;  ______________________________<br />
+Με την τρίτη, τι γράφει το πλαίσιο όταν ισοφαρίσεις το ρεκόρ;  ______________________________</p>
 <h3 id="4">Δ. Δοκιμές (4′)<a class="headerlink" href="#4" title="Permanent link">&para;</a></h3>
 <p>Πρόβλεψε και μετά δοκίμασε στο <code>04-final.py</code>:</p>
 <table>
@@ -4450,9 +4450,9 @@
 </ol>
 <h3 id="3_6">ΣΤ. Κάρτα εξόδου (3′)<a class="headerlink" href="#3_6" title="Permanent link">&para;</a></h3>
 <ol>
-<li>Ποιες τρεις τιμές επιστρέφει η <code>step</code>, και τι σημαίνει καθεμία;  <strong><em>_</em></strong><strong><em>_</em></strong><strong><em>_</em></strong><strong><em>_</em></strong>__</li>
-<li>Πώς αλλάζει η ταχύτητα του φιδιού με τους πόντους, και πότε σταματά να αλλάζει;  <strong><em>_</em></strong><strong><em>_</em></strong><strong><em>_</em></strong><strong><em>_</em></strong>__</li>
-<li>Γιατί είναι καλύτερα η λογική ενός βήματος να βρίσκεται σε μια συνάρτηση που δοκιμάζεται χωρίς παράθυρο;  <strong><em>_</em></strong><strong><em>_</em></strong><strong><em>_</em></strong><strong><em>_</em></strong>__</li>
+<li>Ποιες τρεις τιμές επιστρέφει η <code>step</code>, και τι σημαίνει καθεμία;  ______________________________</li>
+<li>Πώς αλλάζει η ταχύτητα του φιδιού με τους πόντους, και πότε σταματά να αλλάζει;  ______________________________</li>
+<li>Γιατί είναι καλύτερα η λογική ενός βήματος να βρίσκεται σε μια συνάρτηση που δοκιμάζεται χωρίς παράθυρο;  ______________________________</li>
 </ol>
 <hr />
 <h2 id="_1">Αυτοέλεγχος<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
@@ -4567,10 +4567,10 @@
     
       
       
-      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.sections", "navigation.top", "navigation.footer", "content.code.copy", "content.code.annotate", "toc.follow", "search.suggest", "search.highlight"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "\u0391\u03bd\u03c4\u03b9\u03b3\u03c1\u03ac\u03c6\u03b7\u03ba\u03b5 \u03c3\u03c4\u03bf \u03c0\u03c1\u03cc\u03c7\u03b5\u03b9\u03c1\u03bf", "clipboard.copy": "\u0391\u03bd\u03c4\u03b9\u03b3\u03c1\u03b1\u03c6\u03ae \u03c3\u03c4\u03bf \u03c0\u03c1\u03cc\u03c7\u03b5\u03b9\u03c1\u03bf", "search.result.more.one": "1 \u03b1\u03ba\u03cc\u03bc\u03b1 \u03c3\u03b5 \u03b1\u03c5\u03c4\u03ae\u03bd \u03c4\u03b7 \u03c3\u03b5\u03bb\u03af\u03b4\u03b1", "search.result.more.other": "# \u03b1\u03ba\u03cc\u03bc\u03b1 \u03c3\u03b5 \u03b1\u03c5\u03c4\u03ae\u03bd \u03c4\u03b7 \u03c3\u03b5\u03bb\u03af\u03b4\u03b1", "search.result.none": "\u03b4\u03b5\u03bd \u03b2\u03c1\u03ae\u03ba\u03b5 \u03ba\u03ac\u03c0\u03bf\u03b9\u03bf \u03ad\u03b3\u03b3\u03c1\u03b1\u03c6\u03bf", "search.result.one": "1 \u03ad\u03b3\u03b3\u03c1\u03b1\u03c6\u03bf \u03c0\u03bf\u03c5 \u03c4\u03b1\u03b9\u03c1\u03b9\u03ac\u03b6\u03b5\u03b9", "search.result.other": "# \u03ad\u03b3\u03b3\u03c1\u03b1\u03c6\u03b1 \u03c0\u03bf\u03c5 \u03c4\u03b1\u03b9\u03c1\u03b9\u03ac\u03b6\u03bf\u03c5\u03bd", "search.result.placeholder": "\u03a0\u03bb\u03b7\u03ba\u03c4\u03c1\u03bf\u03bb\u03bf\u03b3\u03ae\u03c3\u03c4\u03b5 \u03b3\u03b9\u03b1 \u03bd\u03b1 \u03b1\u03c1\u03c7\u03af\u03c3\u03b5\u03b9 \u03b7 \u03b1\u03bd\u03b1\u03b6\u03ae\u03c4\u03b7\u03c3\u03b7", "search.result.term.missing": "\u039b\u03b5\u03af\u03c0\u03b5\u03b9", "select.version": "\u0395\u03c0\u03b9\u03bb\u03bf\u03b3\u03ae \u03ad\u03ba\u03b4\u03bf\u03c3\u03b7\u03c2"}, "version": null}</script>
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.sections", "navigation.top", "navigation.footer", "content.code.copy", "content.code.annotate", "toc.follow", "search.suggest", "search.highlight"], "search": "../../assets/javascripts/workers/search.a7633da7.min.js", "tags": null, "translations": {"clipboard.copied": "\u0391\u03bd\u03c4\u03b9\u03b3\u03c1\u03ac\u03c6\u03b7\u03ba\u03b5 \u03c3\u03c4\u03bf \u03c0\u03c1\u03cc\u03c7\u03b5\u03b9\u03c1\u03bf", "clipboard.copy": "\u0391\u03bd\u03c4\u03b9\u03b3\u03c1\u03b1\u03c6\u03ae \u03c3\u03c4\u03bf \u03c0\u03c1\u03cc\u03c7\u03b5\u03b9\u03c1\u03bf", "search.result.more.one": "1 \u03b1\u03ba\u03cc\u03bc\u03b1 \u03c3\u03b5 \u03b1\u03c5\u03c4\u03ae\u03bd \u03c4\u03b7 \u03c3\u03b5\u03bb\u03af\u03b4\u03b1", "search.result.more.other": "# \u03b1\u03ba\u03cc\u03bc\u03b1 \u03c3\u03b5 \u03b1\u03c5\u03c4\u03ae\u03bd \u03c4\u03b7 \u03c3\u03b5\u03bb\u03af\u03b4\u03b1", "search.result.none": "\u03b4\u03b5\u03bd \u03b2\u03c1\u03ae\u03ba\u03b5 \u03ba\u03ac\u03c0\u03bf\u03b9\u03bf \u03ad\u03b3\u03b3\u03c1\u03b1\u03c6\u03bf", "search.result.one": "1 \u03ad\u03b3\u03b3\u03c1\u03b1\u03c6\u03bf \u03c0\u03bf\u03c5 \u03c4\u03b1\u03b9\u03c1\u03b9\u03ac\u03b6\u03b5\u03b9", "search.result.other": "# \u03ad\u03b3\u03b3\u03c1\u03b1\u03c6\u03b1 \u03c0\u03bf\u03c5 \u03c4\u03b1\u03b9\u03c1\u03b9\u03ac\u03b6\u03bf\u03c5\u03bd", "search.result.placeholder": "\u03a0\u03bb\u03b7\u03ba\u03c4\u03c1\u03bf\u03bb\u03bf\u03b3\u03ae\u03c3\u03c4\u03b5 \u03b3\u03b9\u03b1 \u03bd\u03b1 \u03b1\u03c1\u03c7\u03af\u03c3\u03b5\u03b9 \u03b7 \u03b1\u03bd\u03b1\u03b6\u03ae\u03c4\u03b7\u03c3\u03b7", "search.result.term.missing": "\u039b\u03b5\u03af\u03c0\u03b5\u03b9", "select.version": "\u0395\u03c0\u03b9\u03bb\u03bf\u03b3\u03ae \u03ad\u03ba\u03b4\u03bf\u03c3\u03b7\u03c2"}, "version": null}</script>
     
     
-      <script src="../../assets/javascripts/bundle.d7400e89.min.js"></script>
+      <script src="../../assets/javascripts/bundle.c21346df.min.js"></script>
       
     
   </body>

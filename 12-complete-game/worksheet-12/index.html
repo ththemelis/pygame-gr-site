@@ -25,7 +25,7 @@
       
       
       <link rel="icon" href="../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.7">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.8.0">
     
     
       
@@ -33,10 +33,10 @@
       
     
     
-      <link rel="stylesheet" href="../../assets/stylesheets/main.ec1eaa64.min.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/main.57a0d79d.min.css">
       
         
-        <link rel="stylesheet" href="../../assets/stylesheets/palette.ab4e12ef.min.css">
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.fb2fffe2.min.css">
       
       
 
@@ -3608,7 +3608,7 @@
 </tbody>
 </table>
 <p>Υπάρχουν 4 καταστάσεις και 5 ενέργειες (<code>play</code>, <code>pause</code>, <code>resume</code>, <code>menu</code>, <code>lose</code>), άρα 20 πιθανά ζεύγη. Πόσα από αυτά υπάρχουν στον
-πίνακα, και τι κάνουν τα υπόλοιπα;  <strong><em>_</em></strong><strong><em>_</em></strong><strong><em>_</em></strong><strong><em>_</em></strong>__</p>
+πίνακα, και τι κάνουν τα υπόλοιπα;  ______________________________</p>
 <h3 id="6">Β. Ιχνηλάτηση: μια ακολουθία πλήκτρων (6′)<a class="headerlink" href="#6" title="Permanent link">&para;</a></h3>
 <p>Το παιχνίδι ξεκινά στο μενού. Για κάθε πλήκτρο γράψε ποια ενέργεια ζητά (σύμφωνα με το <code>KEY_ACTIONS</code> της ενότητας 1.5) και σε ποια
 κατάσταση βρίσκεται το παιχνίδι <strong>μετά</strong>. Αν το πλήκτρο δεν κάνει τίποτα, γράψε «—» στην ενέργεια. Το βήμα 9 δεν είναι πλήκτρο: οι
@@ -3697,8 +3697,8 @@
 </tr>
 </tbody>
 </table>
-<p>Ποιες ενέργειες αλλάζουν κατάσταση όταν το παιχνίδι είναι στο μενού;  <strong><em>_</em></strong><strong><em>_</em></strong><strong><em>_</em></strong><strong><em>_</em></strong>__<br />
-Σε ποιες καταστάσεις το Esc δεν κλείνει το πρόγραμμα, και τι κάνει σε καθεμία;  <strong><em>_</em></strong><strong><em>_</em></strong><strong><em>_</em></strong><strong><em>_</em></strong>__</p>
+<p>Ποιες ενέργειες αλλάζουν κατάσταση όταν το παιχνίδι είναι στο μενού;  ______________________________<br />
+Σε ποιες καταστάσεις το Esc δεν κλείνει το πρόγραμμα, και τι κάνει σε καθεμία;  ______________________________</p>
 <h3 id="2">Γ. Σωστό ή λάθος; (2′)<a class="headerlink" href="#2" title="Permanent link">&para;</a></h3>
 <table>
 <thead>
@@ -3742,8 +3742,8 @@
 <div class="language-python highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="k">def</span><span class="w"> </span><span class="nf">next_state</span><span class="p">(</span><span class="n">state</span><span class="p">,</span> <span class="n">action</span><span class="p">):</span>
 </span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>    <span class="k">return</span> <span class="n">TRANSITIONS</span><span class="p">[(</span><span class="n">state</span><span class="p">,</span> <span class="n">action</span><span class="p">)]</span>
 </span></code></pre></div>
-Πατάς Esc στο μενού για να κλείσεις το πρόγραμμα. Τι μήνυμα βλέπεις;  <strong><em>_</em></strong><strong><em>_</em></strong><strong><em>_</em></strong><strong><em>_</em></strong>__<br />
-Διόρθωση:  <strong><em>_</em></strong><strong><em>_</em></strong><strong><em>_</em></strong><strong><em>_</em></strong>__</p>
+Πατάς Esc στο μενού για να κλείσεις το πρόγραμμα. Τι μήνυμα βλέπεις;  ______________________________<br />
+Διόρθωση:  ______________________________</p>
 <p><strong>2.</strong>
 <div class="language-python highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="k">elif</span> <span class="n">new_state</span> <span class="o">!=</span> <span class="n">state</span><span class="p">:</span>
 </span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>    <span class="n">ship</span><span class="o">.</span><span class="n">move_to</span><span class="p">(</span><span class="n">WIDTH</span> <span class="o">//</span> <span class="mi">2</span><span class="p">,</span> <span class="n">HEIGHT</span> <span class="o">-</span> <span class="mi">70</span><span class="p">)</span>
@@ -3752,15 +3752,15 @@
 </span><span id="__span-2-5"><a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a>    <span class="n">lives</span> <span class="o">=</span> <span class="n">START_LIVES</span>
 </span><span id="__span-2-6"><a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a>    <span class="n">state</span> <span class="o">=</span> <span class="n">new_state</span>
 </span></code></pre></div>
-Λείπει ο έλεγχος <code>if action == "play":</code>. Τι συμβαίνει με τους πόντους και τους αστεροειδείς όταν πατάς P την ώρα που παίζεις;  <strong><em>_</em></strong><strong><em>_</em></strong><strong><em>_</em></strong><strong><em>_</em></strong>__<br />
-Διόρθωση:  <strong><em>_</em></strong><strong><em>_</em></strong><strong><em>_</em></strong><strong><em>_</em></strong>__</p>
+Λείπει ο έλεγχος <code>if action == "play":</code>. Τι συμβαίνει με τους πόντους και τους αστεροειδείς όταν πατάς P την ώρα που παίζεις;  ______________________________<br />
+Διόρθωση:  ______________________________</p>
 <p><strong>3.</strong>
 <div class="language-python highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="k">elif</span> <span class="n">state</span> <span class="o">==</span> <span class="n">GAME_OVER</span><span class="p">:</span>
 </span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>    <span class="n">draw_centered_text</span><span class="p">(</span><span class="n">screen</span><span class="p">,</span> <span class="n">font</span><span class="p">,</span> <span class="s2">"Τέλος παιχνιδιού"</span><span class="p">,</span> <span class="n">RED</span><span class="p">,</span> <span class="p">(</span><span class="n">WIDTH</span> <span class="o">//</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">165</span><span class="p">))</span>
 </span><span id="__span-3-3"><a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a>    <span class="n">draw_panel</span><span class="p">(</span><span class="n">screen</span><span class="p">)</span>
 </span></code></pre></div>
-Τι βλέπεις στην οθόνη του τέλους και γιατί;  <strong><em>_</em></strong><strong><em>_</em></strong><strong><em>_</em></strong><strong><em>_</em></strong>__<br />
-Διόρθωση:  <strong><em>_</em></strong><strong><em>_</em></strong><strong><em>_</em></strong><strong><em>_</em></strong>__</p>
+Τι βλέπεις στην οθόνη του τέλους και γιατί;  ______________________________<br />
+Διόρθωση:  ______________________________</p>
 <h3 id="1-01-statespy-7">Ε. Στάδιο 1 — <code>01-states.py</code> (7′)<a class="headerlink" href="#1-01-statespy-7" title="Permanent link">&para;</a></h3>
 <ol>
 <li>Συμπλήρωσε τα οκτώ κενά (<code>TODO 1</code> έως <code>TODO 8</code>) και τρέξε το πρόγραμμα. Δοκίμασε όλες τις καταστάσεις και όλα τα πλήκτρα του πίνακα
@@ -3793,9 +3793,9 @@
 </tr>
 </tbody>
 </table>
-<p>Με την πρώτη αλλαγή, ποια πλήκτρα ξαναρχίζουν το παιχνίδι από την παύση;  <strong><em>_</em></strong><strong><em>_</em></strong><strong><em>_</em></strong><strong><em>_</em></strong>__<br />
-Με τη δεύτερη αλλαγή, τι κάνει το Q στην παύση, και πώς βγαίνεις από την παύση;  <strong><em>_</em></strong><strong><em>_</em></strong><strong><em>_</em></strong><strong><em>_</em></strong>__<br />
-Με την τρίτη αλλαγή, φαίνεται ο δείκτης του ποντικιού όταν παίζεις;  <strong><em>_</em></strong><strong><em>_</em></strong><strong><em>_</em></strong><strong><em>_</em></strong>__</p>
+<p>Με την πρώτη αλλαγή, ποια πλήκτρα ξαναρχίζουν το παιχνίδι από την παύση;  ______________________________<br />
+Με τη δεύτερη αλλαγή, τι κάνει το Q στην παύση, και πώς βγαίνεις από την παύση;  ______________________________<br />
+Με την τρίτη αλλαγή, φαίνεται ο δείκτης του ποντικιού όταν παίζεις;  ______________________________</p>
 <h3 id="transitions-next_state-8">ΣΤ. Γράψε εσύ: <code>TRANSITIONS</code> και <code>next_state</code> (8′)<a class="headerlink" href="#transitions-next_state-8" title="Permanent link">&para;</a></h3>
 <p>Στο <code>exercises.py</code> υπάρχουν οι τέσσερις καταστάσεις <code>MENU</code>, <code>PLAYING</code>, <code>PAUSED</code>, <code>GAME_OVER</code>. Γράψε:</p>
 <ol>
@@ -3810,9 +3810,9 @@
 χρησιμοποίησε τη μέθοδο <code>get</code> με δεύτερο όρισμα την ίδια την κατάσταση. Τρέξε <code>python check_exercises.py</code>.</p>
 <h3 id="3_1">Ζ. Κάρτα εξόδου (3′)<a class="headerlink" href="#3_1" title="Permanent link">&para;</a></h3>
 <ol>
-<li>Τι είναι η κατάσταση ενός παιχνιδιού, και ποια τρία πράγματα αποφασίζει;  <strong><em>_</em></strong><strong><em>_</em></strong><strong><em>_</em></strong><strong><em>_</em></strong>__</li>
-<li>Ποια η διαφορά ανάμεσα σε ένα συμβάν και σε μια ενέργεια; Δώσε ένα παράδειγμα με δύο συμβάντα που ζητούν την ίδια ενέργεια.  <strong><em>_</em></strong><strong><em>_</em></strong><strong><em>_</em></strong><strong><em>_</em></strong>__</li>
-<li>Γιατί ο πίνακας μεταβάσεων είναι καλύτερος από μια μεγάλη σειρά <code>if</code> και <code>elif</code>;  <strong><em>_</em></strong><strong><em>_</em></strong><strong><em>_</em></strong><strong><em>_</em></strong>__</li>
+<li>Τι είναι η κατάσταση ενός παιχνιδιού, και ποια τρία πράγματα αποφασίζει;  ______________________________</li>
+<li>Ποια η διαφορά ανάμεσα σε ένα συμβάν και σε μια ενέργεια; Δώσε ένα παράδειγμα με δύο συμβάντα που ζητούν την ίδια ενέργεια.  ______________________________</li>
+<li>Γιατί ο πίνακας μεταβάσεων είναι καλύτερος από μια μεγάλη σειρά <code>if</code> και <code>elif</code>;  ______________________________</li>
 </ol>
 <hr />
 <h2 id="2-48">Κύκλος 2 — Μενού και κουμπιά (48′)<a class="headerlink" href="#2-48" title="Permanent link">&para;</a></h2>
@@ -3966,7 +3966,7 @@
 </tr>
 </tbody>
 </table>
-<p>Ποια συμβάντα αλλάζουν τη <code>hovered</code>, και ποια όχι;  <strong><em>_</em></strong><strong><em>_</em></strong><strong><em>_</em></strong><strong><em>_</em></strong>__<br />
+<p>Ποια συμβάντα αλλάζουν τη <code>hovered</code>, και ποια όχι;  ______________________________<br />
 Στο βήμα 6, το κλικ είναι ανάμεσα στα δύο κουμπιά. Ποια είναι η τελευταία γραμμή <code>y</code> του «Συνέχεια» και η πρώτη του «Μενού»;  ______</p>
 <h3 id="2_1">Γ. Σωστό ή λάθος; (2′)<a class="headerlink" href="#2_1" title="Permanent link">&para;</a></h3>
 <table>
@@ -4012,22 +4012,22 @@
 </span><span id="__span-4-2"><a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a><span class="bp">self</span><span class="o">.</span><span class="n">rect</span><span class="o">.</span><span class="n">topleft</span> <span class="o">=</span> <span class="n">center</span>
 </span></code></pre></div>
 Για ένα κουμπί με <code>center = (320, 250)</code>, ποιο είναι το <code>rect.left</code> και ποιο το <code>rect.right</code>;  ______<br />
-Πού φαίνεται το κουμπί, και ποια είναι η σωστή δεύτερη γραμμή;  <strong><em>_</em></strong><strong><em>_</em></strong><strong><em>_</em></strong><strong><em>_</em></strong>__</p>
+Πού φαίνεται το κουμπί, και ποια είναι η σωστή δεύτερη γραμμή;  ______________________________</p>
 <p><strong>2.</strong>
 <div class="language-python highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="k">elif</span> <span class="n">event</span><span class="o">.</span><span class="n">type</span> <span class="o">==</span> <span class="n">pygame</span><span class="o">.</span><span class="n">MOUSEBUTTONDOWN</span><span class="p">:</span>
 </span><span id="__span-5-2"><a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a>    <span class="k">for</span> <span class="n">button</span> <span class="ow">in</span> <span class="n">buttons</span><span class="p">:</span>
 </span><span id="__span-5-3"><a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a>        <span class="k">if</span> <span class="n">button</span><span class="o">.</span><span class="n">is_clicked</span><span class="p">(</span><span class="n">event</span><span class="o">.</span><span class="n">pos</span><span class="p">):</span>
 </span><span id="__span-5-4"><a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a>            <span class="n">actions</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">button</span><span class="o">.</span><span class="n">action</span><span class="p">)</span>
 </span></code></pre></div>
-Τι γίνεται όταν κάνεις δεξί κλικ πάνω στο κουμπί «Παίξε» του μενού;  <strong><em>_</em></strong><strong><em>_</em></strong><strong><em>_</em></strong><strong><em>_</em></strong>__<br />
-Διόρθωση:  <strong><em>_</em></strong><strong><em>_</em></strong><strong><em>_</em></strong><strong><em>_</em></strong>__</p>
+Τι γίνεται όταν κάνεις δεξί κλικ πάνω στο κουμπί «Παίξε» του μενού;  ______________________________<br />
+Διόρθωση:  ______________________________</p>
 <p><strong>3.</strong>
 <div class="language-python highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="k">if</span> <span class="n">state</span> <span class="o">==</span> <span class="n">PAUSED</span><span class="p">:</span>
 </span><span id="__span-6-2"><a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a>    <span class="n">draw_buttons</span><span class="p">(</span><span class="n">screen</span><span class="p">,</span> <span class="n">font</span><span class="p">,</span> <span class="n">pause_buttons</span><span class="p">)</span>
 </span><span id="__span-6-3"><a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a>    <span class="n">draw_panel</span><span class="p">(</span><span class="n">screen</span><span class="p">)</span>
 </span></code></pre></div>
-Τι βλέπεις στην οθόνη της παύσης και γιατί;  <strong><em>_</em></strong><strong><em>_</em></strong><strong><em>_</em></strong><strong><em>_</em></strong>__<br />
-Διόρθωση:  <strong><em>_</em></strong><strong><em>_</em></strong><strong><em>_</em></strong><strong><em>_</em></strong>__</p>
+Τι βλέπεις στην οθόνη της παύσης και γιατί;  ______________________________<br />
+Διόρθωση:  ______________________________</p>
 <h3 id="2-02-buttonspy-7">Ε. Στάδιο 2 — <code>02-buttons.py</code> (7′)<a class="headerlink" href="#2-02-buttonspy-7" title="Permanent link">&para;</a></h3>
 <ol>
 <li>Συμπλήρωσε τα οκτώ κενά (<code>TODO 1</code> έως <code>TODO 8</code>) και τρέξε το πρόγραμμα. Δοκίμασε όλα τα κουμπιά και το hover.</li>
@@ -4059,10 +4059,10 @@
 </tr>
 </tbody>
 </table>
-<p>Με την πρώτη αλλαγή, ποια κουμπιά της παύσης επικαλύπτονται και πόσα pixel ύψος έχει η επικάλυψη;  <strong><em>_</em></strong><strong><em>_</em></strong><strong><em>_</em></strong><strong><em>_</em></strong>__<br />
-Αν κάνεις κλικ μέσα στην επικάλυψη, ποιες ενέργειες ζητούνται και τι γίνεται τελικά;  <strong><em>_</em></strong><strong><em>_</em></strong><strong><em>_</em></strong><strong><em>_</em></strong>__<br />
-Με τη δεύτερη αλλαγή, φωτίζονται τα κουμπιά; Πατιούνται;  <strong><em>_</em></strong><strong><em>_</em></strong><strong><em>_</em></strong><strong><em>_</em></strong>__<br />
-Με την τρίτη αλλαγή, τι κάνει το κλικ στο «Παίξε»; Τι κάνει το SPACE, και γιατί;  <strong><em>_</em></strong><strong><em>_</em></strong><strong><em>_</em></strong><strong><em>_</em></strong>__</p>
+<p>Με την πρώτη αλλαγή, ποια κουμπιά της παύσης επικαλύπτονται και πόσα pixel ύψος έχει η επικάλυψη;  ______________________________<br />
+Αν κάνεις κλικ μέσα στην επικάλυψη, ποιες ενέργειες ζητούνται και τι γίνεται τελικά;  ______________________________<br />
+Με τη δεύτερη αλλαγή, φωτίζονται τα κουμπιά; Πατιούνται;  ______________________________<br />
+Με την τρίτη αλλαγή, τι κάνει το κλικ στο «Παίξε»; Τι κάνει το SPACE, και γιατί;  ______________________________</p>
 <h3 id="button-10">ΣΤ. Γράψε εσύ: η κλάση <code>Button</code> (10′)<a class="headerlink" href="#button-10" title="Permanent link">&para;</a></h3>
 <p>Στο <code>exercises.py</code>, γράψε την κλάση <code>Button</code> (η μέθοδος <code>draw</code> δίνεται έτοιμη). Η <code>Button(text, center, action)</code> δέχεται το κείμενο,
 το κέντρο <code>(x, y)</code> και την ενέργεια. Έχει τις ιδιότητες:</p>
@@ -4105,9 +4105,9 @@
 χρησιμοποίησε την <code>collidepoint</code>. Τρέξε <code>python check_exercises.py</code>.</p>
 <h3 id="3_3">Ζ. Κάρτα εξόδου (3′)<a class="headerlink" href="#3_3" title="Permanent link">&para;</a></h3>
 <ol>
-<li>Ποιες τέσσερις ιδιότητες έχει ένα κουμπί και τι κρατά η καθεμία;  <strong><em>_</em></strong><strong><em>_</em></strong><strong><em>_</em></strong><strong><em>_</em></strong>__</li>
-<li>Γιατί το κλικ σε κουμπί ζητά μια ενέργεια αντί να αλλάζει μόνο του την κατάσταση;  <strong><em>_</em></strong><strong><em>_</em></strong><strong><em>_</em></strong><strong><em>_</em></strong>__</li>
-<li>Πότε αλλάζει η <code>hovered</code>, και τι σημαίνει ότι ένα κουμπί «θυμάται» το ποντίκι;  <strong><em>_</em></strong><strong><em>_</em></strong><strong><em>_</em></strong><strong><em>_</em></strong>__</li>
+<li>Ποιες τέσσερις ιδιότητες έχει ένα κουμπί και τι κρατά η καθεμία;  ______________________________</li>
+<li>Γιατί το κλικ σε κουμπί ζητά μια ενέργεια αντί να αλλάζει μόνο του την κατάσταση;  ______________________________</li>
+<li>Πότε αλλάζει η <code>hovered</code>, και τι σημαίνει ότι ένα κουμπί «θυμάται» το ποντίκι;  ______________________________</li>
 </ol>
 <hr />
 <h2 id="3-49">Κύκλος 3 — Ήχος και μουσική (49′)<a class="headerlink" href="#3-49" title="Permanent link">&para;</a></h2>
@@ -4183,7 +4183,7 @@
 </table>
 <p>Πόσες φορές πρέπει να πατήσεις Πάνω από την αρχική ένταση 0,5 για να φτάσεις στο 100%; Πόσες φορές Κάτω από την αρχική ένταση για
 να φτάσεις στο 0%;  ______<br />
-Τι θα τύπωνε η <code>print(0.7 + 0.1)</code>, και ποιο εργαλείο της <code>change_volume</code> το διορθώνει;  <strong><em>_</em></strong><strong><em>_</em></strong><strong><em>_</em></strong><strong><em>_</em></strong>__</p>
+Τι θα τύπωνε η <code>print(0.7 + 0.1)</code>, και ποιο εργαλείο της <code>change_volume</code> το διορθώνει;  ______________________________</p>
 <h3 id="6_3">Β. Ιχνηλάτηση: ένταση και σίγαση (6′)<a class="headerlink" href="#6_3" title="Permanent link">&para;</a></h3>
 <p>Το παιχνίδι ξεκινά με <code>volume = 0.5</code> και <code>muted = False</code>. Για κάθε πλήκτρο γράψε τις τιμές <strong>μετά</strong> το πλήκτρο, την ένταση που
 ακούγεται, και αν παίζει ο ήχος «click» (το κλικ παίζει μόνο όταν αλλάζει η ένταση με τα Πάνω και Κάτω).</p>
@@ -4257,7 +4257,7 @@
 </tr>
 </tbody>
 </table>
-<p>Στο βήμα 6 ο ήχος ήταν κλειστός. Τι κάνει το Κάτω σε αυτή την περίπτωση, και γιατί το επιλέξαμε έτσι;  <strong><em>_</em></strong><strong><em>_</em></strong><strong><em>_</em></strong><strong><em>_</em></strong>__</p>
+<p>Στο βήμα 6 ο ήχος ήταν κλειστός. Τι κάνει το Κάτω σε αυτή την περίπτωση, και γιατί το επιλέξαμε έτσι;  ______________________________</p>
 <h3 id="2_2">Γ. Σωστό ή λάθος; (2′)<a class="headerlink" href="#2_2" title="Permanent link">&para;</a></h3>
 <table>
 <thead>
@@ -4301,19 +4301,19 @@
 <div class="language-python highlight"><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="n">pygame</span><span class="o">.</span><span class="n">mixer</span><span class="o">.</span><span class="n">music</span><span class="o">.</span><span class="n">play</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span>
 </span><span id="__span-7-2"><a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a><span class="n">pygame</span><span class="o">.</span><span class="n">mixer</span><span class="o">.</span><span class="n">music</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="n">MUSIC_FILE</span><span class="p">)</span>
 </span></code></pre></div>
-Τι μήνυμα βλέπεις;  <strong><em>_</em></strong><strong><em>_</em></strong><strong><em>_</em></strong><strong><em>_</em></strong>__<br />
-Διόρθωση:  <strong><em>_</em></strong><strong><em>_</em></strong><strong><em>_</em></strong><strong><em>_</em></strong>__</p>
+Τι μήνυμα βλέπεις;  ______________________________<br />
+Διόρθωση:  ______________________________</p>
 <p><strong>2.</strong>
 <div class="language-python highlight"><pre><span></span><code><span id="__span-8-1"><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a><span class="n">pygame</span><span class="o">.</span><span class="n">mixer</span><span class="o">.</span><span class="n">music</span><span class="o">.</span><span class="n">play</span><span class="p">()</span>
 </span></code></pre></div>
-Αυτή η γραμμή είναι στο «play» αντί για το <code>play(-1)</code>. Τι ακούς, και πότε;  <strong><em>_</em></strong><strong><em>_</em></strong><strong><em>_</em></strong><strong><em>_</em></strong>__<br />
-Διόρθωση:  <strong><em>_</em></strong><strong><em>_</em></strong><strong><em>_</em></strong><strong><em>_</em></strong>__</p>
+Αυτή η γραμμή είναι στο «play» αντί για το <code>play(-1)</code>. Τι ακούς, και πότε;  ______________________________<br />
+Διόρθωση:  ______________________________</p>
 <p><strong>3.</strong>
 <div class="language-python highlight"><pre><span></span><code><span id="__span-9-1"><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a><span class="k">def</span><span class="w"> </span><span class="nf">change_volume</span><span class="p">(</span><span class="n">volume</span><span class="p">,</span> <span class="n">step</span><span class="p">):</span>
 </span><span id="__span-9-2"><a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a>    <span class="k">return</span> <span class="nb">round</span><span class="p">(</span><span class="n">volume</span> <span class="o">+</span> <span class="n">step</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
 </span></code></pre></div>
-Τι επιστρέφει η <code>change_volume(1.0, 0.1)</code>, και τι δείχνει το μενού μετά από ένα Πάνω στο 100%;  <strong><em>_</em></strong><strong><em>_</em></strong><strong><em>_</em></strong><strong><em>_</em></strong>__<br />
-Διόρθωση:  <strong><em>_</em></strong><strong><em>_</em></strong><strong><em>_</em></strong><strong><em>_</em></strong>__</p>
+Τι επιστρέφει η <code>change_volume(1.0, 0.1)</code>, και τι δείχνει το μενού μετά από ένα Πάνω στο 100%;  ______________________________<br />
+Διόρθωση:  ______________________________</p>
 <h3 id="3-03-soundpy-8">Ε. Στάδιο 3 — <code>03-sound.py</code> (8′)<a class="headerlink" href="#3-03-soundpy-8" title="Permanent link">&para;</a></h3>
 <ol>
 <li>Βεβαιώσου ότι έτρεξες το <code>make_sounds.py</code>. Συμπλήρωσε τα οκτώ κενά (<code>TODO 1</code> έως <code>TODO 8</code>) και τρέξε το πρόγραμμα με χαμηλή
@@ -4346,8 +4346,8 @@
 </tr>
 </tbody>
 </table>
-<p>Με την πρώτη αλλαγή, τι ένταση δείχνει το μενού μετά από ένα Πάνω; (Θυμήσου τη <code>round(…, 1)</code>.)  <strong><em>_</em></strong><strong><em>_</em></strong><strong><em>_</em></strong><strong><em>_</em></strong>__<br />
-Με τη δεύτερη αλλαγή, τι γράφει το μενού όταν πατήσεις M και τι ακούς;  <strong><em>_</em></strong><strong><em>_</em></strong><strong><em>_</em></strong><strong><em>_</em></strong>__<br />
+<p>Με την πρώτη αλλαγή, τι ένταση δείχνει το μενού μετά από ένα Πάνω; (Θυμήσου τη <code>round(…, 1)</code>.)  ______________________________<br />
+Με τη δεύτερη αλλαγή, τι γράφει το μενού όταν πατήσεις M και τι ακούς;  ______________________________<br />
 Με την τρίτη αλλαγή, μετά από πόσα δευτερόλεπτα σταματά η μουσική;  ______</p>
 <h3 id="change_volume-volume_text-9">ΣΤ. Γράψε εσύ: <code>change_volume</code> και <code>volume_text</code> (9′)<a class="headerlink" href="#change_volume-volume_text-9" title="Permanent link">&para;</a></h3>
 <p>Στο <code>exercises.py</code>, γράψε δύο συναρτήσεις.</p>
@@ -4365,9 +4365,9 @@
 <code>python check_exercises.py</code>.</p>
 <h3 id="3_5">Ζ. Κάρτα εξόδου (3′)<a class="headerlink" href="#3_5" title="Permanent link">&para;</a></h3>
 <ol>
-<li>Ποια η διαφορά ανάμεσα στην <code>pygame.mixer.Sound</code> και στην <code>pygame.mixer.music</code>, και πότε διαλέγεις την καθεμία;  <strong><em>_</em></strong><strong><em>_</em></strong><strong><em>_</em></strong><strong><em>_</em></strong>__</li>
-<li>Γιατί η σίγαση κρατά ξεχωριστά τις <code>volume</code> και <code>muted</code>, αντί να βάζει απλώς <code>volume = 0.0</code>;  <strong><em>_</em></strong><strong><em>_</em></strong><strong><em>_</em></strong><strong><em>_</em></strong>__</li>
-<li>Γιατί η <code>change_volume</code> στρογγυλοποιεί, και τι θα επέστρεφε η <code>change_volume(0.7, 0.1)</code> αν δεν το έκανε;  <strong><em>_</em></strong><strong><em>_</em></strong><strong><em>_</em></strong><strong><em>_</em></strong>__</li>
+<li>Ποια η διαφορά ανάμεσα στην <code>pygame.mixer.Sound</code> και στην <code>pygame.mixer.music</code>, και πότε διαλέγεις την καθεμία;  ______________________________</li>
+<li>Γιατί η σίγαση κρατά ξεχωριστά τις <code>volume</code> και <code>muted</code>, αντί να βάζει απλώς <code>volume = 0.0</code>;  ______________________________</li>
+<li>Γιατί η <code>change_volume</code> στρογγυλοποιεί, και τι θα επέστρεφε η <code>change_volume(0.7, 0.1)</code> αν δεν το έκανε;  ______________________________</li>
 </ol>
 <hr />
 <h2 id="4-48">Κύκλος 4 — Ρεκόρ και ολοκλήρωση (48′)<a class="headerlink" href="#4-48" title="Permanent link">&para;</a></h2>
@@ -4418,8 +4418,8 @@
 </tr>
 </tbody>
 </table>
-<p>Ποια δύο είδη προβλήματος αντιμετωπίζει η <code>read_record</code>, και ποιο σφάλμα της Python πιάνει για καθένα;  <strong><em>_</em></strong><strong><em>_</em></strong><strong><em>_</em></strong><strong><em>_</em></strong>__<br />
-Γιατί υπάρχει η <code>max(0, value)</code>;  <strong><em>_</em></strong><strong><em>_</em></strong><strong><em>_</em></strong><strong><em>_</em></strong>__</p>
+<p>Ποια δύο είδη προβλήματος αντιμετωπίζει η <code>read_record</code>, και ποιο σφάλμα της Python πιάνει για καθένα;  ______________________________<br />
+Γιατί υπάρχει η <code>max(0, value)</code>;  ______________________________</p>
 <h3 id="6_4">Β. Ιχνηλάτηση: πέντε παιχνίδια (6′)<a class="headerlink" href="#6_4" title="Permanent link">&para;</a></h3>
 <p>Το αρχείο <code>record.txt</code> έχει στην αρχή το κείμενο <code>10</code>. Παίζονται πέντε παιχνίδια με τους πόντους του πίνακα. Σε κάθε γραμμή, γράψε τι
 επιστρέφει η <code>update_record(RECORD_FILE, score)</code> και τι έχει το αρχείο <strong>μετά</strong>.</p>
@@ -4472,8 +4472,8 @@
 </tbody>
 </table>
 <p>Αν η συνθήκη της <code>update_record</code> ήταν <code>score &gt;= read_record(path)</code>, ποια παιχνίδια θα έδιναν <code>True</code>, και τι θα έβλεπε ο παίκτης στην
-οθόνη του τέλους;  <strong><em>_</em></strong><strong><em>_</em></strong><strong><em>_</em></strong><strong><em>_</em></strong>__<br />
-Πόσες φορές γράφεται το αρχείο στα πέντε παιχνίδια, και γιατί το HUD δεν διαβάζει το αρχείο σε κάθε καρέ;  <strong><em>_</em></strong><strong><em>_</em></strong><strong><em>_</em></strong><strong><em>_</em></strong>__</p>
+οθόνη του τέλους;  ______________________________<br />
+Πόσες φορές γράφεται το αρχείο στα πέντε παιχνίδια, και γιατί το HUD δεν διαβάζει το αρχείο σε κάθε καρέ;  ______________________________</p>
 <h3 id="4-04-finalpy-8">Γ. Στάδιο 4 — <code>04-final.py</code> (8′)<a class="headerlink" href="#4-04-finalpy-8" title="Permanent link">&para;</a></h3>
 <ol>
 <li>Συμπλήρωσε τα οκτώ κενά (<code>TODO 1</code> έως <code>TODO 8</code>) και παίξε δύο ολόκληρα παιχνίδια. Δες το ρεκόρ στο HUD, στο μενού και στην οθόνη
@@ -4506,9 +4506,9 @@
 </tr>
 </tbody>
 </table>
-<p>Με την πρώτη αλλαγή, τι ρεκόρ δείχνει το μενού, και τι δείχνει η οθόνη του τέλους αν κάνεις 5 πόντους;  <strong><em>_</em></strong><strong><em>_</em></strong><strong><em>_</em></strong><strong><em>_</em></strong>__<br />
-Με τη δεύτερη αλλαγή, σπάει το πρόγραμμα; Τι δείχνει το μενού;  <strong><em>_</em></strong><strong><em>_</em></strong><strong><em>_</em></strong><strong><em>_</em></strong>__<br />
-Με την τρίτη αλλαγή, τι δείχνει η οθόνη του τέλους για ένα παιχνίδι με 0 πόντους;  <strong><em>_</em></strong><strong><em>_</em></strong><strong><em>_</em></strong><strong><em>_</em></strong>__</p>
+<p>Με την πρώτη αλλαγή, τι ρεκόρ δείχνει το μενού, και τι δείχνει η οθόνη του τέλους αν κάνεις 5 πόντους;  ______________________________<br />
+Με τη δεύτερη αλλαγή, σπάει το πρόγραμμα; Τι δείχνει το μενού;  ______________________________<br />
+Με την τρίτη αλλαγή, τι δείχνει η οθόνη του τέλους για ένα παιχνίδι με 0 πόντους;  ______________________________</p>
 <h3 id="4">Δ. Δοκιμές (4′)<a class="headerlink" href="#4" title="Permanent link">&para;</a></h3>
 <p>Πρόβλεψε και μετά δοκίμασε στο <code>04-final.py</code>:</p>
 <table>
@@ -4572,9 +4572,9 @@
 </ol>
 <h3 id="3_6">ΣΤ. Κάρτα εξόδου (3′)<a class="headerlink" href="#3_6" title="Permanent link">&para;</a></h3>
 <ol>
-<li>Πότε διαβάζεται το αρχείο του ρεκόρ και πότε γράφεται, και γιατί όχι σε κάθε καρέ;  <strong><em>_</em></strong><strong><em>_</em></strong><strong><em>_</em></strong><strong><em>_</em></strong>__</li>
-<li>Τι κάνει η <code>read_record</code> όταν το αρχείο λείπει ή έχει άκυρο περιεχόμενο, και γιατί είναι σημαντικό;  <strong><em>_</em></strong><strong><em>_</em></strong><strong><em>_</em></strong><strong><em>_</em></strong>__</li>
-<li>Ποιες τρεις έννοιες του σημερινού μαθήματος θα χρησιμοποιούσες σε ένα δικό σου παιχνίδι με μενού, και πού;  <strong><em>_</em></strong><strong><em>_</em></strong><strong><em>_</em></strong><strong><em>_</em></strong>__</li>
+<li>Πότε διαβάζεται το αρχείο του ρεκόρ και πότε γράφεται, και γιατί όχι σε κάθε καρέ;  ______________________________</li>
+<li>Τι κάνει η <code>read_record</code> όταν το αρχείο λείπει ή έχει άκυρο περιεχόμενο, και γιατί είναι σημαντικό;  ______________________________</li>
+<li>Ποιες τρεις έννοιες του σημερινού μαθήματος θα χρησιμοποιούσες σε ένα δικό σου παιχνίδι με μενού, και πού;  ______________________________</li>
 </ol>
 <hr />
 <h2 id="_1">Αυτοέλεγχος<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
@@ -4689,10 +4689,10 @@
     
       
       
-      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.sections", "navigation.top", "navigation.footer", "content.code.copy", "content.code.annotate", "toc.follow", "search.suggest", "search.highlight"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "\u0391\u03bd\u03c4\u03b9\u03b3\u03c1\u03ac\u03c6\u03b7\u03ba\u03b5 \u03c3\u03c4\u03bf \u03c0\u03c1\u03cc\u03c7\u03b5\u03b9\u03c1\u03bf", "clipboard.copy": "\u0391\u03bd\u03c4\u03b9\u03b3\u03c1\u03b1\u03c6\u03ae \u03c3\u03c4\u03bf \u03c0\u03c1\u03cc\u03c7\u03b5\u03b9\u03c1\u03bf", "search.result.more.one": "1 \u03b1\u03ba\u03cc\u03bc\u03b1 \u03c3\u03b5 \u03b1\u03c5\u03c4\u03ae\u03bd \u03c4\u03b7 \u03c3\u03b5\u03bb\u03af\u03b4\u03b1", "search.result.more.other": "# \u03b1\u03ba\u03cc\u03bc\u03b1 \u03c3\u03b5 \u03b1\u03c5\u03c4\u03ae\u03bd \u03c4\u03b7 \u03c3\u03b5\u03bb\u03af\u03b4\u03b1", "search.result.none": "\u03b4\u03b5\u03bd \u03b2\u03c1\u03ae\u03ba\u03b5 \u03ba\u03ac\u03c0\u03bf\u03b9\u03bf \u03ad\u03b3\u03b3\u03c1\u03b1\u03c6\u03bf", "search.result.one": "1 \u03ad\u03b3\u03b3\u03c1\u03b1\u03c6\u03bf \u03c0\u03bf\u03c5 \u03c4\u03b1\u03b9\u03c1\u03b9\u03ac\u03b6\u03b5\u03b9", "search.result.other": "# \u03ad\u03b3\u03b3\u03c1\u03b1\u03c6\u03b1 \u03c0\u03bf\u03c5 \u03c4\u03b1\u03b9\u03c1\u03b9\u03ac\u03b6\u03bf\u03c5\u03bd", "search.result.placeholder": "\u03a0\u03bb\u03b7\u03ba\u03c4\u03c1\u03bf\u03bb\u03bf\u03b3\u03ae\u03c3\u03c4\u03b5 \u03b3\u03b9\u03b1 \u03bd\u03b1 \u03b1\u03c1\u03c7\u03af\u03c3\u03b5\u03b9 \u03b7 \u03b1\u03bd\u03b1\u03b6\u03ae\u03c4\u03b7\u03c3\u03b7", "search.result.term.missing": "\u039b\u03b5\u03af\u03c0\u03b5\u03b9", "select.version": "\u0395\u03c0\u03b9\u03bb\u03bf\u03b3\u03ae \u03ad\u03ba\u03b4\u03bf\u03c3\u03b7\u03c2"}, "version": null}</script>
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.sections", "navigation.top", "navigation.footer", "content.code.copy", "content.code.annotate", "toc.follow", "search.suggest", "search.highlight"], "search": "../../assets/javascripts/workers/search.a7633da7.min.js", "tags": null, "translations": {"clipboard.copied": "\u0391\u03bd\u03c4\u03b9\u03b3\u03c1\u03ac\u03c6\u03b7\u03ba\u03b5 \u03c3\u03c4\u03bf \u03c0\u03c1\u03cc\u03c7\u03b5\u03b9\u03c1\u03bf", "clipboard.copy": "\u0391\u03bd\u03c4\u03b9\u03b3\u03c1\u03b1\u03c6\u03ae \u03c3\u03c4\u03bf \u03c0\u03c1\u03cc\u03c7\u03b5\u03b9\u03c1\u03bf", "search.result.more.one": "1 \u03b1\u03ba\u03cc\u03bc\u03b1 \u03c3\u03b5 \u03b1\u03c5\u03c4\u03ae\u03bd \u03c4\u03b7 \u03c3\u03b5\u03bb\u03af\u03b4\u03b1", "search.result.more.other": "# \u03b1\u03ba\u03cc\u03bc\u03b1 \u03c3\u03b5 \u03b1\u03c5\u03c4\u03ae\u03bd \u03c4\u03b7 \u03c3\u03b5\u03bb\u03af\u03b4\u03b1", "search.result.none": "\u03b4\u03b5\u03bd \u03b2\u03c1\u03ae\u03ba\u03b5 \u03ba\u03ac\u03c0\u03bf\u03b9\u03bf \u03ad\u03b3\u03b3\u03c1\u03b1\u03c6\u03bf", "search.result.one": "1 \u03ad\u03b3\u03b3\u03c1\u03b1\u03c6\u03bf \u03c0\u03bf\u03c5 \u03c4\u03b1\u03b9\u03c1\u03b9\u03ac\u03b6\u03b5\u03b9", "search.result.other": "# \u03ad\u03b3\u03b3\u03c1\u03b1\u03c6\u03b1 \u03c0\u03bf\u03c5 \u03c4\u03b1\u03b9\u03c1\u03b9\u03ac\u03b6\u03bf\u03c5\u03bd", "search.result.placeholder": "\u03a0\u03bb\u03b7\u03ba\u03c4\u03c1\u03bf\u03bb\u03bf\u03b3\u03ae\u03c3\u03c4\u03b5 \u03b3\u03b9\u03b1 \u03bd\u03b1 \u03b1\u03c1\u03c7\u03af\u03c3\u03b5\u03b9 \u03b7 \u03b1\u03bd\u03b1\u03b6\u03ae\u03c4\u03b7\u03c3\u03b7", "search.result.term.missing": "\u039b\u03b5\u03af\u03c0\u03b5\u03b9", "select.version": "\u0395\u03c0\u03b9\u03bb\u03bf\u03b3\u03ae \u03ad\u03ba\u03b4\u03bf\u03c3\u03b7\u03c2"}, "version": null}</script>
     
     
-      <script src="../../assets/javascripts/bundle.d7400e89.min.js"></script>
+      <script src="../../assets/javascripts/bundle.c21346df.min.js"></script>
       
     
   </body>
