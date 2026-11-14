@@ -1,0 +1,4436 @@
+
+<!doctype html>
+<html lang="el" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Εργαστηριακό υλικό μαθήματος — ΣΑΕΚ, Γ΄ εξάμηνο">
+      
+      
+        <meta name="author" content="Θόδωρος Θεμελής">
+      
+      
+        <link rel="canonical" href="https://ththemelis.github.io/pygame-gr-site/simple/02-star/">
+      
+      
+        <link rel="prev" href="../01-player/">
+      
+      
+        <link rel="next" href="../03-stars/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.8.0">
+    
+    
+      
+        <title>Μ10: Το αστέρι που πέφτει - Προγραμματισμός εφαρμογών διαδικτύου & παιχνιδιών (Python, pygame)</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.57a0d79d.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.fb2fffe2.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/course.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#10" class="md-skip">
+          Μετάβαση στο περιεχόμενο
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Κεφαλίδα">
+    <a href="../.." title="Προγραμματισμός εφαρμογών διαδικτύου &amp; παιχνιδιών (Python, pygame)" class="md-header__button md-logo" aria-label="Προγραμματισμός εφαρμογών διαδικτύου & παιχνιδιών (Python, pygame)" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Προγραμματισμός εφαρμογών διαδικτύου & παιχνιδιών (Python, pygame)
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Μ10: Το αστέρι που πέφτει
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Σκοτεινό θέμα"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Σκοτεινό θέμα" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m17.75 4.09-2.53 1.94.91 3.06-2.63-1.81-2.63 1.81.91-3.06-2.53-1.94L12.44 4l1.06-3 1.06 3zm3.5 6.91-1.64 1.25.59 1.98-1.7-1.17-1.7 1.17.59-1.98L15.75 11l2.06-.05L18.5 9l.69 1.95zm-2.28 4.95c.83-.08 1.72 1.1 1.19 1.85-.32.45-.66.87-1.08 1.27C15.17 23 8.84 23 4.94 19.07c-3.91-3.9-3.91-10.24 0-14.14.4-.4.82-.76 1.27-1.08.75-.53 1.93.36 1.85 1.19-.27 2.86.69 5.83 2.89 8.02a9.96 9.96 0 0 0 8.02 2.89m-1.64 2.02a12.08 12.08 0 0 1-7.8-3.47c-2.17-2.19-3.33-5-3.49-7.82-2.81 3.14-2.7 7.96.31 10.98 3.02 3.01 7.84 3.12 10.98.31"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Φωτεινό θέμα"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Φωτεινό θέμα" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 7a5 5 0 0 1 5 5 5 5 0 0 1-5 5 5 5 0 0 1-5-5 5 5 0 0 1 5-5m0 2a3 3 0 0 0-3 3 3 3 0 0 0 3 3 3 3 0 0 0 3-3 3 3 0 0 0-3-3m0-7 2.39 3.42C13.65 5.15 12.84 5 12 5s-1.65.15-2.39.42zM3.34 7l4.16-.35A7.2 7.2 0 0 0 5.94 8.5c-.44.74-.69 1.5-.83 2.29zm.02 10 1.76-3.77a7.131 7.131 0 0 0 2.38 4.14zM20.65 7l-1.77 3.79a7.02 7.02 0 0 0-2.38-4.15zm-.01 10-4.14.36c.59-.51 1.12-1.14 1.54-1.86.42-.73.69-1.5.83-2.29zM12 22l-2.41-3.44c.74.27 1.55.44 2.41.44.82 0 1.63-.17 2.37-.44z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Αναζήτηση" placeholder="Αναζήτηση" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Αναζήτηση">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Καθαρισμός" aria-label="Καθαρισμός" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Αρχικοποίηση αναζήτησης
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Πλοήγηση" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Προγραμματισμός εφαρμογών διαδικτύου &amp; παιχνιδιών (Python, pygame)" class="md-nav__button md-logo" aria-label="Προγραμματισμός εφαρμογών διαδικτύου & παιχνιδιών (Python, pygame)" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    Προγραμματισμός εφαρμογών διαδικτύου & παιχνιδιών (Python, pygame)
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Αρχική
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../setup/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Εγκατάσταση και ρύθμιση
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Μάθημα 1 — Σπάσε τον κωδικό
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Μάθημα 1 — Σπάσε τον κωδικό
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../01-guess-number/lesson-01/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Μάθημα
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../01-guess-number/worksheet-01/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Φύλλο εργασίας
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Μάθημα 2 — Πέτρα, ψαλίδι, χαρτί
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Μάθημα 2 — Πέτρα, ψαλίδι, χαρτί
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../02-rock-paper-scissors/lesson-02/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Μάθημα
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../02-rock-paper-scissors/worksheet-02/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Φύλλο εργασίας
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Μάθημα 3 — Κρεμάλα
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Μάθημα 3 — Κρεμάλα
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../03-hangman/lesson-03/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Μάθημα
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../03-hangman/worksheet-03/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Φύλλο εργασίας
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Μάθημα 4 — Κουίζ γνώσεων
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Μάθημα 4 — Κουίζ γνώσεων
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../04-quiz-console/lesson-04/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Μάθημα
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../04-quiz-console/worksheet-04/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Φύλλο εργασίας
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7" >
+        
+          
+          <label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Φυλλάδιο εξάσκησης (Μαθήματα 2–4)
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Φυλλάδιο εξάσκησης (Μαθήματα 2–4)
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../practice/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Φυλλάδιο
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8" >
+        
+          
+          <label class="md-nav__link" for="__nav_8" id="__nav_8_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Μάθημα 5 — Λαβύρινθος
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_8_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_8">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Μάθημα 5 — Λαβύρινθος
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../05-maze/lesson-05/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Μάθημα
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../05-maze/worksheet-05/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Φύλλο εργασίας
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_9" >
+        
+          
+          <label class="md-nav__link" for="__nav_9" id="__nav_9_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Μάθημα 6 — Μονομαχία
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_9_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_9">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Μάθημα 6 — Μονομαχία
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../06-duel/lesson-06/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Μάθημα
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../06-duel/worksheet-06/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Φύλλο εργασίας
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_10" >
+        
+          
+          <label class="md-nav__link" for="__nav_10" id="__nav_10_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Μάθημα 7 — Πάτα τον στόχο
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_10_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_10">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Μάθημα 7 — Πάτα τον στόχο
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../07-click-target/lesson-07/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Μάθημα
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../07-click-target/worksheet-07/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Φύλλο εργασίας
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_11" >
+        
+          
+          <label class="md-nav__link" for="__nav_11" id="__nav_11_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Μάθημα 8 — Πάγωσε την μπάλα
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_11_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_11">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Μάθημα 8 — Πάγωσε την μπάλα
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../08-freeze-ball/lesson-08/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Μάθημα
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../08-freeze-ball/worksheet-08/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Φύλλο εργασίας
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_12" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_12" id="__nav_12_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Απλή διαδρομή για τα Μ9–Μ15
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_12_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_12">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Απλή διαδρομή για τα Μ9–Μ15
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Πώς δουλεύουμε
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../review/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Επαναληπτικό Μ7–Μ8
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../01-player/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Μ9: Ο παίκτης
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Μ10: Το αστέρι που πέφτει
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Μ10: Το αστέρι που πέφτει
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Πίνακας περιεχομένων">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Πίνακας περιεχομένων
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Στο τέλος θα μπορείς
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Τα αρχεία της συνάντησης
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#place_star" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Η τύχη και η έτοιμη συνάρτηση place_star
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#1-38" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Κύκλος 1 — Το αστέρι πέφτει (38′)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Κύκλος 1 — Το αστέρι πέφτει (38′)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Ξεκίνημα (4′)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Α. Πρόβλεψη (5′)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#7" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Β. Ιχνηλάτηση στην οθόνη (7′)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#8" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Γ. Αλλάζω ένα πράγμα (8′)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#1-01-respawnpy-12" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Δ. Στάδιο 1 — 01-respawn.py (12′)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Ε. Κάρτα εξόδου (2′)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-38" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Κύκλος 2 — Πιάνω το αστέρι (38′)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Κύκλος 2 — Πιάνω το αστέρι (38′)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#4_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Ξεκίνημα (4′)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#5_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Α. Πρόβλεψη (5′)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#7_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Β. Ιχνηλάτηση στην οθόνη (7′)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#8_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Γ. Αλλάζω ένα πράγμα (8′)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-02-catchpy-12" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Δ. Στάδιο 2 — 02-catch.py (12′)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Ε. Κάρτα εξόδου (2′)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-38" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Κύκλος 3 — Σκορ και χαμένα στην οθόνη (38′)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Κύκλος 3 — Σκορ και χαμένα στην οθόνη (38′)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#4_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Ξεκίνημα (4′)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#5_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Α. Πρόβλεψη (5′)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#7_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Β. Ιχνηλάτηση στην οθόνη (7′)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#8_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Γ. Αλλάζω ένα πράγμα (8′)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-03-missespy-12" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Δ. Στάδιο 3 — 03-misses.py (12′)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Ε. Κάρτα εξόδου (2′)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-38" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Κύκλος 4 — Η δυσκολία μεγαλώνει (38′)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Κύκλος 4 — Η δυσκολία μεγαλώνει (38′)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#4_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Ξεκίνημα (4′)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#5_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Α. Πρόβλεψη (5′)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#7_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Β. Ιχνηλάτηση στην οθόνη (7′)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#8_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Γ. Αλλάζω ένα πράγμα (8′)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4-04-levelpy-12" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Δ. Στάδιο 4 — 04-level.py (12′)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Ε. Κάρτα εξόδου (2′)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../03-stars/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Μ11: Πολλά αστέρια
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../04-menu/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Μ12: Μενού και νέο παιχνίδι
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../05-dodge/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Μ13: Η παραλλαγή «αποφυγή»
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../06-mine/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Μ14: Η παραλλαγή μου
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../07-final/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Μ15: Ολοκλήρωση και φεστιβάλ
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_13" >
+        
+          
+          <label class="md-nav__link" for="__nav_13" id="__nav_13_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Μάθημα 9 — Pong
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_13_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_13">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Μάθημα 9 — Pong
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../09-pong/lesson-09/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Μάθημα
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../09-pong/worksheet-09/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Φύλλο εργασίας
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_14" >
+        
+          
+          <label class="md-nav__link" for="__nav_14" id="__nav_14_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Μάθημα 10 — Πιάσε τα αστέρια
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_14_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_14">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Μάθημα 10 — Πιάσε τα αστέρια
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../10-catch-stars/lesson-10/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Μάθημα
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../10-catch-stars/worksheet-10/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Φύλλο εργασίας
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_15" >
+        
+          
+          <label class="md-nav__link" for="__nav_15" id="__nav_15_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Μάθημα 11 — Διαστημική αποφυγή
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_15_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_15">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Μάθημα 11 — Διαστημική αποφυγή
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../11-space-dodge/lesson-11/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Μάθημα
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../11-space-dodge/worksheet-11/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Φύλλο εργασίας
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_16" >
+        
+          
+          <label class="md-nav__link" for="__nav_16" id="__nav_16_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Μάθημα 12 — Το ίδιο παιχνίδι, ολοκληρωμένο
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_16_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_16">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Μάθημα 12 — Το ίδιο παιχνίδι, ολοκληρωμένο
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../12-complete-game/lesson-12/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Μάθημα
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../12-complete-game/worksheet-12/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Φύλλο εργασίας
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_17" >
+        
+          
+          <label class="md-nav__link" for="__nav_17" id="__nav_17_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Μάθημα 13 — Φίδι
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_17_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_17">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Μάθημα 13 — Φίδι
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../13-snake/lesson-13/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Μάθημα
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../13-snake/worksheet-13/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Φύλλο εργασίας
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_18" >
+        
+          
+          <label class="md-nav__link" for="__nav_18" id="__nav_18_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Μάθημα 14 — Project (1/2): από την ιδέα στο πρωτότυπο
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_18_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_18">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Μάθημα 14 — Project (1/2): από την ιδέα στο πρωτότυπο
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../14-project-prototype/lesson-14/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Μάθημα
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../14-project-prototype/worksheet-14/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Φύλλο εργασίας
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_19" >
+        
+          
+          <label class="md-nav__link" for="__nav_19" id="__nav_19_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Μάθημα 15 — Project (2/2): από το πρωτότυπο στο τελικό παιχνίδι
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_19_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_19">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Μάθημα 15 — Project (2/2): από το πρωτότυπο στο τελικό παιχνίδι
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../15-project-final/lesson-15/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Μάθημα
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../15-project-final/worksheet-15/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Φύλλο εργασίας
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_20" >
+        
+          
+          <label class="md-nav__link" for="__nav_20" id="__nav_20_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Project — κάρτες λειτουργιών
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_20_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_20">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Project — κάρτες λειτουργιών
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../15-project-final/cards/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Οδηγός καρτών
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../15-project-final/cards/lives/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Ζωές
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../15-project-final/cards/countdown/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Αντίστροφη μέτρηση
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../15-project-final/cards/levels/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Επίπεδα
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../15-project-final/cards/record/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Ρεκόρ
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../15-project-final/cards/record-file/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Ρεκόρ σε αρχείο
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../15-project-final/cards/mouse/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Κλικ με το ποντίκι
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../15-project-final/cards/gravity/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Βαρύτητα και άλμα
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../15-project-final/cards/pause/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Παύση
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../15-project-final/cards/help-screen/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Οθόνη οδηγιών
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../15-project-final/cards/objects/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Πολλά αντικείμενα
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../15-project-final/cards/collisions/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Συγκρούσεις
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../15-project-final/cards/shuffle/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Ανακάτεμα
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../15-project-final/cards/images/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Εικόνες
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../15-project-final/cards/sounds/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Ήχοι και μουσική
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Πίνακας περιεχομένων">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Πίνακας περιεχομένων
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Στο τέλος θα μπορείς
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Τα αρχεία της συνάντησης
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#place_star" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Η τύχη και η έτοιμη συνάρτηση place_star
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#1-38" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Κύκλος 1 — Το αστέρι πέφτει (38′)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Κύκλος 1 — Το αστέρι πέφτει (38′)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Ξεκίνημα (4′)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Α. Πρόβλεψη (5′)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#7" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Β. Ιχνηλάτηση στην οθόνη (7′)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#8" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Γ. Αλλάζω ένα πράγμα (8′)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#1-01-respawnpy-12" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Δ. Στάδιο 1 — 01-respawn.py (12′)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Ε. Κάρτα εξόδου (2′)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-38" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Κύκλος 2 — Πιάνω το αστέρι (38′)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Κύκλος 2 — Πιάνω το αστέρι (38′)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#4_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Ξεκίνημα (4′)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#5_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Α. Πρόβλεψη (5′)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#7_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Β. Ιχνηλάτηση στην οθόνη (7′)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#8_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Γ. Αλλάζω ένα πράγμα (8′)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-02-catchpy-12" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Δ. Στάδιο 2 — 02-catch.py (12′)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Ε. Κάρτα εξόδου (2′)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-38" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Κύκλος 3 — Σκορ και χαμένα στην οθόνη (38′)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Κύκλος 3 — Σκορ και χαμένα στην οθόνη (38′)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#4_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Ξεκίνημα (4′)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#5_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Α. Πρόβλεψη (5′)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#7_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Β. Ιχνηλάτηση στην οθόνη (7′)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#8_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Γ. Αλλάζω ένα πράγμα (8′)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-03-missespy-12" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Δ. Στάδιο 3 — 03-misses.py (12′)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Ε. Κάρτα εξόδου (2′)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-38" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Κύκλος 4 — Η δυσκολία μεγαλώνει (38′)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Κύκλος 4 — Η δυσκολία μεγαλώνει (38′)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#4_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Ξεκίνημα (4′)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#5_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Α. Πρόβλεψη (5′)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#7_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Β. Ιχνηλάτηση στην οθόνη (7′)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#8_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Γ. Αλλάζω ένα πράγμα (8′)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4-04-levelpy-12" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Δ. Στάδιο 4 — 04-level.py (12′)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Ε. Κάρτα εξόδου (2′)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="10">Μ10: το αστέρι που πέφτει<a class="headerlink" href="#10" title="Permanent link">&para;</a></h1>
+<div class="admonition info">
+<p class="admonition-title">Πώς δουλεύουμε</p>
+<p>Δουλεύετε σε ζευγάρια: ο ένας πληκτρολογεί και ο άλλος προβλέπει και εξηγεί. Αλλάζετε ρόλους κάθε 10′. Σε κάθε κύκλο
+ακολουθείτε τη ρουτίνα <strong>Τρέχω – Προβλέπω – Αλλάζω – Εξηγώ</strong>, όπως στο <a href="../review/">Επαναληπτικό</a>: ξεκινάτε από ένα
+πρόγραμμα που ήδη δουλεύει, γράφετε πρώτα την πρόβλεψή σας, αλλάζετε ένα πράγμα τη φορά και λέτε με δικά σας λόγια τι έγινε.
+Σήμερα το παιχνίδι έχει και <strong>τύχη</strong>: η θέση ενός νέου αστεριού δεν προβλέπεται. Προβλέπουμε μόνο ό,τι δεν είναι τυχαίο.
+Αν κολλήσετε, δείτε τη σελίδα <a href="../">Πώς δουλεύουμε</a>.</p>
+</div>
+<h2 id="_1">Στο τέλος θα μπορείς<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
+<ul>
+<li>Να κινείς ένα δεύτερο <code>Rect</code>, το αστέρι, και να το ξαναβάζεις πάνω όταν βγαίνει από το παράθυρο.</li>
+<li>Να χρησιμοποιείς μια έτοιμη συνάρτηση που αλλάζει ένα αντικείμενο: της δίνεις το <code>Rect</code> και το αλλάζει η ίδια.</li>
+<li>Να ρωτάς με την <code>colliderect</code> αν ο παίκτης έπιασε το αστέρι και να αλλάζεις το σκορ.</li>
+<li>Να δείχνεις σκορ και χαμένα αστέρια στην οθόνη, με κείμενο που φτιάχνεται από τα δεδομένα.</li>
+<li>Να υπολογίζεις μια ταχύτητα από το σκορ και να της βάζεις όριο με τη <code>min</code>.</li>
+</ul>
+<h2 id="_2">Τα αρχεία της συνάντησης<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
+<p>Μέσα στον φάκελο <code>python-games</code> φτιάξε τον φάκελο <code>star</code> και αντίγραψε εκεί τα παρακάτω αρχεία.</p>
+<table>
+<thead>
+<tr>
+<th>Αρχείο</th>
+<th>Τι είναι</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="code/starter/00-start.py"><code>00-start.py</code></a></td>
+<td>Έτοιμο πρόγραμμα του κύκλου 1: ένα αστέρι που πέφτει</td>
+</tr>
+<tr>
+<td><a href="code/starter/01-respawn.py"><code>01-respawn.py</code></a></td>
+<td>Στάδιο 1, με τρία κενά</td>
+</tr>
+<tr>
+<td><a href="code/starter/02-demo.py"><code>02-demo.py</code></a></td>
+<td>Έτοιμο πρόγραμμα του κύκλου 2: ο παίκτης και το αστέρι, με ερώτηση επικάλυψης</td>
+</tr>
+<tr>
+<td><a href="code/starter/02-catch.py"><code>02-catch.py</code></a></td>
+<td>Στάδιο 2, με τρία κενά</td>
+</tr>
+<tr>
+<td><a href="code/starter/03-demo.py"><code>03-demo.py</code></a></td>
+<td>Έτοιμο πρόγραμμα του κύκλου 3: το σκορ φαίνεται στην οθόνη</td>
+</tr>
+<tr>
+<td><a href="code/starter/03-misses.py"><code>03-misses.py</code></a></td>
+<td>Στάδιο 3, με τρία κενά</td>
+</tr>
+<tr>
+<td><a href="code/starter/04-demo.py"><code>04-demo.py</code></a></td>
+<td>Έτοιμο πρόγραμμα του κύκλου 4: η ταχύτητα του αστεριού μεγαλώνει με το σκορ</td>
+</tr>
+<tr>
+<td><a href="code/starter/04-level.py"><code>04-level.py</code></a></td>
+<td>Στάδιο 4, με τρία κενά</td>
+</tr>
+</tbody>
+</table>
+<p>Τα αρχεία <code>NN-demo.py</code> είναι για όποιον δεν τελείωσε το προηγούμενο στάδιο: κάθε κύκλος ξεκινά από ένα πρόγραμμα που δουλεύει.</p>
+<p>Φτιάξε και ένα κενό αρχείο <code>sandbox.py</code> στον ίδιο φάκελο, για μικρές δοκιμές όπως στα προηγούμενα μαθήματα.</p>
+<h2 id="place_star">Η τύχη και η έτοιμη συνάρτηση <code>place_star</code><a class="headerlink" href="#place_star" title="Permanent link">&para;</a></h2>
+<p>Οι ζώνες των προγραμμάτων και ο βοηθός ιχνηλάτησης (τα πλήκτρα P και N, και οι τιμές κάτω αριστερά) είναι ίδιοι με το
+<a href="../review/">Επαναληπτικό</a>. Ο παίκτης είναι αυτός του <a href="../01-player/">Μ9</a>: τα τέσσερα βέλη και τα όρια του παραθύρου,
+χωρίς το SHIFT. Σήμερα προστίθενται δύο καινούργια πράγματα:</p>
+<ul>
+<li>Στη ζώνη 2 υπάρχει η έτοιμη συνάρτηση <code>place_star(star)</code>. Της δίνεις ένα <code>Rect</code> και αυτή αλλάζει το <code>x</code> και το <code>y</code> του: βάζει το
+  αστέρι σε <strong>τυχαία</strong> θέση, ακριβώς κάτω από τη γραμμή <code>HUD_HEIGHT</code>. Δεν γράφουμε εμείς τη συνάρτηση, τη <strong>χρησιμοποιούμε</strong>.</li>
+<li>Επειδή το <code>x</code> ενός νέου αστεριού είναι τυχαίο, δεν μπορείς να το προβλέψεις. Το <code>y</code> όμως το προβλέπεις πάντα. Στις προβλέψεις του
+  φύλλου ρωτάμε μόνο για ό,τι δεν είναι τυχαίο.</li>
+</ul>
+<hr />
+<h2 id="1-38">Κύκλος 1 — Το αστέρι πέφτει (38′)<a class="headerlink" href="#1-38" title="Permanent link">&para;</a></h2>
+<h3 id="4">Ξεκίνημα (4′)<a class="headerlink" href="#4" title="Permanent link">&para;</a></h3>
+<p><strong>Θυμήσου.</strong> Δύο ερωτήσεις, χωρίς να τρέξεις κώδικα:</p>
+<ol>
+<li>Ποιες τιμές μπορεί να επιστρέψει η <code>random.randint(1, 3)</code>;  ______</li>
+<li>Αν <code>y = 60</code> και σε κάθε καρέ προστίθεται 4, ποια τιμή έχει το <code>y</code> μετά από 5 καρέ;  ______</li>
+</ol>
+<p><strong>Διάβασε.</strong> Το αστέρι είναι ένα δεύτερο <code>Rect</code>, το <code>star</code>. Σε κάθε καρέ το <code>y</code> του αυξάνεται κατά <code>STAR_SPEED</code>, άρα το αστέρι πέφτει. Όταν
+το <strong>πάνω</strong> άκρο του ξεπεράσει το κάτω όριο του παραθύρου, το αστέρι δεν φαίνεται πια και το ξαναβάζουμε πάνω. Αυτό το κάνει η έτοιμη
+<code>place_star(star)</code>: της δίνουμε το <code>Rect</code> που πρέπει να αλλάξει. Το νέο <code>x</code> είναι τυχαίο, το νέο <code>y</code> είναι πάντα το <code>HUD_HEIGHT</code>.</p>
+<h3 id="5">Α. Πρόβλεψη (5′)<a class="headerlink" href="#5" title="Permanent link">&para;</a></h3>
+<p>Άνοιξε το <code>00-start.py</code>, <strong>χωρίς να το τρέξεις ακόμη</strong>. Το <code>star.y</code> ξεκινά από 60 και υπόθεσε ότι η <code>STAR_SPEED</code> είναι 100. Συμπλήρωσε
+το <code>star.y</code> στο <strong>τέλος</strong> κάθε καρέ:</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: center;">Καρέ</th>
+<th style="text-align: center;">1</th>
+<th style="text-align: center;">2</th>
+<th style="text-align: center;">3</th>
+<th style="text-align: center;">4</th>
+<th style="text-align: center;">5</th>
+<th style="text-align: center;">6</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;"><code>star.y</code></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+</tr>
+</tbody>
+</table>
+<p>Από ποιο καρέ και μετά το πάνω άκρο του αστεριού είναι μεγαλύτερο από το <code>HEIGHT</code> (480), δηλαδή το αστέρι έχει βγει ολόκληρο κάτω από το
+παράθυρο;  ______</p>
+<h3 id="7">Β. Ιχνηλάτηση στην οθόνη (7′)<a class="headerlink" href="#7" title="Permanent link">&para;</a></h3>
+<ol>
+<li>Στο <code>00-start.py</code> βάλε <code>STAR_SPEED = 100</code> και στη ζώνη 3 <code>paused = True</code>, και τρέξε το πρόγραμμα.</li>
+<li>Πάτα N έξι φορές, μία-μία, και μετά από κάθε πάτημα γράψε τις τιμές της οθόνης:</li>
+</ol>
+<table>
+<thead>
+<tr>
+<th style="text-align: center;">Πάτημα του N</th>
+<th style="text-align: center;"><code>frame</code></th>
+<th style="text-align: center;"><code>star.y</code></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;">1ο</td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+</tr>
+<tr>
+<td style="text-align: center;">2ο</td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+</tr>
+<tr>
+<td style="text-align: center;">3ο</td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+</tr>
+<tr>
+<td style="text-align: center;">4ο</td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+</tr>
+<tr>
+<td style="text-align: center;">5ο</td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+</tr>
+<tr>
+<td style="text-align: center;">6ο</td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+</tr>
+</tbody>
+</table>
+<ol>
+<li>Ταιριάζει με την πρόβλεψή σου στο Α; Αν όχι, σε ποιο καρέ διαφέρει;  ______</li>
+<li>Τι γίνεται με το αστέρι όταν περάσει το κάτω όριο, και τι λείπει από το πρόγραμμα;  ______</li>
+</ol>
+<h3 id="8">Γ. Αλλάζω ένα πράγμα (8′)<a class="headerlink" href="#8" title="Permanent link">&para;</a></h3>
+<p>Σε κάθε γραμμή άλλαξε <strong>μόνο μία</strong> τιμή και γράψε πρώτα τι νομίζεις ότι θα συμβεί. Μετά τρέξε το πρόγραμμα, με <code>STAR_SPEED = 4</code> και
+<code>paused = False</code>, και γράψε τι έγινε. Επανάφερε την αρχική τιμή πριν από την επόμενη αλλαγή.</p>
+<table>
+<thead>
+<tr>
+<th>Αλλαγή</th>
+<th>Πρόβλεψη</th>
+<th>Τι έγινε</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>STAR_SPEED = 8</code></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><code>STAR_SIZE = 60</code></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><code>star = pygame.Rect(100, HUD_HEIGHT, STAR_SIZE, STAR_SIZE)</code> στη θέση του <code>Rect(300, …)</code></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>γράψε <code>star.y += STAR_SPEEED</code> (με δύο E) στη θέση του <code>star.y += STAR_SPEED</code></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p>Στην τελευταία αλλαγή διάβασε την <strong>τελευταία γραμμή</strong> του μηνύματος σφάλματος: τι λέει και ποια γραμμή του προγράμματος δείχνει;  ______</p>
+<h3 id="1-01-respawnpy-12">Δ. Στάδιο 1 — <code>01-respawn.py</code> (12′)<a class="headerlink" href="#1-01-respawnpy-12" title="Permanent link">&para;</a></h3>
+<p>Στο <code>00-start.py</code> το αστέρι πέφτει και χάνεται. Θα το κάνουμε να ξαναρχίζει από πάνω, σε τυχαία θέση.</p>
+<ol>
+<li>Άνοιξε το <code>01-respawn.py</code> και συμπλήρωσε τα τρία κενά (<code>TODO 1</code> έως <code>TODO 3</code>).</li>
+<li>Τρέξε το πρόγραμμα. Όταν το αστέρι βγει από το κάτω μέρος, πρέπει να ξαναφαίνεται πάνω, κάθε φορά σε άλλη θέση.</li>
+<li><strong>Πρόβλεψη και δοκιμή.</strong> Βάλε προσωρινά <code>STAR_SPEED = 100</code> και <code>paused = True</code>. Πάτα N. Σε ποιο πάτημα ξαναρχίζει το αστέρι και τι τιμή
+   έχει τότε το <code>star.y</code>; Πρόβλεψη: ________  Αποτέλεσμα: ________</li>
+<li>Τι παρατηρείς στο <code>star.x</code> όταν ξαναρχίζει το αστέρι; Μπορείς να το προβλέψεις;  ______</li>
+<li>Επανάφερε <code>STAR_SPEED = 4</code> και <code>paused = False</code>.</li>
+</ol>
+<h3 id="2">Ε. Κάρτα εξόδου (2′)<a class="headerlink" href="#2" title="Permanent link">&para;</a></h3>
+<ol>
+<li>Τι κάνει η <code>place_star(star)</code> και τι της δίνουμε;  ______</li>
+<li>Γιατί η συνθήκη ελέγχει το <code>star.top</code> και όχι το <code>star.bottom</code>;  ______</li>
+</ol>
+<hr />
+<h2 id="2-38">Κύκλος 2 — Πιάνω το αστέρι (38′)<a class="headerlink" href="#2-38" title="Permanent link">&para;</a></h2>
+<h3 id="4_1">Ξεκίνημα (4′)<a class="headerlink" href="#4_1" title="Permanent link">&para;</a></h3>
+<p><strong>Θυμήσου.</strong> Δύο ερωτήσεις, χωρίς να τρέξεις κώδικα:</p>
+<ol>
+<li>Τι επιστρέφει η <code>a.colliderect(b)</code> όταν τα δύο ορθογώνια μόνο ακουμπούν;  ______</li>
+<li>Αν <code>score = 0</code> και εκτελεστεί δύο φορές η <code>score += 1</code>, ποια τιμή έχει η <code>score</code>;  ______</li>
+</ol>
+<p><strong>Διάβασε.</strong> Στο Μ9 ρωτήσαμε αν ο παίκτης χτυπά έναν τοίχο που δεν κινείται. Τώρα κινούνται και τα δύο ορθογώνια, αλλά η ερώτηση είναι ίδια:
+<code>player.colliderect(star)</code>. Την απάντηση την κρατάμε στην <code>touching</code>. Όταν ο παίκτης πιάνει το αστέρι, γίνονται δύο πράγματα: το αστέρι
+ξαναρχίζει από πάνω και το σκορ αυξάνεται κατά ένα. Αν το αστέρι δεν ξαναρχίσει, θα συνεχίσει να επικαλύπτει τον παίκτη στα επόμενα καρέ.</p>
+<h3 id="5_1">Α. Πρόβλεψη (5′)<a class="headerlink" href="#5_1" title="Permanent link">&para;</a></h3>
+<p>Άνοιξε το <code>02-demo.py</code>, <strong>χωρίς να το τρέξεις ακόμη</strong>. Ο παίκτης μένει ακίνητος στη θέση <code>Rect(290, 210, 60, 60)</code>, το αστέρι ξεκινά από
+<code>Rect(300, 60, 30, 30)</code> και υπόθεσε ότι η <code>STAR_SPEED</code> είναι 40. Συμπλήρωσε το <code>star.y</code> και το <code>touching</code> (<code>True</code> ή <code>False</code>) στο <strong>τέλος</strong>
+κάθε καρέ:</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: center;">Καρέ</th>
+<th style="text-align: center;">1</th>
+<th style="text-align: center;">2</th>
+<th style="text-align: center;">3</th>
+<th style="text-align: center;">4</th>
+<th style="text-align: center;">5</th>
+<th style="text-align: center;">6</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;"><code>star.y</code></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+</tr>
+<tr>
+<td style="text-align: center;"><code>touching</code></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+</tr>
+</tbody>
+</table>
+<p>Στο καρέ 3 το κάτω άκρο του αστεριού (210) είναι ίσο με το πάνω άκρο του παίκτη. Γιατί το <code>touching</code> δεν είναι <code>True</code>;  ______</p>
+<h3 id="7_1">Β. Ιχνηλάτηση στην οθόνη (7′)<a class="headerlink" href="#7_1" title="Permanent link">&para;</a></h3>
+<ol>
+<li>Στο <code>02-demo.py</code> βάλε <code>STAR_SPEED = 40</code> και <code>paused = True</code>, και τρέξε το πρόγραμμα. Άφησε τον παίκτη ακίνητο.</li>
+<li>Πάτα N έξι φορές και μετά από κάθε πάτημα γράψε τις τιμές της οθόνης:</li>
+</ol>
+<table>
+<thead>
+<tr>
+<th style="text-align: center;">Πάτημα του N</th>
+<th style="text-align: center;"><code>star.y</code></th>
+<th style="text-align: center;"><code>touching</code></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;">1ο</td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+</tr>
+<tr>
+<td style="text-align: center;">2ο</td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+</tr>
+<tr>
+<td style="text-align: center;">3ο</td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+</tr>
+<tr>
+<td style="text-align: center;">4ο</td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+</tr>
+<tr>
+<td style="text-align: center;">5ο</td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+</tr>
+<tr>
+<td style="text-align: center;">6ο</td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+</tr>
+</tbody>
+</table>
+<ol>
+<li>Ταιριάζει με την πρόβλεψή σου; Αν όχι, σε ποιο καρέ διαφέρει;  ______</li>
+<li>Το <code>02-demo.py</code> ρωτά αν ο παίκτης έπιασε το αστέρι. Κάνει κάτι με την απάντηση;  ______</li>
+</ol>
+<h3 id="8_1">Γ. Αλλάζω ένα πράγμα (8′)<a class="headerlink" href="#8_1" title="Permanent link">&para;</a></h3>
+<p>Στο <code>02-demo.py</code>, με <code>STAR_SPEED = 4</code> και <code>paused = False</code>, άλλαξε μία τιμή τη φορά. Άφησε τον παίκτη ακίνητο και γράψε πρώτα πότε νομίζεις ότι
+θα γίνει για πρώτη φορά <code>True</code> το <code>touching</code>. Επανάφερε την αρχική τιμή πριν από την επόμενη αλλαγή.</p>
+<table>
+<thead>
+<tr>
+<th>Αλλαγή</th>
+<th>Πρόβλεψη</th>
+<th>Τι έγινε</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>STAR_SIZE = 60</code></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><code>SIZE = 120</code></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><code>star = pygame.Rect(100, HUD_HEIGHT, STAR_SIZE, STAR_SIZE)</code> στη θέση του <code>Rect(300, …)</code></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>γράψε <code>player.collide(star)</code> στη θέση της <code>player.colliderect(star)</code></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p>Στην τελευταία αλλαγή διάβασε την <strong>τελευταία γραμμή</strong> του μηνύματος σφάλματος: τι λέει και ποια γραμμή του προγράμματος δείχνει;  ______</p>
+<h3 id="2-02-catchpy-12">Δ. Στάδιο 2 — <code>02-catch.py</code> (12′)<a class="headerlink" href="#2-02-catchpy-12" title="Permanent link">&para;</a></h3>
+<p>Στο <code>02-demo.py</code> ο παίκτης περνά μέσα από το αστέρι. Θα κάνουμε το αστέρι να πιάνεται.</p>
+<ol>
+<li>Άνοιξε το <code>02-catch.py</code> και συμπλήρωσε τα τρία κενά (<code>TODO 1</code> έως <code>TODO 3</code>).</li>
+<li>Τρέξε το πρόγραμμα και πιάσε μερικά αστέρια. Κάθε φορά το αστέρι ξαναρχίζει από πάνω και το <code>score</code> του βοηθού αυξάνεται.</li>
+<li><strong>Πρόβλεψη και δοκιμή.</strong> Βάλε προσωρινά <code>STAR_SPEED = 40</code> και <code>paused = True</code>. Άφησε τον παίκτη ακίνητο και πάτα N. Σε ποιο πάτημα
+   ξαναρχίζει το αστέρι και τι τιμή έχει τότε το <code>score</code>; Πρόβλεψη: ________  Αποτέλεσμα: ________</li>
+<li>Επανάφερε <code>STAR_SPEED = 4</code> και <code>paused = False</code>.</li>
+</ol>
+<h3 id="2_1">Ε. Κάρτα εξόδου (2′)<a class="headerlink" href="#2_1" title="Permanent link">&para;</a></h3>
+<ol>
+<li>Τι θα γινόταν αν δεν καλούσαμε την <code>place_star</code> όταν ο παίκτης πιάνει το αστέρι;  ______</li>
+<li>Σε ποιο σημείο του προγράμματος αλλάζει το <code>score</code> και πού το βλέπεις;  ______</li>
+</ol>
+<hr />
+<h2 id="3-38">Κύκλος 3 — Σκορ και χαμένα στην οθόνη (38′)<a class="headerlink" href="#3-38" title="Permanent link">&para;</a></h2>
+<h3 id="4_2">Ξεκίνημα (4′)<a class="headerlink" href="#4_2" title="Permanent link">&para;</a></h3>
+<p><strong>Θυμήσου.</strong> Δύο ερωτήσεις, χωρίς να τρέξεις κώδικα:</p>
+<ol>
+<li>Τι κείμενο φτιάχνει η <code>f"Σκορ: {score}"</code> όταν <code>score = 3</code>;  ______</li>
+<li>Στην <code>draw_text(screen, font, text, color, position)</code>, ποιο όρισμα δείχνει πού θα μπει το κείμενο;  ______</li>
+</ol>
+<p><strong>Διάβασε.</strong> Ως τώρα το σκορ φαινόταν μόνο στις τιμές κάτω αριστερά. Ένα παιχνίδι το δείχνει στον παίκτη, στον χώρο πάνω από τη γραμμή
+<code>HUD_HEIGHT</code>. Το κείμενο φτιάχνεται στο μέρος Γ από τα δεδομένα, σε κάθε καρέ: όταν αλλάξει η <code>score</code>, αλλάζει και το κείμενο, χωρίς άλλη
+εντολή. Η πορεία ενός αστεριού τελειώνει με δύο τρόπους: το πιάνεις (το σκορ αυξάνεται) ή το χάνεις (βγαίνει από το παράθυρο).</p>
+<h3 id="5_2">Α. Πρόβλεψη (5′)<a class="headerlink" href="#5_2" title="Permanent link">&para;</a></h3>
+<p>Στο <code>03-demo.py</code> το σκορ ξεκινά από 0. Υπόθεσε ότι ο παίκτης πιάνει ένα αστέρι στα καρέ 4, 8 και 12. Τι κείμενο σκορ δείχνει η οθόνη στο
+<strong>τέλος</strong> των καρέ 3, 4, 7, 8 και 12;</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: center;">Καρέ</th>
+<th style="text-align: center;">3</th>
+<th style="text-align: center;">4</th>
+<th style="text-align: center;">7</th>
+<th style="text-align: center;">8</th>
+<th style="text-align: center;">12</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;">Κείμενο</td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+</tr>
+</tbody>
+</table>
+<p>Στο καρέ 4 η <code>score</code> αλλάζει στο μέρος Β και το κείμενο ζωγραφίζεται στο μέρος Γ του ίδιου καρέ. Γιατί η οθόνη δείχνει ήδη το καινούργιο σκορ;  ______</p>
+<h3 id="7_2">Β. Ιχνηλάτηση στην οθόνη (7′)<a class="headerlink" href="#7_2" title="Permanent link">&para;</a></h3>
+<ol>
+<li>Τρέξε το <code>03-demo.py</code>. Πιάσε τρία αστέρια, ένα-ένα.</li>
+<li>Μετά από κάθε αστέρι γράψε το κείμενο που δείχνει η οθόνη πάνω αριστερά και την τιμή <code>score</code> του βοηθού:</li>
+</ol>
+<table>
+<thead>
+<tr>
+<th style="text-align: center;">Αστέρι</th>
+<th>Κείμενο της οθόνης</th>
+<th style="text-align: center;"><code>score</code> του βοηθού</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;">1ο</td>
+<td></td>
+<td style="text-align: center;"></td>
+</tr>
+<tr>
+<td style="text-align: center;">2ο</td>
+<td></td>
+<td style="text-align: center;"></td>
+</tr>
+<tr>
+<td style="text-align: center;">3ο</td>
+<td></td>
+<td style="text-align: center;"></td>
+</tr>
+</tbody>
+</table>
+<ol>
+<li>Άφησε ένα αστέρι να πέσει χωρίς να το πιάσεις. Αλλάζει το σκορ;  ______</li>
+<li>Ποια εντολή του μέρους Γ φτιάχνει το κείμενο και από ποια δεδομένα;  ______</li>
+</ol>
+<h3 id="8_2">Γ. Αλλάζω ένα πράγμα (8′)<a class="headerlink" href="#8_2" title="Permanent link">&para;</a></h3>
+<p>Στο <code>03-demo.py</code> άλλαξε μία τιμή τη φορά και γράψε πρώτα τι νομίζεις ότι θα συμβεί. Επανάφερε την αρχική τιμή πριν από την επόμενη αλλαγή.</p>
+<table>
+<thead>
+<tr>
+<th>Αλλαγή</th>
+<th>Πρόβλεψη</th>
+<th>Τι έγινε</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>f"Πόντοι: {score}"</code> στη θέση του <code>f"Σκορ: {score}"</code></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>η θέση <code>(20, 100)</code> στη θέση της <code>(20, 20)</code> στο κείμενο του σκορ</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><code>score += 10</code> στη θέση του <code>score += 1</code></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>σβήσε το <code>f</code> μπροστά από το <code>"Σκορ: {score}"</code></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p>Στην τελευταία αλλαγή: τι βλέπεις στην οθόνη και γιατί;  ______</p>
+<h3 id="3-03-missespy-12">Δ. Στάδιο 3 — <code>03-misses.py</code> (12′)<a class="headerlink" href="#3-03-missespy-12" title="Permanent link">&para;</a></h3>
+<p>Το πρόγραμμα μετρά μόνο τα αστέρια που πιάνεις. Θα μετρήσουμε και όσα χάνονται.</p>
+<ol>
+<li>Άνοιξε το <code>03-misses.py</code> και συμπλήρωσε τα τρία κενά (<code>TODO 1</code> έως <code>TODO 3</code>).</li>
+<li>Τρέξε το πρόγραμμα. Πάρε τον παίκτη στην άκρη και άφησε αστέρια να πέσουν: τα <code>Χαμένα</code> πρέπει να αυξάνονται.</li>
+<li><strong>Πρόβλεψη και δοκιμή.</strong> Βάλε προσωρινά <code>star = pygame.Rect(560, HUD_HEIGHT, STAR_SIZE, STAR_SIZE)</code> (το αστέρι ξεκινά μακριά από τον παίκτη),
+   <code>STAR_SPEED = 100</code> και <code>paused = True</code>. Πάτα N. Σε ποιο πάτημα θα δεις για πρώτη φορά <code>Χαμένα: 1</code>; Πρόβλεψη: ________  Αποτέλεσμα: ________</li>
+<li>Επανάφερε τις αρχικές τιμές.</li>
+</ol>
+<h3 id="2_2">Ε. Κάρτα εξόδου (2′)<a class="headerlink" href="#2_2" title="Permanent link">&para;</a></h3>
+<ol>
+<li>Σε ποιο σημείο του προγράμματος αυξάνεται το <code>score</code> και σε ποιο το <code>misses</code>;  ______</li>
+<li>Γιατί το κείμενο ζωγραφίζεται στο μέρος Γ και όχι στο μέρος Β;  ______</li>
+</ol>
+<hr />
+<h2 id="4-38">Κύκλος 4 — Η δυσκολία μεγαλώνει (38′)<a class="headerlink" href="#4-38" title="Permanent link">&para;</a></h2>
+<h3 id="4_3">Ξεκίνημα (4′)<a class="headerlink" href="#4_3" title="Permanent link">&para;</a></h3>
+<p><strong>Θυμήσου.</strong> Δύο ερωτήσεις, χωρίς να τρέξεις κώδικα:</p>
+<ol>
+<li>Ποιο είναι το αποτέλεσμα της <code>7 // 3</code>;  ______</li>
+<li>Αν <code>score = 8</code>, ποια τιμή έχει η <code>4 + score // 3</code>;  ______</li>
+</ol>
+<p><strong>Διάβασε.</strong> Η ταχύτητα του αστεριού δεν χρειάζεται να είναι σταθερή: μπορεί να υπολογίζεται από το σκορ. Η <code>star_speed</code> είναι η ταχύτητα
+<strong>αυτού του καρέ</strong> και υπολογίζεται ξανά σε κάθε καρέ: <code>star_speed = STAR_SPEED + score // LEVEL_SIZE</code>. Η <code>//</code> κάνει ακέραια διαίρεση: κρατά
+μόνο το ακέραιο μέρος του αποτελέσματος. Έτσι η ταχύτητα αυξάνεται κατά 1 κάθε <code>LEVEL_SIZE</code> αστέρια. Αν όμως η ταχύτητα μεγαλώνει χωρίς όριο,
+κάποια στιγμή το παιχνίδι γίνεται αδύνατο. Η <code>min(a, b)</code> δίνει τη μικρότερη από δύο τιμές: η <code>min(star_speed, MAX_SPEED)</code> δεν αφήνει την
+ταχύτητα να ξεπεράσει το όριο.</p>
+<h3 id="5_3">Α. Πρόβλεψη (5′)<a class="headerlink" href="#5_3" title="Permanent link">&para;</a></h3>
+<p>Άνοιξε το <code>04-demo.py</code>, <strong>χωρίς να το τρέξεις ακόμη</strong>. Η <code>STAR_SPEED</code> είναι 4 και η <code>LEVEL_SIZE</code> είναι 3. Συμπλήρωσε την ταχύτητα του
+αστεριού για κάθε σκορ:</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: center;">Σκορ</th>
+<th style="text-align: center;">0</th>
+<th style="text-align: center;">1</th>
+<th style="text-align: center;">2</th>
+<th style="text-align: center;">3</th>
+<th style="text-align: center;">4</th>
+<th style="text-align: center;">5</th>
+<th style="text-align: center;">6</th>
+<th style="text-align: center;">7</th>
+<th style="text-align: center;">8</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;"><code>star_speed</code></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+</tr>
+</tbody>
+</table>
+<p>Κάθε πόσα αστέρια αυξάνεται η ταχύτητα;  ______</p>
+<h3 id="7_3">Β. Ιχνηλάτηση στην οθόνη (7′)<a class="headerlink" href="#7_3" title="Permanent link">&para;</a></h3>
+<p><strong>Στο χαρτί.</strong> Έλεγξε την πρόβλεψή σου στο <code>sandbox.py</code>:</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="n">STAR_SPEED</span> <span class="o">=</span> <span class="mi">4</span>
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="n">LEVEL_SIZE</span> <span class="o">=</span> <span class="mi">3</span>
+</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="k">for</span> <span class="n">score</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">9</span><span class="p">):</span>
+</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>    <span class="nb">print</span><span class="p">(</span><span class="n">score</span><span class="p">,</span> <span class="n">STAR_SPEED</span> <span class="o">+</span> <span class="n">score</span> <span class="o">//</span> <span class="n">LEVEL_SIZE</span><span class="p">)</span>
+</span></code></pre></div>
+<p><strong>Στην οθόνη.</strong></p>
+<ol>
+<li>Στο <code>04-demo.py</code> βάλε στη ζώνη 3 <code>score = 2</code> και τρέξε το πρόγραμμα. Πιάσε ένα αστέρι. Συμπλήρωσε από τον βοηθό:</li>
+</ol>
+<table>
+<thead>
+<tr>
+<th>Στιγμή</th>
+<th style="text-align: center;"><code>score</code></th>
+<th style="text-align: center;"><code>star_speed</code></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>πριν πιάσεις αστέρι</td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+</tr>
+<tr>
+<td>λίγο αφότου έπιασες το πρώτο</td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+</tr>
+</tbody>
+</table>
+<ol>
+<li>Βάλε τώρα <code>score = 15</code> και τρέξε ξανά. Τι τιμή έχει η <code>star_speed</code>;  ______</li>
+<li>Μπορείς να πιάσεις αστέρια με τόση ταχύτητα; Τι θα γινόταν με <code>score = 30</code>;  ______</li>
+</ol>
+<h3 id="8_3">Γ. Αλλάζω ένα πράγμα (8′)<a class="headerlink" href="#8_3" title="Permanent link">&para;</a></h3>
+<p>Στο <code>04-demo.py</code>, με <code>score = 0</code>, άλλαξε μία τιμή τη φορά και γράψε πρώτα τι νομίζεις ότι θα συμβεί. Επανάφερε την αρχική τιμή πριν από την επόμενη αλλαγή.</p>
+<table>
+<thead>
+<tr>
+<th>Αλλαγή</th>
+<th>Πρόβλεψη</th>
+<th>Τι έγινε</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>LEVEL_SIZE = 1</code></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><code>STAR_SPEED = 2</code></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><code>star_speed = score // LEVEL_SIZE</code> στη θέση της <code>star_speed = STAR_SPEED + score // LEVEL_SIZE</code></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><code>LEVEL_SIZE = 0</code></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p>Στην τελευταία αλλαγή διάβασε το μήνυμα σφάλματος: τι λέει και ποια γραμμή δείχνει;  ______</p>
+<h3 id="4-04-levelpy-12">Δ. Στάδιο 4 — <code>04-level.py</code> (12′)<a class="headerlink" href="#4-04-levelpy-12" title="Permanent link">&para;</a></h3>
+<p>Στο <code>04-demo.py</code> η ταχύτητα μεγαλώνει χωρίς όριο. Θα της βάλουμε όριο.</p>
+<ol>
+<li>Άνοιξε το <code>04-level.py</code> και συμπλήρωσε τα τρία κενά (<code>TODO 1</code> έως <code>TODO 3</code>).</li>
+<li>Τρέξε το πρόγραμμα. Πάνω δεξιά φαίνεται τώρα και η ταχύτητα του αστεριού.</li>
+<li><strong>Πρόβλεψη και δοκιμή.</strong> Βάλε προσωρινά <code>score = 30</code> στη ζώνη 3. Τι τιμή έχει η <code>star_speed</code> στο <code>04-demo.py</code> και τι στο <code>04-level.py</code>;
+   Πρόβλεψη: ________ και ________  Αποτέλεσμα: ________ και ________</li>
+<li>Επανάφερε <code>score = 0</code>.</li>
+</ol>
+<h3 id="2_3">Ε. Κάρτα εξόδου (2′)<a class="headerlink" href="#2_3" title="Permanent link">&para;</a></h3>
+<ol>
+<li>Γιατί η <code>star_speed</code> υπολογίζεται σε κάθε καρέ και όχι μία φορά στην αρχή;  ______</li>
+<li>Τι κάνει η <code>min(star_speed, MAX_SPEED)</code> και από ποιο σκορ και μετά η ταχύτητα δεν αλλάζει άλλο;  ______</li>
+</ol>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Επιστροφή στην αρχή
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+      
+      <nav class="md-footer__inner md-grid" aria-label="Υποσέλιδο" >
+        
+          
+          <a href="../01-player/" class="md-footer__link md-footer__link--prev" aria-label="Προηγούμενο: Μ9: Ο παίκτης">
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Προηγούμενο
+              </span>
+              <div class="md-ellipsis">
+                Μ9: Ο παίκτης
+              </div>
+            </div>
+          </a>
+        
+        
+          
+          <a href="../03-stars/" class="md-footer__link md-footer__link--next" aria-label="Επόμενο: Μ11: Πολλά αστέρια">
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Επόμενο
+              </span>
+              <div class="md-ellipsis">
+                Μ11: Πολλά αστέρια
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      © 2026 Θόδωρος Θεμελής — <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.el"
+   target="_blank" rel="noopener">CC BY-NC-SA 4.0</a>
+
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.sections", "navigation.top", "navigation.footer", "content.code.copy", "content.code.annotate", "toc.follow", "search.suggest", "search.highlight"], "search": "../../assets/javascripts/workers/search.a7633da7.min.js", "tags": null, "translations": {"clipboard.copied": "\u0391\u03bd\u03c4\u03b9\u03b3\u03c1\u03ac\u03c6\u03b7\u03ba\u03b5 \u03c3\u03c4\u03bf \u03c0\u03c1\u03cc\u03c7\u03b5\u03b9\u03c1\u03bf", "clipboard.copy": "\u0391\u03bd\u03c4\u03b9\u03b3\u03c1\u03b1\u03c6\u03ae \u03c3\u03c4\u03bf \u03c0\u03c1\u03cc\u03c7\u03b5\u03b9\u03c1\u03bf", "search.result.more.one": "1 \u03b1\u03ba\u03cc\u03bc\u03b1 \u03c3\u03b5 \u03b1\u03c5\u03c4\u03ae\u03bd \u03c4\u03b7 \u03c3\u03b5\u03bb\u03af\u03b4\u03b1", "search.result.more.other": "# \u03b1\u03ba\u03cc\u03bc\u03b1 \u03c3\u03b5 \u03b1\u03c5\u03c4\u03ae\u03bd \u03c4\u03b7 \u03c3\u03b5\u03bb\u03af\u03b4\u03b1", "search.result.none": "\u03b4\u03b5\u03bd \u03b2\u03c1\u03ae\u03ba\u03b5 \u03ba\u03ac\u03c0\u03bf\u03b9\u03bf \u03ad\u03b3\u03b3\u03c1\u03b1\u03c6\u03bf", "search.result.one": "1 \u03ad\u03b3\u03b3\u03c1\u03b1\u03c6\u03bf \u03c0\u03bf\u03c5 \u03c4\u03b1\u03b9\u03c1\u03b9\u03ac\u03b6\u03b5\u03b9", "search.result.other": "# \u03ad\u03b3\u03b3\u03c1\u03b1\u03c6\u03b1 \u03c0\u03bf\u03c5 \u03c4\u03b1\u03b9\u03c1\u03b9\u03ac\u03b6\u03bf\u03c5\u03bd", "search.result.placeholder": "\u03a0\u03bb\u03b7\u03ba\u03c4\u03c1\u03bf\u03bb\u03bf\u03b3\u03ae\u03c3\u03c4\u03b5 \u03b3\u03b9\u03b1 \u03bd\u03b1 \u03b1\u03c1\u03c7\u03af\u03c3\u03b5\u03b9 \u03b7 \u03b1\u03bd\u03b1\u03b6\u03ae\u03c4\u03b7\u03c3\u03b7", "search.result.term.missing": "\u039b\u03b5\u03af\u03c0\u03b5\u03b9", "select.version": "\u0395\u03c0\u03b9\u03bb\u03bf\u03b3\u03ae \u03ad\u03ba\u03b4\u03bf\u03c3\u03b7\u03c2"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.c21346df.min.js"></script>
+      
+    
+  </body>
+</html>
