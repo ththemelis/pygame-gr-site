@@ -4040,6 +4040,7 @@
 </span><span id="__span-1-4"><a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a><span class="k">for</span> <span class="n">point</span> <span class="ow">in</span> <span class="p">[(</span><span class="mi">412</span><span class="p">,</span> <span class="mi">130</span><span class="p">),</span> <span class="p">(</span><span class="mi">399</span><span class="p">,</span> <span class="mi">130</span><span class="p">),</span> <span class="p">(</span><span class="mi">460</span><span class="p">,</span> <span class="mi">130</span><span class="p">),</span> <span class="p">(</span><span class="mi">430</span><span class="p">,</span> <span class="mi">160</span><span class="p">),</span> <span class="p">(</span><span class="mi">430</span><span class="p">,</span> <span class="mi">159</span><span class="p">)]:</span>
 </span><span id="__span-1-5"><a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a>    <span class="nb">print</span><span class="p">(</span><span class="n">point</span><span class="p">,</span> <span class="n">box</span><span class="o">.</span><span class="n">collidepoint</span><span class="p">(</span><span class="n">point</span><span class="p">))</span>
 </span></code></pre></div>
+<p>Γιατί τα <code>(460, 130)</code> και <code>(430, 160)</code> δίνουν <code>False</code>, παρότι <code>400 + 60 = 460</code> και <code>100 + 60 = 160</code>;  ______</p>
 <p><strong>Στην οθόνη.</strong> Στο <code>02-demo.py</code> άλλαξε το <code>paused = False</code> σε <code>paused = True</code>, τρέξε το και κάνε κλικ μέσα και έξω από το τετράγωνο.</p>
 <ol>
 <li>Τι δείχνουν τα <code>click</code> και <code>hit</code> όταν πατάς μέσα στο τετράγωνο και τι όταν πατάς έξω;  ______</li>
@@ -4249,7 +4250,7 @@
 <ol>
 <li>Άνοιξε το <code>03-bounce.py</code> και συμπλήρωσε τα τρία κενά (<code>TODO 1</code> έως <code>TODO 3</code>). Η κατακόρυφη κίνηση μοιάζει με την οριζόντια.</li>
 <li>Τρέξε το πρόγραμμα. Το τετράγωνο πρέπει να αναπηδά και στα τέσσερα όρια.</li>
-<li><strong>Πρόβλεψη και δοκιμή.</strong> Άλλαξε προσωρινά <code>speed_y = 30</code> και <code>paused = True</code>. Σε ποιο καρέ θα γίνει για πρώτη φορά <code>speed_y = -30</code>
+<li><strong>Πρόβλεψη και δοκιμή.</strong> Άλλαξε προσωρινά <code>speed_y = 30</code> και <code>paused = True</code>. Το τετράγωνο ξεκινά με <code>box.y = 210</code>. Σε ποιο καρέ θα γίνει για πρώτη φορά <code>speed_y = -30</code>
    και τι τιμή θα έχει τότε το <code>box.y</code>; Πρόβλεψη: ________  Αποτέλεσμα: ________</li>
 <li>Επανάφερε <code>speed_y = 3</code> και <code>paused = False</code>.</li>
 </ol>
@@ -4273,7 +4274,7 @@
 <p>Άνοιξε το <code>04-demo.py</code> και απάντησε χωρίς να το τρέξεις:</p>
 <ol>
 <li>Σε ποιο μέρος του βρόχου (Α, Β ή Γ) αλλάζει η τιμή του <code>score</code>;  ______</li>
-<li>Ποια γραμμή μεταφέρει το τετράγωνο σε νέα θέση όταν το πατάς;  ______</li>
+<li>Ποια γραμμή μεταφέρει το τετράγωνο σε νέα κατακόρυφη θέση όταν το πατάς;  ______</li>
 <li>Σε ποιο μέρος του βρόχου ζωγραφίζεται το κείμενο «Σκορ»;  ______</li>
 <li>Τι θα έκανε το τετράγωνο αν σβήναμε τη γραμμή <code>box.y += speed_y</code>;  ______</li>
 </ol>
