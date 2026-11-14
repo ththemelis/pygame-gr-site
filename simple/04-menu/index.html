@@ -4192,7 +4192,7 @@
 χειρότερο παιχνίδι θα μείωνε το ρεκόρ. Η <code>best</code> αλλάζει μόνο όταν το σκορ είναι <strong>μεγαλύτερο</strong>. Το ρεκόρ ζει όσο τρέχει το πρόγραμμα: όταν το κλείσεις, χάνεται.</p>
 <h3 id="5_2">Α. Πρόβλεψη (5′)<a class="headerlink" href="#5_2" title="Permanent link">&para;</a></h3>
 <p>Άνοιξε το <code>03-demo.py</code>, <strong>χωρίς να το τρέξεις ακόμη</strong>. Στο τέλος κάθε παιχνιδιού το πρόγραμμα γράφει <code>best = score</code>. Υπόθεσε ότι παίζεις δύο παιχνίδια: στο πρώτο το σκορ
-τελειώνει στο 5 και στο δεύτερο στο 0. Συμπλήρωσε:</p>
+τελειώνει στο 3 και στο δεύτερο στο 0. Συμπλήρωσε:</p>
 <table>
 <thead>
 <tr>
@@ -4204,7 +4204,7 @@
 <tbody>
 <tr>
 <td style="text-align: center;"><code>score</code> στο τέλος του παιχνιδιού</td>
-<td style="text-align: center;">5</td>
+<td style="text-align: center;">3</td>
 <td style="text-align: center;">0</td>
 </tr>
 <tr>
@@ -4222,7 +4222,7 @@
 <p>Ποιο είναι το λάθος του <code>03-demo.py</code>;  ______</p>
 <h3 id="7_2">Β. Ιχνηλάτηση στην οθόνη (7′)<a class="headerlink" href="#7_2" title="Permanent link">&para;</a></h3>
 <ol>
-<li>Στο <code>03-demo.py</code> βάλε στη ζώνη 3 <code>score = 5</code> (το πρώτο παιχνίδι ξεκινά με 5 πόντους), <code>STAR_SPEED = 100</code> και <code>paused = True</code>, και τρέξε το πρόγραμμα.</li>
+<li>Στο <code>03-demo.py</code> βάλε στη ζώνη 3 <code>score = 3</code> (το πρώτο παιχνίδι ξεκινά με 3 πόντους· κάτω από τους 4 πόντους δεν προστίθεται νέο αστέρι, άρα το αποτέλεσμα βγαίνει πάντα το ίδιο), <code>STAR_SPEED = 100</code> και <code>paused = True</code>, και τρέξε το πρόγραμμα.</li>
 <li>Πάτησε με τη σειρά: SPACE, πέντε φορές N, SPACE, SPACE, πέντε φορές N (δεκατρία πλήκτρα). Μετά από τα πατήματα 6, 7 και 13 γράψε τις τιμές της οθόνης:</li>
 </ol>
 <table>
@@ -4260,7 +4260,7 @@
 <li>Τι ρεκόρ δείχνει το μήνυμα τέλους μετά το 13ο πάτημα και τι θα έπρεπε να δείχνει;  ______</li>
 </ol>
 <h3 id="8_2">Γ. Αλλάζω ένα πράγμα (8′)<a class="headerlink" href="#8_2" title="Permanent link">&para;</a></h3>
-<p>Στο <code>03-demo.py</code>, με <code>score = 5</code> στη ζώνη 3, <code>STAR_SPEED = 100</code> και <code>paused = True</code>, άλλαξε μία τιμή τη φορά και γράψε πρώτα τι νομίζεις ότι θα συμβεί. Πάτησε κάθε φορά
+<p>Στο <code>03-demo.py</code>, με <code>score = 3</code> στη ζώνη 3, <code>STAR_SPEED = 100</code> και <code>paused = True</code>, άλλαξε μία τιμή τη φορά και γράψε πρώτα τι νομίζεις ότι θα συμβεί. Πάτησε κάθε φορά
 SPACE, πέντε φορές N και SPACE (επτά πλήκτρα) και γράψε τι ρεκόρ δείχνει το μενού. Επανάφερε την αρχική τιμή πριν από την επόμενη αλλαγή.</p>
 <table>
 <thead>
@@ -4299,9 +4299,9 @@ SPACE, πέντε φορές N και SPACE (επτά πλήκτρα) και γ�
 <ol>
 <li>Άνοιξε το <code>03-record.py</code> και συμπλήρωσε τα τρία κενά (<code>TODO 1</code> έως <code>TODO 3</code>).</li>
 <li>Τρέξε το πρόγραμμα και παίξε δύο παιχνίδια, ένα καλό και ένα κακό. Το μενού και το μήνυμα τέλους πρέπει να δείχνουν το μεγαλύτερο σκορ.</li>
-<li><strong>Πρόβλεψη και δοκιμή.</strong> Βάλε προσωρινά <code>STAR_SPEED = 100</code>, <code>paused = True</code>, <code>best = 5</code> και <code>score = 8</code> στη ζώνη 3. Πάτησε SPACE, πέντε φορές N και SPACE. Τι ρεκόρ
+<li><strong>Πρόβλεψη και δοκιμή.</strong> Βάλε προσωρινά <code>STAR_SPEED = 100</code>, <code>paused = True</code>, <code>best = 2</code> και <code>score = 3</code> στη ζώνη 3. Πάτησε SPACE, πέντε φορές N και SPACE. Τι ρεκόρ
    δείχνει το μενού; Πρόβλεψη: ________  Αποτέλεσμα: ________</li>
-<li>Άλλαξε το <code>score = 8</code> σε <code>score = 3</code> και ξαναπάτησε τα ίδια πλήκτρα. Τι ρεκόρ δείχνει τώρα το μενού και γιατί;  ______</li>
+<li>Άλλαξε το <code>score = 3</code> σε <code>score = 1</code> και ξαναπάτησε τα ίδια πλήκτρα. Τι ρεκόρ δείχνει τώρα το μενού και γιατί;  ______</li>
 <li>Επανάφερε τις αρχικές τιμές.</li>
 </ol>
 <h3 id="2_2">Ε. Κάρτα εξόδου (2′)<a class="headerlink" href="#2_2" title="Permanent link">&para;</a></h3>
