@@ -118,10 +118,10 @@ while running:
     # ----- Γ. ΣΧΕΔΙΑΣΗ: ζωγραφίζουμε τα δεδομένα -----
     screen.fill(BACKGROUND)
     pygame.draw.line(screen, GREY, (0, HUD_HEIGHT), (WIDTH, HUD_HEIGHT), 2)
-    draw_text(screen, font, f"Σκορ: {score}", WHITE, (20, 20))
-    draw_text(screen, font, f"Χαμένα: {misses}", WHITE, (220, 20))
+    draw_text(screen, font, f"Σκορ: {score}", WHITE, (20, 30))
+    draw_text(screen, font, f"Χαμένα: {misses}", WHITE, (220, 30))
     # TODO 3: το κείμενο δείχνει την ταχύτητα του αστεριού
-    draw_text(screen, font, f"Ταχύτητα: {____}", WHITE, (420, 20))
+    draw_text(screen, font, f"Ταχύτητα: {____}", WHITE, (420, 30))
     pygame.draw.circle(screen, YELLOW, star.center, STAR_SIZE // 2)
     pygame.draw.rect(screen, GREEN, player)
     draw_watch(screen, small_font, [("frame", frame), ("score", score), ("star_speed", star_speed), ("star.y", star.y)])
