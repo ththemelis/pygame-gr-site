@@ -1,0 +1,142 @@
+"""Επαναληπτικό, Στάδιο 4 — «Πάτα το τετράγωνο»: πάγωμα με SPACE και τέλος μετά από GOAL πόντους.
+
+Συμπλήρωσε τα τρία κενά (____).
+"""
+import random
+
+import pygame
+
+pygame.init()
+
+# ===== 1. ΡΥΘΜΙΣΕΙΣ: οι σταθερές. Εδώ αλλάζεις μεγέθη, χρώματα και τον στόχο =====
+WIDTH = 640
+HEIGHT = 480
+HUD_HEIGHT = 60
+SIZE = 60
+GOAL = 5                   # πόσα κλικ χρειάζονται για να κερδίσεις
+
+BACKGROUND = (25, 35, 60)
+RED = (220, 60, 60)
+BLUE = (90, 160, 255)
+GREEN = (90, 220, 150)
+WHITE = (245, 245, 245)
+GREY = (120, 130, 150)
+
+screen = pygame.display.set_mode((WIDTH, HEIGHT))
+pygame.display.set_caption("Επαναληπτικό: πάτα το τετράγωνο")
+font = pygame.font.Font(None, 36)
+small_font = pygame.font.Font(None, 28)
+clock = pygame.time.Clock()
+
+
+# ===== 2. ΕΡΓΑΛΕΙΑ: έτοιμες συναρτήσεις. Μην τις πειράξεις =====
+def draw_text(surface, font, text, color, position):
+    """Ζωγραφίζει το κείμενο, με την πάνω αριστερή γωνία του στο position."""
+    image = font.render(text, True, color)
+    surface.blit(image, position)
+
+
+def draw_centered_text(surface, font, text, color, center):
+    """Ζωγραφίζει το κείμενο, με το κέντρο του στο center."""
+    image = font.render(text, True, color)
+    surface.blit(image, image.get_rect(center=center))
+
+
+def draw_watch(surface, font, lines):
+    """Δείχνει κάτω αριστερά τις τιμές που παρακολουθούμε (λίστα από ζεύγη όνομα-τιμή) και πάνω δεξιά τα πλήκτρα του βοηθού."""
+    hint = font.render("P: παύση    N: ένα καρέ", True, GREY)
+    surface.blit(hint, (WIDTH - hint.get_width() - 10, 8))
+    y = HEIGHT - 28 * len(lines) - 6
+    for name, value in lines:
+        image = font.render(f"{name} = {value}", True, WHITE)
+        surface.blit(image, (10, y))
+        y += 28
+
+
+# ===== 3. ΔΕΔΟΜΕΝΑ: οι μεταβλητές που αλλάζουν όσο τρέχει το παιχνίδι =====
+box = pygame.Rect(570, 210, SIZE, SIZE)
+speed_x = 5                # pixel ανά καρέ προς τα δεξιά (αρνητικό: προς τα αριστερά)
+speed_y = 3                # pixel ανά καρέ προς τα κάτω (αρνητικό: προς τα πάνω)
+score = 0
+misses = 0
+last_click = None
+hit = False
+frozen = False
+game_over = False
+frame = 0
+paused = False             # True: το πρόγραμμα ξεκινά σταματημένο και προχωρά με το N
+step_once = False
+
+running = True
+while running:
+    # ===== 4. Ο ΒΡΟΧΟΣ: ένα καρέ σε κάθε επανάληψη =====
+    # ----- Α. ΣΥΜΒΑΝΤΑ: τι έκανε ο παίκτης -----
+    for event in pygame.event.get():
+        if event.type == pygame.QUIT:
+            running = False
+        elif event.type == pygame.KEYDOWN:
+            if event.key == pygame.K_p:
+                paused = not paused
+            elif event.key == pygame.K_n:
+                step_once = True
+            elif event.key == pygame.K_SPACE:
+                # TODO 1: το SPACE αντιστρέφει την τιμή του frozen: αν ήταν True γίνεται False, και αντίστροφα
+                frozen = not ____
+        elif event.type == pygame.MOUSEBUTTONDOWN and event.button == 1:
+            last_click = event.pos
+            if game_over:
+                score = 0
+                misses = 0
+                game_over = False
+            else:
+                hit = box.collidepoint(event.pos)
+                if hit:
+                    score += 1
+                    # TODO 2: το παιχνίδι τελειώνει όταν οι πόντοι γίνουν ίσοι με τον στόχο GOAL
+                    if score ____ GOAL:
+                        # TODO 3: το παιχνίδι τελείωσε
+                        game_over = ____
+                    else:
+                        box.y = random.randint(HUD_HEIGHT, HEIGHT - SIZE)
+                else:
+                    misses += 1
+
+    # ----- Β. ΕΝΗΜΕΡΩΣΗ: αλλάζουμε τα δεδομένα -----
+    if not paused or step_once:
+        frame += 1
+        if not frozen and not game_over:
+            box.x += speed_x
+            box.y += speed_y
+            if box.left < 0:
+                box.left = 0
+                speed_x = -speed_x
+            elif box.right > WIDTH:
+                box.right = WIDTH
+                speed_x = -speed_x
+            if box.top < HUD_HEIGHT:
+                box.top = HUD_HEIGHT
+                speed_y = -speed_y
+            elif box.bottom > HEIGHT:
+                box.bottom = HEIGHT
+                speed_y = -speed_y
+        step_once = False
+
+    # ----- Γ. ΣΧΕΔΙΑΣΗ: ζωγραφίζουμε τα δεδομένα -----
+    screen.fill(BACKGROUND)
+    pygame.draw.line(screen, GREY, (0, HUD_HEIGHT), (WIDTH, HUD_HEIGHT), 2)
+    draw_text(screen, font, f"Σκορ: {score} / {GOAL}", WHITE, (20, 20))
+    draw_text(screen, font, f"Αστοχίες: {misses}", WHITE, (220, 20))
+    if game_over:
+        draw_centered_text(screen, font, "Κέρδισες.", GREEN, (WIDTH // 2, HEIGHT // 2 - 20))
+        draw_centered_text(screen, font, "Κάνε κλικ για νέο παιχνίδι.", WHITE, (WIDTH // 2, HEIGHT // 2 + 20))
+    else:
+        if frozen:
+            color = BLUE
+        else:
+            color = RED
+        pygame.draw.rect(screen, color, box)
+    draw_watch(screen, small_font, [("frame", frame), ("box", box), ("frozen", frozen), ("hit", hit), ("misses", misses)])
+    pygame.display.flip()
+    clock.tick(60)
+
+pygame.quit()
